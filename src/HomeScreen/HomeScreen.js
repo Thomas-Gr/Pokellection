@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MyHeader from "../UtilityScreens/MyHeader.js";
-import { Container, Header, Content, List, ListItem, Text } from 'native-base';
+import { Container, Content, List, ListItem, Text } from 'native-base';
 import { AsyncStorage } from "react-native";
 
 import CollectionMemory from "../State/CollectionMemory.js";

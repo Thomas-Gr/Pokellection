@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar } from "react-native";
+import { Image, StatusBar } from "react-native";
 import {
   Button,
   Text,

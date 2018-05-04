@@ -1,21 +1,8 @@
 import React from "react";
-import { StatusBar, StyleSheet, Image, ListView, View, Dimensions, TouchableOpacity, List, FlatList } from "react-native";
+import { Text } from "native-base";
+import { Image, View, TouchableOpacity } from "react-native";
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
-import {
-  Button,
-  Text,
-  Container,
-  Body,
-  Content,
-  Header,
-  Title,
-  Left,
-  Icon,
-  Right,
-  Picker,
-  Form
-} from "native-base";
 
 export default class CardItem extends React.PureComponent {
   render() {

@@ -3,9 +3,6 @@ import { StatusBar } from "react-native";
 import {
   Button,
   Text,
-  Container,
-  Card,
-  CardItem,
   Body,
   Content,
   Header,

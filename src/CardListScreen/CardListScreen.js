@@ -1,26 +1,12 @@
 import React from "react";
-import { StatusBar, StyleSheet, Image, ListView, View, Dimensions, TouchableOpacity, List, FlatList } from "react-native";
+import { Image, FlatList } from "react-native";
+import { Text, Container, Body, Content, Picker, Form } from "native-base";
+
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
 import CardItem from "./CardItem.js";
 
-import {
-  Button,
-  Text,
-  Container,
-  Body,
-  Content,
-  Header,
-  Title,
-  Left,
-  Icon,
-  Right,
-  Picker,
-  Form
-} from "native-base";
-
 import CollectionMemory from "../State/CollectionMemory.js"
-
 import SerieConfig from '../Config/SerieConfig.js';
 
 export default class CardListScreen extends React.Component {
