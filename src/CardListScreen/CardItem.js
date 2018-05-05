@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "native-base";
-import { Image, View, TouchableOpacity } from "react-native";
+import { Image, View, TouchableOpacity, Dimensions } from "react-native";
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
 

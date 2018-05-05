@@ -14,13 +14,14 @@ export default class CardListScreen extends React.Component {
     super(props);
 
     const serie = SerieConfig[props.navigation.state.params.serieName];
+    const collection = Object.assign({}, props.navigation.state.params.collection);
 
     this.state = {
       name: serie.name,
       cards: serie.cards,
-      dataSource: this.refreshCardList(serie.cards, props.navigation.state.params.collection, undefined),
+      dataSource: this.refreshCardList(serie.cards, collection, undefined),
       selection: undefined,
-      collection: props.navigation.state.params.collection,
+      collection: collection,
     };
 
     this.onSelectionChange = this.onSelectionChange.bind(this);
@@ -52,6 +53,10 @@ export default class CardListScreen extends React.Component {
   }
 
   refreshCardList(cards, collection, selection) {
+
+    console.log(collection);
+    //console.log(cards);
+
     return Object.values(cards)
       .sort((a, b) => parseInt(a.number) - parseInt(b.number))
       .map(a => ({id: a.id, owned: collection[a.id] != null}))
