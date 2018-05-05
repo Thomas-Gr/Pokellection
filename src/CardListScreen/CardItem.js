@@ -16,12 +16,12 @@ export default class CardItem extends React.PureComponent {
 
     return (
       <TouchableOpacity onPress={() => this.props.addCard(collectionName, data)}>
-        <View style={{borderWidth:0.5, borderColor:'#d6d7da', margin:0.5}}>
+        <View style={{backgroundColor: item.owned ? '#4DB6AC' : '#E57373'}}>
           <Image
-            style={{flex:1, height:170, width: Dimensions.get('window').width / 3 - 2}}
+            style={{flex:1, height:170, width: Dimensions.get('window').width / 3 - 2, margin: 1}}
             source={image}
           />
-          <Text style={{textAlign: 'center', fontSize: 10}}>{item.owned ? "yes" : "No"} {data.name.substring(0, 16)}</Text>
+          <Text style={{textAlign: 'center', fontSize: 10}}>{data.name.substring(0, 25)}</Text>
         </View>
       </TouchableOpacity>
      )
