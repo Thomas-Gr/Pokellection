@@ -7,20 +7,25 @@ import {
   Content,
   Header,
   Title,
+  Subtitle,
   Left,
   Icon,
   Right
 } from "native-base";
 
 export default class MyHeader extends React.Component {
-	constructor(props) {
-        super(props);
+  subtitle() {
+    if (this.props.title != null) {
+      return (<Subtitle>{this.props.title}</Subtitle>)
+    } else {
+      return (null);
     }
+  }
 
   render() {
     return (
 	    <Header>
-	      <Left>
+	      <Left style={{flex: 0.15}}>
 	        <Button
 	          transparent
 	          onPress={() => this.props.navigation.navigate("DrawerOpen")}
@@ -28,10 +33,10 @@ export default class MyHeader extends React.Component {
 	          <Icon name="menu" />
 	        </Button>
 	      </Left>
-	      <Body>
+	      <Body style={{flex: 0.85}}>
 	        <Title>Pokellection</Title>
+          {this.subtitle()}
 	      </Body>
-	      <Right />
 	    </Header>
     );
   }

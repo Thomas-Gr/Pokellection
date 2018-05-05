@@ -114,7 +114,7 @@ export default class CardListScreen extends React.Component {
   render() {
     return (
       <Container>
-        <MyHeader {...this.props}/>
+        <MyHeader {...this.props} title={this.state.name}/>
         <Content>
           <Form>
             <Picker
