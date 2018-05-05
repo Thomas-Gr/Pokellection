@@ -10,8 +10,8 @@ export default class CardItem extends React.PureComponent {
     const data = this.props.data;
     const collectionName = this.props.collectionName;
 
-    const image = SerieConfig[collectionName].pictures[data.pictures[0]] != null
-      ? SerieConfig[collectionName].pictures[data.pictures[0]]
+    const image = SerieConfig[collectionName].pictures[data.picture] != null
+      ? SerieConfig[collectionName].pictures[data.picture]
       : require('../../resources/images/missing.png');
 
     return (

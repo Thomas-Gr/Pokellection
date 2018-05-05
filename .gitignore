@@ -1,7 +1,7 @@
 .expo/
 android/
 ios/
-resources/
 *.iml
 package-lock.json
 node_modules/
+resources/images/cards/

@@ -53,6 +53,7 @@ export default class CardListScreen extends React.Component {
   }
 
   refreshCardList(cards, collection, selection) {
+    // TODO: Move this somewhere else
     const typeOrder = {
       "GRASS": 1,
       "FIRE": 2,
