@@ -13,7 +13,7 @@ export default class CardListScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    const serie = SerieConfig[props.navigation.state.params.serieName];
+    const serie = SerieConfig[props.navigation.state.params.serieName].definition;
     const collection = Object.assign({}, props.navigation.state.params.collection);
 
     this.state = {
@@ -53,10 +53,6 @@ export default class CardListScreen extends React.Component {
   }
 
   refreshCardList(cards, collection, selection) {
-
-    console.log(collection);
-    //console.log(cards);
-
     return Object.values(cards)
       .sort((a, b) => parseInt(a.number) - parseInt(b.number))
       .map(a => ({id: a.id, owned: collection[a.id] != null}))

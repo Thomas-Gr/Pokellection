@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "native-base";
 import { Image, View, TouchableOpacity, Dimensions } from "react-native";
 import MyHeader from "../UtilityScreens/MyHeader.js";
-import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
+import SerieConfig from '../Config/SerieConfig.js';
 
 export default class CardItem extends React.PureComponent {
   render() {
@@ -10,9 +10,9 @@ export default class CardItem extends React.PureComponent {
     const data = this.props.data;
     const collectionName = this.props.collectionName;
 
-    const image = GymChallenge[data.pictures[0]] != null
-      ? GymChallenge[data.pictures[0]]
-      : GymChallenge['BlaineArcanineGymChallenge1.jpg'];
+    const image = SerieConfig[collectionName].pictures[data.pictures[0]] != null
+      ? SerieConfig[collectionName].pictures[data.pictures[0]]
+      : require('../../resources/images/missing.png');
 
     return (
       <TouchableOpacity onPress={() => this.props.addCard(collectionName, data)}>
@@ -21,7 +21,7 @@ export default class CardItem extends React.PureComponent {
             style={{flex:1, height:170, width: Dimensions.get('window').width / 3 - 2}}
             source={image}
           />
-          <Text style={{textAlign: 'center', fontSize: 10}}> {item.owned ? "yes" : "No"} {data.name.substring(0, 16)}</Text>
+          <Text style={{textAlign: 'center', fontSize: 10}}>{item.owned ? "yes" : "No"} {data.name.substring(0, 16)}</Text>
         </View>
       </TouchableOpacity>
      )
