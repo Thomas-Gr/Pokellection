@@ -1,0 +1,6 @@
+.expo/
+android/
+ios/
+resources/
+*.iml
+package-lock.json
