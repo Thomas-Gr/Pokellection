@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import { Container, Content, List, ListItem, Text } from 'native-base';
-import { AsyncStorage } from "react-native";
+import { AsyncStorage, FlatList } from "react-native";
 
 import CollectionMemory from "../State/CollectionMemory.js";
+import SerieConfig from '../Config/SerieConfig.js';
 
 export default class HomeScreen extends Component {
   constructor(){
@@ -15,6 +16,16 @@ export default class HomeScreen extends Component {
     CollectionMemory.getCollection((collections) =>
         this.setState({launched: true, collections: collections}));
   }
+
+  _renderItem = ({item}) => (
+    <ListItem>
+      <Text onPress={() => this.props.navigation.navigate(
+          'CardListScreen',
+          {serieName: item, collection: this.state.collections[item]})}>
+        {item}
+      </Text>
+    </ListItem>
+  )
 
   render() {
     if (!this.state.launched) {
@@ -30,14 +41,10 @@ export default class HomeScreen extends Component {
         <Container>
           <MyHeader {...this.props}/>
           <Content>
-            <List>
-              <ListItem itemHeader first>
-                <Text>Dummy title</Text>
-              </ListItem>
-              <ListItem>
-                <Text onPress={() => this.props.navigation.navigate('CardListScreen', {serieName: 'Gym Challenge', collection: this.state.collections['Gym Challenge']})}>Gym Challenge</Text>
-              </ListItem>
-            </List>
+          <FlatList
+             data={Object.keys(SerieConfig)}
+             keyExtractor={item => item}
+             renderItem={this._renderItem}/>
           </Content>
         </Container>
       );
