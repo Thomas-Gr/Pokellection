@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
-import { AsyncStorage, FlatList, Image } from "react-native";
+import { AsyncStorage, SectionList, Image } from "react-native";
 
 import CollectionMemory from "../State/CollectionMemory.js";
 import SerieConfig from '../Config/SerieConfig.js';
+import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';
 
 export default class HomeScreen extends Component {
@@ -31,12 +32,16 @@ export default class HomeScreen extends Component {
         </Text>
       </Body>
       <Right style={{flex:0.15}}>
-        <Text style={{fontSize:10}}>
+        <Text note>
           {Object.keys(this.state.collections[item]).length}
           /{Object.keys(SerieConfig[item].definition.cards).length}
         </Text>
       </Right>
     </ListItem>
+  )
+
+  _renderSectionHeader = ({section}) => (
+    <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
   )
 
   render() {
@@ -53,10 +58,12 @@ export default class HomeScreen extends Component {
         <Container>
           <MyHeader {...this.props}/>
           <Content>
-          <FlatList
-             data={Object.keys(SerieConfig)}
+          <SectionList
+             sections={HomeSerieConfig}
              keyExtractor={item => item}
-             renderItem={this._renderItem}/>
+             renderItem={this._renderItem}
+             renderSectionHeader={this._renderSectionHeader}
+             />
           </Content>
         </Container>
       );
