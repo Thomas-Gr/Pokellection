@@ -7,6 +7,8 @@ import Fossil from "./ImageConfig/Fossil.js";
 import MysteryOfTheFossils from "./ImageConfig/MysteryOfTheFossils.js";
 import RocketGang from "./ImageConfig/RocketGang.js";
 import TeamRocket from "./ImageConfig/TeamRocket.js";
+import GymHeroes from "./ImageConfig/GymHeroes.js";
+import LeadersStadium from "./ImageConfig/LeadersStadium.js";
 import GymChallenge from "./ImageConfig/GymChallenge.js";
 import ChallengeFromTheDarkness from "./ImageConfig/ChallengeFromTheDarkness.js";
 
@@ -43,6 +45,14 @@ const SerieConfig =
     'Rocket Gang' : {
       definition: require('../../resources/series/Rocket Gang.json'),
       pictures: RocketGang
+    },
+    'Gym Heroes' : {
+      definition: require('../../resources/series/Gym Heroes.json'),
+      pictures: GymHeroes
+    },
+    'Leaders\' Stadium' : {
+      definition: require('../../resources/series/Leaders\' Stadium.json'),
+      pictures: LeadersStadium
     },
     'Gym Challenge' : {
       definition: require('../../resources/series/Gym Challenge.json'),
