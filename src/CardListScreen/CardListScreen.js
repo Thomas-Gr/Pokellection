@@ -72,8 +72,9 @@ export default class CardListScreen extends React.Component {
       "RARE": 3,
       "RARE_HOLO": 3,
       "SUPER_RARE": 5,
-      "ULTRA_RARE_UNCOMMON": 6,
-      "NONE": 7
+      "SUPER_RARE_HOLO": 6,
+      "ULTRA_RARE_UNCOMMON": 7,
+      "NONE": 8
     };
 
     return Object.values(cards)

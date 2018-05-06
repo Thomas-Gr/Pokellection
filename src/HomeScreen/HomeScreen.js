@@ -9,7 +9,7 @@ import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';
 
 export default class HomeScreen extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {launched: false};
   }
@@ -52,9 +52,7 @@ export default class HomeScreen extends Component {
     if (!this.state.launched) {
       return (
         <Container>
-          <Content>
-            <Text>Loading ...</Text>
-          </Content>
+          <Content/>
         </Container>
       );
     } else {
