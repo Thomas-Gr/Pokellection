@@ -2,12 +2,12 @@ import React from 'react';
 
 const HomeSerieConfig = [
   {
-    title: "Génération 1 US 🇺🇸",
-    data: ['Base Set', 'Jungle', 'Gym Challenge']
+    title: "Original Series - US 🇺🇸",
+    data: ['Base Set', 'Jungle', 'Fossil', 'Gym Challenge']
   },
   {
-    title: "Génération 1 JP 🇯🇵",
-    data: ['Expansion Pack', 'Pokémon Jungle', 'Challenge from the Darkness']
+    title: "Original Era - JP 🇯🇵",
+    data: ['Expansion Pack', 'Pokémon Jungle', 'Mystery of the Fossils', 'Challenge from the Darkness']
   }
 ];
 
