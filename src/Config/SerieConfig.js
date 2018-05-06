@@ -1,6 +1,8 @@
 import React from 'react';
 import BaseSet from "./ImageConfig/BaseSet.js";
 import ExpansionPack from "./ImageConfig/ExpansionPack.js";
+import Jungle from "./ImageConfig/Jungle.js";
+import PokemonJungle from "./ImageConfig/PokemonJungle.js";
 import GymChallenge from "./ImageConfig/GymChallenge.js";
 import ChallengeFromTheDarkness from "./ImageConfig/ChallengeFromTheDarkness.js";
 
@@ -13,6 +15,14 @@ const SerieConfig =
     'Base Set' : {
       definition: require('../../resources/series/Base Set.json'),
       pictures: BaseSet
+    },
+    'Pokémon Jungle' : {
+      definition: require('../../resources/series/Pokemon Jungle.json'),
+      pictures: PokemonJungle
+    },
+    'Jungle' : {
+      definition: require('../../resources/series/Jungle.json'),
+      pictures: Jungle
     },
     'Gym Challenge' : {
       definition: require('../../resources/series/Gym Challenge.json'),
