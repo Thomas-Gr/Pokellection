@@ -22,7 +22,11 @@ export default class HomeScreen extends Component {
   _renderItem = ({item}) => (
     <ListItem>
       <Left style={{flex:0.15}}>
-        <Image source={SeriesLogos[SerieConfig[item].definition.image]} />
+        {
+          SerieConfig[item].definition.image != ""
+            ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} />)
+            : (null)
+        }
       </Left>
       <Body style={{flex:0.7}}>
         <Text style={{fontSize:15}} onPress={() => this.props.navigation.navigate(
@@ -33,7 +37,7 @@ export default class HomeScreen extends Component {
       </Body>
       <Right style={{flex:0.15}}>
         <Text note>
-          {Object.keys(this.state.collections[item]).length}
+          {this.state.collections[item] == null ? 0 : Object.keys(this.state.collections[item]).length}
           /{Object.keys(SerieConfig[item].definition.cards).length}
         </Text>
       </Right>

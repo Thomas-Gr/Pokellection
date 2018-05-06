@@ -3,11 +3,11 @@ import React from 'react';
 const HomeSerieConfig = [
   {
     title: "Génération 1 US 🇺🇸",
-    data: ['Gym Challenge']
+    data: ['Base Set', 'Gym Challenge']
   },
   {
     title: "Génération 1 JP 🇯🇵",
-    data: ['Challenge from the Darkness']
+    data: ['Expansion Pack', 'Challenge from the Darkness']
   }
 ];
 
