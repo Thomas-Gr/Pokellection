@@ -63,7 +63,11 @@ export default class CardListScreen extends React.Component {
       "FIGHTING": 6,
       "COLORLESS": 7,
       "TRAINER": 8,
-      "ENERGY": 9
+      "EXTRA_RULE": 9,
+      "PASS_CARD": 10,
+      "ARTWORK": 11,
+      "DECK_LIST": 12,
+      "ENERGY": 13
     };
 
     const rarityOrder = {

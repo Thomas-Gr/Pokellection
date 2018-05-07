@@ -11,6 +11,9 @@ import GymHeroes from "./ImageConfig/GymHeroes.js";
 import LeadersStadium from "./ImageConfig/LeadersStadium.js";
 import GymChallenge from "./ImageConfig/GymChallenge.js";
 import ChallengeFromTheDarkness from "./ImageConfig/ChallengeFromTheDarkness.js";
+import Vending1 from "./ImageConfig/Vending_1.js";
+import Vending2 from "./ImageConfig/Vending_2.js";
+import Vending3 from "./ImageConfig/Vending_3.js";
 
 const SerieConfig =
   {
@@ -61,6 +64,18 @@ const SerieConfig =
     'Challenge from the Darkness' : {
       definition: require('../../resources/series/Challenge from the Darkness.json'),
       pictures: ChallengeFromTheDarkness
+    },
+    'Series 1 (Blue)' : {
+      definition: require('../../resources/series/Series 1 (Blue).json'),
+      pictures: Vending1
+    },
+    'Series 2 (Red)' : {
+      definition: require('../../resources/series/Series 2 (Red).json'),
+      pictures: Vending2
+    },
+    'Series 3 (Green)' : {
+      definition: require('../../resources/series/Series 3 (Green).json'),
+      pictures: Vending3
     }
   };
 

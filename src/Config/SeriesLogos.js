@@ -6,5 +6,6 @@ export default SeriesLogos = {
   'SetSymbolJungle.png' : require('../../resources/images/series/SetSymbolJungle.png'),
   'SetSymbolFossil.png' : require('../../resources/images/series/SetSymbolFossil.png'),
   'SetSymbolTeam_Rocket.png' : require('../../resources/images/series/SetSymbolTeam_Rocket.png'),
-  'SetSymbolGym_Heroes.png' : require('../../resources/images/series/SetSymbolGym_Heroes.png')
+  'SetSymbolGym_Heroes.png' : require('../../resources/images/series/SetSymbolGym_Heroes.png'),
+  'SetSymbolVending.png' : require('../../resources/images/series/SetSymbolVending.png')
 };
