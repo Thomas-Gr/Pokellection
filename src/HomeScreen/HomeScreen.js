@@ -3,7 +3,8 @@ import MyHeader from "../UtilityScreens/MyHeader.js";
 import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
 import { AsyncStorage, SectionList, Image } from "react-native";
 
-import CollectionMemory from "../State/CollectionMemory.js";
+import * as CollectionMemory from "../State/CollectionMemory.js";
+
 import SerieConfig from '../Config/SerieConfig.js';
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';

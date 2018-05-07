@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import { AsyncStorage } from "react-native";
 
-export default class CollectionMemory extends Component {
+var cardsCache = {};
 
-  static async addCard(collection, result) {
-    try {
-      await AsyncStorage.setItem('@Collections:' + collection, result);
-    } catch (error) {
-      console.log(error);
-    }
+export const addCard = (collection, result) => {
+  try {
+    AsyncStorage.setItem('@Collections:' + collection, result);
+    cardsCache[collection] = result;
+  } catch (error) {
+    console.log(error);
   }
+}
 
-  static async getCollection(success) {
+export const getCollection = (success) => {
+  if (Object.keys(cardsCache).length === 0) { // Keep data in cache
     AsyncStorage.getAllKeys().then(result => {
       Promise.all(result.map(key => AsyncStorage.getItem(key)))
           .then((collection) => {
@@ -24,7 +26,10 @@ export default class CollectionMemory extends Component {
             });
 
             success(collections);
+            cardsCache = collections;
           });
     });
+  } else {
+    success(cardsCache);
   }
 }

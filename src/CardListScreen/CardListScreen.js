@@ -6,7 +6,7 @@ import MyHeader from "../UtilityScreens/MyHeader.js";
 import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
 import CardItem from "./CardItem.js";
 
-import CollectionMemory from "../State/CollectionMemory.js"
+import * as CollectionMemory from "../State/CollectionMemory.js";
 import SerieConfig from '../Config/SerieConfig.js';
 
 export default class CardListScreen extends React.Component {
