@@ -13,10 +13,9 @@ import {
 } from "native-base";
 
 const routes = [
-  { name: "Accueil", link: "Home"},
-  { name: "Ma collection", link: "CardListScreen"},
+  { name: "Séries", link: "Home"}, //, icon: "pokeball"
   { name: "Préférences", link: "NOPE", icon: "cog"},
-  { name: "A propos", link: "NOPE"}]
+  { name: "A propos", link: "NOPE"}] // , icon: "info"
 
 export default class SideBar extends React.Component {
   render() {

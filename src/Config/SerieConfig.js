@@ -14,6 +14,7 @@ import ChallengeFromTheDarkness from "./ImageConfig/ChallengeFromTheDarkness.js"
 import Vending1 from "./ImageConfig/Vending_1.js";
 import Vending2 from "./ImageConfig/Vending_2.js";
 import Vending3 from "./ImageConfig/Vending_3.js";
+import NiviCityGym from "./ImageConfig/NiviCityGym.js";
 
 const SerieConfig =
   {
@@ -76,6 +77,10 @@ const SerieConfig =
     'Series 3 (Green)' : {
       definition: require('../../resources/series/Series 3 (Green).json'),
       pictures: Vending3
+    },
+    'Nivi City Gym' : {
+      definition: require('../../resources/series/Nivi City Gym.json'),
+      pictures: NiviCityGym
     }
   };
 

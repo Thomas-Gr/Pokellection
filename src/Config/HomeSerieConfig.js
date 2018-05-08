@@ -10,6 +10,10 @@ const HomeSerieConfig = [
     data: ['Series 1 (Blue)', 'Series 2 (Red)', 'Series 3 (Green)']
   },
   {
+      title: "🇯🇵 Original Era (decks) 🇯🇵",
+      data: ['Nivi City Gym']
+    },
+  {
     title: "🇺🇸 Original Series 🇺🇸",
     data: ['Base Set', 'Jungle', 'Fossil', 'Team Rocket', 'Gym Heroes', 'Gym Challenge']
   }
