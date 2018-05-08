@@ -46,7 +46,7 @@ export default class CardListScreen extends React.Component {
     this.setState(
       {collection},
       () => {
-        CollectionMemory.addCard(collectionName, JSON.stringify(collection));
+        CollectionMemory.addCard(collectionName, collection);
 
         this.updateCardList();
       });

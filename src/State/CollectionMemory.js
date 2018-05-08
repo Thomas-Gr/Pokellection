@@ -5,7 +5,7 @@ var cardsCache = {};
 
 export const addCard = (collection, result) => {
   try {
-    AsyncStorage.setItem('@Collections:' + collection, result);
+    AsyncStorage.setItem('@Collections:' + collection, JSON.stringify(result));
     cardsCache[collection] = result;
   } catch (error) {
     console.log(error);
