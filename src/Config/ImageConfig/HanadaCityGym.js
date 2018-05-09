@@ -1,0 +1,28 @@
+import React from 'react';
+const HanadaCityGym =
+  {'DoubleColorlessEnergyBaseSet96.jpg' : require('../../../resources/images/cards/DoubleColorlessEnergyBaseSet96.jpg'),
+'MistyStaryuGymChallenge92.jpg' : require('../../../resources/images/cards/MistyStaryuGymChallenge92.jpg'),
+'MistyTearsHanadaCityGym.jpg' : require('../../../resources/images/cards/MistyTearsHanadaCityGym.jpg'),
+'CeruleanCityGymGymHeroes108.jpg' : require('../../../resources/images/cards/CeruleanCityGymGymHeroes108.jpg'),
+'MistyGoldeenGymHeroes30.jpg' : require('../../../resources/images/cards/MistyGoldeenGymHeroes30.jpg'),
+'MistyGymHeroes18.jpg' : require('../../../resources/images/cards/MistyGymHeroes18.jpg'),
+'MistyHorseaGymHeroes86.jpg' : require('../../../resources/images/cards/MistyHorseaGymHeroes86.jpg'),
+'MistyWrathGymHeroes114.jpg' : require('../../../resources/images/cards/MistyWrathGymHeroes114.jpg'),
+'BS93GustOfWind.jpg' : require('../../../resources/images/cards/BS93GustOfWind.jpg'),
+'MistyDuelGymHeroes123.jpg' : require('../../../resources/images/cards/MistyDuelGymHeroes123.jpg'),
+'MistyStaryuGymHeroes90.jpg' : require('../../../resources/images/cards/MistyStaryuGymHeroes90.jpg'),
+'MistyPoliwagGymHeroes87.jpg' : require('../../../resources/images/cards/MistyPoliwagGymHeroes87.jpg'),
+'MistyGoldeenGymHeroes85.jpg' : require('../../../resources/images/cards/MistyGoldeenGymHeroes85.jpg'),
+'WaterEnergyBaseSet102.jpg' : require('../../../resources/images/cards/WaterEnergyBaseSet102.jpg'),
+'MistyTentacruelGymHeroes10.jpg' : require('../../../resources/images/cards/MistyTentacruelGymHeroes10.jpg'),
+'MistySeelGymHeroes88.jpg' : require('../../../resources/images/cards/MistySeelGymHeroes88.jpg'),
+'MistyShellderGymHeroes89.jpg' : require('../../../resources/images/cards/MistyShellderGymHeroes89.jpg'),
+'MistyStarmieGymHeroes56.jpg' : require('../../../resources/images/cards/MistyStarmieGymHeroes56.jpg'),
+'MistyPsyduckGymHeroes54.jpg' : require('../../../resources/images/cards/MistyPsyduckGymHeroes54.jpg'),
+'MistyCloysterGymHeroes29.jpg' : require('../../../resources/images/cards/MistyCloysterGymHeroes29.jpg'),
+'MistySeakingGymHeroes55.jpg' : require('../../../resources/images/cards/MistySeakingGymHeroes55.jpg'),
+'MistyTentacoolGymHeroes32.jpg' : require('../../../resources/images/cards/MistyTentacoolGymHeroes32.jpg'),
+'PokeBallJungle64.jpg' : require('../../../resources/images/cards/PokeBallJungle64.jpg'),
+'PotionBaseSet94.jpg' : require('../../../resources/images/cards/PotionBaseSet94.jpg'),
+'DefenderBaseSet80.jpg' : require('../../../resources/images/cards/DefenderBaseSet80.jpg')};
+export default HanadaCityGym

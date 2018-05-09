@@ -15,6 +15,11 @@ import Vending1 from "./ImageConfig/Vending_1.js";
 import Vending2 from "./ImageConfig/Vending_2.js";
 import Vending3 from "./ImageConfig/Vending_3.js";
 import NiviCityGym from "./ImageConfig/NiviCityGym.js";
+import HanadaCityGym from "./ImageConfig/HanadaCityGym.js";
+import KuchibaCityGym from "./ImageConfig/KuchibaCityGym.js";
+import TamamushiCityGym from "./ImageConfig/TamamushiCityGym.js";
+import YamabukiCityGym from "./ImageConfig/YamabukiCityGym.js";
+import GurenTownGym from "./ImageConfig/GurenTownGym.js";
 
 const SerieConfig =
   {
@@ -81,6 +86,26 @@ const SerieConfig =
     'Nivi City Gym' : {
       definition: require('../../resources/series/Nivi City Gym.json'),
       pictures: NiviCityGym
+    },
+    'Hanada City Gym' : {
+      definition: require('../../resources/series/Hanada City Gym.json'),
+      pictures: HanadaCityGym
+    },
+    'Kuchiba City Gym' : {
+      definition: require('../../resources/series/Kuchiba City Gym.json'),
+      pictures: KuchibaCityGym
+    },
+    'Tamamushi City Gym' : {
+      definition: require('../../resources/series/Tamamushi City Gym.json'),
+      pictures: TamamushiCityGym
+    },
+    'Yamabuki City Gym' : {
+      definition: require('../../resources/series/Yamabuki City Gym.json'),
+      pictures: YamabukiCityGym
+    },
+    'Guren Town Gym' : {
+      definition: require('../../resources/series/Guren Town Gym.json'),
+      pictures:  GurenTownGym
     }
   };
 
