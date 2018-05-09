@@ -11,7 +11,7 @@ const HomeSerieConfig = [
   },
   {
       title: "🇯🇵 Original Era (decks) 🇯🇵",
-      data: ['Nivi City Gym', 'Hanada City Gym', 'Kuchiba City Gym', 'Tamamushi City Gym', 'Yamabuki City Gym', 'Guren Town Gym']
+      data: ['Nivi City Gym', 'Hanada City Gym', 'Kuchiba City Gym', 'Tamamushi City Gym', 'Yamabuki City Gym', 'Guren Town Gym', 'Red Deck', 'Green Deck', 'Bulbasaur Deck', 'Squirtle Deck']
     },
   {
     title: "🇺🇸 Original Series 🇺🇸",

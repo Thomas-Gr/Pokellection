@@ -20,6 +20,10 @@ import KuchibaCityGym from "./ImageConfig/KuchibaCityGym.js";
 import TamamushiCityGym from "./ImageConfig/TamamushiCityGym.js";
 import YamabukiCityGym from "./ImageConfig/YamabukiCityGym.js";
 import GurenTownGym from "./ImageConfig/GurenTownGym.js";
+import GreenDeck from "./ImageConfig/GreenDeck.js";
+import RedDeck from "./ImageConfig/RedDeck.js";
+import BulbasaurDeck from "./ImageConfig/BulbasaurDeck.js";
+import SquirtleDeck from "./ImageConfig/SquirtleDeck.js";
 
 const SerieConfig =
   {
@@ -106,6 +110,22 @@ const SerieConfig =
     'Guren Town Gym' : {
       definition: require('../../resources/series/Guren Town Gym.json'),
       pictures:  GurenTownGym
+    },
+    'Green Deck' : {
+      definition: require('../../resources/series/Green Deck.json'),
+      pictures:  GreenDeck
+    },
+    'Red Deck' : {
+      definition: require('../../resources/series/Red Deck.json'),
+      pictures:  RedDeck
+    },
+    'Bulbasaur Deck' : {
+      definition: require('../../resources/series/Bulbasaur Deck.json'),
+      pictures:  BulbasaurDeck
+    },
+    'Squirtle Deck' : {
+      definition: require('../../resources/series/Squirtle Deck.json'),
+      pictures:  SquirtleDeck
     }
   };
 

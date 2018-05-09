@@ -1,0 +1,25 @@
+import React from 'react';
+const BulbasaurDeck =
+  {'VenusaurBestCDPromo.jpg' : require('../../../resources/images/cards/VenusaurBestCDPromo.jpg'),
+'JynxBulbasaurDeck37.jpg' : require('../../../resources/images/cards/JynxBulbasaurDeck37.jpg'),
+'SuperScoopUpNeoGenesis98.jpg' : require('../../../resources/images/cards/SuperScoopUpNeoGenesis98.jpg'),
+'LightningEnergyBaseSet100.jpg' : require('../../../resources/images/cards/LightningEnergyBaseSet100.jpg'),
+'MeowthBulbasaurDeck16.jpg' : require('../../../resources/images/cards/MeowthBulbasaurDeck16.jpg'),
+'BulbasaurVendingS1.jpg' : require('../../../resources/images/cards/BulbasaurVendingS1.jpg'),
+'SwitchBaseSet95.jpg' : require('../../../resources/images/cards/SwitchBaseSet95.jpg'),
+'GrassEnergyBaseSet99.jpg' : require('../../../resources/images/cards/GrassEnergyBaseSet99.jpg'),
+'PsychicEnergyBaseSet101.jpg' : require('../../../resources/images/cards/PsychicEnergyBaseSet101.jpg'),
+'DoubleColorlessEnergyBaseSet96.jpg' : require('../../../resources/images/cards/DoubleColorlessEnergyBaseSet96.jpg'),
+'IvysaurBulbasaurDeck22.jpg' : require('../../../resources/images/cards/IvysaurBulbasaurDeck22.jpg'),
+'BillTeleporterNeoGenesis91.jpg' : require('../../../resources/images/cards/BillTeleporterNeoGenesis91.jpg'),
+'KoffingBulbasaurDeck39.jpg' : require('../../../resources/images/cards/KoffingBulbasaurDeck39.jpg'),
+'BulbasaurBulbasaurDeck1.jpg' : require('../../../resources/images/cards/BulbasaurBulbasaurDeck1.jpg'),
+'PikachuBaseSet58.png' : require('../../../resources/images/cards/PikachuBaseSet58.png'),
+'PotionBaseSet94.jpg' : require('../../../resources/images/cards/PotionBaseSet94.jpg'),
+'RaichuBulbasaurDeck3.jpg' : require('../../../resources/images/cards/RaichuBulbasaurDeck3.jpg'),
+'PikachuToyotaPromo.jpg' : require('../../../resources/images/cards/PikachuToyotaPromo.jpg'),
+'DoduoBaseSet48.jpg' : require('../../../resources/images/cards/DoduoBaseSet48.jpg'),
+'DrowzeeBaseSet49.jpg' : require('../../../resources/images/cards/DrowzeeBaseSet49.jpg'),
+'ElectabuzzBulbasaurDeck26.jpg' : require('../../../resources/images/cards/ElectabuzzBulbasaurDeck26.jpg'),
+'BS93GustOfWind.jpg' : require('../../../resources/images/cards/BS93GustOfWind.jpg')};
+export default BulbasaurDeck
