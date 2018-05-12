@@ -23,5 +23,7 @@ const GurenTownGym =
 'BlaineMagmarGymHeroes37.jpg' : require('../../../resources/images/cards/BlaineMagmarGymHeroes37.jpg'),
 'CinnabarCityGymGymChallenge113.jpg' : require('../../../resources/images/cards/CinnabarCityGymGymChallenge113.jpg'),
 'FullHealBaseSet82.jpg' : require('../../../resources/images/cards/FullHealBaseSet82.jpg'),
+'BlaineQuiz1GymHeroes97.jpg' : require('../../../resources/images/cards/BlaineQuiz1GymHeroes97.jpg'),
+'BlaineQuiz2GymChallenge111.jpg' : require('../../../resources/images/cards/BlaineQuiz2GymChallenge111.jpg'),
 'BlaineArcanineGymChallenge1.jpg' : require('../../../resources/images/cards/BlaineArcanineGymChallenge1.jpg')};
 export default GurenTownGym

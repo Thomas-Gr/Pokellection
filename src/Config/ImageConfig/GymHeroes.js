@@ -129,6 +129,7 @@ const GymHeroes =
 'MistyPoliwhirlGymHeroes53.jpg' : require('../../../resources/images/cards/MistyPoliwhirlGymHeroes53.jpg'),
 'ErikaTangelaGymHeroes79.jpg' : require('../../../resources/images/cards/ErikaTangelaGymHeroes79.jpg'),
 'RecallGymHeroes116.jpg' : require('../../../resources/images/cards/RecallGymHeroes116.jpg'),
+'BlaineQuiz1GymHeroes97.jpg' : require('../../../resources/images/cards/BlaineQuiz1GymHeroes97.jpg'),
 'BrockLickitungGymHeroes41.jpg' : require('../../../resources/images/cards/BrockLickitungGymHeroes41.jpg'),
 'LtSurgeElectabuzzGymHeroes27.jpg' : require('../../../resources/images/cards/LtSurgeElectabuzzGymHeroes27.jpg')};
 export default GymHeroes

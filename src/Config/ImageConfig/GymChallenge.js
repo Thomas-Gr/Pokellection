@@ -119,6 +119,8 @@ export default GymChallenge =
 'MistyStaryuGymChallenge92.jpg' : require('../../../resources/images/cards/MistyStaryuGymChallenge92.jpg'),
 'GiovanniMachokeGymChallenge42.jpg' : require('../../../resources/images/cards/GiovanniMachokeGymChallenge42.jpg'),
 'SabrinaMrMimeGymChallenge59.jpg' : require('../../../resources/images/cards/SabrinaMrMimeGymChallenge59.jpg'),
+'BlaineQuiz2GymChallenge111.jpg' : require('../../../resources/images/cards/BlaineQuiz2GymChallenge111.jpg'),
+'BlaineQuiz3GymChallenge112.jpg' : require('../../../resources/images/cards/BlaineQuiz3GymChallenge112.jpg'),
 'SabrinaAlakazamGymChallenge16.jpg' : require('../../../resources/images/cards/SabrinaAlakazamGymChallenge16.jpg'),
 'ErikaKindnessGymChallenge103.jpg' : require('../../../resources/images/cards/ErikaKindnessGymChallenge103.jpg'),
 'MistyGolduckGymChallenge12.jpg' : require('../../../resources/images/cards/MistyGolduckGymChallenge12.jpg'),

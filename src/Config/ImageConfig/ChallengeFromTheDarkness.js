@@ -92,6 +92,7 @@ const ChallengeFromTheDarkness =
 'SabrinaPorygonGymChallenge98.jpg' : require('../../../resources/images/cards/SabrinaPorygonGymChallenge98.jpg'),
 'GiovanniPersianGymChallenge8.jpg' : require('../../../resources/images/cards/GiovanniPersianGymChallenge8.jpg'),
 'SabrinaVenomothGymHeroes34.jpg' : require('../../../resources/images/cards/SabrinaVenomothGymHeroes34.jpg'),
+'BlaineQuiz3GymChallenge112.jpg' : require('../../../resources/images/cards/BlaineQuiz3GymChallenge112.jpg'),
 'LtSurgeRaichuGymChallenge11.jpg' : require('../../../resources/images/cards/LtSurgeRaichuGymChallenge11.jpg'),
 'BlaineKangaskhanGymHeroes36.jpg' : require('../../../resources/images/cards/BlaineKangaskhanGymHeroes36.jpg'),
 'RocketSnorlaxGymHeroes33.jpg' : require('../../../resources/images/cards/RocketSnorlaxGymHeroes33.jpg'),
