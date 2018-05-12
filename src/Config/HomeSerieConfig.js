@@ -7,7 +7,7 @@ const HomeSerieConfig = [
   },
   {
     title: "🇯🇵 Original Era (Special sets) 🇯🇵",
-    data: ['Series 1 (Blue)', 'Series 2 (Red)', 'Series 3 (Green)']
+    data: ['Series 1 (Blue)', 'Series 2 (Red)', 'Series 3 (Green)', 'Tropical Island', 'Rainbow Island']
   },
   {
       title: "🇯🇵 Original Era (decks) 🇯🇵",
@@ -15,7 +15,7 @@ const HomeSerieConfig = [
     },
   {
     title: "🇺🇸 Original Series 🇺🇸",
-    data: ['Base Set', 'Jungle', 'Fossil', 'Team Rocket', 'Gym Heroes', 'Gym Challenge']
+    data: ['Base Set', 'Jungle', 'Fossil', 'Team Rocket', 'Gym Heroes', 'Gym Challenge', 'Southern Islands']
   }
 ];
 

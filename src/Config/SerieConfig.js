@@ -24,6 +24,9 @@ import GreenDeck from "./ImageConfig/GreenDeck.js";
 import RedDeck from "./ImageConfig/RedDeck.js";
 import BulbasaurDeck from "./ImageConfig/BulbasaurDeck.js";
 import SquirtleDeck from "./ImageConfig/SquirtleDeck.js";
+import RainbowIsland from "./ImageConfig/RainbowIsland.js";
+import TropicalIsland from "./ImageConfig/TropicalIsland.js";
+import SouthernIslands from "./ImageConfig/SouthernIslands.js";
 
 const SerieConfig =
   {
@@ -126,6 +129,18 @@ const SerieConfig =
     'Squirtle Deck' : {
       definition: require('../../resources/series/Squirtle Deck.json'),
       pictures:  SquirtleDeck
+    },
+    'Tropical Island' : {
+      definition: require('../../resources/series/Tropical Island.json'),
+      pictures:  TropicalIsland
+    },
+    'Rainbow Island' : {
+      definition: require('../../resources/series/Rainbow Island.json'),
+      pictures:  RainbowIsland
+    },
+    'Southern Islands' : {
+      definition: require('../../resources/series/Southern Islands.json'),
+      pictures:  SouthernIslands
     }
   };
 

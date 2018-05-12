@@ -9,5 +9,6 @@ export default SeriesLogos = {
   'SetSymbolGym_Heroes.png' : require('../../resources/images/series/SetSymbolGym_Heroes.png'),
   'SetSymbolVending.png' : require('../../resources/images/series/SetSymbolVending.png'),
   'SetSymbolBulbasaurIntroPack.png' : require('../../resources/images/series/SetSymbolBulbasaurIntroPack.png'),
-  'SetSymbolSquirtleIntroPack.png' : require('../../resources/images/series/SetSymbolSquirtleIntroPack.png')
+  'SetSymbolSquirtleIntroPack.png' : require('../../resources/images/series/SetSymbolSquirtleIntroPack.png'),
+  'SetSymbolSouthern_Islands.png' : require('../../resources/images/series/SetSymbolSouthern_Islands.png')
 };

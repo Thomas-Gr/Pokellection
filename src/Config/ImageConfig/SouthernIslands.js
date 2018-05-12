@@ -1,0 +1,21 @@
+import React from 'react';
+const SouthernIslands =
+  {'TogepiSouthernIslands4.jpg' : require('../../../resources/images/cards/TogepiSouthernIslands4.jpg'),
+'VileplumeSouthernIslands17.jpg' : require('../../../resources/images/cards/VileplumeSouthernIslands17.jpg'),
+'RaticateSouthernIslands6.jpg' : require('../../../resources/images/cards/RaticateSouthernIslands6.jpg'),
+'LaprasSouthernIslands12.jpg' : require('../../../resources/images/cards/LaprasSouthernIslands12.jpg'),
+'PidgeotSouthernIslands2.jpg' : require('../../../resources/images/cards/PidgeotSouthernIslands2.jpg'),
+'OnixSouthernIslands3.jpg' : require('../../../resources/images/cards/OnixSouthernIslands3.jpg'),
+'MewSouthernIslands1.jpg' : require('../../../resources/images/cards/MewSouthernIslands1.jpg'),
+'IvysaurSouthernIslands5.jpg' : require('../../../resources/images/cards/IvysaurSouthernIslands5.jpg'),
+'PrimeapeSouthernIslands.jpg' : require('../../../resources/images/cards/PrimeapeSouthernIslands.jpg'),
+'SlowkingSouthernIslands14.jpg' : require('../../../resources/images/cards/SlowkingSouthernIslands14.jpg'),
+'LickitungSouthernIslands16.jpg' : require('../../../resources/images/cards/LickitungSouthernIslands16.jpg'),
+'TentacruelSouthernIslands10.jpg' : require('../../../resources/images/cards/TentacruelSouthernIslands10.jpg'),
+'MarillSouthernIslands11.jpg' : require('../../../resources/images/cards/MarillSouthernIslands11.jpg'),
+'JigglypuffSouthernIslands8.jpg' : require('../../../resources/images/cards/JigglypuffSouthernIslands8.jpg'),
+'ButterfreeSouthernIslands9.jpg' : require('../../../resources/images/cards/ButterfreeSouthernIslands9.jpg'),
+'ExeggutorSouthernIslands13.jpg' : require('../../../resources/images/cards/ExeggutorSouthernIslands13.jpg'),
+'WartortleSouthernIslands15.jpg' : require('../../../resources/images/cards/WartortleSouthernIslands15.jpg'),
+'LedybaSouthernIslands7.jpg' : require('../../../resources/images/cards/LedybaSouthernIslands7.jpg')};
+export default SouthernIslands

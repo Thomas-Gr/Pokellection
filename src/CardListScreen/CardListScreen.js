@@ -92,7 +92,7 @@ export default class CardListScreen extends React.Component {
         const rarityDiff = rarityOrder[a.rarity] - rarityOrder[b.rarity];
         if (rarityDiff != 0) return rarityDiff;
 
-        const pokemonNumberDiff = a.pokemonNumber - b.pokemonNumber;
+        const pokemonNumberDiff = parseInt(a.pokemonNumber) - parseInt(b.pokemonNumber);
         if (pokemonNumberDiff != 0) return pokemonNumberDiff;
       })
       .map(a => ({id: a.id, owned: collection[a.id] != null}))
