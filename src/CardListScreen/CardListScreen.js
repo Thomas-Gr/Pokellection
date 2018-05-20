@@ -136,6 +136,7 @@ export default class CardListScreen extends React.Component {
              data={this.state.dataSource}
              keyExtractor={item => item.id}
              numColumns={3}
+             initialNumToRender={12}
              renderItem={this._renderItem}/>
         </Content>
       </Container>
