@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusBar, TouchableOpacity } from "react-native";
+import { StatusBar, TouchableOpacity, View } from "react-native";
 import {
   Button,
   Text,
@@ -26,27 +26,27 @@ export default class MyHeader extends React.Component {
     if (this.props.selectionFunction != null) {
       if (this.props.selection == 'got') {
         return (
-          <Right>
+          <View style={{marginTop: 15}}>
             <TouchableOpacity onPress={this.props.selectionFunction}>
               <Icon name="check-circle" type="FontAwesome" style={{color: 'white'}}/>
             </TouchableOpacity>
-          </Right>
+          </View>
         )
       } else if (this.props.selection == 'miss') {
         return (
-          <Right>
+          <View style={{marginTop: 15}}>
             <TouchableOpacity onPress={this.props.selectionFunction}>
               <Icon name="times-circle" type="FontAwesome" style={{color: 'white'}}/>
             </TouchableOpacity>
-          </Right>
+          </View>
         )
       } else {
         return (
-          <Right>
+          <View style={{marginTop: 15}}>
             <TouchableOpacity onPress={this.props.selectionFunction}>
               <Icon name="check-circle" type="FontAwesome" style={{color: 'white', opacity: 0.2}}/>
             </TouchableOpacity>
-          </Right>
+          </View>
         )
       }
     }
