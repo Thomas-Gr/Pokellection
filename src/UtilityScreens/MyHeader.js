@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, TouchableOpacity } from "react-native";
 import {
   Button,
   Text,
@@ -22,6 +22,36 @@ export default class MyHeader extends React.Component {
     }
   }
 
+  renderSelectionButton() {
+    if (this.props.selectionFunction != null) {
+      if (this.props.selection == 'got') {
+        return (
+          <Right>
+            <TouchableOpacity onPress={this.props.selectionFunction}>
+              <Icon name="check-circle" type="FontAwesome" style={{color: 'white'}}/>
+            </TouchableOpacity>
+          </Right>
+        )
+      } else if (this.props.selection == 'miss') {
+        return (
+          <Right>
+            <TouchableOpacity onPress={this.props.selectionFunction}>
+              <Icon name="times-circle" type="FontAwesome" style={{color: 'white'}}/>
+            </TouchableOpacity>
+          </Right>
+        )
+      } else {
+        return (
+          <Right>
+            <TouchableOpacity onPress={this.props.selectionFunction}>
+              <Icon name="check-circle" type="FontAwesome" style={{color: 'white', opacity: 0.2}}/>
+            </TouchableOpacity>
+          </Right>
+        )
+      }
+    }
+  }
+
   render() {
     return (
 	    <Header>
@@ -37,6 +67,7 @@ export default class MyHeader extends React.Component {
 	        <Title>Pokellection</Title>
           {this.subtitle()}
 	      </Body>
+        {this.renderSelectionButton()}
 	    </Header>
     );
   }

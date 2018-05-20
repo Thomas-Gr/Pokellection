@@ -24,14 +24,25 @@ export default class CardListScreen extends React.Component {
       collection: collection,
     };
 
-    this.onSelectionChange = this.onSelectionChange.bind(this);
     this.updateCardList = this.updateCardList.bind(this);
+    this.changeSelection = this.changeSelection.bind(this);
+    this.onChangeSelection = this.onChangeSelection.bind(this);
   }
 
-  onSelectionChange(value: string) {
+  changeSelection(value: string) {
     this.setState(
       {selection: value},
       () => this.updateCardList());
+  }
+
+  onChangeSelection() {
+    if (this.state.selection == 'got') {
+      this.changeSelection('miss');
+    } else if (this.state.selection == 'miss') {
+      this.changeSelection('all');
+    } else {
+      this.changeSelection('got');
+    }
   }
 
   addCard(collectionName, card) {
@@ -119,20 +130,8 @@ export default class CardListScreen extends React.Component {
   render() {
     return (
       <Container>
-        <MyHeader {...this.props} title={this.state.name}/>
+        <MyHeader {...this.props} title={this.state.name} selection={this.state.selection} selectionFunction={this.onChangeSelection}/>
         <Content>
-          <Form>
-            <Picker
-              mode="dropdown"
-              selectedValue={this.state.selection}
-              onValueChange={this.onSelectionChange.bind(this)}
-            >
-              <Picker.Item label="Toutes les cartes" value="all" />
-              <Picker.Item label="Cartes manquantes" value="miss" />
-              <Picker.Item label="Mes cartes" value="got" />
-            </Picker>
-          </Form>
-
           <FlatList
              data={this.state.dataSource}
              keyExtractor={item => item.id}

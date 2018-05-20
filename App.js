@@ -16,7 +16,8 @@ export default class AwesomeApp extends Component {
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      Ionicons: require("native-base/Fonts/Ionicons.ttf")
+      Ionicons: require("native-base/Fonts/Ionicons.ttf"),
+      FontAwesome: require("native-base/Fonts/FontAwesome.ttf")
     });
     this.setState({ isReady: true });
   }
