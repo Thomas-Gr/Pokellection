@@ -8,6 +8,7 @@ export default class CardItem extends React.PureComponent {
   render() {
     const item = this.props.item;
     const data = this.props.data;
+    const showNumbers = this.props.showNumbers;
     const collectionName = this.props.collectionName;
 
     const image = SerieConfig[collectionName].pictures[data.picture] != null
@@ -23,11 +24,19 @@ export default class CardItem extends React.PureComponent {
               style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
               source={image}
             />
-            <Text style={{textAlign: 'center', fontSize: 10}}>{data.name.substring(0, 25)}</Text>
+            <Text style={{textAlign: 'center', fontSize: 10}}>{showNumbers == true ? this.showNumber(data) : ""}{data.name.substring(0, 25)}</Text>
           </Body>
         </Card>
       </TouchableOpacity>
      )
+  }
+
+  showNumber(data) {
+    if (data.number == -42) {
+      return "";
+    } else {
+      return data.number + " / ";
+    }
   }
 }
 

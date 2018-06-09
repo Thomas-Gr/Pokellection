@@ -21,6 +21,7 @@ export default class CardListScreen extends React.Component {
       cards: serie.cards,
       dataSource: this.refreshCardList(serie.cards, collection, undefined),
       selection: undefined,
+      showNumbers: serie.showNumbers,
       collection: collection,
     };
 
@@ -125,6 +126,7 @@ export default class CardListScreen extends React.Component {
     collectionName={this.state.name}
     item={item}
     data={this.state.cards[item.id.toString()]}
+    showNumbers={this.state.showNumbers}
     addCard={(a, b) => this.addCard(a, b)}/>)
 
   render() {
