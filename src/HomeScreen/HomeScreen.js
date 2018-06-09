@@ -69,6 +69,8 @@ export default class HomeScreen extends Component {
              sections={HomeSerieConfig}
              keyExtractor={item => item}
              renderItem={this._renderItem}
+             numColumns={1}
+             initialNumToRender={12}
              renderSectionHeader={this._renderSectionHeader}
              />
           </Content>
