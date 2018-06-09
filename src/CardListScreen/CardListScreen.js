@@ -7,6 +7,7 @@ import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
 import CardItem from "./CardItem.js";
 
 import * as CollectionMemory from "../State/CollectionMemory.js";
+import * as SelectionMemory from "../State/SelectionMemory.js";
 import SerieConfig from '../Config/SerieConfig.js';
 
 export default class CardListScreen extends React.Component {
@@ -19,8 +20,8 @@ export default class CardListScreen extends React.Component {
     this.state = {
       name: serie.name,
       cards: serie.cards,
-      dataSource: this.refreshCardList(serie.cards, collection, undefined),
-      selection: undefined,
+      dataSource: this.refreshCardList(serie.cards, collection, props.navigation.state.params.selection),
+      selection: props.navigation.state.params.selection,
       showNumbers: serie.showNumbers,
       collection: collection,
     };
@@ -31,6 +32,8 @@ export default class CardListScreen extends React.Component {
   }
 
   changeSelection(value: string) {
+    SelectionMemory.setSelection(value);
+
     this.setState(
       {selection: value},
       () => this.updateCardList());

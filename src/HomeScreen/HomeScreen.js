@@ -4,6 +4,7 @@ import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'nat
 import { AsyncStorage, SectionList, Image } from "react-native";
 
 import * as CollectionMemory from "../State/CollectionMemory.js";
+import * as SelectionMemory from "../State/SelectionMemory.js";
 
 import SerieConfig from '../Config/SerieConfig.js';
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
@@ -16,6 +17,9 @@ export default class HomeScreen extends Component {
   }
 
   componentWillMount() {
+    SelectionMemory.getSelection((selection) =>
+        this.setState({selection: selection}));
+
     CollectionMemory.getCollection((collections) =>
         this.setState({launched: true, collections: collections}));
   }
@@ -32,7 +36,7 @@ export default class HomeScreen extends Component {
       <Body style={{flex:0.7}}>
         <Text style={{fontSize:15}} onPress={() => this.props.navigation.navigate(
             'CardListScreen',
-            {serieName: item, collection: this.state.collections[item]})}>
+            {serieName: item, selection: this.state.selection, collection: this.state.collections[item]})}>
           {item}
         </Text>
       </Body>
