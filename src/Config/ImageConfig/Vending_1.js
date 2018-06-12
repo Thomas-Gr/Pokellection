@@ -15,7 +15,7 @@ const Vending1 =
 'WeedleVendingS1.jpg' : require('../../../resources/images/cards/WeedleVendingS1.jpg'),
 'WigglytuffVendingS1.jpg' : require('../../../resources/images/cards/WigglytuffVendingS1.jpg'),
 'ZubatVendingS1.jpg' : require('../../../resources/images/cards/ZubatVendingS1.jpg'),
-'SnorlaxWizardsPromo49.jpg' : require('../../../resources/images/cards/SnorlaxWizardsPromo49.jpg'),
+'SnorlaxVendingS1.jpg' : require('../../../resources/images/cards/SnorlaxVendingS1.jpg'),
 'GolbatVendingS1.jpg' : require('../../../resources/images/cards/GolbatVendingS1.jpg'),
 'ParasectVendingS1.jpg' : require('../../../resources/images/cards/ParasectVendingS1.jpg'),
 'ClefairyVendingS1.jpg' : require('../../../resources/images/cards/ClefairyVendingS1.jpg'),
