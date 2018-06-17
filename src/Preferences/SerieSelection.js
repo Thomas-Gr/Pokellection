@@ -1,49 +1,39 @@
 import React, { Component } from 'react';
 import MyHeader from "../UtilityScreens/MyHeader.js";
-import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
+import { Container, Content, List, ListItem, CheckBox, Text, Left, Body, Right } from 'native-base';
 import { AsyncStorage, SectionList, Image } from "react-native";
 
-import * as CollectionMemory from "../State/CollectionMemory.js";
-import * as SelectionMemory from "../State/SelectionMemory.js";
 import * as PreferencesMemory from "../State/PreferencesMemory.js";
 
 import SerieConfig from '../Config/SerieConfig.js';
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';
 
-export default class HomeScreen extends Component {
+export default class SerieSelection extends Component {
   constructor() {
     super();
-    this.state = {launched: false};
+    this.state = {
+      launched: false,
+      series: {}
+    };
   }
 
   componentWillMount() {
-    SelectionMemory.getSelection((selection) =>
-        this.setState({selection: selection}));
-
-    PreferencesMemory.getSerieSelection((selectedSeries) => {
-        this.setState({seriesToDisplay: this.filterSelectedSeriesOnly(HomeSerieConfig, selectedSeries)});
-
-        CollectionMemory.getCollection(selectedSeries, (collections) =>
-            this.setState({launched: true, collections: collections}));
-    });
+    PreferencesMemory.getSerieSelection((series) =>
+        this.setState({launched: true, series: series}));
   }
 
-  filterSelectedSeriesOnly(allSeries, selectedSeries) {
-    var result = [];
+  updateSerie(item: string) {
+    let series = Object.assign({}, this.state.series);
 
-    allSeries.forEach((value, index) => {
-      var newData = value.data.filter(key => selectedSeries[key]);
+    if (series[item] != null) {
+      series[item] = !series[item];
+    } else {
+      series[item] = true;
+    }
 
-      if (newData.length != 0) {
-        result.push({
-          title: value.title,
-          data: newData
-        });
-      }
-    });
-
-    return result;
+    PreferencesMemory.setSerieSelection(series);
+    this.setState({series: series});
   }
 
   _renderItem = ({item}) => (
@@ -56,17 +46,12 @@ export default class HomeScreen extends Component {
         }
       </Left>
       <Body style={{flex:0.7}}>
-        <Text style={{fontSize:15}} onPress={() => this.props.navigation.navigate(
-            'CardListScreen',
-            {serieName: item, selection: this.state.selection, collection: this.state.collections[item]})}>
+        <Text style={{fontSize:15}}>
           {item}
         </Text>
       </Body>
       <Right style={{flex:0.15}}>
-        <Text note>
-          {this.state.collections[item] == null ? 0 : Object.keys(this.state.collections[item]).length}
-          /{Object.keys(SerieConfig[item].definition.cards).length}
-        </Text>
+        <CheckBox checked={this.state.series[item] == true} onPress={() => this.updateSerie(item)}/>
       </Right>
     </ListItem>
   )
@@ -88,7 +73,7 @@ export default class HomeScreen extends Component {
           <MyHeader {...this.props}/>
           <Content>
           <SectionList
-             sections={this.state.seriesToDisplay}
+             sections={HomeSerieConfig}
              keyExtractor={item => item}
              renderItem={this._renderItem}
              numColumns={1}

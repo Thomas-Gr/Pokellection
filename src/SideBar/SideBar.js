@@ -14,7 +14,7 @@ import {
 
 const routes = [
   { name: "Séries", link: "Home"}, //, icon: "pokeball"
-  { name: "Préférences", link: "NOPE", icon: "cog"},
+  { name: "Selection des séries", link: "SerieSelection", icon: "cog"},
   { name: "A propos", link: "NOPE"}] // , icon: "info"
 
 export default class SideBar extends React.Component {
