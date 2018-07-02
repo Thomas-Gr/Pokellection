@@ -14,6 +14,7 @@ import {
 
 const routes = [
   { name: "Séries", link: "Home"}, //, icon: "pokeball"
+  { name: "Recherches", link: "ResearchsScreen"},
   { name: "Selection des séries", link: "SerieSelection", icon: "cog"},
   { name: "A propos", link: "NOPE"}] // , icon: "info"
 
