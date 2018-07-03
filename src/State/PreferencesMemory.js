@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { AsyncStorage } from "react-native";
 
+import HomeSerieConfig from '../Config/HomeSerieConfig.js';
+
 var selectionCache = -1;
 
 export const setSerieSelection = (value) => {
@@ -14,7 +16,13 @@ export const setSerieSelection = (value) => {
 
 export const getSerieSelection = (success) => {
   if (selectionCache === -1) { // Keep data in cache
-    AsyncStorage.getItem('@Preferences:SerieSelection').then(result => success(JSON.parse(result)));
+    AsyncStorage.getItem('@Preferences:SerieSelection').then(result => success(result == null
+      ? [].concat.apply([], HomeSerieConfig.map(obj => obj.data))
+          .reduce((obj, item) => {
+           obj[item] = true
+           return obj
+         }, {})
+      : JSON.parse(result)));
   } else {
     success(selectionCache);
   }
