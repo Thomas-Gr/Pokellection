@@ -16,7 +16,7 @@ export default class CardItem extends React.PureComponent {
       : require('../../resources/images/missing.png');
 
     return (
-      <TouchableOpacity onPress={() => this.props.addCard(collectionName, data)}>
+      <TouchableOpacity onPress={() => this.props.selectCard()}>
         <Card style={{flex:1, width: Dimensions.get('window').width / 3 - 4, margin: 1, padding: 1}}>
           <Body>
             <Icon name="check-square-o" type="FontAwesome" style={[styles.checkbox, item.owned ? styles.yes : styles.no]}/>

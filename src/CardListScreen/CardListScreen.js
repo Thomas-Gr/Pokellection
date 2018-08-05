@@ -3,8 +3,8 @@ import { Image, FlatList } from "react-native";
 import { Text, Container, Body, Content, Picker, Form } from "native-base";
 
 import MyHeader from "../UtilityScreens/MyHeader.js";
-import GymChallenge from "../Config/ImageConfig/GymChallenge.js";
 import CardItem from "./CardItem.js";
+import CardInformationScreen from "./CardInformationScreen.js";
 
 import refreshCardList from "./CardListHelper.js";
 
@@ -40,12 +40,16 @@ export default class CardListScreen extends React.Component {
       selection: selection,
       showNumbers: serie.showNumbers,
       collection: collection,
-      isEmbedded: props.isEmbedded
+      isEmbedded: props.isEmbedded,
+      cardInformationVisible: false,
+      selectedCard: undefined
     };
 
     this.updateCardList = this.updateCardList.bind(this);
     this.changeSelection = this.changeSelection.bind(this);
     this.onChangeSelection = this.onChangeSelection.bind(this);
+    this.updateSelectedCard = this.updateSelectedCard.bind(this);
+    this.hideCardInformation = this.hideCardInformation.bind(this);
   }
 
   changeSelection(value: string) {
@@ -91,12 +95,24 @@ export default class CardListScreen extends React.Component {
       this.state.selection)});
   }
 
+  hideCardInformation() {
+    this.setState({cardInformationVisible: false});
+  }
+
+  updateSelectedCard(card) {
+    this.setState({
+      cardInformationVisible: true,
+      selectedCard: card,
+      hasSelectedCard: this.state.collection[card.id] != null
+    });
+  }
+
   _renderItem = ({item}) => (<CardItem
     collectionName={this.state.name}
     item={item}
     data={this.state.cards[item.id.toString()]}
     showNumbers={this.state.showNumbers}
-    addCard={(a, b) => this.addCard(a, b)}/>)
+    selectCard={() => this.updateSelectedCard(this.state.cards[item.id.toString()])}/>)
 
   render() {
     if (this.state.isEmbedded) {
@@ -113,6 +129,13 @@ export default class CardListScreen extends React.Component {
         <Container>
           <MyHeader {...this.props} title={this.state.name} selection={this.state.selection} selectionFunction={this.onChangeSelection}/>
           <Content>
+            <CardInformationScreen
+                serieName={this.state.name}
+                selectedCard={this.state.selectedCard}
+                visible={this.state.cardInformationVisible}
+                hide={this.hideCardInformation}
+                hasSelectedCard={this.state.hasSelectedCard}
+                addCard={() => this.addCard(this.state.name, this.state.cards[this.state.selectedCard.id.toString()])}/>
             <FlatList
                data={this.state.dataSource}
                keyExtractor={item => item.id}
