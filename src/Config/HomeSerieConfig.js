@@ -12,7 +12,11 @@ const HomeSerieConfig = [
   {
       title: "🇯🇵 Original Era (decks) 🇯🇵",
       data: ['Nivi City Gym', 'Hanada City Gym', 'Kuchiba City Gym', 'Tamamushi City Gym', 'Yamabuki City Gym', 'Guren Town Gym', 'Red Deck', 'Green Deck', 'Bulbasaur Deck', 'Squirtle Deck']
-    },
+  },
+  {
+      title: "🇯🇵 Promotional cards 🇯🇵",
+      data: ['Gym', 'Trade Please', 'Lucky Stadium', 'How I Became a Pokémon Card']
+  },
   {
     title: "🇺🇸 Original Series 🇺🇸",
     data: ['Base Set', 'Jungle', 'Fossil', 'Team Rocket', 'Gym Heroes', 'Gym Challenge', 'Southern Islands']

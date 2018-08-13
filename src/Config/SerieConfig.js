@@ -27,6 +27,10 @@ import SquirtleDeck from "./ImageConfig/SquirtleDeck.js";
 import RainbowIsland from "./ImageConfig/RainbowIsland.js";
 import TropicalIsland from "./ImageConfig/TropicalIsland.js";
 import SouthernIslands from "./ImageConfig/SouthernIslands.js";
+import HowIBecameAPokemonCard from "./ImageConfig/HowIBecameAPokemonCard.js";
+import TradePlease from "./ImageConfig/TradePlease.js";
+import Gym from "./ImageConfig/Gym.js";
+import LuckyStadium from "./ImageConfig/LuckyStadium.js";
 
 const SerieConfig =
   {
@@ -112,35 +116,51 @@ const SerieConfig =
     },
     'Guren Town Gym' : {
       definition: require('../../resources/series/Guren Town Gym.json'),
-      pictures:  GurenTownGym
+      pictures: GurenTownGym
     },
     'Green Deck' : {
       definition: require('../../resources/series/Green Deck.json'),
-      pictures:  GreenDeck
+      pictures: GreenDeck
     },
     'Red Deck' : {
       definition: require('../../resources/series/Red Deck.json'),
-      pictures:  RedDeck
+      pictures: RedDeck
     },
     'Bulbasaur Deck' : {
       definition: require('../../resources/series/Bulbasaur Deck.json'),
-      pictures:  BulbasaurDeck
+      pictures: BulbasaurDeck
     },
     'Squirtle Deck' : {
       definition: require('../../resources/series/Squirtle Deck.json'),
-      pictures:  SquirtleDeck
+      pictures: SquirtleDeck
     },
     'Tropical Island' : {
       definition: require('../../resources/series/Tropical Island.json'),
-      pictures:  TropicalIsland
+      pictures: TropicalIsland
     },
     'Rainbow Island' : {
       definition: require('../../resources/series/Rainbow Island.json'),
-      pictures:  RainbowIsland
+      pictures: RainbowIsland
     },
     'Southern Islands' : {
       definition: require('../../resources/series/Southern Islands.json'),
-      pictures:  SouthernIslands
+      pictures: SouthernIslands
+    },
+    'How I Became a Pokémon Card' : {
+      definition: require('../../resources/series/How I Became a Pokemon Card.json'),
+      pictures: HowIBecameAPokemonCard
+    },
+    'Trade Please' : {
+      definition: require('../../resources/series/Trade Please.json'),
+      pictures: TradePlease
+    },
+    'Gym' : {
+      definition: require('../../resources/series/Gym.json'),
+      pictures: Gym
+    },
+    'Lucky Stadium' : {
+      definition: require('../../resources/series/Lucky Stadium.json'),
+      pictures: LuckyStadium
     }
   };
 

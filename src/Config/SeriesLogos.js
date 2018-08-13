@@ -10,5 +10,6 @@ export default SeriesLogos = {
   'SetSymbolVending.png' : require('../../resources/images/series/SetSymbolVending.png'),
   'SetSymbolBulbasaurIntroPack.png' : require('../../resources/images/series/SetSymbolBulbasaurIntroPack.png'),
   'SetSymbolSquirtleIntroPack.png' : require('../../resources/images/series/SetSymbolSquirtleIntroPack.png'),
-  'SetSymbolSouthern_Islands.png' : require('../../resources/images/series/SetSymbolSouthern_Islands.png')
+  'SetSymbolSouthern_Islands.png' : require('../../resources/images/series/SetSymbolSouthern_Islands.png'),
+  'Pikachu_Records.png' : require('../../resources/images/series/Pikachu_Records.png')
 };
