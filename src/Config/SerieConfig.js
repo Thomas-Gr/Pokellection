@@ -31,6 +31,9 @@ import HowIBecameAPokemonCard from "./ImageConfig/HowIBecameAPokemonCard.js";
 import TradePlease from "./ImageConfig/TradePlease.js";
 import Gym from "./ImageConfig/Gym.js";
 import LuckyStadium from "./ImageConfig/LuckyStadium.js";
+import GameBoy from "./ImageConfig/GameBoy.js";
+import CoroCoroBestPhotoContest from "./ImageConfig/CoroCoroBestPhotoContest.js";
+import VendingMachine from "./ImageConfig/VendingMachine.js";
 
 const SerieConfig =
   {
@@ -161,6 +164,18 @@ const SerieConfig =
     'Lucky Stadium' : {
       definition: require('../../resources/series/Lucky Stadium.json'),
       pictures: LuckyStadium
+    },
+    'Game Boy' : {
+      definition: require('../../resources/series/Game Boy.json'),
+      pictures: GameBoy
+    },
+    'CoroCoro Best Photo Contest' : {
+      definition: require('../../resources/series/CoroCoro Best Photo Contest.json'),
+      pictures: CoroCoroBestPhotoContest
+    },
+    'Vending Machine' : {
+      definition: require('../../resources/series/Vending Machine.json'),
+      pictures: VendingMachine
     }
   };
 

@@ -15,7 +15,7 @@ const HomeSerieConfig = [
   },
   {
       title: "🇯🇵 Promotional cards 🇯🇵",
-      data: ['Gym', 'Trade Please', 'Lucky Stadium', 'How I Became a Pokémon Card']
+      data: ['Gym', 'Vending Machine', 'Trade Please', 'Lucky Stadium', 'How I Became a Pokémon Card', 'Game Boy', 'CoroCoro Best Photo Contest']
   },
   {
     title: "🇺🇸 Original Series 🇺🇸",
