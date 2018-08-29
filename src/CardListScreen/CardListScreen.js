@@ -42,7 +42,8 @@ export default class CardListScreen extends React.Component {
       collection: collection,
       isEmbedded: props.isEmbedded,
       cardInformationVisible: false,
-      selectedCard: undefined
+      selectedCard: undefined,
+      inLongSelectionMode: false
     };
 
     this.updateCardList = this.updateCardList.bind(this);
@@ -50,6 +51,7 @@ export default class CardListScreen extends React.Component {
     this.onChangeSelection = this.onChangeSelection.bind(this);
     this.updateSelectedCard = this.updateSelectedCard.bind(this);
     this.hideCardInformation = this.hideCardInformation.bind(this);
+    this.switchLongSelectionMode = this.switchLongSelectionMode.bind(this);
   }
 
   changeSelection(value: string) {
@@ -99,6 +101,10 @@ export default class CardListScreen extends React.Component {
     this.setState({cardInformationVisible: false});
   }
 
+  switchLongSelectionMode() {
+    this.setState({inLongSelectionMode: !this.state.inLongSelectionMode}, () => this.updateCardList());
+  }
+
   updateSelectedCard(card) {
     this.setState({
       cardInformationVisible: true,
@@ -112,6 +118,9 @@ export default class CardListScreen extends React.Component {
     item={item}
     data={this.state.cards[item.id.toString()]}
     showNumbers={this.state.showNumbers}
+    inLongSelectionMode={this.state.inLongSelectionMode}
+    switchLongSelectionMode={() => this.switchLongSelectionMode()}
+    addCard={(a) => this.addCard(this.state.name, this.state.cards[item.id.toString()])}
     selectCard={() => this.updateSelectedCard(this.state.cards[item.id.toString()])}/>)
 
   render() {
