@@ -34,6 +34,10 @@ import LuckyStadium from "./ImageConfig/LuckyStadium.js";
 import GameBoy from "./ImageConfig/GameBoy.js";
 import CoroCoroBestPhotoContest from "./ImageConfig/CoroCoroBestPhotoContest.js";
 import VendingMachine from "./ImageConfig/VendingMachine.js";
+import EvolutionCommunicationCampaign from "./ImageConfig/EvolutionCommunicationCampaign.js";
+import TropicalPhoneCards from "./ImageConfig/TropicalMegaBattlePhoneCards.js";
+import PokemonSongBestCollection from "./ImageConfig/PokemonSongBestCollection.js";
+import PokemonFanClub from "./ImageConfig/PokemonFanClub.js";
 
 const SerieConfig =
   {
@@ -176,6 +180,22 @@ const SerieConfig =
     'Vending Machine' : {
       definition: require('../../resources/series/Vending Machine.json'),
       pictures: VendingMachine
+    },
+    'Evolution Communication Campaign' : {
+      definition: require('../../resources/series/Evolution Communication Campaign.json'),
+      pictures: EvolutionCommunicationCampaign
+    },
+    'Tropical Mega Battle Phone Cards' : {
+      definition: require('../../resources/series/Tropical Mega Battle Phone Cards.json'),
+      pictures: TropicalPhoneCards
+    },
+    'Pokémon Song Best Collection' : {
+      definition: require('../../resources/series/Pokemon Song Best Collection.json'),
+      pictures: PokemonSongBestCollection
+    },
+    'Pokemon Fan Club' : {
+      definition: require('../../resources/series/Pokemon Fan Club.json'),
+      pictures: PokemonFanClub
     }
   };
 
