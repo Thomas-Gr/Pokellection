@@ -38,6 +38,16 @@ import EvolutionCommunicationCampaign from "./ImageConfig/EvolutionCommunication
 import TropicalPhoneCards from "./ImageConfig/TropicalMegaBattlePhoneCards.js";
 import PokemonSongBestCollection from "./ImageConfig/PokemonSongBestCollection.js";
 import PokemonFanClub from "./ImageConfig/PokemonFanClub.js";
+import Jumbo from "./ImageConfig/Jumbo.js";
+import Year1996 from "./ImageConfig/1996.js";
+import Year1997 from "./ImageConfig/1997.js";
+import Year1998 from "./ImageConfig/1998.js";
+import Year1999 from "./ImageConfig/1999.js";
+import Year2000 from "./ImageConfig/2000.js";
+import Year20012005 from "./ImageConfig/2001-2005.js";
+import AnaJR from "./ImageConfig/ANA-JR.js";
+import Championship from "./ImageConfig/Championship.js";
+import PikachuIllustrator from "./ImageConfig/PikachuIllustrator.js";
 
 const SerieConfig =
   {
@@ -196,6 +206,50 @@ const SerieConfig =
     'Pokemon Fan Club' : {
       definition: require('../../resources/series/Pokemon Fan Club.json'),
       pictures: PokemonFanClub
+    },
+    'Jumbo' : {
+      definition: require('../../resources/series/Jumbo.json'),
+      pictures: Jumbo
+    },
+    'Championship' : {
+      definition: require('../../resources/series/Championship.json'),
+      pictures: Championship
+    },
+    '1996' : {
+      definition: require('../../resources/series/1996.json'),
+      pictures: Year1996
+    },
+    '1997' : {
+      definition: require('../../resources/series/1997.json'),
+      pictures: Year1997
+    },
+    '1998' : {
+      definition: require('../../resources/series/1998.json'),
+      pictures: Year1998
+    },
+    '1999' : {
+      definition: require('../../resources/series/1999.json'),
+      pictures: Year1999
+    },
+    '2000' : {
+      definition: require('../../resources/series/2000.json'),
+      pictures: Year2000
+    },
+    '2001-2005' : {
+      definition: require('../../resources/series/2001-2005.json'),
+      pictures: Year20012005
+    },
+    'ANA-JR' : {
+      definition: require('../../resources/series/ANA-JR.json'),
+      pictures: AnaJR
+    },
+    'Championship' : {
+      definition: require('../../resources/series/Championship.json'),
+      pictures: Championship
+    },
+    'Pikachu Illustrator' : {
+      definition: require('../../resources/series/Pikachu Illustrator.json'),
+      pictures: PikachuIllustrator
     }
   };
 

@@ -1,0 +1,19 @@
+import React from 'react';
+const Year2000 =
+  {'CleffaWizardsPromo31.jpg' : require('../../../resources/images/cards/CleffaWizardsPromo31.jpg'),
+'ScizorWizardsPromo33.jpg' : require('../../../resources/images/cards/ScizorWizardsPromo33.jpg'),
+'ChikoritaNeoGenesis53.jpg' : require('../../../resources/images/cards/ChikoritaNeoGenesis53.jpg'),
+'CyndaquilNeoGenesis57.jpg' : require('../../../resources/images/cards/CyndaquilNeoGenesis57.jpg'),
+'SmoochumCoroCoroPromo.jpg' : require('../../../resources/images/cards/SmoochumCoroCoroPromo.jpg'),
+'DanceNeoImakuniCDPromo.jpg' : require('../../../resources/images/cards/DanceNeoImakuniCDPromo.jpg'),
+'UnownJWizardsPromo38.jpg' : require('../../../resources/images/cards/UnownJWizardsPromo38.jpg'),
+'PikachuWizardsPromo4.jpg' : require('../../../resources/images/cards/PikachuWizardsPromo4.jpg'),
+'IgglybuffWizardsPromo36.jpg' : require('../../../resources/images/cards/IgglybuffWizardsPromo36.jpg'),
+'MewWizardsPromo8.jpg' : require('../../../resources/images/cards/MewWizardsPromo8.jpg'),
+'UnownRCoroCoroPromo.jpg' : require('../../../resources/images/cards/UnownRCoroCoroPromo.jpg'),
+'TotodileNeoGenesis81.jpg' : require('../../../resources/images/cards/TotodileNeoGenesis81.jpg'),
+'MisdreavusWizardsPromo39.jpg' : require('../../../resources/images/cards/MisdreavusWizardsPromo39.jpg'),
+'SteelixTrainersPromo.jpg' : require('../../../resources/images/cards/SteelixTrainersPromo.jpg'),
+'SmeargleWizardsPromo32.jpg' : require('../../../resources/images/cards/SmeargleWizardsPromo32.jpg'),
+'HitmontopWizardsPromo37.jpg' : require('../../../resources/images/cards/HitmontopWizardsPromo37.jpg')};
+export default Year2000

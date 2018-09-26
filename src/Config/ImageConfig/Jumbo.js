@@ -1,0 +1,19 @@
+import React from 'react';
+const Jumbo =
+  {'TropicalPresentEarly1999Promo.jpg' : require('../../../resources/images/cards/TropicalPresentEarly1999Promo.jpg'),
+'TropicalPresentSummer1999Promo.jpg' : require('../../../resources/images/cards/TropicalPresentSummer1999Promo.jpg'),
+'TropicalPresentSummer2001Promo.jpg' : require('../../../resources/images/cards/TropicalPresentSummer2001Promo.jpg'),
+'PichuPikachuCoroCoroPromo.jpg' : require('../../../resources/images/cards/PichuPikachuCoroCoroPromo.jpg'),
+'PokemonValleyCoroCoroPromo.jpg' : require('../../../resources/images/cards/PokemonValleyCoroCoroPromo.jpg'),
+'NewYearPresentFanClubPromo.jpg' : require('../../../resources/images/cards/NewYearPresentFanClubPromo.jpg'),
+'PokemonPlazaCoroCoroPromo.jpg' : require('../../../resources/images/cards/PokemonPlazaCoroCoroPromo.jpg'),
+'PikachuJigglypuffClefairyCoroCoroPromo.jpg' : require('../../../resources/images/cards/PikachuJigglypuffClefairyCoroCoroPromo.jpg'),
+'ShadowLugiaNintendoWorldPromo.jpg' : require('../../../resources/images/cards/ShadowLugiaNintendoWorldPromo.jpg'),
+'ArticunoMoltresZapdosWarnerBrosPromo.jpg' : require('../../../resources/images/cards/ArticunoMoltresZapdosWarnerBrosPromo.jpg'),
+'CharizardBaseSet4.jpg' : require('../../../resources/images/cards/CharizardBaseSet4.jpg'),
+'MewtwoStrikesBackCoroCoroPromo.jpg' : require('../../../resources/images/cards/MewtwoStrikesBackCoroCoroPromo.jpg'),
+'LawrenceIIICoroCoropromo.jpg' : require('../../../resources/images/cards/LawrenceIIICoroCoropromo.jpg'),
+'PikachuSummerVacationCoroCoroPromo.jpg' : require('../../../resources/images/cards/PikachuSummerVacationCoroCoroPromo.jpg'),
+'CrystalTowerEnteiCoroCoroPromo.jpg' : require('../../../resources/images/cards/CrystalTowerEnteiCoroCoroPromo.jpg'),
+'NewCenturyPresentFanClubPromo.jpg' : require('../../../resources/images/cards/NewCenturyPresentFanClubPromo.jpg')};
+export default Jumbo

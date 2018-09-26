@@ -15,7 +15,12 @@ const HomeSerieConfig = [
   },
   {
       title: "🇯🇵 Promotional cards 🇯🇵",
-      data: ['Gym', 'Vending Machine', 'Trade Please', 'Lucky Stadium', 'How I Became a Pokémon Card', 'Game Boy', 'Evolution Communication Campaign', 'Pokémon Song Best Collection', 'Pokemon Fan Club', 'CoroCoro Best Photo Contest', 'Tropical Mega Battle Phone Cards']
+      data: [
+        '1996', '1997', '1998', '1999', '2000', '2001-2005',
+        'Gym', 'Vending Machine', 'Trade Please', 'Lucky Stadium', 'How I Became a Pokémon Card',
+        'Game Boy', 'Evolution Communication Campaign', 'Pokémon Song Best Collection', 'Pokemon Fan Club', 'ANA-JR',
+        'Jumbo', 'Championship', 'CoroCoro Best Photo Contest', 'Tropical Mega Battle Phone Cards', 'Pikachu Illustrator'
+      ]
   },
   {
     title: "🇺🇸 Original Series 🇺🇸",
