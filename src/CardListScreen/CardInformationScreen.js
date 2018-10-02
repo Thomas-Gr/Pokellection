@@ -4,6 +4,8 @@ import { Text, Container, Body, Content, Picker, Form, Button } from "native-bas
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 import SerieConfig from '../Config/SerieConfig.js';
+import TypesLogos from '../Config/TypesLogos.js';
+import RaritiesLogos from '../Config/RaritiesLogos.js';
 
 export default class CardInformationScreen extends React.Component {
   constructor(props) {
@@ -36,6 +38,14 @@ export default class CardInformationScreen extends React.Component {
           )
         : null;
 
+    const type = TypesLogos[selectedCard.type] != null
+        ? <Image source={TypesLogos[selectedCard.type]} />
+        : <Text style={{backgroundColor: 'white'}}>{selectedCard.type.charAt(0)}</Text>;
+
+    const rarity = RaritiesLogos[selectedCard.rarity] != null
+        ? <Image source={RaritiesLogos[selectedCard.rarity].image} style={{height:RaritiesLogos[selectedCard.rarity].height, width:RaritiesLogos[selectedCard.rarity].width}}/>
+        : null;
+
     /*
     There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
      As a result tapping just below the white space won't actually close the Modal...
@@ -61,7 +71,7 @@ export default class CardInformationScreen extends React.Component {
                   <Grid>
                     <Row style={{height: 60}}>
                       <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
-                        <Text style={{fontWeight: 'bold', color: 'white'}}>{selectedCard.type} {selectedCard.rarity} {selectedCard.name} {card}</Text>
+                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {selectedCard.name} {card}</Text>
                       </View>
                     </Row>
                     <Row>
