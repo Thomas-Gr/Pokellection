@@ -14,6 +14,12 @@ const HomeSerieConfig = [
       data: ['Nivi City Gym', 'Hanada City Gym', 'Kuchiba City Gym', 'Tamamushi City Gym', 'Yamabuki City Gym', 'Guren Town Gym', 'Red Deck', 'Green Deck', 'Bulbasaur Deck', 'Squirtle Deck']
   },
   {
+      title: "🇯🇵 e-Card Era 🇯🇵",
+      data: [
+        'Base Expansion Pack', 'The Town on no Map', 'Wind from the Sea', 'Split Earth', 'Mysterious Mountains'
+      ]
+  },
+  {
       title: "🇯🇵 Promotional cards 🇯🇵",
       data: [
         '1996', '1997', '1998', '1999', '2000', '2001-2005',
@@ -22,10 +28,7 @@ const HomeSerieConfig = [
         'Jumbo', 'Championship', 'CoroCoro Best Photo Contest', 'Tropical Mega Battle Phone Cards', 'Pikachu Illustrator'
       ]
   },
-  {
-    title: "🇺🇸 Original Series 🇺🇸",
-    data: ['Base Set', 'Jungle', 'Fossil', 'Team Rocket', 'Gym Heroes', 'Gym Challenge', 'Southern Islands']
-  }
+
 ];
 
 export default HomeSerieConfig

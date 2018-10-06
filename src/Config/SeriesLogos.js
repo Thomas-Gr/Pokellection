@@ -11,5 +11,10 @@ export default SeriesLogos = {
   'SetSymbolBulbasaurIntroPack.png' : require('../../resources/images/series/SetSymbolBulbasaurIntroPack.png'),
   'SetSymbolSquirtleIntroPack.png' : require('../../resources/images/series/SetSymbolSquirtleIntroPack.png'),
   'SetSymbolSouthern_Islands.png' : require('../../resources/images/series/SetSymbolSouthern_Islands.png'),
-  'Pikachu_Records.png' : require('../../resources/images/series/Pikachu_Records.png')
+  'Pikachu_Records.png' : require('../../resources/images/series/Pikachu_Records.png'),
+  'SetSymbolBase_Expansion_Pack.png' : require('../../resources/images/series/SetSymbolBase_Expansion_Pack.png'),
+  'SetSymbolMysterious_Mountains.png' : require('../../resources/images/series/SetSymbolMysterious_Mountains.png'),
+  'SetSymbolSplit_Earth.png' : require('../../resources/images/series/SetSymbolSplit_Earth.png'),
+  'SetSymbolThe_Town_on_No_Map.png' : require('../../resources/images/series/SetSymbolThe_Town_on_No_Map.png'),
+  'SetSymbolWind_from_the_Sea.png' : require('../../resources/images/series/SetSymbolWind_from_the_Sea.png'),
 };

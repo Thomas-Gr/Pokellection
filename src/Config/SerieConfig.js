@@ -48,6 +48,11 @@ import Year20012005 from "./ImageConfig/2001-2005.js";
 import AnaJR from "./ImageConfig/ANA-JR.js";
 import Championship from "./ImageConfig/Championship.js";
 import PikachuIllustrator from "./ImageConfig/PikachuIllustrator.js";
+import TheTownonnoMap from "./ImageConfig/TheTownonNoMap.js";
+import BaseExpansionPack from "./ImageConfig/BaseExpansionPack.js";
+import WindfromtheSea from "./ImageConfig/WindfromtheSea.js";
+import SplitEarth from "./ImageConfig/SplitEarth.js";
+import MysteriousMountains from "./ImageConfig/MysteriousMountains.js";
 
 const SerieConfig =
   {
@@ -250,6 +255,26 @@ const SerieConfig =
     'Pikachu Illustrator' : {
       definition: require('../../resources/series/Pikachu Illustrator.json'),
       pictures: PikachuIllustrator
+    },
+    'Base Expansion Pack' : {
+      definition: require('../../resources/series/Base Expansion Pack.json'),
+      pictures: BaseExpansionPack
+    },
+    'The Town on no Map' : {
+      definition: require('../../resources/series/The Town on No Map.json'),
+      pictures: TheTownonnoMap
+    },
+    'Wind from the Sea' : {
+      definition: require('../../resources/series/Wind from the Sea.json'),
+      pictures: WindfromtheSea
+    },
+    'Split Earth' : {
+      definition: require('../../resources/series/Split Earth.json'),
+      pictures: SplitEarth
+    },
+    'Mysterious Mountains' : {
+      definition: require('../../resources/series/Mysterious Mountains.json'),
+      pictures: MysteriousMountains
     }
   };
 
