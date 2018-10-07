@@ -3,6 +3,7 @@ import { Image, FlatList } from "react-native";
 import { Text, Container, Body, Content, Picker, Form } from "native-base";
 
 import MyHeader from "../UtilityScreens/MyHeader.js";
+import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardItem from "./CardItem.js";
 import CardInformationScreen from "./CardInformationScreen.js";
 
@@ -30,7 +31,6 @@ export default class CardListScreen extends React.Component {
       collection = Object.assign({}, props.navigation.state.params.collection);
       selection = props.navigation.state.params.selection;
     }
-
     var serie = SerieConfig[serieName].definition;
 
     this.state = {
@@ -152,6 +152,7 @@ export default class CardListScreen extends React.Component {
                initialNumToRender={12}
                renderItem={this._renderItem}/>
           </Content>
+          <AdBanner/>
         </Container>
       );
     }

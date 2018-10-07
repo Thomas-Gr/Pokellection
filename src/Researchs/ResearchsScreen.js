@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyHeader from "../UtilityScreens/MyHeader.js";
+import AdBanner from "../UtilityScreens/AdBanner.js";
 import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
 import { AsyncStorage, SectionList, Image } from "react-native";
 
@@ -81,6 +82,7 @@ export default class ResearchsScreen extends Component {
              renderSectionHeader={this._renderSectionHeader}
              />
           </Content>
+          <AdBanner />
         </Container>
       );
     }
