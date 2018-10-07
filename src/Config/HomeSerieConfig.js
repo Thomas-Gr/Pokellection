@@ -16,7 +16,7 @@ const HomeSerieConfig = [
   {
       title: "🇯🇵 e-Card Era 🇯🇵",
       data: [
-        'Base Expansion Pack', 'The Town on no Map', 'Wind from the Sea', 'Split Earth', 'Mysterious Mountains'
+        'Pokémon VS', 'Pokémon Web', 'Base Expansion Pack', 'The Town on no Map', 'Wind from the Sea', 'Split Earth', 'Mysterious Mountains'
       ]
   },
   {

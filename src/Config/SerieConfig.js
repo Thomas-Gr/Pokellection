@@ -53,6 +53,8 @@ import BaseExpansionPack from "./ImageConfig/BaseExpansionPack.js";
 import WindfromtheSea from "./ImageConfig/WindfromtheSea.js";
 import SplitEarth from "./ImageConfig/SplitEarth.js";
 import MysteriousMountains from "./ImageConfig/MysteriousMountains.js";
+import PokemonWeb from "./ImageConfig/PokemonWeb.js";
+import PokemonVS from "./ImageConfig/PokemonVS.js";
 
 const SerieConfig =
   {
@@ -275,6 +277,14 @@ const SerieConfig =
     'Mysterious Mountains' : {
       definition: require('../../resources/series/Mysterious Mountains.json'),
       pictures: MysteriousMountains
+    },
+    'Pokémon VS' : {
+      definition: require('../../resources/series/Pokemon VS.json'),
+      pictures: PokemonVS
+    },
+    'Pokémon Web' : {
+      definition: require('../../resources/series/Pokemon Web.json'),
+      pictures: PokemonWeb
     }
   };
 

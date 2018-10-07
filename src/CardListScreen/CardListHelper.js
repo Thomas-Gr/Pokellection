@@ -66,6 +66,12 @@ function bulbapediaSorting(a, b) {
 }
 
 function USLikeSorting(a, b) {
+    if (parseInt(a.number) < 0 && parseInt(b.number) > 0) {
+      return 1;
+    } else if (parseInt(a.number) > 0 && parseInt(b.number) < 0) {
+      return -1;
+    }
+
     const cardNumberDiff = parseInt(a.number) - parseInt(b.number);
     if (cardNumberDiff != 0) return cardNumberDiff;
 
