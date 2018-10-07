@@ -3,7 +3,7 @@
     "androidStatusBar": {
       "backgroundColor": "#000000"
     },
-    "sdkVersion": "26.0.0",
+    "sdkVersion": "29.0.0",
     "name": "Pokellection",
     "version": "1.0.0",
     "slug": "pokellection",

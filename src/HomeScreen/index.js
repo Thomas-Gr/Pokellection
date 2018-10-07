@@ -6,9 +6,9 @@ import SerieSelection from "../Preferences/SerieSelection.js";
 import CardListScreen from "../CardListScreen/CardListScreen.js";
 import SideBar from "../SideBar/SideBar.js";
 
-import { DrawerNavigator } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation";
 
-const HomeScreenRouter = DrawerNavigator(
+const HomeScreenRouter = createDrawerNavigator(
   {
     Home: { screen: HomeScreen },
     ResearchsScreen: { screen: ResearchsScreen },
@@ -16,10 +16,8 @@ const HomeScreenRouter = DrawerNavigator(
     SerieSelection: { screen: SerieSelection }
   },
   {
-    contentComponent: props => <SideBar {...props} />
-  },
-  {
-    initialRouteName: 'Home',
+    contentComponent: props => <SideBar {...props} />,
+    initialRouteName: 'Home'
   }
 );
 export default HomeScreenRouter;
