@@ -1,5 +1,5 @@
 import React from 'react';
-const PokemonWeb =
+const ChangeName =
   {'IvysaurBulbasaurDeck22.jpg' : require('../../../resources/images/cards/IvysaurBulbasaurDeck22.jpg'),
 'VulpixVendingS3.jpg' : require('../../../resources/images/cards/VulpixVendingS3.jpg'),
 'DarkCharizardTeamRocket4.jpg' : require('../../../resources/images/cards/DarkCharizardTeamRocket4.jpg'),
@@ -7,21 +7,26 @@ const PokemonWeb =
 'TangelaPokemonWeb5.jpg' : require('../../../resources/images/cards/TangelaPokemonWeb5.jpg'),
 'VoltorbBaseSet67.jpg' : require('../../../resources/images/cards/VoltorbBaseSet67.jpg'),
 'DarkKadabraTeamRocket39.jpg' : require('../../../resources/images/cards/DarkKadabraTeamRocket39.jpg'),
+'DarkAlakazamTeamRocket1.jpg' : require('../../../resources/images/cards/DarkAlakazamTeamRocket1.jpg'),
 'DarkVenusaurBestofGame7.jpg' : require('../../../resources/images/cards/DarkVenusaurBestofGame7.jpg'),
+'TeamRocketMeowthWizardsPromo18.jpg' : require('../../../resources/images/cards/TeamRocketMeowthWizardsPromo18.jpg'),
 'ArticunoWizardsPromo22.jpg' : require('../../../resources/images/cards/ArticunoWizardsPromo22.jpg'),
 'CharmeleonBaseSet24.jpg' : require('../../../resources/images/cards/CharmeleonBaseSet24.jpg'),
 'HitmonleeVendingS2.jpg' : require('../../../resources/images/cards/HitmonleeVendingS2.jpg'),
 'NidorinoVendingS3.jpg' : require('../../../resources/images/cards/NidorinoVendingS3.jpg'),
 'MarillWizardsPromo29.jpg' : require('../../../resources/images/cards/MarillWizardsPromo29.jpg'),
 'NewPokedexNeoGenesis95.jpg' : require('../../../resources/images/cards/NewPokedexNeoGenesis95.jpg'),
+'UniversityMagikarp.jpg' : require('../../../resources/images/cards/UniversityMagikarp.jpg'),
 'SurfingPikachuWizardsPromo28.jpg' : require('../../../resources/images/cards/SurfingPikachuWizardsPromo28.jpg'),
 'ElectrodePokemonWeb26.jpg' : require('../../../resources/images/cards/ElectrodePokemonWeb26.jpg'),
 'HyperDevolutionSprayNeoDiscovery73.jpg' : require('../../../resources/images/cards/HyperDevolutionSprayNeoDiscovery73.jpg'),
 'WeezingTeamRocket31.jpg' : require('../../../resources/images/cards/WeezingTeamRocket31.jpg'),
 'DarkCharmeleonTeamRocket32.jpg' : require('../../../resources/images/cards/DarkCharmeleonTeamRocket32.jpg'),
+'RocketSneakAttackTeamRocket72.jpg' : require('../../../resources/images/cards/RocketSneakAttackTeamRocket72.jpg'),
 'ExeggutorJungle35.jpg' : require('../../../resources/images/cards/ExeggutorJungle35.jpg'),
 'VenonatVendingS3.jpg' : require('../../../resources/images/cards/VenonatVendingS3.jpg'),
 'WartortleSquirtleDeck3.jpg' : require('../../../resources/images/cards/WartortleSquirtleDeck3.jpg'),
+'RaichuBaseSet14.jpg' : require('../../../resources/images/cards/RaichuBaseSet14.jpg'),
 'DarkWartortleTeamRocket46.jpg' : require('../../../resources/images/cards/DarkWartortleTeamRocket46.jpg'),
 'MachampWizardsPromo43.jpg' : require('../../../resources/images/cards/MachampWizardsPromo43.jpg'),
 'DarkIvysaurBestofGame6.jpg' : require('../../../resources/images/cards/DarkIvysaurBestofGame6.jpg'),
@@ -32,6 +37,9 @@ const PokemonWeb =
 'DugtrioPokemonWeb29.jpg' : require('../../../resources/images/cards/DugtrioPokemonWeb29.jpg'),
 'GengarCommunicationEvolutionPromo.jpg' : require('../../../resources/images/cards/GengarCommunicationEvolutionPromo.jpg'),
 'DarkSlowbroTeamRocket29.jpg' : require('../../../resources/images/cards/DarkSlowbroTeamRocket29.jpg'),
+'NidokingBaseSet11.jpg' : require('../../../resources/images/cards/NidokingBaseSet11.jpg'),
+'NinetalesBaseSet12.jpg' : require('../../../resources/images/cards/NinetalesBaseSet12.jpg'),
+'DragoniteWizardsPromo5.jpg' : require('../../../resources/images/cards/DragoniteWizardsPromo5.jpg'),
 'MoltresWizardsPromo21.jpg' : require('../../../resources/images/cards/MoltresWizardsPromo21.jpg'),
 'DiglettPokemonWeb13.jpg' : require('../../../resources/images/cards/DiglettPokemonWeb13.jpg'),
 'DarkBlastoiseTeamRocket3.jpg' : require('../../../resources/images/cards/DarkBlastoiseTeamRocket3.jpg'),
@@ -40,4 +48,4 @@ const PokemonWeb =
 'VenomothPokemonWeb19.jpg' : require('../../../resources/images/cards/VenomothPokemonWeb19.jpg'),
 'BillTeleporterNeoGenesis91.jpg' : require('../../../resources/images/cards/BillTeleporterNeoGenesis91.jpg'),
 'SlowpokePokemonWeb12.jpg' : require('../../../resources/images/cards/SlowpokePokemonWeb12.jpg')};
-export default PokemonWeb
+export default ChangeName
