@@ -55,6 +55,13 @@ import SplitEarth from "./ImageConfig/SplitEarth.js";
 import MysteriousMountains from "./ImageConfig/MysteriousMountains.js";
 import PokemonWeb from "./ImageConfig/PokemonWeb.js";
 import PokemonVS from "./ImageConfig/PokemonVS.js";
+import PPromotionalCards from "./ImageConfig/PPromotionalCards.js";
+import TPromotionalCards from "./ImageConfig/TPromotionalCards.js";
+import JPromotionalCards from "./ImageConfig/JPromotionalCards.js";
+import McDonaldsOriginalMinimumPack from "./ImageConfig/McDonaldsOriginalMinimumPack.js";
+import PokemonEStarterDeck from "./ImageConfig/PokemonEStarterDeck.js";
+import TyranitarHalfDeck from "./ImageConfig/TyranitarHalfDeck.js";
+import TheaterLimitedVSPack from "./ImageConfig/TheaterLimitedVSPack.js";
 
 const SerieConfig =
   {
@@ -285,6 +292,34 @@ const SerieConfig =
     'Pokémon Web' : {
       definition: require('../../resources/series/Pokemon Web.json'),
       pictures: PokemonWeb
+    },
+    'P Promotional cards' : {
+      definition: require('../../resources/series/P Promotional cards.json'),
+      pictures: PPromotionalCards
+    },
+    'T Promotional cards' : {
+      definition: require('../../resources/series/T Promotional cards.json'),
+      pictures: TPromotionalCards
+    },
+    'J Promotional cards' : {
+      definition: require('../../resources/series/J Promotional cards.json'),
+      pictures: JPromotionalCards
+    },
+    'McDonald\'s Original Minimum Pack' : {
+      definition: require('../../resources/series/McDonald\'s Original Minimum Pack.json'),
+      pictures: McDonaldsOriginalMinimumPack
+    },
+    'Pokémon-e Starter Deck' : {
+      definition: require('../../resources/series/Pokemon-e Starter Deck.json'),
+      pictures: PokemonEStarterDeck
+    },
+    'Tyranitar Half Deck' : {
+      definition: require('../../resources/series/Tyranitar Half Deck.json'),
+      pictures: TyranitarHalfDeck
+    },
+    'Theater Limited VS Pack' : {
+      definition: require('../../resources/series/Theater Limited VS Pack.json'),
+      pictures: TheaterLimitedVSPack
     }
   };
 

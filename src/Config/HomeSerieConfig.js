@@ -20,6 +20,12 @@ const HomeSerieConfig = [
       ]
   },
   {
+      title: "🇯🇵 e-Card Era (Promo) 🇯🇵",
+      data: [
+        'P Promotional cards', 'T Promotional cards', 'J Promotional cards', 'McDonald\'s Original Minimum Pack', 'Pokémon-e Starter Deck', 'Tyranitar Half Deck', 'Theater Limited VS Pack'
+      ]
+  },
+  {
       title: "🇯🇵 Promotional cards 🇯🇵",
       data: [
         '1996', '1997', '1998', '1999', '2000', '2001-2005',
