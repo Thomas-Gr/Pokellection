@@ -87,6 +87,12 @@ function USLikeSorting(a, b) {
       return -1;
     }
 
+    if (typeOrder[a.type] == 15 && typeOrder[b.type] == 10) {
+      return 1;
+    } else if (typeOrder[a.type] == 10 && typeOrder[b.type] == 15) {
+      return -1;
+    }
+
     const rarityDiff = rarityOrder2[a.rarity] - rarityOrder2[b.rarity];
     if (rarityDiff != 0) return rarityDiff;
 
