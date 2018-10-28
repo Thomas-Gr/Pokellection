@@ -62,6 +62,10 @@ import McDonaldsOriginalMinimumPack from "./ImageConfig/McDonaldsOriginalMinimum
 import PokemonEStarterDeck from "./ImageConfig/PokemonEStarterDeck.js";
 import TyranitarHalfDeck from "./ImageConfig/TyranitarHalfDeck.js";
 import TheaterLimitedVSPack from "./ImageConfig/TheaterLimitedVSPack.js";
+import CrossingtheRuins from "./ImageConfig/CrossingtheRuins.js";
+import AwakeningLegends from "./ImageConfig/AwakeningLegends.js";
+import DarknessandtoLight from "./ImageConfig/DarknessandtoLight.js";
+import GoldSilvertoaNewWorld from "./ImageConfig/GoldSilvertoaNewWorld.js";
 
 const SerieConfig =
   {
@@ -320,6 +324,22 @@ const SerieConfig =
     'Theater Limited VS Pack' : {
       definition: require('../../resources/series/Theater Limited VS Pack.json'),
       pictures: TheaterLimitedVSPack
+    },
+    'Crossing the Ruins...' : {
+      definition: require('../../resources/series/Crossing the Ruins.json'),
+      pictures: CrossingtheRuins
+    },
+    'Awakening Legends' : {
+      definition: require('../../resources/series/Awakening Legends.json'),
+      pictures: AwakeningLegends
+    },
+    'Darkness, and to Light...' : {
+      definition: require('../../resources/series/Darkness, and to Light.json'),
+      pictures: DarknessandtoLight
+    },
+    'Gold, Silver, to a New World...' : {
+      definition: require('../../resources/series/Gold, Silver, to a New World.json'),
+      pictures: GoldSilvertoaNewWorld
     }
   };
 

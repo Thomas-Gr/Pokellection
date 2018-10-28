@@ -14,6 +14,10 @@ const HomeSerieConfig = [
       data: ['Nivi City Gym', 'Hanada City Gym', 'Kuchiba City Gym', 'Tamamushi City Gym', 'Yamabuki City Gym', 'Guren Town Gym', 'Red Deck', 'Green Deck', 'Bulbasaur Deck', 'Squirtle Deck']
   },
   {
+      title: "🇯🇵 Neo Era 🇯🇵",
+      data: ['Gold, Silver, to a New World...', 'Crossing the Ruins...', 'Awakening Legends', 'Darkness, and to Light...']
+  },
+  {
       title: "🇯🇵 e-Card Era 🇯🇵",
       data: [
         'Pokémon VS', 'Pokémon Web', 'Base Expansion Pack', 'The Town on no Map', 'Wind from the Sea', 'Split Earth', 'Mysterious Mountains'
@@ -26,7 +30,7 @@ const HomeSerieConfig = [
       ]
   },
   {
-      title: "🇯🇵 Promotional cards 🇯🇵",
+      title: "🇯🇵 Unnumbered Promotional cards 🇯🇵",
       data: [
         '1996', '1997', '1998', '1999', '2000', '2001-2005',
         'Gym', 'Vending Machine', 'Trade Please', 'Lucky Stadium', 'How I Became a Pokémon Card',

@@ -17,5 +17,10 @@ export default SeriesLogos = {
   'SetSymbolSplit_Earth.png' : require('../../resources/images/series/SetSymbolSplit_Earth.png'),
   'SetSymbolThe_Town_on_No_Map.png' : require('../../resources/images/series/SetSymbolThe_Town_on_No_Map.png'),
   'SetSymbolWind_from_the_Sea.png' : require('../../resources/images/series/SetSymbolWind_from_the_Sea.png'),
-  'SetSymbolVS.png' : require('../../resources/images/series/SetSymbolVS.png'),
+  'SetSymbolChikoritaIntroPackNeo.png' : require('../../resources/images/series/SetSymbolChikoritaIntroPackNeo.png'),
+  'SetSymbolTotodileIntroPackNeo.png' : require('../../resources/images/series/SetSymbolTotodileIntroPackNeo.png'),
+  'SetSymbolNeo_Genesis.png' : require('../../resources/images/series/SetSymbolNeo_Genesis.png'),
+  'SetSymbolNeo_Revelation.png' : require('../../resources/images/series/SetSymbolNeo_Revelation.png'),
+  'SetSymbolNeo_Discovery.png' : require('../../resources/images/series/SetSymbolNeo_Discovery.png'),
+  'SetSymbolNeo_Destiny.png' : require('../../resources/images/series/SetSymbolNeo_Destiny.png'),
 };
