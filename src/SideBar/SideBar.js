@@ -13,10 +13,11 @@ import {
 } from "native-base";
 
 const routes = [
-  { name: "Séries", link: "Home"}, //, icon: "pokeball"
-  { name: "Recherches", link: "ResearchsScreen"},
-  { name: "Selection des séries", link: "SerieSelection", icon: "cog"},
-  { name: "A propos", link: "NOPE"}] // , icon: "info"
+  { name: "Series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
+  { name: "Researchs", link: "ResearchsScreen", icon: "search"},
+  { name: "Series selection", link: "SerieSelection", icon: "cog"},
+  { name: "Statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
+  { name: "About", link: "About", icon: "question", type: "FontAwesome"}]
 
 export default class SideBar extends React.Component {
   render() {
@@ -59,7 +60,7 @@ export default class SideBar extends React.Component {
                   onPress={() => this.props.navigation.navigate(data.link)}
                 >
                   <Left>
-                    {data.icon != null ? (<Icon name={data.icon} />) : null}
+                    {data.icon != null ? (<Icon name={data.icon} type={data.type} style={{width:25}}/>) : null}
                   </Left>
                   <Body>
                     <Text>{data.name}</Text>
