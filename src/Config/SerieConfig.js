@@ -66,6 +66,11 @@ import CrossingtheRuins from "./ImageConfig/CrossingtheRuins.js";
 import AwakeningLegends from "./ImageConfig/AwakeningLegends.js";
 import DarknessandtoLight from "./ImageConfig/DarknessandtoLight.js";
 import GoldSilvertoaNewWorld from "./ImageConfig/GoldSilvertoaNewWorld.js";
+import PremiumFile1 from "./ImageConfig/PremiumFile1.js";
+import PremiumFile2 from "./ImageConfig/PremiumFile2.js";
+import PremiumFile3 from "./ImageConfig/PremiumFile3.js";
+import ChikoritaHalfDeck from "./ImageConfig/ChikoritaHalfDeck.js";
+import TotodileHalfDeck from "./ImageConfig/TotodileHalfDeck.js";
 
 const SerieConfig =
   {
@@ -340,6 +345,26 @@ const SerieConfig =
     'Gold, Silver, to a New World...' : {
       definition: require('../../resources/series/Gold, Silver, to a New World.json'),
       pictures: GoldSilvertoaNewWorld
+    },
+    'Premium File 1' : {
+      definition: require('../../resources/series/Premium File 1.json'),
+      pictures: PremiumFile1
+    },
+    'Premium File 2' : {
+      definition: require('../../resources/series/Premium File 2.json'),
+      pictures: PremiumFile2
+    },
+    'Premium File 3' : {
+      definition: require('../../resources/series/Premium File 3.json'),
+      pictures: PremiumFile3
+    },
+    'Chikorita Half Deck' : {
+      definition: require('../../resources/series/Chikorita Half Deck.json'),
+      pictures: ChikoritaHalfDeck
+    },
+    'Totodile Half Deck' : {
+      definition: require('../../resources/series/Totodile Half Deck.json'),
+      pictures: TotodileHalfDeck
     }
   };
 

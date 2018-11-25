@@ -18,6 +18,10 @@ const HomeSerieConfig = [
       data: ['Gold, Silver, to a New World...', 'Crossing the Ruins...', 'Awakening Legends', 'Darkness, and to Light...']
   },
   {
+      title: "🇯🇵 Neo Era (Special sets) 🇯🇵",
+      data: ['Premium File 1', 'Premium File 2', 'Premium File 3', 'Chikorita Half Deck', 'Totodile Half Deck']
+  },
+  {
       title: "🇯🇵 e-Card Era 🇯🇵",
       data: [
         'Pokémon VS', 'Pokémon Web', 'Base Expansion Pack', 'The Town on no Map', 'Wind from the Sea', 'Split Earth', 'Mysterious Mountains'
