@@ -46,6 +46,14 @@ export default class CardInformationScreen extends React.Component {
         ? <Image source={RaritiesLogos[selectedCard.rarity].image} style={{height:RaritiesLogos[selectedCard.rarity].height, width:RaritiesLogos[selectedCard.rarity].width}}/>
         : null;
 
+    const explanation = selectedCard.explanation != null
+        ? <Row style={{height: 60}}>
+            <View style={{padding: 10, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
+              <Text style={{fontWeight: 'bold', textAlign: 'center'}}>{selectedCard.explanation}</Text>
+            </View>
+          </Row>
+        : null;
+
     /*
     There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
      As a result tapping just below the white space won't actually close the Modal...
@@ -93,6 +101,7 @@ export default class CardInformationScreen extends React.Component {
                         </Col>
                       </Grid>
                     </Row>
+                    {explanation}
                   </Grid>
                 </View>
             </TouchableOpacity>
