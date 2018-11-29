@@ -1,8 +1,11 @@
 import React from "react";
-import { Text, Icon, Card, Body, Button } from "native-base";
+import { Text, Icon, Card, Button, ListItem, Left, Body, Right, Row } from "native-base";
 import { Image, View, TouchableOpacity, Dimensions, StyleSheet } from "react-native";
 import MyHeader from "../UtilityScreens/MyHeader.js";
+
 import SerieConfig from '../Config/SerieConfig.js';
+import TypesLogos from '../Config/TypesLogos.js';
+import RaritiesLogos from '../Config/RaritiesLogos.js';
 
 export default class CardItem extends React.PureComponent {
   render() {
@@ -11,6 +14,54 @@ export default class CardItem extends React.PureComponent {
     const showNumbers = this.props.showNumbers;
     const collectionName = this.props.collectionName;
 
+    if (this.props.display == 'list') {
+      return this.displayListStyle(item, data, showNumbers, collectionName);
+    } else {
+      return this.displayPictureStyle(item, data, showNumbers, collectionName);
+    }
+  }
+
+  displayListStyle(item, data, showNumbers, collectionName) {
+    const type = TypesLogos[data.type] != null
+        ? <Image source={TypesLogos[data.type]} style={{width:20,height:20}}/>
+        : <Text style={{backgroundColor: 'white'}}>{data.type.charAt(0)}</Text>;
+
+    const rarity = RaritiesLogos[data.rarity] != null
+        ? <Left style={{flex:0.1}}><Image source={RaritiesLogos[data.rarity].image} style={{height:RaritiesLogos[data.rarity].height/2, width:RaritiesLogos[data.rarity].width/2}}/></Left>
+        : null;
+
+    const explanation = data.explanation != null
+        ? <Row style={{height: 60}}>
+            <View style={{padding: 10, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
+              <Text style={{fontWeight: 'bold', textAlign: 'center'}}>{data.explanation}</Text>
+            </View>
+          </Row>
+        : null;
+
+    return (
+      <ListItem>
+        <Left style={{flex:0.1}}>
+          {type}
+        </Left>
+        {rarity}
+        <Body style={{flex: RaritiesLogos[data.rarity] != null ? 0.7 : 0.8}}>
+          <TouchableOpacity onPress={() => this.props.selectCard()}>
+            <Text style={{fontSize:15, fontWeight: 'bold'}}>
+              {data.number > 0 ? this.showNumber(data) : ""}{data.name}
+            </Text>
+          </TouchableOpacity>
+        </Body>
+        <Right style={{flex:0.1}}>
+          <TouchableOpacity
+              onPress={() => this.props.addCard()}>
+            <Icon name="check-square-o" type="FontAwesome" style={item.owned ? styles.yes : styles.no_2}/>
+          </TouchableOpacity>
+        </Right>
+      </ListItem>
+     )
+  }
+
+  displayPictureStyle(item, data, showNumbers, collectionName) {
     const image = SerieConfig[collectionName].pictures[data.picture] != null
       ? SerieConfig[collectionName].pictures[data.picture]
       : require('../../resources/images/missing.png');
@@ -71,9 +122,13 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   yes: {
-    opacity: 1
+    opacity: 1,
+    color: 'black'
   },
   no: {
     opacity: 0.2
+  },
+  no_2: {
+    opacity: 0.4
   }
 });

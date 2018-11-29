@@ -1,11 +1,12 @@
 import React from "react";
-import { Image, FlatList } from "react-native";
+import { Image, FlatList, View } from "react-native";
 import { Text, Container, Body, Content, Picker, Form } from "native-base";
 
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardItem from "./CardItem.js";
 import CardInformationScreen from "./CardInformationScreen.js";
+import CardListConfigurationScreen from "./CardListConfigurationScreen.js";
 
 import refreshCardList from "./CardListHelper.js";
 
@@ -21,15 +22,18 @@ export default class CardListScreen extends React.Component {
     var collection;
     var cards;
     var selection;
+    var display;
 
     if (props.isEmbedded) {
       serieName = props.serieName;
       collection = props.collection;
       selection = 'miss';
+      display = 'pictures';
     } else {
       serieName = props.navigation.state.params.serieName;
       collection = Object.assign({}, props.navigation.state.params.collection);
       selection = props.navigation.state.params.selection;
+      display = props.navigation.state.params.display;
     }
     var serie = SerieConfig[serieName].definition;
 
@@ -38,38 +42,32 @@ export default class CardListScreen extends React.Component {
       cards: serie.cards,
       dataSource: refreshCardList(serie.cards, collection, selection),
       selection: selection,
+      display: display,
       showNumbers: serie.showNumbers,
       collection: collection,
       isEmbedded: props.isEmbedded,
       cardInformationVisible: false,
+      listConfigurationVisible: false,
       selectedCard: undefined,
       inLongSelectionMode: false
     };
 
     this.updateCardList = this.updateCardList.bind(this);
     this.changeSelection = this.changeSelection.bind(this);
-    this.onChangeSelection = this.onChangeSelection.bind(this);
     this.updateSelectedCard = this.updateSelectedCard.bind(this);
     this.hideCardInformation = this.hideCardInformation.bind(this);
+    this.showConfigurationPanel = this.showConfigurationPanel.bind(this);
+    this.hideConfiguration = this.hideConfiguration.bind(this);
     this.switchLongSelectionMode = this.switchLongSelectionMode.bind(this);
   }
 
-  changeSelection(value: string) {
-    SelectionMemory.setSelection(value);
+  changeSelection(selection: string, display: string) {
+    SelectionMemory.setSelection(selection);
+    SelectionMemory.setDisplay(display);
 
     this.setState(
-      {selection: value},
+      {selection: selection, display: display},
       () => this.updateCardList());
-  }
-
-  onChangeSelection() {
-    if (this.state.selection == 'got') {
-      this.changeSelection('miss');
-    } else if (this.state.selection == 'miss') {
-      this.changeSelection('all');
-    } else {
-      this.changeSelection('got');
-    }
   }
 
   addCard(collectionName, card) {
@@ -101,6 +99,14 @@ export default class CardListScreen extends React.Component {
     this.setState({cardInformationVisible: false});
   }
 
+  showConfigurationPanel() {
+    this.setState({listConfigurationVisible: true});
+  }
+
+  hideConfiguration() {
+    this.setState({listConfigurationVisible: false});
+  }
+
   switchLongSelectionMode() {
     this.setState({inLongSelectionMode: !this.state.inLongSelectionMode}, () => this.updateCardList());
   }
@@ -114,6 +120,7 @@ export default class CardListScreen extends React.Component {
   }
 
   _renderItem = ({item}) => (<CardItem
+    display={this.state.display}
     collectionName={this.state.name}
     item={item}
     data={this.state.cards[item.id.toString()]}
@@ -124,19 +131,25 @@ export default class CardListScreen extends React.Component {
     selectCard={() => this.updateSelectedCard(this.state.cards[item.id.toString()])}/>)
 
   render() {
-    if (this.state.isEmbedded) {
-      return (
-        <FlatList
+    const cardsList = this.state.display == 'list'
+        ? <View><FlatList
            data={this.state.dataSource}
-           keyExtractor={item => item.id}
+           keyExtractor={item => 'list' + item.id.toString()}
+           initialNumToRender={15}
+           renderItem={this._renderItem}/></View>
+        : <FlatList
+           data={this.state.dataSource}
+           keyExtractor={item => 'pictures' + item.id.toString()}
            numColumns={3}
            initialNumToRender={12}
            renderItem={this._renderItem}/>
-      );
+
+    if (this.state.isEmbedded) {
+      return cardsList;
     } else {
       return (
         <Container>
-          <MyHeader {...this.props} title={this.state.name} selection={this.state.selection} selectionFunction={this.onChangeSelection}/>
+          <MyHeader {...this.props} title={this.state.name} selection={this.state.selection} selectionFunction={this.showConfigurationPanel}/>
           <Content>
             <CardInformationScreen
                 serieName={this.state.name}
@@ -145,12 +158,15 @@ export default class CardListScreen extends React.Component {
                 hide={this.hideCardInformation}
                 hasSelectedCard={this.state.hasSelectedCard}
                 addCard={() => this.addCard(this.state.name, this.state.cards[this.state.selectedCard.id.toString()])}/>
-            <FlatList
-               data={this.state.dataSource}
-               keyExtractor={item => item.id}
-               numColumns={3}
-               initialNumToRender={12}
-               renderItem={this._renderItem}/>
+
+            <CardListConfigurationScreen
+                selection={this.state.selection}
+                display={this.state.display}
+                visible={this.state.listConfigurationVisible}
+                hide={this.hideConfiguration}
+                changeSelection={(selection, display) => this.changeSelection(selection, display)}/>
+
+            {cardsList}
           </Content>
           <AdBanner/>
         </Container>

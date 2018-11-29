@@ -22,11 +22,14 @@ export default class HomeScreen extends Component {
     SelectionMemory.getSelection((selection) =>
         this.setState({selection: selection}));
 
+    SelectionMemory.getDisplay((display) =>
+        this.setState({display: display}));
+
     PreferencesMemory.getSerieSelection((selectedSeries) => {
         this.setState({seriesToDisplay: this.filterSelectedSeriesOnly(HomeSerieConfig, selectedSeries)});
 
-        CollectionMemory.getCollection(selectedSeries, (collections) =>
-            this.setState({launched: true, collections: collections}));
+    CollectionMemory.getCollection(selectedSeries, (collections) =>
+        this.setState({launched: true, collections: collections}));
     });
   }
 
@@ -56,14 +59,14 @@ export default class HomeScreen extends Component {
             : (null)
         }
       </Left>
-      <Body style={{flex:0.7}}>
+      <Body style={{flex:0.67}}>
         <Text style={{fontSize:15}} onPress={() => this.props.navigation.navigate(
             'CardListScreen',
-            {serieName: item, selection: this.state.selection, collection: this.state.collections[item]})}>
+            {serieName: item, selection: this.state.selection, display: this.state.display, collection: this.state.collections[item]})}>
           {item}
         </Text>
       </Body>
-      <Right style={{flex:0.15}}>
+      <Right style={{flex:0.17}}>
         <Text note>
           {this.state.collections[item] == null ? 0 : Object.keys(this.state.collections[item]).length}
           /{Object.keys(SerieConfig[item].definition.cards).length}

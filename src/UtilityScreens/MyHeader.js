@@ -24,31 +24,13 @@ export default class MyHeader extends React.Component {
 
   renderSelectionButton() {
     if (this.props.selectionFunction != null) {
-      if (this.props.selection == 'got') {
-        return (
-          <View style={{marginTop: 15}}>
-            <TouchableOpacity onPress={this.props.selectionFunction}>
-              <Icon name="check-circle" type="FontAwesome" style={{color: 'white'}}/>
-            </TouchableOpacity>
-          </View>
-        )
-      } else if (this.props.selection == 'miss') {
-        return (
-          <View style={{marginTop: 15}}>
-            <TouchableOpacity onPress={this.props.selectionFunction}>
-              <Icon name="times-circle" type="FontAwesome" style={{color: 'white'}}/>
-            </TouchableOpacity>
-          </View>
-        )
-      } else {
-        return (
-          <View style={{marginTop: 15}}>
-            <TouchableOpacity onPress={this.props.selectionFunction}>
-              <Icon name="check-circle" type="FontAwesome" style={{color: 'white', opacity: 0.2}}/>
-            </TouchableOpacity>
-          </View>
-        )
-      }
+      return (
+        <View style={{marginTop: 15}}>
+          <TouchableOpacity onPress={this.props.selectionFunction}>
+            <Icon name="sound-mix" type="Entypo" style={{color: 'white'}}/>
+          </TouchableOpacity>
+        </View>
+      )
     }
   }
 
