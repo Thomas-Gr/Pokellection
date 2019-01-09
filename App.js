@@ -20,6 +20,7 @@ export default class AwesomeApp extends Component {
       FontAwesome: require("native-base/Fonts/FontAwesome.ttf"),
       MaterialCommunityIcons: require("native-base/Fonts/MaterialCommunityIcons.ttf"),
       Entypo: require("native-base/Fonts/Entypo.ttf"),
+      "Material Design Icons": require("@expo/vector-icons/fonts/MaterialIcons.ttf")
     });
     this.setState({ isReady: true });
   }
