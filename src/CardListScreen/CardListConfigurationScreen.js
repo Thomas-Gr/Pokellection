@@ -7,6 +7,17 @@ import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 
+const selections = [
+  {name: "all", icon: "circle"},
+  {name: "got", icon: "check-circle"},
+  {name: "miss", icon: "x-circle"}
+]
+
+const displays = [
+  {name: "picture", icon: "th"},
+  {name: "list", icon: "th-list"}
+]
+
 const rarities = [
   [
     "NONE",
@@ -33,13 +44,13 @@ export default class CardListConfigurationScreen extends React.Component {
     };
   }
 
-  onCardsToDisplayChange(value: string) {
+  updateSelection(value) {
     this.setState({
       cardsToDisplay: value
     });
   }
 
-  onStyleToDisplayChange(value: string) {
+  updateDisplay(value) {
     this.setState({
       styleToDisplay: value
     });
@@ -76,6 +87,28 @@ export default class CardListConfigurationScreen extends React.Component {
       return (<Row key={row[0]}>{content}</Row>);
     })
 
+    const displayElements = displays.map(element => {
+        return (
+          <Col key={element.name} style={[{margin:1}, this.state.styleToDisplay != element.name ? {opacity: 0.1} : null]}>
+            <TouchableOpacity
+              onPress={() => this.updateDisplay(element.name)}
+              style={styles.cell}>
+                <Icon name={element.icon} type="FontAwesome"/>
+            </TouchableOpacity>
+          </Col>);
+    })
+
+    const selectionElements = selections.map(element => {
+        return (
+          <Col key={element.name} style={[{margin:1}, this.state.cardsToDisplay != element.name ? {opacity: 0.1} : null]}>
+            <TouchableOpacity
+              onPress={() => this.updateSelection(element.name)}
+              style={styles.cell}>
+                <Icon name={element.icon} type="Feather"/>
+            </TouchableOpacity>
+          </Col>);
+    })
+
     /*
     There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
      As a result tapping just below the white space won't actually close the Modal...
@@ -103,49 +136,28 @@ export default class CardListConfigurationScreen extends React.Component {
                         <Text style={{fontSize: 20, fontWeight: 'bold', marginBottom: 20}}>Configuration:</Text>
                       </Row>
                       <Row>
-                        <Picker
-                            mode="dropdown"
-                            iosIcon={<Icon name="ios-arrow-down-outline" />}
-                            style={{ width: undefined }}
-                            placeholder="Cards to display"
-                            placeholderStyle={{ color: "#bfc6ea" }}
-                            placeholderIconColor="#007aff"
-                            selectedValue={this.state.cardsToDisplay}
-                            onValueChange={this.onCardsToDisplayChange.bind(this)}
-                          >
-                            <Picker.Item label="Show all cards" value="all" />
-                            <Picker.Item label="Show only collected cards" value="got" />
-                            <Picker.Item label="Show only non collected cards" value="miss" />
-                          </Picker>
-                        </Row>
-                        <Row>
-                          <Picker
-                            mode="dropdown"
-                            iosIcon={<Icon name="ios-arrow-down-outline" />}
-                            style={{ width: undefined }}
-                            placeholder="Display Style"
-                            placeholderStyle={{ color: "#bfc6ea" }}
-                            placeholderIconColor="#007aff"
-                            selectedValue={this.state.styleToDisplay}
-                            onValueChange={this.onStyleToDisplayChange.bind(this)}
-                          >
-                            <Picker.Item label="Show cards with picture" value="pictures" />
-                            <Picker.Item label="Show a detailed list of cards" value="list" />
-                          </Picker>
-                        </Row>
-                        <Row>
-                            <Grid>
-                              {rarityElements}
-                            </Grid>
-                        </Row>
-                        <Row>
-                          <Button bordered style={{marginTop: 30}} onPress={() => {
-                                this.props.changeSelection(this.state.cardsToDisplay, this.state.styleToDisplay, this.state.unselectedRarities);
-                                this.props.hide();
-                              }}>
-                            <Text style={{fontWeight: 'bold'}}>DONE</Text>
-                          </Button>
-                        </Row>
+                        <Grid>
+                          <Row>{selectionElements}</Row>
+                        </Grid>
+                      </Row>
+                      <Row>
+                        <Grid>
+                          <Row>{displayElements}</Row>
+                        </Grid>
+                      </Row>
+                      <Row>
+                        <Grid>
+                          {rarityElements}
+                        </Grid>
+                      </Row>
+                      <Row>
+                        <Button bordered style={{marginTop: 30}} onPress={() => {
+                              this.props.changeSelection(this.state.cardsToDisplay, this.state.styleToDisplay, this.state.unselectedRarities);
+                              this.props.hide();
+                            }}>
+                          <Text style={{fontWeight: 'bold'}}>DONE</Text>
+                        </Button>
+                      </Row>
                     </Grid>
                 </View>
             </TouchableOpacity>
