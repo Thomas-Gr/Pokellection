@@ -29,20 +29,23 @@ export default class CardListScreen extends React.Component {
       collection = props.collection;
       selection = 'miss';
       display = 'pictures';
+      unselectedRarities = {};
     } else {
       serieName = props.navigation.state.params.serieName;
       collection = Object.assign({}, props.navigation.state.params.collection);
       selection = props.navigation.state.params.selection;
       display = props.navigation.state.params.display;
+      unselectedRarities = props.navigation.state.params.unselectedRarities;
     }
     var serie = SerieConfig[serieName].definition;
 
     this.state = {
       name: serie.name,
       cards: serie.cards,
-      dataSource: refreshCardList(serie.cards, collection, selection),
+      dataSource: refreshCardList(serie.cards, collection, selection, unselectedRarities),
       selection: selection,
       display: display,
+      unselectedRarities: unselectedRarities,
       showNumbers: serie.showNumbers,
       collection: collection,
       isEmbedded: props.isEmbedded,
@@ -61,12 +64,13 @@ export default class CardListScreen extends React.Component {
     this.switchLongSelectionMode = this.switchLongSelectionMode.bind(this);
   }
 
-  changeSelection(selection: string, display: string) {
+  changeSelection(selection: string, display: string, unselectedRarities: string[]) {
     SelectionMemory.setSelection(selection);
     SelectionMemory.setDisplay(display);
+    SelectionMemory.setUnselectedRarities(unselectedRarities);
 
     this.setState(
-      {selection: selection, display: display},
+      {selection: selection, display: display, unselectedRarities: unselectedRarities},
       () => this.updateCardList());
   }
 
@@ -92,7 +96,8 @@ export default class CardListScreen extends React.Component {
     this.setState({dataSource: refreshCardList(
       this.state.cards,
       this.state.collection,
-      this.state.selection)});
+      this.state.selection,
+      this.state.unselectedRarities)});
   }
 
   hideCardInformation() {
@@ -162,9 +167,10 @@ export default class CardListScreen extends React.Component {
             <CardListConfigurationScreen
                 selection={this.state.selection}
                 display={this.state.display}
+                unselectedRarities={this.state.unselectedRarities}
                 visible={this.state.listConfigurationVisible}
                 hide={this.hideConfiguration}
-                changeSelection={(selection, display) => this.changeSelection(selection, display)}/>
+                changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
 
             {cardsList}
           </Content>

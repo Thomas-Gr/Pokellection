@@ -40,9 +40,10 @@ const rarityOrder2 = {
   "NONE": 8
 };
 
-export const refreshCardList = (cards, collection, selection) => {
+export const refreshCardList = (cards, collection, selection, unselectedRarities) => {
   return Object.values(cards)
     .sort((a, b) => USLikeSorting(a, b))
+    .filter(a => unselectedRarities[a.rarity] == null)
     .map(a => ({id: a.id, owned: collection[a.id] != null}))
     .filter(a => {
       if (selection == 'got') return a.owned;

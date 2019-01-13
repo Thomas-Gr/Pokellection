@@ -25,6 +25,9 @@ export default class HomeScreen extends Component {
     SelectionMemory.getDisplay((display) =>
         this.setState({display: display}));
 
+    SelectionMemory.getUnselectedRarities((unselectedRarities) =>
+        this.setState({unselectedRarities: unselectedRarities}));
+
     PreferencesMemory.getSerieSelection((selectedSeries) => {
         this.setState({seriesToDisplay: this.filterSelectedSeriesOnly(HomeSerieConfig, selectedSeries)});
 
@@ -62,7 +65,13 @@ export default class HomeScreen extends Component {
       <Body style={{flex:0.67}}>
         <Text style={{fontSize:15}} onPress={() => this.props.navigation.navigate(
             'CardListScreen',
-            {serieName: item, selection: this.state.selection, display: this.state.display, collection: this.state.collections[item]})}>
+            {
+              serieName: item,
+              selection: this.state.selection,
+              display: this.state.display,
+              unselectedRarities: this.state.unselectedRarities,
+              collection: this.state.collections[item]
+            })}>
           {item}
         </Text>
       </Body>
