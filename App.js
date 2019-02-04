@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { Container, Content, Picker, Button, Text } from "native-base";
-import Expo from "expo";
+import * as Expo from 'expo'
 
 import HomeScreen from "./src/HomeScreen/index.js";
 

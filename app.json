@@ -3,15 +3,23 @@
     "androidStatusBar": {
       "backgroundColor": "#000000"
     },
-    "sdkVersion": "29.0.0",
+    "sdkVersion": "32.0.0",
     "name": "Pokellection",
-    "version": "1.0.0",
+    "version": "0.1",
     "slug": "pokellection",
     "ios": {
       "bundleIdentifier": "com.pokellection"
     },
     "android": {
       "package": "com.pokellection"
-    }
+    },
+    "assetBundlePatterns": [
+      "resources/images/rarities/*",
+      "resources/images/series/*",
+      "resources/images/types/*",
+      "resources/images/missing.png",
+      "resources/series/*",
+      "resources/pokemon.json"
+    ],
   }
 }
