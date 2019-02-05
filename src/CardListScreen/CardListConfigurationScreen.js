@@ -38,6 +38,7 @@ export default class CardListConfigurationScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      forcedResearched: props.research,
       cardsToDisplay: props.selection,
       styleToDisplay: props.display,
       unselectedRarities: props.unselectedRarities
@@ -98,16 +99,22 @@ export default class CardListConfigurationScreen extends React.Component {
           </Col>);
     })
 
-    const selectionElements = selections.map(element => {
-        return (
-          <Col key={element.name} style={[{margin:1}, this.state.cardsToDisplay != element.name ? {opacity: 0.1} : null]}>
-            <TouchableOpacity
-              onPress={() => this.updateSelection(element.name)}
-              style={styles.cell}>
-                <Icon name={element.icon} type="Feather"/>
-            </TouchableOpacity>
-          </Col>);
-    })
+    const selectionElements = this.state.forcedResearched == null
+        ? selections.map(element => {
+            return (
+              <Col key={element.name} style={[{margin:1}, this.state.cardsToDisplay != element.name ? {opacity: 0.1} : null]}>
+                <TouchableOpacity
+                  onPress={() => this.updateSelection(element.name)}
+                  style={styles.cell}>
+                    <Icon name={element.icon} type="Feather"/>
+                </TouchableOpacity>
+              </Col>);
+        })
+        : null;
+
+    const selectionRow = this.state.forcedResearched == null
+        ? (<Row><Grid><Row>{selectionElements}</Row></Grid></Row>)
+        : null;
 
     /*
     There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
@@ -135,11 +142,7 @@ export default class CardListConfigurationScreen extends React.Component {
                       <Row>
                         <Text style={{fontSize: 20, fontWeight: 'bold', marginBottom: 20}}>Configuration:</Text>
                       </Row>
-                      <Row>
-                        <Grid>
-                          <Row>{selectionElements}</Row>
-                        </Grid>
-                      </Row>
+                          {selectionRow}
                       <Row>
                         <Grid>
                           <Row>{displayElements}</Row>

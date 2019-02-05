@@ -27,9 +27,9 @@ export default class CardListScreen extends React.Component {
     if (props.isEmbedded) {
       serieName = props.serieName;
       collection = props.collection;
-      selection = 'miss';
-      display = 'pictures';
-      unselectedRarities = {};
+      selection = props.selection;
+      display = props.display;
+      unselectedRarities = props.unselectedRarities;
     } else {
       serieName = props.navigation.state.params.serieName;
       collection = Object.assign({}, props.navigation.state.params.collection);
@@ -154,7 +154,7 @@ export default class CardListScreen extends React.Component {
     } else {
       return (
         <Container>
-          <MyHeader {...this.props} title={this.state.name} selection={this.state.selection} selectionFunction={this.showConfigurationPanel}/>
+          <MyHeader {...this.props} title={this.state.name} selectionFunction={this.showConfigurationPanel}/>
           <Content>
             <CardInformationScreen
                 serieName={this.state.name}
