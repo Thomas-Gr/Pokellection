@@ -39,11 +39,11 @@ export default class CardInformationScreen extends React.Component {
         : null;
 
     const type = TypesLogos[selectedCard.type] != null
-        ? <Image source={TypesLogos[selectedCard.type]} />
+        ? <Image source={TypesLogos[selectedCard.type]} style={{width:20, height:20}}/>
         : <Text style={{backgroundColor: 'white'}}>{selectedCard.type.charAt(0)}</Text>;
 
     const rarity = RaritiesLogos[selectedCard.rarity] != null
-        ? <Image source={RaritiesLogos[selectedCard.rarity].image} style={{height:RaritiesLogos[selectedCard.rarity].height, width:RaritiesLogos[selectedCard.rarity].width}}/>
+        ? <Image source={RaritiesLogos[selectedCard.rarity].image}/>
         : null;
 
     const explanation = selectedCard.explanation != null
@@ -77,7 +77,7 @@ export default class CardInformationScreen extends React.Component {
                   height: '60%'}}>
                 <View style={{flex: 1, backgroundColor: 'white'}}>
                   <Grid>
-                    <Row style={{height: 60}}>
+                    <Row style={{height: 40}}>
                       <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
                         <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {selectedCard.name} {card}</Text>
                       </View>
