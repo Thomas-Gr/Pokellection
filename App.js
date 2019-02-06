@@ -18,7 +18,6 @@ export default class AwesomeApp extends Component {
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
       Ionicons: require("native-base/Fonts/Ionicons.ttf"),
       FontAwesome: require("native-base/Fonts/FontAwesome.ttf"),
-      Feather: require("native-base/Fonts/Feather.ttf"),
       MaterialCommunityIcons: require("native-base/Fonts/MaterialCommunityIcons.ttf"),
       Entypo: require("native-base/Fonts/Entypo.ttf"),
       "Material Design Icons": require("@expo/vector-icons/fonts/MaterialIcons.ttf")

@@ -8,9 +8,9 @@ import TypesLogos from '../Config/TypesLogos.js';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 
 const selections = [
-  {name: "all", icon: "circle"},
-  {name: "got", icon: "check-circle"},
-  {name: "miss", icon: "x-circle"}
+  {name: "all", icon: "circle-o"},
+  {name: "got", icon: "check-circle-o"},
+  {name: "miss", icon: "times-circle-o"}
 ]
 
 const displays = [
@@ -106,7 +106,7 @@ export default class CardListConfigurationScreen extends React.Component {
                 <TouchableOpacity
                   onPress={() => this.updateSelection(element.name)}
                   style={styles.cell}>
-                    <Icon name={element.icon} type="Feather"/>
+                    <Icon name={element.icon} type="FontAwesome"/>
                 </TouchableOpacity>
               </Col>);
         })
