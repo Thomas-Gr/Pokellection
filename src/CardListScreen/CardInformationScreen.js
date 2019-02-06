@@ -92,7 +92,7 @@ export default class CardInformationScreen extends React.Component {
                         </Col>
                         <Col style={styles.centered}>
                           <View style={{width:'90%'}}>
-                            <Button block style={{marginBottom:10}} onPress={() => { this.props.hide(); this.props.addCard(); }}>
+                            <Button block style={{marginBottom:10}} onPress={() => { this.props.hide(); this.props.addCard(this.props.serieName, this.props.selectedCard); }}>
                               <Text>{this.props.hasSelectedCard ? 'Remove' : 'Add'} card</Text>
                             </Button>
 

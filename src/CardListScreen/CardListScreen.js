@@ -2,94 +2,49 @@ import React from "react";
 import { Image, FlatList, View } from "react-native";
 import { Text, Container, Body, Content, Picker, Form } from "native-base";
 
-import MyHeader from "../UtilityScreens/MyHeader.js";
-import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardItem from "./CardItem.js";
-import CardInformationScreen from "./CardInformationScreen.js";
-import CardListConfigurationScreen from "./CardListConfigurationScreen.js";
 
 import refreshCardList from "./CardListHelper.js";
 
-import * as CollectionMemory from "../State/CollectionMemory.js";
-import * as SelectionMemory from "../State/SelectionMemory.js";
 import SerieConfig from '../Config/SerieConfig.js';
 
 export default class CardListScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    var serieName;
-    var collection;
-    var cards;
-    var selection;
-    var display;
-
-    if (props.isEmbedded) {
-      serieName = props.serieName;
-      collection = props.collection;
-      selection = props.selection;
-      display = props.display;
-      unselectedRarities = props.unselectedRarities;
-    } else {
-      serieName = props.navigation.state.params.serieName;
-      collection = Object.assign({}, props.navigation.state.params.collection);
-      selection = props.navigation.state.params.selection;
-      display = props.navigation.state.params.display;
-      unselectedRarities = props.navigation.state.params.unselectedRarities;
-    }
-    var serie = SerieConfig[serieName].definition;
+    var serie = SerieConfig[props.serieName].definition;
+    var collection = Object.assign({}, props.collection);
 
     this.state = {
       name: serie.name,
       cards: serie.cards,
-      dataSource: refreshCardList(serie.cards, collection, selection, unselectedRarities),
-      selection: selection,
-      display: display,
-      unselectedRarities: unselectedRarities,
+      dataSource: refreshCardList(serie.cards, collection, props.selection, props.unselectedRarities),
+      selection: props.selection,
+      display: props.display,
+      unselectedRarities: props.unselectedRarities,
       showNumbers: serie.showNumbers,
       collection: collection,
-      isEmbedded: props.isEmbedded,
-      cardInformationVisible: false,
-      listConfigurationVisible: false,
-      selectedCard: undefined,
       inLongSelectionMode: false
     };
 
     this.updateCardList = this.updateCardList.bind(this);
-    this.changeSelection = this.changeSelection.bind(this);
-    this.updateSelectedCard = this.updateSelectedCard.bind(this);
-    this.hideCardInformation = this.hideCardInformation.bind(this);
-    this.showConfigurationPanel = this.showConfigurationPanel.bind(this);
-    this.hideConfiguration = this.hideConfiguration.bind(this);
     this.switchLongSelectionMode = this.switchLongSelectionMode.bind(this);
   }
 
-  changeSelection(selection: string, display: string, unselectedRarities: string[]) {
-    SelectionMemory.setSelection(selection);
-    SelectionMemory.setDisplay(display);
-    SelectionMemory.setUnselectedRarities(unselectedRarities);
+  componentDidUpdate(prevProps) {
+    var collection = Object.assign({}, this.props.collection);
 
-    this.setState(
-      {selection: selection, display: display, unselectedRarities: unselectedRarities},
-      () => this.updateCardList());
-  }
-
-  addCard(collectionName, card) {
-    let collection = Object.assign({}, this.state.collection);
-
-    if (collection[card.id] != null) {
-      delete collection[card.id]
-    } else {
-      collection[card.id] = true;
+    if (prevProps.selection != this.props.selection
+      || prevProps.display != this.props.display
+      || JSON.stringify(this.state.collection) != JSON.stringify(collection)
+      || prevProps.unselectedRarities != this.props.unselectedRarities) {
+      this.setState({
+        selection: this.props.selection,
+        display: this.props.display,
+        unselectedRarities: this.props.unselectedRarities,
+        collection: Object.assign({}, this.props.collection)
+      }, () => this.updateCardList());
     }
-
-    this.setState(
-      {collection},
-      () => {
-        CollectionMemory.addCard(collectionName, collection);
-
-        this.updateCardList();
-      });
   }
 
   updateCardList() {
@@ -100,28 +55,8 @@ export default class CardListScreen extends React.Component {
       this.state.unselectedRarities)});
   }
 
-  hideCardInformation() {
-    this.setState({cardInformationVisible: false});
-  }
-
-  showConfigurationPanel() {
-    this.setState({listConfigurationVisible: true});
-  }
-
-  hideConfiguration() {
-    this.setState({listConfigurationVisible: false});
-  }
-
   switchLongSelectionMode() {
     this.setState({inLongSelectionMode: !this.state.inLongSelectionMode}, () => this.updateCardList());
-  }
-
-  updateSelectedCard(card) {
-    this.setState({
-      cardInformationVisible: true,
-      selectedCard: card,
-      hasSelectedCard: this.state.collection[card.id] != null
-    });
   }
 
   _renderItem = ({item}) => (<CardItem
@@ -132,11 +67,11 @@ export default class CardListScreen extends React.Component {
     showNumbers={this.state.showNumbers}
     inLongSelectionMode={this.state.inLongSelectionMode}
     switchLongSelectionMode={() => this.switchLongSelectionMode()}
-    addCard={(a) => this.addCard(this.state.name, this.state.cards[item.id.toString()])}
-    selectCard={() => this.updateSelectedCard(this.state.cards[item.id.toString()])}/>)
+    addCard={this.props.addCard}
+    selectCard={this.props.selectCard}/>)
 
   render() {
-    const cardsList = this.state.display == 'list'
+    return this.state.display == 'list'
         ? <View><FlatList
            data={this.state.dataSource}
            keyExtractor={item => 'list' + item.id.toString()}
@@ -148,36 +83,5 @@ export default class CardListScreen extends React.Component {
            numColumns={3}
            initialNumToRender={12}
            renderItem={this._renderItem}/>
-
-    if (this.state.isEmbedded) {
-      return cardsList;
-    } else {
-      return (
-        <Container>
-          <MyHeader {...this.props} title={this.state.name} selectionFunction={this.showConfigurationPanel}/>
-          <Content>
-            <CardInformationScreen
-                serieName={this.state.name}
-                selectedCard={this.state.selectedCard}
-                visible={this.state.cardInformationVisible}
-                hide={this.hideCardInformation}
-                hasSelectedCard={this.state.hasSelectedCard}
-                addCard={() => this.addCard(this.state.name, this.state.cards[this.state.selectedCard.id.toString()])}/>
-
-            <CardListConfigurationScreen
-                selection={this.state.selection}
-                display={this.state.display}
-                unselectedRarities={this.state.unselectedRarities}
-                visible={this.state.listConfigurationVisible}
-                hide={this.hideConfiguration}
-                changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
-
-            {cardsList}
-          </Content>
-          <AdBanner/>
-        </Container>
-      );
-    }
-
   }
 }

@@ -45,7 +45,7 @@ export default class CardItem extends React.PureComponent {
         </Left>
         {rarity}
         <Body style={{flex: RaritiesLogos[data.rarity] != null ? 0.7 : 0.8}}>
-          <TouchableOpacity onPress={() => this.props.selectCard()}>
+          <TouchableOpacity onPress={() => this.props.selectCard(this.props.data)}>
             <Text style={{fontSize:15, fontWeight: 'bold'}}>
               {data.number > 0 ? this.showNumber(data) : ""}{data.name}
             </Text>
@@ -53,7 +53,7 @@ export default class CardItem extends React.PureComponent {
         </Body>
         <Right style={{flex:0.1}}>
           <TouchableOpacity
-              onPress={() => this.props.addCard()}>
+              onPress={() => this.props.addCard(this.props.collectionName, this.props.data)}>
             <Icon name="check-square-o" type="FontAwesome" style={item.owned ? styles.yes : styles.no_2}/>
           </TouchableOpacity>
         </Right>
@@ -74,7 +74,7 @@ export default class CardItem extends React.PureComponent {
         (
           <Button iconLeft
               style={{position: 'absolute', alignSelf: 'center', zIndex:10, marginTop:70}}
-              onPress={() => this.props.addCard()}>
+              onPress={() => this.props.addCard(this.props.collectionName, this.props.data)}>
             <Icon name={icon} />
             <Text>{text}</Text>
           </Button>
@@ -85,7 +85,7 @@ export default class CardItem extends React.PureComponent {
       <TouchableOpacity
           onPress={() => {
             if (!this.props.inLongSelectionMode) {
-              this.props.selectCard();
+              this.props.selectCard(this.props.data);
             }
           }}
           onLongPress={() => this.props.switchLongSelectionMode()}>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MyHeader from "../UtilityScreens/MyHeader.js";
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
-import { AsyncStorage, SectionList, Image } from "react-native";
+import { AsyncStorage, SectionList, Image, TouchableOpacity } from "react-native";
 
 import * as CollectionMemory from "../State/CollectionMemory.js";
 import * as SelectionMemory from "../State/SelectionMemory.js";
@@ -16,9 +16,18 @@ export default class HomeScreen extends Component {
   constructor() {
     super();
     this.state = {launched: false};
+
+    this.updateData = this.updateData.bind(this);
+    this.fetchAndUpdateState = this.fetchAndUpdateState.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    this.props.navigation.addListener('didFocus', () => {
+      this.fetchAndUpdateState();
+    });
+  }
+
+  fetchAndUpdateState() {
     SelectionMemory.getSelection((selection) =>
         this.setState({selection: selection}));
 
@@ -33,6 +42,15 @@ export default class HomeScreen extends Component {
 
     CollectionMemory.getCollection(selectedSeries, (collections) =>
         this.setState({launched: true, collections: collections}));
+    });
+  }
+
+  updateData(selection, display, unselectedRarities, collections) {
+    this.setState({
+      selection: selection,
+      display: display,
+      unselectedRarities: unselectedRarities,
+      collections: collections
     });
   }
 
@@ -54,7 +72,17 @@ export default class HomeScreen extends Component {
   }
 
   _renderItem = ({item}) => (
-    <ListItem>
+    <ListItem style={{backgroundColor:"transparent"}} onPress={() => this.props.navigation.navigate(
+        'CardListScreen',
+        {
+          serieName: item,
+          selection: this.state.selection,
+          display: this.state.display,
+          unselectedRarities: this.state.unselectedRarities,
+          collections: this.state.collections,
+          seriesToDisplay: this.state.seriesToDisplay,
+          updateData: this.updateData
+        })}>
       <Left style={{flex:0.15}}>
         {
           SerieConfig[item].definition.image != ""
@@ -63,19 +91,11 @@ export default class HomeScreen extends Component {
         }
       </Left>
       <Body style={{flex:0.67}}>
-        <Text style={{fontSize:15}} onPress={() => this.props.navigation.navigate(
-            'CardListScreen',
-            {
-              serieName: item,
-              selection: this.state.selection,
-              display: this.state.display,
-              unselectedRarities: this.state.unselectedRarities,
-              collection: this.state.collections[item]
-            })}>
+        <Text style={{fontSize: 15}}>
           {item}
         </Text>
       </Body>
-      <Right style={{flex:0.17}}>
+      <Right style={{flex: 0.17}}>
         <Text note>
           {this.state.collections[item] == null ? 0 : Object.keys(this.state.collections[item]).length}
           /{Object.keys(SerieConfig[item].definition.cards).length}

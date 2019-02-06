@@ -25,6 +25,7 @@ export default class ResearchsScreen extends Component {
     this.changeSelection = this.changeSelection.bind(this);
     this.showConfigurationPanel = this.showConfigurationPanel.bind(this);
     this.hideConfigurationPanel = this.hideConfigurationPanel.bind(this);
+    this.addCard = this.addCard.bind(this);
   }
 
   componentWillMount() {
@@ -44,7 +45,8 @@ export default class ResearchsScreen extends Component {
               selection: 'miss',
               display: display,
               unselectedRarities: unselectedRarities,
-              launched: true
+              launched: true,
+              collections: collections
             });
           });
         });
@@ -70,7 +72,6 @@ export default class ResearchsScreen extends Component {
     series = series.map(item => ({
         title: item.title,
         data: [{
-          cards: item.data[0].cards,
           name: item.data[0].name,
           selection: selection,
           display: display,
@@ -80,15 +81,12 @@ export default class ResearchsScreen extends Component {
         unselectedRarities: unselectedRarities
       }));
 
-    this.setState({seriesToDisplay: []}, () => { // Hack to force reloading...
-        this.setState({
-          selection: selection,
-          display: display,
-          unselectedRarities: unselectedRarities,
-          seriesToDisplay: series
-        });
-      }
-    );
+      this.setState({
+        selection: selection,
+        display: display,
+        unselectedRarities: unselectedRarities,
+        seriesToDisplay: series
+      });
   }
 
   merge(filteredSerie, collections, selection, display, unselectedRarities) {
@@ -96,31 +94,47 @@ export default class ResearchsScreen extends Component {
         .map(key => ({
           title: key,
           data: [{
-            cards: collections[key] == undefined ? {} : collections[key],
             name: key,
             selection: selection,
             display: display,
             unselectedRarities: unselectedRarities}]
         }))
-        .filter(obj => Object.keys(obj.data[0].cards).length !=
-            Object.keys(SerieConfig[obj.title].definition.cards).length);
+        .filter(obj => collections[obj.data[0].name] == undefined ||
+            Object.keys(collections[obj.data[0].name]).length !=
+                Object.keys(SerieConfig[obj.title].definition.cards).length);
   }
 
   filterSelectedSeriesOnly(allSeries, selectedSeries) {
-    const concat = (x, y) => x.concat(y);
-    const flatMap = (f, xs) => xs.map(f).reduce(concat, []);
+    return [].concat(...allSeries.map(x => x.data, allSeries)).filter(key => selectedSeries[key])
+  }
 
-    return flatMap(x => x.data, allSeries).filter(key => selectedSeries[key])
+  addCard(collectionName, card) {
+    let collections = Object.assign({}, this.state.collections);
+
+    if (collections[collectionName] != null && collections[collectionName][card.id] != null) {
+      delete collections[collectionName][card.id]
+    } else {
+      if (collections[collectionName] == null) {
+        collections[collectionName] = {};
+      }
+      collections[collectionName][card.id] = true;
+    }
+
+    this.setState(
+      {collections},
+      () => CollectionMemory.addCard(collectionName, collections[collectionName]));
   }
 
   _renderItem = ({item}) => (
       <CardListScreen
           isEmbedded={true}
-          collection={item.cards}
+          collection={this.state.collections[item.name]}
           serieName={item.name}
           selection={item.selection}
           display={item.display}
           unselectedRarities={item.unselectedRarities}
+          selectCard={() => null}
+          addCard={(name, card) => this.addCard(name, card)}
           />
   )
 
