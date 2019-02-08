@@ -13,19 +13,26 @@ import SerieConfig from '../Config/SerieConfig.js';
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';
 import CardListConfigurationScreen from '../CardListScreen/CardListConfigurationScreen.js';
+import CardInformationScreen from "../CardListScreen/CardInformationScreen.js";
 
 export default class ResearchsScreen extends Component {
   constructor() {
     super();
     this.state = {
       launched: false,
-      listConfigurationVisible: false
+      listConfigurationVisible: false,
+      cardInformationVisible: false,
+      selectedCard: null,
+      selectedSerie: null,
+      hasSelectedCard: false
     };
 
     this.changeSelection = this.changeSelection.bind(this);
     this.showConfigurationPanel = this.showConfigurationPanel.bind(this);
     this.hideConfigurationPanel = this.hideConfigurationPanel.bind(this);
     this.addCard = this.addCard.bind(this);
+    this.showCardInformation = this.showCardInformation.bind(this);
+    this.hideCardInformation = this.hideCardInformation.bind(this);
   }
 
   componentWillMount() {
@@ -133,7 +140,7 @@ export default class ResearchsScreen extends Component {
           selection={item.selection}
           display={item.display}
           unselectedRarities={item.unselectedRarities}
-          selectCard={() => null}
+          selectCard={(card) => this.showCardInformation(item.name, card)}
           addCard={(name, card) => this.addCard(name, card)}
           />
   )
@@ -141,6 +148,20 @@ export default class ResearchsScreen extends Component {
   _renderSectionHeader = ({section}) => (
     <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
   )
+
+  hideCardInformation() {
+    this.setState({cardInformationVisible: false, hasSelectedCard: false});
+  }
+
+  showCardInformation(serieName, card) {
+    this.setState({
+      cardInformationVisible: true,
+      selectedCard: card,
+      selectedSerie: serieName,
+      hasSelectedCard: this.state.collections[serieName] != null
+          && this.state.collections[serieName][card.id] != null
+    });
+  }
 
   render() {
     if (!this.state.launched) {
@@ -162,6 +183,14 @@ export default class ResearchsScreen extends Component {
                initialNumToRender={1}
                renderSectionHeader={this._renderSectionHeader}
                />
+
+             <CardInformationScreen
+               serieName={this.state.selectedSerie}
+               visible={this.state.cardInformationVisible}
+               hide={this.hideCardInformation}
+               hasSelectedCard={this.state.hasSelectedCard}
+               selectedCard={this.state.selectedCard}
+               addCard={(name, card) => this.addCard(name, card)}/>
 
              <CardListConfigurationScreen
                  selection={this.state.selection}
