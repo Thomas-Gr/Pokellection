@@ -3,85 +3,53 @@ import MyHeader from "../UtilityScreens/MyHeader.js";
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
 import { AsyncStorage, SectionList, Image, TouchableOpacity } from "react-native";
+import { connect } from 'react-redux'
 
 import * as CollectionMemory from "../State/CollectionMemory.js";
 import * as SelectionMemory from "../State/SelectionMemory.js";
 import * as PreferencesMemory from "../State/PreferencesMemory.js";
 
 import SerieConfig from '../Config/SerieConfig.js';
-import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';
 
-export default class HomeScreen extends Component {
-  constructor() {
-    super();
-    this.state = {launched: false};
+class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
 
-    this.updateData = this.updateData.bind(this);
     this.fetchAndUpdateState = this.fetchAndUpdateState.bind(this);
-  }
 
-  componentDidMount() {
-    this.props.navigation.addListener('didFocus', () => {
-      this.fetchAndUpdateState();
-    });
+    this.fetchAndUpdateState();
   }
 
   fetchAndUpdateState() {
-    SelectionMemory.getSelection((selection) =>
-        this.setState({selection: selection}));
-
-    SelectionMemory.getDisplay((display) =>
-        this.setState({display: display}));
-
-    SelectionMemory.getUnselectedRarities((unselectedRarities) =>
-        this.setState({unselectedRarities: unselectedRarities}));
-
-    PreferencesMemory.getSerieSelection((selectedSeries) => {
-        this.setState({seriesToDisplay: this.filterSelectedSeriesOnly(HomeSerieConfig, selectedSeries)});
-
-    CollectionMemory.getCollection(selectedSeries, (collections) =>
-        this.setState({launched: true, collections: collections}));
-    });
-  }
-
-  updateData(selection, display, unselectedRarities, collections) {
-    this.setState({
-      selection: selection,
-      display: display,
-      unselectedRarities: unselectedRarities,
-      collections: collections
-    });
-  }
-
-  filterSelectedSeriesOnly(allSeries, selectedSeries) {
-    var result = [];
-
-    allSeries.forEach((value, index) => {
-      var newData = value.data.filter(key => selectedSeries[key]);
-
-      if (newData.length != 0) {
-        result.push({
-          title: value.title,
-          data: newData
+    SelectionMemory.getSelection((selection) => {
+      SelectionMemory.getDisplay((display) => {
+        SelectionMemory.getUnselectedRarities((unselectedRarities) => {
+          PreferencesMemory.getSerieSelection((selectedSeries) => {
+            CollectionMemory.getCollection(selectedSeries, (collections) => {
+                if (!this.props.isLoaded) {
+                  this.props.dispatch({
+                    type: "LOAD_FROM_MEMORY",
+                    value: {
+                      collections: collections,
+                      selectedSeries: selectedSeries,
+                      unselectedRarities: unselectedRarities,
+                      display: display,
+                      selection: selection,
+                  }});
+                }
+            });
+          });
         });
-      }
+      });
     });
-
-    return result;
   }
 
   _renderItem = ({item}) => (
     <ListItem style={{backgroundColor:"transparent"}} onPress={() => this.props.navigation.navigate(
         'CardListScreen',
         {
-          serieName: item,
-          selection: this.state.selection,
-          display: this.state.display,
-          unselectedRarities: this.state.unselectedRarities,
-          collections: this.state.collections,
-          seriesToDisplay: this.state.seriesToDisplay,
-          updateData: this.updateData
+          serieName: item
         })}>
       <Left style={{flex:0.15}}>
         {
@@ -97,7 +65,7 @@ export default class HomeScreen extends Component {
       </Body>
       <Right style={{flex: 0.17}}>
         <Text note>
-          {this.state.collections[item] == null ? 0 : Object.keys(this.state.collections[item]).length}
+          {this.props.collections[item] == null ? 0 : Object.keys(this.props.collections[item]).length}
           /{Object.keys(SerieConfig[item].definition.cards).length}
         </Text>
       </Right>
@@ -109,7 +77,7 @@ export default class HomeScreen extends Component {
   )
 
   render() {
-    if (!this.state.launched) {
+    if (!this.props.isLoaded) {
       return (
         <Container>
           <Content/>
@@ -121,7 +89,7 @@ export default class HomeScreen extends Component {
           <MyHeader {...this.props}/>
           <Content>
           <SectionList
-             sections={this.state.seriesToDisplay}
+             sections={this.props.seriesToDisplay}
              keyExtractor={item => item}
              renderItem={this._renderItem}
              numColumns={1}
@@ -135,3 +103,13 @@ export default class HomeScreen extends Component {
     }
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    seriesToDisplay: state.seriesToDisplay,
+    collections: state.collections,
+    isLoaded: state.isLoaded,
+  }
+}
+
+export default connect(mapStateToProps)(HomeScreen)

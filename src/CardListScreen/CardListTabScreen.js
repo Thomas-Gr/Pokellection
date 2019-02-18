@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, Container } from "native-base";
 import { View, Dimensions } from 'react-native';
 import { TabView } from 'react-native-tab-view';
+import { connect } from 'react-redux'
 
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import MyHeader from "../UtilityScreens/MyHeader.js";
@@ -13,22 +14,17 @@ import CardListConfigurationScreen from "./CardListConfigurationScreen.js";
 import * as SelectionMemory from "../State/SelectionMemory.js";
 import * as CollectionMemory from "../State/CollectionMemory.js";
 
-export default class CardListTabScreen extends React.Component {
+class CardListTabScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const series = [].concat(...props.navigation.state.params.seriesToDisplay.map(a => a.data))
+    const series = [].concat(...props.seriesToDisplay.map(a => a.data))
+
     const firstIndex = series.indexOf(props.navigation.state.params.serieName);
 
     this.state = {
       index: firstIndex,
       routes: series.map(a => ({key: a})),
-      collections: Object.assign({}, props.navigation.state.params.collections),
-      selection: props.navigation.state.params.selection,
-      display: props.navigation.state.params.display,
-      unselectedRarities: props.navigation.state.params.unselectedRarities,
-      seriesToDisplay: props.navigation.state.params.seriesToDisplay,
-      updateData: props.navigation.state.params.updateData,
       listConfigurationVisible: false,
       cardInformationVisible: false,
       selectedCard: null,
@@ -59,45 +55,17 @@ export default class CardListTabScreen extends React.Component {
     this.setState({
       cardInformationVisible: true,
       selectedCard: card,
-      hasSelectedCard: this.state.collections[this.state.routes[this.state.index].key] != null
-          && this.state.collections[this.state.routes[this.state.index].key][card.id] != null
+      hasSelectedCard: this.props.collections[this.state.routes[this.state.index].key] != null
+          && this.props.collections[this.state.routes[this.state.index].key][card.id] != null
     });
   }
 
   changeSelection(selection: string, display: string, unselectedRarities: string[]) {
-    SelectionMemory.setSelection(selection);
-    SelectionMemory.setDisplay(display);
-    SelectionMemory.setUnselectedRarities(unselectedRarities);
-
-    this.setState({
-      selection: selection,
-      display: display,
-      unselectedRarities: unselectedRarities},
-      () => this.state.updateData(
-        this.state.selection,
-        this.state.display,
-        this.state.unselectedRarities,
-        this.state.collections));
+    this.props.dispatch({ type: "CHANGE_CONFIG", value: {selection: selection, display: display, unselectedRarities: unselectedRarities} })
   }
 
   addCard(collectionName, card) {
-    let collections = Object.assign({}, this.state.collections);
-
-    if (collections[collectionName] != null && collections[collectionName][card.id] != null) {
-      delete collections[collectionName][card.id]
-    } else {
-      if (collections[collectionName] == null) {
-        collections[collectionName] = {};
-      }
-      collections[collectionName][card.id] = true;
-    }
-
-    this.setState(
-      {collections},
-      () => {
-        CollectionMemory.addCard(collectionName, collections[collectionName]);
-        this.state.updateData(this.state.selection, this.state.display, this.state.unselectedRarities, this.state.collections);
-      });
+    this.props.dispatch({ type: "ADD_CARD", value: {collectionName: collectionName, card: card} })
   }
 
   _renderTabBar = route => null;
@@ -109,13 +77,9 @@ export default class CardListTabScreen extends React.Component {
     }
 
     return <CardListScreen
-      collection={this.state.collections[route.key]}
       serieName={route.key}
-      selection={this.state.selection}
-      display={this.state.display}
-      unselectedRarities={this.state.unselectedRarities}
-      addCard={(name, card) => this.addCard(name, card)}
       selectCard={(card) => this.showCardInformation(card)}
+      addCard={(name, card) => this.addCard(name, card)}
       />;
   };
 
@@ -124,9 +88,6 @@ export default class CardListTabScreen extends React.Component {
       <Container>
         <MyHeader {...this.props} title={this.state.routes[this.state.index].key} selectionFunction={this.showConfigurationPanel}/>
           <CardListConfigurationScreen
-            selection={this.state.selection}
-            display={this.state.display}
-            unselectedRarities={this.state.unselectedRarities}
             visible={this.state.listConfigurationVisible}
             hide={this.hideConfigurationPanel}
             changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
@@ -151,3 +112,12 @@ export default class CardListTabScreen extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    seriesToDisplay: state.seriesToDisplay,
+    collections: state.collections
+  }
+}
+
+export default connect(mapStateToProps)(CardListTabScreen)

@@ -44,7 +44,7 @@ export const refreshCardList = (cards, collection, selection, unselectedRarities
   return Object.values(cards)
     .sort((a, b) => USLikeSorting(a, b))
     .filter(a => unselectedRarities[a.rarity] == null)
-    .map(a => ({id: a.id, owned: collection[a.id] != null}))
+    .map(a => ({id: a.id, owned: collection != null && collection[a.id] != null}))
     .filter(a => {
       if (selection == 'got') return a.owned;
       else if (selection == 'miss') return !a.owned;

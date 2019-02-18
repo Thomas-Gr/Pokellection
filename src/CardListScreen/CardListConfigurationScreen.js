@@ -2,6 +2,7 @@ import React from "react";
 import { Image, FlatList, Modal, TouchableHighlight, TouchableOpacity, View, Dimensions, Linking, StyleSheet} from "react-native";
 import { Text, Container, Body, Content, Item, Picker, Form, Button, Icon } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
+import { connect } from 'react-redux'
 
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
@@ -33,7 +34,7 @@ const rarities = [
   ]
 ];
 
-export default class CardListConfigurationScreen extends React.Component {
+class CardListConfigurationScreen extends React.Component {
 
   constructor(props) {
     super(props);
@@ -99,7 +100,7 @@ export default class CardListConfigurationScreen extends React.Component {
           </Col>);
     })
 
-    const selectionElements = this.state.forcedResearched == null
+    const selectionElements = this.props.forcedResearched == null
         ? selections.map(element => {
             return (
               <Col key={element.name} style={[{margin:1}, this.state.cardsToDisplay != element.name ? {opacity: 0.1} : null]}>
@@ -112,7 +113,7 @@ export default class CardListConfigurationScreen extends React.Component {
         })
         : null;
 
-    const selectionRow = this.state.forcedResearched == null
+    const selectionRow = this.props.forcedResearched == null
         ? (<Row><Grid><Row>{selectionElements}</Row></Grid></Row>)
         : null;
 
@@ -183,3 +184,14 @@ const styles = StyleSheet.create({
     height:'100%'
   }
 });
+
+const mapStateToProps = (state) => {
+  return {
+    research: state.research,
+    selection: state.selection,
+    display: state.display,
+    unselectedRarities: state.unselectedRarities
+  }
+}
+
+export default connect(mapStateToProps)(CardListConfigurationScreen)

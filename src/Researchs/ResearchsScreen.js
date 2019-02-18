@@ -3,6 +3,7 @@ import MyHeader from "../UtilityScreens/MyHeader.js";
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
 import { AsyncStorage, SectionList, Image } from "react-native";
+import { connect } from 'react-redux'
 
 import * as CollectionMemory from "../State/CollectionMemory.js";
 import * as SelectionMemory from "../State/SelectionMemory.js";
@@ -15,7 +16,7 @@ import SeriesLogos from '../Config/SeriesLogos.js';
 import CardListConfigurationScreen from '../CardListScreen/CardListConfigurationScreen.js';
 import CardInformationScreen from "../CardListScreen/CardInformationScreen.js";
 
-export default class ResearchsScreen extends Component {
+class ResearchsScreen extends Component {
   constructor() {
     super();
     this.state = {
@@ -36,28 +37,9 @@ export default class ResearchsScreen extends Component {
   }
 
   componentWillMount() {
-    SelectionMemory.getUnselectedRarities((unselectedRarities) => {
-      SelectionMemory.getDisplay((display) => {
-        PreferencesMemory.getSerieSelection((selectedSeries) => {
-          CollectionMemory.getCollection(selectedSeries, (collections) => {
-            var seriesToDisplay = this.merge(
-              this.filterSelectedSeriesOnly(HomeSerieConfig, selectedSeries),
-              collections,
-              'miss',
-              display,
-              unselectedRarities);
-
-            this.setState({
-              seriesToDisplay: seriesToDisplay,
-              selection: 'miss',
-              display: display,
-              unselectedRarities: unselectedRarities,
-              launched: true,
-              collections: collections
-            });
-          });
-        });
-      });
+    this.setState({
+      seriesToDisplay: this.buildList(this.filterSelectedSeriesOnly(HomeSerieConfig, this.props.selectedSeries)),
+      launched: true
     });
   }
 
@@ -70,44 +52,17 @@ export default class ResearchsScreen extends Component {
   }
 
   changeSelection(selection: string, display: string, unselectedRarities: string[]) {
-    SelectionMemory.setSelection(selection);
-    SelectionMemory.setDisplay(display);
-    SelectionMemory.setUnselectedRarities(unselectedRarities);
-
-    let series = Object.assign([], this.state.seriesToDisplay)
-
-    series = series.map(item => ({
-        title: item.title,
-        data: [{
-          name: item.data[0].name,
-          selection: selection,
-          display: display,
-          unselectedRarities: unselectedRarities}],
-        selection: selection,
-        display: display,
-        unselectedRarities: unselectedRarities
-      }));
-
-      this.setState({
-        selection: selection,
-        display: display,
-        unselectedRarities: unselectedRarities,
-        seriesToDisplay: series
-      });
+    this.props.dispatch({ type: "CHANGE_CONFIG", value: {selection: selection, display: display, unselectedRarities: unselectedRarities} })
   }
 
-  merge(filteredSerie, collections, selection, display, unselectedRarities) {
+  buildList(filteredSerie) {
     return filteredSerie
         .map(key => ({
           title: key,
-          data: [{
-            name: key,
-            selection: selection,
-            display: display,
-            unselectedRarities: unselectedRarities}]
+          data: [{name: key}]
         }))
-        .filter(obj => collections[obj.data[0].name] == undefined ||
-            Object.keys(collections[obj.data[0].name]).length !=
+        .filter(obj => this.props.collections[obj.data[0].name] == undefined ||
+            Object.keys(this.props.collections[obj.data[0].name]).length !=
                 Object.keys(SerieConfig[obj.title].definition.cards).length);
   }
 
@@ -116,30 +71,14 @@ export default class ResearchsScreen extends Component {
   }
 
   addCard(collectionName, card) {
-    let collections = Object.assign({}, this.state.collections);
-
-    if (collections[collectionName] != null && collections[collectionName][card.id] != null) {
-      delete collections[collectionName][card.id]
-    } else {
-      if (collections[collectionName] == null) {
-        collections[collectionName] = {};
-      }
-      collections[collectionName][card.id] = true;
-    }
-
-    this.setState(
-      {collections},
-      () => CollectionMemory.addCard(collectionName, collections[collectionName]));
+    this.props.dispatch({ type: "ADD_CARD", value: {collectionName: collectionName, card: card} })
   }
 
   _renderItem = ({item}) => (
       <CardListScreen
           isEmbedded={true}
-          collection={this.state.collections[item.name]}
           serieName={item.name}
-          selection={item.selection}
-          display={item.display}
-          unselectedRarities={item.unselectedRarities}
+          forcedSelection="miss"
           selectCard={(card) => this.showCardInformation(item.name, card)}
           addCard={(name, card) => this.addCard(name, card)}
           />
@@ -158,8 +97,8 @@ export default class ResearchsScreen extends Component {
       cardInformationVisible: true,
       selectedCard: card,
       selectedSerie: serieName,
-      hasSelectedCard: this.state.collections[serieName] != null
-          && this.state.collections[serieName][card.id] != null
+      hasSelectedCard: this.props.collections[serieName] != null
+          && this.props.collections[serieName][card.id] != null
     });
   }
 
@@ -193,12 +132,9 @@ export default class ResearchsScreen extends Component {
                addCard={(name, card) => this.addCard(name, card)}/>
 
              <CardListConfigurationScreen
-                 selection={this.state.selection}
-                 display={this.state.display}
-                 unselectedRarities={this.state.unselectedRarities}
                  visible={this.state.listConfigurationVisible}
                  hide={this.hideConfigurationPanel}
-                 research='miss'
+                 forcedResearched='miss'
                  changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
           </Content>
           <AdBanner />
@@ -207,3 +143,12 @@ export default class ResearchsScreen extends Component {
     }
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    selectedSeries: state.selectedSeries,
+    collections: state.collections
+  }
+}
+
+export default connect(mapStateToProps)(ResearchsScreen)

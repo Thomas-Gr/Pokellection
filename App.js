@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import { Container, Content, Picker, Button, Text } from "native-base";
 import * as Expo from 'expo'
+import { Provider } from 'react-redux'
 
+import Store from './src/Store/configureStore.js'
 import HomeScreen from "./src/HomeScreen/index.js";
 
 export default class AwesomeApp extends Component {
@@ -30,6 +32,6 @@ export default class AwesomeApp extends Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    return <HomeScreen />;
+    return <Provider store={Store}><HomeScreen /></Provider>;
   }
 }
