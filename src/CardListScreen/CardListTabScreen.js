@@ -102,7 +102,7 @@ class CardListTabScreen extends React.PureComponent {
             renderScene={this._renderScene}
             onIndexChange={this._handleIndexChange}
             renderTabBar={(route) => null}
-            initialLayout={{ width: Dimensions.get('window').width }}
+            initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
           />
       <AdBanner/>
     </Container>

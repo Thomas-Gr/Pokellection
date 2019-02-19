@@ -27,7 +27,7 @@ export default class AwesomeApp extends Component {
     this.setState({ isReady: true });
   }
   render() {
-    Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
+    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.PORTRAIT);
 
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
