@@ -4,7 +4,7 @@ import { Text, Container, Body, Content, Picker, Form } from "native-base";
 import { connect } from 'react-redux'
 import CardItem from "./CardItem.js";
 import SerieConfig from '../Config/SerieConfig.js';
-import refreshCardList from "./CardListHelper.js";
+import makeGetDisplayedCards from "../selectors/dataSourceSelectors.js";
 
 class CardListScreen extends React.Component {
   constructor(props) {
@@ -46,19 +46,16 @@ class CardListScreen extends React.Component {
   }
 }
 
-const computeDataSource = (serieName, collection, selection, unselectedRarities) => {
-  return refreshCardList(SerieConfig[serieName].definition.cards, collection, selection, unselectedRarities)
-}
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    display: state.display,
-    dataSource: refreshCardList(
-      SerieConfig[ownProps.serieName].definition.cards,
-      state.collections[ownProps.serieName],
-      ownProps.forcedSelection || state.selection,
-      state.unselectedRarities)
+const makeMapStateToProps = () => {
+  const displayedCards = makeGetDisplayedCards()
+  const mapStateToProps = (state, props) => {
+    return {
+      display: state.display,
+      dataSource: displayedCards(state, props)
+    }
   }
+  return mapStateToProps
 }
 
-export default connect(mapStateToProps)(CardListScreen)
+
+export default connect(makeMapStateToProps)(CardListScreen)
