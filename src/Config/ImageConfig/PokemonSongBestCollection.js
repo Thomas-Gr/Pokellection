@@ -1,4 +1,3 @@
-import React from 'react';
 const PokemonSongBestCollection =
   {'PikachuBaseSet58.png' : require('../../../resources/images/cards/PikachuBaseSet58.png'),
 'SuperEnergyRetrievalNeoGenesis89.jpg' : require('../../../resources/images/cards/SuperEnergyRetrievalNeoGenesis89.jpg'),

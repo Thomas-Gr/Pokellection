@@ -1,4 +1,3 @@
-import React from 'react';
 const WindfromtheSea =
   {'VileplumeAquapolis43.jpg' : require('../../../resources/images/cards/VileplumeAquapolis43.jpg'),
 'ExeggcuteAquapolis77.jpg' : require('../../../resources/images/cards/ExeggcuteAquapolis77.jpg'),

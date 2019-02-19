@@ -1,4 +1,3 @@
-import React from 'react';
 const VendingMachine =
   {'MewtwoWHFSpecialSheetPromo.jpg' : require('../../../resources/images/cards/MewtwoWHFSpecialSheetPromo.jpg'),
 'CuboneCoroCoroPromo.jpg' : require('../../../resources/images/cards/CuboneCoroCoroPromo.jpg'),

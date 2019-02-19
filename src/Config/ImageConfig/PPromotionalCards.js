@@ -1,4 +1,3 @@
-import React from 'react';
 const PPromotionalCards =
   {
 'FeraligatrExpedition46.jpg' : require('../../../resources/images/cards/FeraligatrExpedition46.jpg'),

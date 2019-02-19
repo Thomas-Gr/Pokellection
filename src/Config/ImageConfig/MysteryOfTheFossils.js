@@ -1,4 +1,3 @@
-import React from 'react';
 const MysteryOfTheFossils =
   {'PsyduckFossil53.jpg' : require('../../../resources/images/cards/PsyduckFossil53.jpg'),
 'MysteriousFossilFossil62.jpg' : require('../../../resources/images/cards/MysteriousFossilFossil62.jpg'),

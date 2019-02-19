@@ -1,4 +1,3 @@
-import React from 'react';
 const SplitEarth =
   {'AerodactylSkyridge1.jpg' : require('../../../resources/images/cards/AerodactylSkyridge1.jpg'),
 'ForretressSkyridge9.jpg' : require('../../../resources/images/cards/ForretressSkyridge9.jpg'),

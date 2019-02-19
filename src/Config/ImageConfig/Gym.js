@@ -1,4 +1,3 @@
-import React from 'react';
 const Gym =
   {'LtSurgeJolteonCoroCoroPromo.jpg' : require('../../../resources/images/cards/LtSurgeJolteonCoroCoroPromo.jpg'),
 'BrockOnixCoroCoroPromo.jpg' : require('../../../resources/images/cards/BrockOnixCoroCoroPromo.jpg'),

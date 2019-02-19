@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from "react-native";
-import { AdMobBanner, AdMobInterstitial, AdMobRewarded } from "expo";
+
+import { AdMobBanner } from 'expo';
+import { StyleSheet } from 'react-native';
 
 export default class AdBanner extends Component {
   bannerError() {

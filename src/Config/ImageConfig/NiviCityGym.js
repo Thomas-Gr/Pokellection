@@ -1,4 +1,3 @@
-import React from 'react';
 const NiviCityGym =
   {'DoubleColorlessEnergyBaseSet96.jpg' : require('../../../resources/images/cards/DoubleColorlessEnergyBaseSet96.jpg'),
 'BrockGeodudeGymHeroes66.jpg' : require('../../../resources/images/cards/BrockGeodudeGymHeroes66.jpg'),

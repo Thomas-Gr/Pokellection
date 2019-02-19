@@ -1,17 +1,7 @@
+import { Body, Button, Header, Icon, Left, Subtitle, Title } from 'native-base';
+import { TouchableOpacity, View } from 'react-native';
+
 import React from "react";
-import { StatusBar, TouchableOpacity, View } from "react-native";
-import {
-  Button,
-  Text,
-  Body,
-  Content,
-  Header,
-  Title,
-  Subtitle,
-  Left,
-  Icon,
-  Right
-} from "native-base";
 
 export default class MyHeader extends React.Component {
   subtitle() {

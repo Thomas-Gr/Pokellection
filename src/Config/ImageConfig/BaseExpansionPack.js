@@ -1,4 +1,3 @@
-import React from 'react';
 const BaseExpansionPack =
   {'DragonairExpedition75.jpg' : require('../../../resources/images/cards/DragonairExpedition75.jpg'),
 'PoliwrathExpedition24.jpg' : require('../../../resources/images/cards/PoliwrathExpedition24.jpg'),

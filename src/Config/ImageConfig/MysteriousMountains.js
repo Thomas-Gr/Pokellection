@@ -1,4 +1,3 @@
-import React from 'react';
 const MysteriousMountains =
   {'MachopSkyridge74.jpg' : require('../../../resources/images/cards/MachopSkyridge74.jpg'),
 'GrowlitheSkyridge62.jpg' : require('../../../resources/images/cards/GrowlitheSkyridge62.jpg'),

@@ -1,4 +1,3 @@
-import React from 'react';
 const BaseSet =
   {'JynxBaseSet31.jpg' : require('../../../resources/images/cards/JynxBaseSet31.jpg'),
 'AbraBaseSet43.jpg' : require('../../../resources/images/cards/AbraBaseSet43.jpg'),

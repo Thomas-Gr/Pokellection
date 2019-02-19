@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+
 import SerieConfig from '../Config/SerieConfig.js';
 import refreshCardList from "../CardListScreen/CardListHelper.js";
 

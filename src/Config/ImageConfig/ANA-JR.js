@@ -1,4 +1,3 @@
-import React from 'react';
 const AnaJR =
   {'ArticunoANAPromo.jpg' : require('../../../resources/images/cards/ArticunoANAPromo.jpg'),
 'MewtwoWizardsPromo12.jpg' : require('../../../resources/images/cards/MewtwoWizardsPromo12.jpg'),

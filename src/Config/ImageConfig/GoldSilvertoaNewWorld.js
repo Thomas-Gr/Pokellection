@@ -1,4 +1,3 @@
-import React from 'react';
 const ChangeName =
   {'BellossomNeoGenesis3.jpg' : require('../../../resources/images/cards/BellossomNeoGenesis3.jpg'),
 'SuperEnergyRetrievalNeoGenesis89.jpg' : require('../../../resources/images/cards/SuperEnergyRetrievalNeoGenesis89.jpg'),

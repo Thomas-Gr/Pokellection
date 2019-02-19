@@ -1,15 +1,22 @@
+import {
+  Body,
+  CheckBox,
+  Container,
+  Content,
+  Left,
+  ListItem,
+  Right,
+  Text
+} from 'native-base';
+import { Image, SectionList } from 'react-native';
 import React, { Component } from 'react';
-import MyHeader from "../UtilityScreens/MyHeader.js";
+
 import AdBanner from "../UtilityScreens/AdBanner.js";
-import { Container, Content, List, ListItem, CheckBox, Text, Left, Body, Right } from 'native-base';
-import { AsyncStorage, SectionList, Image } from "react-native";
-import { connect } from 'react-redux'
-
-import * as PreferencesMemory from "../State/PreferencesMemory.js";
-
-import SerieConfig from '../Config/SerieConfig.js';
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
+import MyHeader from "../UtilityScreens/MyHeader.js";
+import SerieConfig from '../Config/SerieConfig.js';
 import SeriesLogos from '../Config/SeriesLogos.js';
+import { connect } from 'react-redux'
 
 class SerieSelection extends Component {
   updateSerie(item) {

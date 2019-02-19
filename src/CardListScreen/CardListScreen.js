@@ -1,9 +1,9 @@
-import React from "react";
-import { Image, FlatList, View } from "react-native";
-import { Text, Container, Body, Content, Picker, Form } from "native-base";
-import { connect } from 'react-redux'
+import { FlatList, View } from 'react-native';
+
 import CardItem from "./CardItem.js";
+import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
+import { connect } from 'react-redux'
 import makeGetDisplayedCards from "../selectors/dataSourceSelectors.js";
 
 class CardListScreen extends React.Component {
@@ -56,6 +56,5 @@ const makeMapStateToProps = () => {
   }
   return mapStateToProps
 }
-
 
 export default connect(makeMapStateToProps)(CardListScreen)

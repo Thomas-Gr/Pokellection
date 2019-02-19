@@ -1,4 +1,3 @@
-import React from 'react';
 const RocketGang =
   {'DarkRapidashTeamRocket44.jpg' : require('../../../resources/images/cards/DarkRapidashTeamRocket44.jpg'),
 'Digger2.jpg' : require('../../../resources/images/cards/Digger2.jpg'),

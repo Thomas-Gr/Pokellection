@@ -1,4 +1,3 @@
-import React from 'react';
 const EvolutionCommunicationCampaign =
   {'AlakazamCommunicationEvolutionPromo.jpg' : require('../../../resources/images/cards/AlakazamCommunicationEvolutionPromo.jpg'),
 'GengarCommunicationEvolutionPromo.jpg' : require('../../../resources/images/cards/GengarCommunicationEvolutionPromo.jpg'),

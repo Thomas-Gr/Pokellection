@@ -1,4 +1,3 @@
-import React from 'react';
 const GurenTownGym =
   {'BlaineNinetalesGymChallenge21.jpg' : require('../../../resources/images/cards/BlaineNinetalesGymChallenge21.jpg'),
 'BlainePonytaGymChallenge64.jpg' : require('../../../resources/images/cards/BlainePonytaGymChallenge64.jpg'),

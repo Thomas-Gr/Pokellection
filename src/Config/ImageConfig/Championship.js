@@ -1,4 +1,3 @@
-import React from 'react';
 const Championship =
   {'100_T_NO1TRAINER1.jpg' : require('../../../resources/images/cards/100_T_NO1TRAINER1.jpg'),
 'ChampionLeague2005Promo.jpg' : require('../../../resources/images/cards/ChampionLeague2005Promo.jpg'),

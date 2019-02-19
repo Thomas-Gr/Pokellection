@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default RaritiesLogos = {
   "COMMON": {'image': require('../../resources/images/rarities/Rarity_Common.png'), 'width': 39, 'height':36},
   "UNCOMMON": {'image': require('../../resources/images/rarities/Rarity_Uncommon.png'), 'width': 39, 'height':36},

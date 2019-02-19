@@ -1,4 +1,3 @@
-import React from 'react';
 const ChallengeFromTheDarkness =
   {'BlaineNinetalesGymChallenge21.jpg' : require('../../../resources/images/cards/BlaineNinetalesGymChallenge21.jpg'),
 'GiovanniMachokeGymChallenge42.jpg' : require('../../../resources/images/cards/GiovanniMachokeGymChallenge42.jpg'),

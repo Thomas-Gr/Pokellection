@@ -1,4 +1,3 @@
-import React from 'react';
 export default GymChallenge =
   {'KogaKoffingGymChallenge48.jpg' : require('../../../resources/images/cards/KogaKoffingGymChallenge48.jpg'),
 'KogaGolbatGymChallenge46.jpg' : require('../../../resources/images/cards/KogaGolbatGymChallenge46.jpg'),

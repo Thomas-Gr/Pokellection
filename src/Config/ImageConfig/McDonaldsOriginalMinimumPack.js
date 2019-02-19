@@ -1,4 +1,3 @@
-import React from 'react';
 const McDonaldsOriginalMinimumPack =
   {'ChikoritaMcDonaldPack3.jpg' : require('../../../resources/images/cards/ChikoritaMcDonaldPack3.jpg'),
 'SquirtleMcDonaldPack7.jpg' : require('../../../resources/images/cards/SquirtleMcDonaldPack7.jpg'),

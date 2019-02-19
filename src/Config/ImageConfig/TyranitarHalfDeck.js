@@ -1,4 +1,3 @@
-import React from 'react';
 const TyranitarHalfDeck =
   {'FalknerFearowTyranitarHalfDeck.jpg' : require('../../../resources/images/cards/FalknerFearowTyranitarHalfDeck.jpg'),
 'EnergyArkNeoDiscovery75.jpg' : require('../../../resources/images/cards/EnergyArkNeoDiscovery75.jpg'),

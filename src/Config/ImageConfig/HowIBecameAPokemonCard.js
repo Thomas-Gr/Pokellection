@@ -1,4 +1,3 @@
-import React from 'react';
 const HowIBecameAPokemonCard =
   {'MankeyHowIBecamePokemonCardPromo.jpg' : require('../../../resources/images/cards/MankeyHowIBecamePokemonCardPromo.jpg'),
 'SunkernHowIBecamePokemonCardPromo.jpg' : require('../../../resources/images/cards/SunkernHowIBecamePokemonCardPromo.jpg'),

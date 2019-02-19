@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default TypeLogos = {
   "GRASS": require('../../resources/images/types/Grass-attack.png'),
   "FIRE": require('../../resources/images/types/Fire-attack.png'),

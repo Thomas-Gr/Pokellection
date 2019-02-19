@@ -1,4 +1,3 @@
-import React from 'react';
 const Year1998 =
   {'DiglettAsobikataPromo.jpg' : require('../../../resources/images/cards/DiglettAsobikataPromo.jpg'),
 'BlankPikachuWizardsPromo24.jpg' : require('../../../resources/images/cards/BlankPikachuWizardsPromo24.jpg'),

@@ -1,16 +1,16 @@
-import React from "react";
-import { Image, StatusBar } from "react-native";
 import {
-  Button,
-  Text,
+  Body,
   Container,
-  List,
-  ListItem,
   Content,
   Icon,
   Left,
-  Body
-} from "native-base";
+  List,
+  ListItem,
+  Text
+} from 'native-base';
+
+import { Image } from 'react-native';
+import React from "react";
 
 const routes = [
   { name: "Series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},

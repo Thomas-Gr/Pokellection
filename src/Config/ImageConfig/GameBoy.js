@@ -1,4 +1,3 @@
-import React from 'react';
 const GameBoy =
   {'MeowthWizardsPromo10.jpg' : require('../../../resources/images/cards/MeowthWizardsPromo10.jpg'),
 'GreatRocketMewtwoCardGB2Promo.jpg' : require('../../../resources/images/cards/GreatRocketMewtwoCardGB2Promo.jpg'),

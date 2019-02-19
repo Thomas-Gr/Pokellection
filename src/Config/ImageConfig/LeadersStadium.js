@@ -1,4 +1,3 @@
-import React from 'react';
 const LeadersStadium =
   {'ErikaWeepinbellGymHeroes48.jpg' : require('../../../resources/images/cards/ErikaWeepinbellGymHeroes48.jpg'),
 'BrockDiglettGymChallenge67.jpg' : require('../../../resources/images/cards/BrockDiglettGymChallenge67.jpg'),

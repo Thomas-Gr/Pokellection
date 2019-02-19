@@ -1,4 +1,3 @@
-import React from 'react';
 const CoroCoroBestPhotoContest =
   {'SquirtleSnapBestPhotoContest.jpg' : require('../../../resources/images/cards/SquirtleSnapBestPhotoContest.jpg'),
 'PoliwagSnapBestPhotoContest.jpg' : require('../../../resources/images/cards/PoliwagSnapBestPhotoContest.jpg'),

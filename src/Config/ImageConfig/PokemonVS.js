@@ -1,4 +1,3 @@
-import React from 'react';
 const PokemonVS =
   {'JanineVenomothVS63.jpg' : require('../../../resources/images/cards/JanineVenomothVS63.jpg'),
 'BrockOmastarVS68.jpg' : require('../../../resources/images/cards/BrockOmastarVS68.jpg'),

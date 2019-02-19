@@ -1,12 +1,12 @@
 const initialState = { isLoaded: false, inLongSelectionMode: false }
 
+import * as CollectionMemory from "../../State/CollectionMemory.js";
+import * as PreferencesMemory from "../../State/PreferencesMemory.js";
+import * as SelectionMemory from "../../State/SelectionMemory.js";
+
 import HomeSerieConfig from '../../Config/HomeSerieConfig.js';
 import SerieConfig from '../../Config/SerieConfig.js';
 import refreshCardList from "../../CardListScreen/CardListHelper.js";
-
-import * as CollectionMemory from "../../State/CollectionMemory.js";
-import * as SelectionMemory from "../../State/SelectionMemory.js";
-import * as PreferencesMemory from "../../State/PreferencesMemory.js";
 
 function toggleCollection(state = initialState, action) {
   if (action.type == "LOAD_FROM_MEMORY") {

@@ -1,20 +1,15 @@
+import { Container, Content, ListItem, Text } from 'native-base';
 import React, { Component } from 'react';
-import MyHeader from "../UtilityScreens/MyHeader.js";
+
 import AdBanner from "../UtilityScreens/AdBanner.js";
-import { Container, Content, List, ListItem, Text, Left, Body, Right } from 'native-base';
-import { AsyncStorage, SectionList, Image } from "react-native";
-import { connect } from 'react-redux'
-
-import * as CollectionMemory from "../State/CollectionMemory.js";
-import * as SelectionMemory from "../State/SelectionMemory.js";
-import * as PreferencesMemory from "../State/PreferencesMemory.js";
-
-import CardListScreen from '../CardListScreen/CardListScreen.js';
-import SerieConfig from '../Config/SerieConfig.js';
-import HomeSerieConfig from '../Config/HomeSerieConfig.js';
-import SeriesLogos from '../Config/SeriesLogos.js';
-import CardListConfigurationScreen from '../CardListScreen/CardListConfigurationScreen.js';
 import CardInformationScreen from "../CardListScreen/CardInformationScreen.js";
+import CardListConfigurationScreen from '../CardListScreen/CardListConfigurationScreen.js';
+import CardListScreen from '../CardListScreen/CardListScreen.js';
+import HomeSerieConfig from '../Config/HomeSerieConfig.js';
+import MyHeader from "../UtilityScreens/MyHeader.js";
+import { SectionList } from 'react-native';
+import SerieConfig from '../Config/SerieConfig.js';
+import { connect } from 'react-redux'
 
 class ResearchsScreen extends Component {
   constructor() {

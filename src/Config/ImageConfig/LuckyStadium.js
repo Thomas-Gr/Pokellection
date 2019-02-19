@@ -1,4 +1,3 @@
-import React from 'react';
 const LuckyStadium =
   {'LuckyStadiumPromoChugokuShikoku.jpg' : require('../../../resources/images/cards/LuckyStadiumPromoChugokuShikoku.jpg'),
 'LuckyStadiumPromoKansai.jpg' : require('../../../resources/images/cards/LuckyStadiumPromoKansai.jpg'),

@@ -1,4 +1,3 @@
-import React from 'react';
 const Vending3 =
   {'TaurosVendingS3.jpg' : require('../../../resources/images/cards/TaurosVendingS3.jpg'),
 'OuchAtThePokemonMansionVendingS3.jpg' : require('../../../resources/images/cards/OuchAtThePokemonMansionVendingS3.jpg'),

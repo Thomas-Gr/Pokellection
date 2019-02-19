@@ -1,18 +1,15 @@
 import * as React from 'react';
-import { Text, Container } from "native-base";
-import { View, Dimensions } from 'react-native';
-import { TabView } from 'react-native-tab-view';
-import { connect } from 'react-redux'
+
+import { Dimensions, View } from 'react-native';
 
 import AdBanner from "../UtilityScreens/AdBanner.js";
-import MyHeader from "../UtilityScreens/MyHeader.js";
-
-import CardListScreen from "./CardListScreen.js";
 import CardInformationScreen from "./CardInformationScreen.js";
 import CardListConfigurationScreen from "./CardListConfigurationScreen.js";
-
-import * as SelectionMemory from "../State/SelectionMemory.js";
-import * as CollectionMemory from "../State/CollectionMemory.js";
+import CardListScreen from "./CardListScreen.js";
+import { Container } from 'native-base';
+import MyHeader from "../UtilityScreens/MyHeader.js";
+import { TabView } from 'react-native-tab-view';
+import { connect } from 'react-redux'
 
 class CardListTabScreen extends React.PureComponent {
   constructor(props) {

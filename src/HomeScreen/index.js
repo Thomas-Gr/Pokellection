@@ -1,15 +1,13 @@
-import React, { Component } from "react";
+import { createDrawerNavigator, createStackNavigator } from "react-navigation";
 
+import About from "../Screens/About.js";
+import CardListTabScreen from "../CardListScreen/CardListTabScreen.js";
 import HomeScreen from "./HomeScreen.js";
+import { Platform } from "react-native";
+import React from 'react';
 import ResearchsScreen from "../Researchs/ResearchsScreen.js";
 import SerieSelection from "../Preferences/SerieSelection.js";
-import CardListScreen from "../CardListScreen/CardListScreen.js";
-import CardListTabScreen from "../CardListScreen/CardListTabScreen.js";
 import SideBar from "../SideBar/SideBar.js";
-import About from "../Screens/About.js";
-
-import { createDrawerNavigator, createStackNavigator } from "react-navigation";
-import { Platform } from "react-native";
 
 const StackNavigator = createStackNavigator(
   {

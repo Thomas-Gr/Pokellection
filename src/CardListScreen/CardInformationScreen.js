@@ -1,11 +1,19 @@
-import React from "react";
-import { Image, FlatList, Modal, TouchableHighlight, TouchableOpacity, View, Dimensions, Linking, StyleSheet} from "react-native";
-import { Text, Container, Body, Content, Picker, Form, Button } from "native-base";
-import { Col, Row, Grid } from "react-native-easy-grid";
+import { Button, Text } from 'native-base';
+import { Col, Grid, Row } from "react-native-easy-grid";
+import {
+  Dimensions,
+  Image,
+  Linking,
+  Modal,
+  StyleSheet,
+  TouchableOpacity,
+  View
+} from 'react-native';
 
+import RaritiesLogos from '../Config/RaritiesLogos.js';
+import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
-import RaritiesLogos from '../Config/RaritiesLogos.js';
 
 export default class CardInformationScreen extends React.Component {
   constructor(props) {

@@ -1,4 +1,3 @@
-import React from 'react';
 const ChikoritaHalfDeck =
   {'QuilavaChikoritaHalfDeck13.jpg' : require('../../../resources/images/cards/QuilavaChikoritaHalfDeck13.jpg'),
 'CyndaquilChikoritaHalfDeck16.jpg' : require('../../../resources/images/cards/CyndaquilChikoritaHalfDeck16.jpg'),

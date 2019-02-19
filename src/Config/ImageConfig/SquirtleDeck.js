@@ -1,4 +1,3 @@
-import React from 'react';
 const SquirtleDeck =
   {'SquirtleSquirtleDeck16.jpg' : require('../../../resources/images/cards/SquirtleSquirtleDeck16.jpg'),
 'WaterEnergyBaseSet102.jpg' : require('../../../resources/images/cards/WaterEnergyBaseSet102.jpg'),

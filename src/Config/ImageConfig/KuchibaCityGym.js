@@ -1,4 +1,3 @@
-import React from 'react';
 const KuchibaCityGym =
   {'DoubleColorlessEnergyBaseSet96.jpg' : require('../../../resources/images/cards/DoubleColorlessEnergyBaseSet96.jpg'),
 'LtSurgePikachuGymHeroes81.jpg' : require('../../../resources/images/cards/LtSurgePikachuGymHeroes81.jpg'),

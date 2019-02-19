@@ -1,4 +1,3 @@
-import React from 'react';
 const PokemonEStarterDeck =
   {'SquirtleExpedition132.jpg' : require('../../../resources/images/cards/SquirtleExpedition132.jpg'),
 'CyndaquilExpedition104.jpg' : require('../../../resources/images/cards/CyndaquilExpedition104.jpg'),

@@ -1,12 +1,11 @@
-import React from "react";
-import { Text, Icon, Card, Button, ListItem, Left, Body, Right, Row } from "native-base";
-import { Image, View, TouchableOpacity, Dimensions, StyleSheet } from "react-native";
-import MyHeader from "../UtilityScreens/MyHeader.js";
-import { connect } from 'react-redux'
+import { Body, Button, Card, Icon, Left, ListItem, Right, Row, Text } from "native-base";
+import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
+import RaritiesLogos from '../Config/RaritiesLogos.js';
+import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
-import RaritiesLogos from '../Config/RaritiesLogos.js';
+import { connect } from 'react-redux'
 
 class CardItem extends React.PureComponent {
   render() {

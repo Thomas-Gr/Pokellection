@@ -1,4 +1,3 @@
-import React from 'react';
 const BulbasaurDeck =
   {'VenusaurBestCDPromo.jpg' : require('../../../resources/images/cards/VenusaurBestCDPromo.jpg'),
 'JynxBulbasaurDeck37.jpg' : require('../../../resources/images/cards/JynxBulbasaurDeck37.jpg'),

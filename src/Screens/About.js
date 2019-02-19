@@ -1,10 +1,9 @@
+import { Container, Content } from 'native-base';
+import { Linking, StyleSheet, Text, View } from "react-native";
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Linking } from "react-native";
-import { Container, Content, List, ListItem, Left, Body, Right } from 'native-base';
-import { AdMobBanner, AdMobInterstitial, AdMobRewarded } from "expo";
 
-import MyHeader from "../UtilityScreens/MyHeader.js";
 import AdBanner from "../UtilityScreens/AdBanner.js";
+import MyHeader from "../UtilityScreens/MyHeader.js";
 
 export default class About extends Component {
   render() {

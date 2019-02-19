@@ -1,12 +1,10 @@
-import React from "react";
-import { Image, FlatList, Modal, TouchableHighlight, TouchableOpacity, View, Dimensions, Linking, StyleSheet} from "react-native";
-import { Text, Container, Body, Content, Item, Picker, Form, Button, Icon } from "native-base";
-import { Col, Row, Grid } from "react-native-easy-grid";
-import { connect } from 'react-redux'
+import { Button, Icon, Text } from 'native-base';
+import { Col, Grid, Row } from "react-native-easy-grid";
+import { Image, Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
 
-import SerieConfig from '../Config/SerieConfig.js';
-import TypesLogos from '../Config/TypesLogos.js';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
+import React from "react";
+import { connect } from 'react-redux'
 
 const selections = [
   {name: "all", icon: "circle-o"},

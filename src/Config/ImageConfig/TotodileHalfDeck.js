@@ -1,4 +1,3 @@
-import React from 'react';
 const TotodileHalfDeck =
   {'WaterEnergyBaseSet102.jpg' : require('../../../resources/images/cards/WaterEnergyBaseSet102.jpg'),
 'MareepNeoDiscovery58.png' : require('../../../resources/images/cards/MareepNeoDiscovery58.png'),

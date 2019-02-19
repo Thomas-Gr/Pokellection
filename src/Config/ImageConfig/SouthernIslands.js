@@ -1,4 +1,3 @@
-import React from 'react';
 const SouthernIslands =
   {'TogepiSouthernIslands4.jpg' : require('../../../resources/images/cards/TogepiSouthernIslands4.jpg'),
 'VileplumeSouthernIslands17.jpg' : require('../../../resources/images/cards/VileplumeSouthernIslands17.jpg'),

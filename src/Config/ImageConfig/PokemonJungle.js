@@ -1,4 +1,3 @@
-import React from 'react';
 const PokemonJungle =
   {'NidoqueenJungle7.jpg' : require('../../../resources/images/cards/NidoqueenJungle7.jpg'),
 'WeepinbellJungle48.jpg' : require('../../../resources/images/cards/WeepinbellJungle48.jpg'),

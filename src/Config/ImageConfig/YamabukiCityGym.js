@@ -1,4 +1,3 @@
-import React from 'react';
 const YamabukiCityGym =
   {'SabrinaGastlyGymHeroes93.jpg' : require('../../../resources/images/cards/SabrinaGastlyGymHeroes93.jpg'),
 'DoubleColorlessEnergyBaseSet96.jpg' : require('../../../resources/images/cards/DoubleColorlessEnergyBaseSet96.jpg'),

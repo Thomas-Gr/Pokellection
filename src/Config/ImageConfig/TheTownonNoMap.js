@@ -1,4 +1,3 @@
-import React from 'react';
 const TheTownonnoMap =
   {'Porygon2Aquapolis28.jpg' : require('../../../resources/images/cards/Porygon2Aquapolis28.jpg'),
 'SmeargleAquapolis109.jpg' : require('../../../resources/images/cards/SmeargleAquapolis109.jpg'),

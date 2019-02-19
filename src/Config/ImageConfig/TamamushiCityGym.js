@@ -1,4 +1,3 @@
-import React from 'react';
 const TamamushiCityGym =
   {'ErikaTangelaGymHeroes79.jpg' : require('../../../resources/images/cards/ErikaTangelaGymHeroes79.jpg'),
 'ErikaBellsproutGymHeroes75.jpg' : require('../../../resources/images/cards/ErikaBellsproutGymHeroes75.jpg'),

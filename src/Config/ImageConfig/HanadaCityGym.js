@@ -1,4 +1,3 @@
-import React from 'react';
 const HanadaCityGym =
   {'DoubleColorlessEnergyBaseSet96.jpg' : require('../../../resources/images/cards/DoubleColorlessEnergyBaseSet96.jpg'),
 'MistyStaryuGymChallenge92.jpg' : require('../../../resources/images/cards/MistyStaryuGymChallenge92.jpg'),

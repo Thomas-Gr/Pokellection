@@ -1,4 +1,3 @@
-import React from 'react';
 const PremiumFile2 =
   {'EspeonNeoDiscovery20.jpg' : require('../../../resources/images/cards/EspeonNeoDiscovery20.jpg'),
 'PichuWizardsPromo35.jpg' : require('../../../resources/images/cards/PichuWizardsPromo35.jpg'),

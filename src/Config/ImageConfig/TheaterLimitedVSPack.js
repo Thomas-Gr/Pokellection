@@ -1,4 +1,3 @@
-import React from 'react';
 const TheaterLimitedVSPack =
   {'OakleyAriadosTheaterVSPack1.jpg' : require('../../../resources/images/cards/OakleyAriadosTheaterVSPack1.jpg'),
 'RossWailmerTheaterVSPack5.jpg' : require('../../../resources/images/cards/RossWailmerTheaterVSPack5.jpg'),

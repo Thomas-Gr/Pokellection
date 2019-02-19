@@ -1,4 +1,3 @@
-import React from 'react';
 const GreenDeck =
   {'MewtwoVendingS1.jpg' : require('../../../resources/images/cards/MewtwoVendingS1.jpg'),
 'NidoranPokemonWeb2.jpg' : require('../../../resources/images/cards/NidoranPokemonWeb2.jpg'),

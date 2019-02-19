@@ -1,4 +1,3 @@
-import React from 'react';
 const RedDeck =
   {'HitmonchanVendingS2.jpg' : require('../../../resources/images/cards/HitmonchanVendingS2.jpg'),
 'VoltorbVendingS2.jpg' : require('../../../resources/images/cards/VoltorbVendingS2.jpg'),

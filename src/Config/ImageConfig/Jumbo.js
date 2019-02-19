@@ -1,4 +1,3 @@
-import React from 'react';
 const Jumbo =
   {'TropicalPresentEarly1999Promo.jpg' : require('../../../resources/images/cards/TropicalPresentEarly1999Promo.jpg'),
 'TropicalPresentSummer1999Promo.jpg' : require('../../../resources/images/cards/TropicalPresentSummer1999Promo.jpg'),

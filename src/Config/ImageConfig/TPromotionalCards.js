@@ -1,4 +1,3 @@
-import React from 'react';
 const TPromotionalCards =
   {'BayleefTPromo7.jpg' : require('../../../resources/images/cards/BayleefTPromo7.jpg'),
 'DragoniteTPromo18.jpg' : require('../../../resources/images/cards/DragoniteTPromo18.jpg'),
