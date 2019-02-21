@@ -17,6 +17,7 @@ export default class About extends Component {
 
             <Text h1 style={styles.title}>Team:</Text>
             <Text style={styles.padded}>Developer: Arca</Text>
+            <Text style={styles.padded}>Icon: Oshobo</Text>
 
             <Text h1 style={styles.title}>License:</Text>
             <Text style={styles.padded}>GNU General Public License v3.0</Text>
