@@ -8,19 +8,45 @@ import {
   ListItem,
   Text
 } from 'native-base';
+import { Col, Grid, Row } from "react-native-easy-grid";
+import { Image, TouchableOpacity, View } from 'react-native';
+import { string } from "../i18n.js"
 
-import { Image } from 'react-native';
+import Flag from 'react-native-flags';
 import React from "react";
+import { connect } from 'react-redux'
 
 const routes = [
-  { name: "Series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
-  { name: "Researchs", link: "ResearchsScreen", icon: "search"},
-  { name: "Series selection", link: "SerieSelection", icon: "cog"},
-  { name: "Statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
-  { name: "About", link: "About", icon: "question", type: "FontAwesome"}]
+  { name: "section.series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
+  { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
+  { name: "section.seriesSelection", link: "SerieSelection", icon: "cog"},
+  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
+  { name: "section.about", link: "About", icon: "question", type: "FontAwesome"}]
 
-export default class SideBar extends React.Component {
+const flags = [
+    { key: 'US', language: 'en' },
+    { key: 'FR', language: 'fr' },
+    { key: 'JP', language: 'ja' }
+  ]
+
+class SideBar extends React.Component {
+
   render() {
+    const selectionElements = flags.map(flag => {
+      return (
+        <Col key={flag.key}>
+          <View style={{ alignItems: 'center', opacity: flag.language == this.props.language ? 1 : 0.1 }}>
+            <TouchableOpacity activeOpacity={0.4} onPress={() => this.clickFlag(flag.language)}>
+              <Flag code={flag.key} size={32} />
+            </TouchableOpacity>
+          </View>
+        </Col>);
+    })
+
+    const translatedRoutes = routes.map(route => {
+      return {...route, translatedString: string(route.name)}
+    });
+
     return (
       <Container>
         <Content>
@@ -51,7 +77,7 @@ export default class SideBar extends React.Component {
             }}
           />
           <List
-            dataArray={routes}
+            dataArray={translatedRoutes}
             contentContainerStyle={{ marginTop: 120 }}
             renderRow={data => {
               return (
@@ -63,14 +89,27 @@ export default class SideBar extends React.Component {
                     {data.icon != null ? (<Icon name={data.icon} type={data.type} style={{width:25}}/>) : null}
                   </Left>
                   <Body>
-                    <Text>{data.name}</Text>
+                    <Text>{data.translatedString}</Text>
                   </Body>
                 </ListItem>
               );
             }}
           />
+          <Grid style={{marginTop: 10}}><Row>{selectionElements}</Row></Grid>
         </Content>
       </Container>
     );
   }
+
+  clickFlag(flag) {
+    this.props.dispatch({ type: "CHANGE_LANGUAGE", value: flag })
+  }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    language: state.language
+  }
+}
+
+export default connect(mapStateToProps)(SideBar)

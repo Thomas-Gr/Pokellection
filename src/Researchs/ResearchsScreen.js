@@ -10,6 +10,7 @@ import MyHeader from "../UtilityScreens/MyHeader.js";
 import { SectionList } from 'react-native';
 import SerieConfig from '../Config/SerieConfig.js';
 import { connect } from 'react-redux'
+import { language } from "../i18n.js"
 
 class ResearchsScreen extends Component {
   constructor() {
@@ -53,7 +54,7 @@ class ResearchsScreen extends Component {
   buildList(filteredSerie) {
     return filteredSerie
         .map(key => ({
-          title: key,
+          title: language(this.props.language, key),
           data: [{name: key}]
         }))
         .filter(obj => this.props.collections[obj.data[0].name] == undefined ||
@@ -79,9 +80,9 @@ class ResearchsScreen extends Component {
           />
   )
 
-  _renderSectionHeader = ({section}) => (
+  _renderSectionHeader = ({section}) => { console.log(section); return(
     <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
-  )
+  )}
 
   hideCardInformation() {
     this.setState({cardInformationVisible: false, hasSelectedCard: false});
@@ -142,7 +143,8 @@ class ResearchsScreen extends Component {
 const mapStateToProps = (state) => {
   return {
     selectedSeries: state.selectedSeries,
-    collections: state.collections
+    collections: state.collections,
+    language: state.language
   }
 }
 

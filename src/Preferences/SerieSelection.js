@@ -10,7 +10,7 @@ import {
 } from 'native-base';
 import { Image, SectionList } from 'react-native';
 import React, { Component } from 'react';
-
+import { language } from "../i18n.js"
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import MyHeader from "../UtilityScreens/MyHeader.js";
@@ -34,7 +34,7 @@ class SerieSelection extends Component {
       </Left>
       <Body style={{flex:0.7}}>
         <Text style={{fontSize:15}}>
-          {item}
+          {language(this.props.language, SerieConfig[item].definition)}
         </Text>
       </Body>
       <Right style={{flex:0.15}}>
@@ -44,7 +44,7 @@ class SerieSelection extends Component {
   )
 
   _renderSectionHeader = ({section}) => (
-    <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
+    <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{language(this.props.language, section)}</Text></ListItem>
   )
 
   render() {
@@ -69,7 +69,8 @@ class SerieSelection extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedSeries: state.selectedSeries
+    selectedSeries: state.selectedSeries,
+    language: state.language
   }
 }
 

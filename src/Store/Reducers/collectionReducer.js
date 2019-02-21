@@ -3,6 +3,7 @@ const initialState = { isLoaded: false, inLongSelectionMode: false }
 import * as CollectionMemory from "../../State/CollectionMemory.js";
 import * as PreferencesMemory from "../../State/PreferencesMemory.js";
 import * as SelectionMemory from "../../State/SelectionMemory.js";
+import { changeLanguage, language } from "../../i18n.js"
 
 import HomeSerieConfig from '../../Config/HomeSerieConfig.js';
 import SerieConfig from '../../Config/SerieConfig.js';
@@ -10,6 +11,7 @@ import refreshCardList from "../../CardListScreen/CardListHelper.js";
 
 function toggleCollection(state = initialState, action) {
   if (action.type == "LOAD_FROM_MEMORY") {
+    changeLanguage(action.value.language);
     return {
       ...state,
       collections: action.value.collections,
@@ -17,7 +19,8 @@ function toggleCollection(state = initialState, action) {
       unselectedRarities: action.value.unselectedRarities,
       display: action.value.display,
       selection: action.value.selection,
-      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, action.value.selectedSeries),
+      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, action.value.selectedSeries, action.value.language),
+      language: action.value.language,
       isLoaded: true
     }
   } else if (action.type == "ADD_CARD") {
@@ -59,7 +62,14 @@ function toggleCollection(state = initialState, action) {
     return {
       ...state,
       selectedSeries: series,
-      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, series),
+      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, series, state.language),
+    }
+  } else if (action.type == "CHANGE_LANGUAGE") {
+    changeLanguage(action.value);
+    PreferencesMemory.setLanguage(action.value);
+    return {
+      ...state,
+      language: action.value
     }
   }
 
@@ -81,7 +91,7 @@ function recomputeCollections(collectionName, card, oldCollections) {
   return collections;
 }
 
-function filterSelectedSeriesOnly(allSeries, selectedSeries) { // TODO: No need to recompute everything
+function filterSelectedSeriesOnly(allSeries, selectedSeries, lang) { // TODO: No need to recompute everything
   var result = [];
 
   allSeries.forEach((value, index) => {
@@ -89,7 +99,7 @@ function filterSelectedSeriesOnly(allSeries, selectedSeries) { // TODO: No need 
 
     if (newData.length != 0) {
       result.push({
-        title: value.title,
+        title: language(lang, value),
         data: newData
       });
     }

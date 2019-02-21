@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 import { Dimensions, View } from 'react-native';
-
+import { language } from "../i18n.js"
+import SerieConfig from '../Config/SerieConfig.js';
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardInformationScreen from "./CardInformationScreen.js";
 import CardListConfigurationScreen from "./CardListConfigurationScreen.js";
@@ -83,7 +84,7 @@ class CardListTabScreen extends React.PureComponent {
   render() {
     return (
       <Container>
-        <MyHeader {...this.props} title={this.state.routes[this.state.index].key} selectionFunction={this.showConfigurationPanel}/>
+        <MyHeader {...this.props} title={language(this.props.language, SerieConfig[this.state.routes[this.state.index].key].definition)} selectionFunction={this.showConfigurationPanel}/>
           <CardListConfigurationScreen
             visible={this.state.listConfigurationVisible}
             hide={this.hideConfigurationPanel}
@@ -113,7 +114,8 @@ class CardListTabScreen extends React.PureComponent {
 const mapStateToProps = (state) => {
   return {
     seriesToDisplay: state.seriesToDisplay,
-    collections: state.collections
+    collections: state.collections,
+    language: state.language
   }
 }
 

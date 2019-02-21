@@ -6,6 +6,7 @@ import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
 import { connect } from 'react-redux'
+import { language } from "../i18n.js"
 
 class CardItem extends React.PureComponent {
   render() {
@@ -47,7 +48,7 @@ class CardItem extends React.PureComponent {
         <Body style={{flex: RaritiesLogos[data.rarity] != null ? 0.7 : 0.8}}>
           <TouchableOpacity onPress={() => this.props.selectCard(this.props.data)}>
             <Text style={{fontSize:15, fontWeight: 'bold'}}>
-              {data.number > 0 ? this.showNumber(data) : ""}{data.name}
+              {data.number > 0 ? this.showNumber(data) : ""}{language(this.props.language, data)}
             </Text>
           </TouchableOpacity>
         </Body>
@@ -97,7 +98,7 @@ class CardItem extends React.PureComponent {
               style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
               source={image}
             />
-            <Text style={{textAlign: 'center', fontSize: 10}}>{showNumbers == true ? this.showNumber(data) : ""}{data.name.substring(0, 21)}</Text>
+            <Text style={{textAlign: 'center', fontSize: 10}}>{showNumbers == true ? this.showNumber(data) : ""}{language(this.props.language, data).substring(0, 21)}</Text>
           </Body>
         </Card>
       </TouchableOpacity>
@@ -136,7 +137,8 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
   return {
     display: state.display,
-    inLongSelectionMode: state.inLongSelectionMode
+    inLongSelectionMode: state.inLongSelectionMode,
+    language: state.language
   }
 }
 

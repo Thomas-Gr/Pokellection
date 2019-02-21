@@ -1,7 +1,7 @@
 import * as CollectionMemory from "../State/CollectionMemory.js";
 import * as PreferencesMemory from "../State/PreferencesMemory.js";
 import * as SelectionMemory from "../State/SelectionMemory.js";
-
+import { language } from "../i18n.js"
 import {
   Body,
   Container,
@@ -30,12 +30,13 @@ class HomeScreen extends Component {
   }
 
   fetchAndUpdateState() {
-    SelectionMemory.getSelection((selection) => {
-      SelectionMemory.getDisplay((display) => {
-        SelectionMemory.getUnselectedRarities((unselectedRarities) => {
-          PreferencesMemory.getSerieSelection((selectedSeries) => {
-            CollectionMemory.getCollection(selectedSeries, (collections) => {
-                if (!this.props.isLoaded) {
+    if (!this.props.isLoaded) {
+      SelectionMemory.getSelection((selection) => {
+        SelectionMemory.getDisplay((display) => {
+          SelectionMemory.getUnselectedRarities((unselectedRarities) => {
+            PreferencesMemory.getSerieSelection((selectedSeries) => {
+              PreferencesMemory.getLanguage((language) => {
+                CollectionMemory.getCollection(selectedSeries, (collections) => {
                   this.props.dispatch({
                     type: "LOAD_FROM_MEMORY",
                     value: {
@@ -44,13 +45,15 @@ class HomeScreen extends Component {
                       unselectedRarities: unselectedRarities,
                       display: display,
                       selection: selection,
+                      language: language
                   }});
-                }
+                });
+              });
             });
           });
         });
       });
-    });
+    }
   }
 
   _renderItem = ({item}) => (
@@ -68,7 +71,7 @@ class HomeScreen extends Component {
       </Left>
       <Body style={{flex:0.67}}>
         <Text style={{fontSize: 15}}>
-          {item}
+          {language(this.props.language, SerieConfig[item].definition)}
         </Text>
       </Body>
       <Right style={{flex: 0.17}}>
@@ -117,6 +120,7 @@ const mapStateToProps = (state) => {
     seriesToDisplay: state.seriesToDisplay,
     collections: state.collections,
     isLoaded: state.isLoaded,
+    language: state.language
   }
 }
 
