@@ -14,5 +14,7 @@ const Year2000 =
 'MisdreavusWizardsPromo39.jpg' : require('../../../resources/images/cards/MisdreavusWizardsPromo39.jpg'),
 'SteelixTrainersPromo.jpg' : require('../../../resources/images/cards/SteelixTrainersPromo.jpg'),
 'SmeargleWizardsPromo32.jpg' : require('../../../resources/images/cards/SmeargleWizardsPromo32.jpg'),
+'GoldBerryNeoGenesis93.jpg' : require('../../../resources/images/cards/GoldBerryNeoGenesis93.jpg'),
+'BerryNeoGenesis99.jpg' : require('../../../resources/images/cards/BerryNeoGenesis99.jpg'),
 'HitmontopWizardsPromo37.jpg' : require('../../../resources/images/cards/HitmontopWizardsPromo37.jpg')};
 export default Year2000

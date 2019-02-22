@@ -29,10 +29,5 @@ const Championship =
 'TropicalWindTropicalMegaBattle1999Promo.jpg' : require('../../../resources/images/cards/TropicalWindTropicalMegaBattle1999Promo.jpg'),
 'ChampionshipArenaNintendoPromo28.jpg' : require('../../../resources/images/cards/ChampionshipArenaNintendoPromo28.jpg'),
 'TropicalMegaBattleNo2.jpg' : require('../../../resources/images/cards/TropicalMegaBattleNo2.jpg'),
-'TotodileNeoGenesis81.jpg' : require('../../../resources/images/cards/TotodileNeoGenesis81.jpg'),
-'GoldBerryNeoGenesis93.jpg' : require('../../../resources/images/cards/GoldBerryNeoGenesis93.jpg'),
-'BerryNeoGenesis99.jpg' : require('../../../resources/images/cards/BerryNeoGenesis99.jpg'),
-'ChikoritaNeoGenesis53.jpg' : require('../../../resources/images/cards/ChikoritaNeoGenesis53.jpg'),
-'CyndaquilNeoGenesis57.jpg' : require('../../../resources/images/cards/CyndaquilNeoGenesis57.jpg'),
 'EliteFourTrainerBattleRoadSummer2002finalspromo.jpg' : require('../../../resources/images/cards/EliteFourTrainerBattleRoadSummer2002finalspromo.jpg')};
 export default Championship
