@@ -5,6 +5,7 @@ import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import { connect } from 'react-redux'
 import makeGetDisplayedCards from "../selectors/dataSourceSelectors.js";
+import refreshCardList from "./CardListHelper.js";
 
 class CardListScreen extends React.Component {
   constructor(props) {
@@ -47,11 +48,12 @@ class CardListScreen extends React.Component {
 }
 
 const makeMapStateToProps = () => {
-  const displayedCards = makeGetDisplayedCards()
-  const mapStateToProps = (state, props) => {
+  //const displayedCards = makeGetDisplayedCards()
+  const mapStateToProps = (state, ownProps) => {
     return {
       display: state.display,
-      dataSource: displayedCards(state, props)
+      //dataSource: displayedCards(state, ownProps),
+      dataSource: refreshCardList(SerieConfig[ownProps.serieName].definition.cards, state.collections[ownProps.serieName], ownProps.forcedSelection || state.selection, state.unselectedRarities)
     }
   }
   return mapStateToProps
