@@ -9,7 +9,8 @@ import {
   Left,
   ListItem,
   Right,
-  Text
+  Text,
+  Icon
 } from 'native-base';
 import { Image, SectionList } from 'react-native';
 import React, { Component } from 'react';
@@ -56,32 +57,38 @@ class HomeScreen extends Component {
     }
   }
 
-  _renderItem = ({item}) => (
-    <ListItem style={{backgroundColor:"transparent"}} onPress={() => this.props.navigation.navigate(
-        'CardListScreen',
-        {
-          serieName: item
-        })}>
-      <Left style={{flex:0.15}}>
-        {
-          SerieConfig[item].definition.image != ""
-            ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} />)
-            : (null)
-        }
-      </Left>
-      <Body style={{flex:0.67}}>
-        <Text style={{fontSize: 15}}>
-          {language(this.props.language, SerieConfig[item].definition)}
-        </Text>
-      </Body>
-      <Right style={{flex: 0.17}}>
-        <Text note>
-          {this.props.collections[item] == null ? 0 : Object.keys(this.props.collections[item]).length}
-          /{Object.keys(SerieConfig[item].definition.cards).length}
-        </Text>
-      </Right>
-    </ListItem>
-  )
+  _renderItem = ({item}) => {
+    const got = this.props.collections[item] == null ? 0 : Object.keys(this.props.collections[item]).length
+    const total = Object.keys(SerieConfig[item].definition.cards).length
+
+    const message = got == total
+      ? <Icon name="check" type="FontAwesome" style={{color: '#aaa'}}/>
+      : (got == 0
+        ? <Icon name="remove" type="FontAwesome" style={{color: '#aaa'}}/>
+        : got + '/' + total)
+    return (
+      <ListItem style={{backgroundColor:"transparent"}} onPress={() => this.props.navigation.navigate(
+          'CardListScreen', { serieName: item })}>
+        <Left style={{flex:0.15}}>
+          {
+            SerieConfig[item].definition.image != ""
+              ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} />)
+              : (null)
+          }
+        </Left>
+        <Body style={{flex:0.67}}>
+          <Text style={{fontSize: 15}}>
+            {language(this.props.language, SerieConfig[item].definition)}
+          </Text>
+        </Body>
+        <Right style={{flex: 0.17}}>
+          <Text note>
+            {message}
+          </Text>
+        </Right>
+      </ListItem>
+    )
+  }
 
   _renderSectionHeader = ({section}) => (
     <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
