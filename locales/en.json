@@ -5,5 +5,19 @@
     "seriesSelection": "Series selection",
     "statistics": "Statistics",
     "about": "About"
+  },
+  "about": {
+    "version": "Version:",
+    "team": "Team:",
+    "developer": "Developer: Arca",
+    "designer": "Icon: Oshobo",
+    "license": "License",
+    "license2": "GNU General Public License v3.0",
+    "contact": "Contact:",
+    "tip": "Tip:",
+    "tipMessage": "If you enjoy the app, leave me a message and tip me on PayPal:",
+    "disclaimer": "Disclaimer:",
+    "disclaimer1": "Most of the data has been extracted from",
+    "disclaimer2": "Some of the information included in this app, both literal and graphical, are property of the copyright owners Pokemon, Nintendo, The Pokémon Company International Inc., Creatures, GAMEFREAK and Wizards of the Coast Inc. respectively. Pokellection is not affilated with, sponsored or endorsed by, or in any way associated with pokemon or The Pokémon Company International Inc."
   }
 }

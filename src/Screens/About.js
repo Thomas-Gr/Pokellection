@@ -1,53 +1,50 @@
 import { Container, Content } from 'native-base';
 import { Linking, StyleSheet, Text, View } from "react-native";
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux'
+import { string } from "../i18n.js"
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import MyHeader from "../UtilityScreens/MyHeader.js";
 
-export default class About extends Component {
+class About extends Component {
   render() {
     return (
       <Container>
         <MyHeader {...this.props}/>
         <Content>
           <View style={styles.view}>
-            <Text h1 style={styles.title}>Version:</Text>
+            <Text h1 style={styles.title}>{string('about.version')}</Text>
             <Text style={styles.padded}>0.1</Text>
 
-            <Text h1 style={styles.title}>Team:</Text>
-            <Text style={styles.padded}>Developer: Arca</Text>
-            <Text style={styles.padded}>Icon: Oshobo</Text>
+            <Text h1 style={styles.title}>{string('about.team')}</Text>
+            <Text>{string('about.developer')}</Text>
+            <Text style={styles.padded}>{string('about.designer')}</Text>
 
-            <Text h1 style={styles.title}>License:</Text>
-            <Text style={styles.padded}>GNU General Public License v3.0</Text>
+            <Text h1 style={styles.title}>{string('about.license')}</Text>
+            <Text style={styles.padded}>{string('about.license2')}</Text>
 
-            <Text h1 style={styles.title}>Contact:</Text>
+            <Text h1 style={styles.title}>{string('about.contact')}</Text>
             <Text style={[styles.padded, styles.link]} onPress={() => Linking.openURL('https://github.com/Thomas-Gr/Pokellection')}>
               https://github.com/Thomas-Gr/Pokellection
             </Text>
 
-            <Text h1 style={styles.title}>Tip:</Text>
+            <Text h1 style={styles.title}>{string('about.tip')}</Text>
             <Text style={styles.padded}>
-              If you enjoy the app, leave me a message and tip me on PayPal:{' '}
+              {string('about.tipMessage')}{' '}
               <Text style={styles.link} onPress={() => Linking.openURL('https://paypal.me/GrTh')}>
                 https://paypal.me/GrTh
               </Text>
             </Text>
 
-            <Text h1 style={styles.title}>Disclaimer:</Text>
+            <Text h1 style={styles.title}>{string('about.disclaimer')}</Text>
             <Text>
-              1.   Most of the data has been extracted from{' '}
+              1.   {string('about.disclaimer1')}{' '}
               <Text style={[styles.padded, styles.link]} onPress={() => Linking.openURL('http://bulbapedia.bulbagarden.net/')}>
                 Bulbapedia
               </Text>
             </Text>
             <Text style={styles.padded}>
-              2.   Some of the information included in this app, both literal and graphical, are property of the copyright owners
-              Pokemon, Nintendo, The Pokémon Company International Inc., Creatures, GAMEFREAK and Wizards of the Coast Inc.
-               respectively.
-               Pokellection is not affilated with, sponsored or endorsed by, or in any way associated
-               with pokemon or The Pokémon Company International Inc.
+              2.   {string('about.disclaimer2')}
             </Text>
           </View>
         </Content>
@@ -72,3 +69,11 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline'
   }
 });
+
+const mapStateToProps = (state) => {
+  return {
+    language: state.language
+  }
+}
+
+export default connect(mapStateToProps)(About)

@@ -54,12 +54,12 @@ class ResearchsScreen extends Component {
   buildList(filteredSerie) {
     return filteredSerie
         .map(key => ({
-          title: language(this.props.language, key),
+          title: language(this.props.language, SerieConfig[key].definition),
           data: [{name: key}]
         }))
         .filter(obj => this.props.collections[obj.data[0].name] == undefined ||
             Object.keys(this.props.collections[obj.data[0].name]).length !=
-                Object.keys(SerieConfig[obj.title].definition.cards).length);
+                Object.keys(SerieConfig[obj.data[0].name].definition.cards).length);
   }
 
   filterSelectedSeriesOnly(allSeries, selectedSeries) {
@@ -80,9 +80,9 @@ class ResearchsScreen extends Component {
           />
   )
 
-  _renderSectionHeader = ({section}) => { console.log(section); return(
+  _renderSectionHeader = ({section}) => (
     <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
-  )}
+  )
 
   hideCardInformation() {
     this.setState({cardInformationVisible: false, hasSelectedCard: false});
