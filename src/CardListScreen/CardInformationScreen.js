@@ -14,8 +14,10 @@ import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
+import { language } from "../i18n.js"
+import { connect } from 'react-redux'
 
-export default class CardInformationScreen extends React.Component {
+class CardInformationScreen extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -87,7 +89,7 @@ export default class CardInformationScreen extends React.Component {
                   <Grid>
                     <Row style={{height: 40}}>
                       <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
-                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {selectedCard.name} {card}</Text>
+                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {language(this.props.language, selectedCard)} {card}</Text>
                       </View>
                     </Row>
                     <Row>
@@ -129,3 +131,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+const mapStateToProps = (state) => {
+  return {
+    language: state.language
+  }
+}
+
+export default connect(mapStateToProps)(CardInformationScreen)

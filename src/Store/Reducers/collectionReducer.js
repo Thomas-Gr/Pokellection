@@ -69,7 +69,8 @@ function toggleCollection(state = initialState, action) {
     PreferencesMemory.setLanguage(action.value);
     return {
       ...state,
-      language: action.value
+      language: action.value,
+      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, state.selectedSeries, action.value)
     }
   }
 
