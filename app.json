@@ -12,7 +12,9 @@
       "bundleIdentifier": "com.pokellection"
     },
     "android": {
-      "package": "com.pokellection"
+      "package": "com.pokellection",
+      "permissions": [],
+      "versionCode": 2
     },
     "assetBundlePatterns": [
       "resources/images/rarities/*",
