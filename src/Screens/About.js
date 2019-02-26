@@ -18,7 +18,8 @@ class About extends Component {
 
             <Text h1 style={styles.title}>{string('about.team')}</Text>
             <Text>{string('about.developer')}</Text>
-            <Text style={styles.padded}>{string('about.designer')}</Text>
+            <Text>{string('about.designer')}</Text>
+            <Text style={styles.padded}>{string('about.pictures')}</Text>
 
             <Text h1 style={styles.title}>{string('about.license')}</Text>
             <Text style={styles.padded}>{string('about.license2')}</Text>
