@@ -37,17 +37,20 @@ class HomeScreen extends Component {
           SelectionMemory.getUnselectedRarities((unselectedRarities) => {
             PreferencesMemory.getSerieSelection((selectedSeries) => {
               PreferencesMemory.getLanguage((language) => {
-                CollectionMemory.getCollection(selectedSeries, (collections) => {
-                  this.props.dispatch({
-                    type: "LOAD_FROM_MEMORY",
-                    value: {
-                      collections: collections,
-                      selectedSeries: selectedSeries,
-                      unselectedRarities: unselectedRarities,
-                      display: display,
-                      selection: selection,
-                      language: language
-                  }});
+                PreferencesMemory.getUnumberedSorting((unumberedSorting) => {
+                  CollectionMemory.getCollection(selectedSeries, (collections) => {
+                    this.props.dispatch({
+                      type: "LOAD_FROM_MEMORY",
+                      value: {
+                        collections: collections,
+                        selectedSeries: selectedSeries,
+                        unselectedRarities: unselectedRarities,
+                        display: display,
+                        selection: selection,
+                        language: language,
+                        unumberedSorting: unumberedSorting
+                    }});
+                  });
                 });
               });
             });

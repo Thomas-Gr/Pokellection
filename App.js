@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import { Container, Content, Picker, Button, Text } from "native-base";
+import { Container, Content, Picker, Button, Text, Root } from "native-base";
 import * as Expo from 'expo'
 import { Provider } from 'react-redux'
 
@@ -32,6 +32,6 @@ export default class AwesomeApp extends Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    return <Provider store={Store}><HomeScreen /></Provider>;
+    return <Provider store={Store}><Root><HomeScreen /></Root></Provider>;
   }
 }

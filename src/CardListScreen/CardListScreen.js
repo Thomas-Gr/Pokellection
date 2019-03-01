@@ -53,7 +53,12 @@ const makeMapStateToProps = () => {
     return {
       display: state.display,
       //dataSource: displayedCards(state, ownProps),
-      dataSource: refreshCardList(SerieConfig[ownProps.serieName].definition.cards, state.collections[ownProps.serieName], ownProps.forcedSelection || state.selection, state.unselectedRarities)
+      dataSource: refreshCardList(
+        SerieConfig[ownProps.serieName].definition.cards,
+        state.collections[ownProps.serieName],
+        ownProps.forcedSelection || state.selection,
+        state.unselectedRarities,
+        state.unumberedSorting)
     }
   }
   return mapStateToProps

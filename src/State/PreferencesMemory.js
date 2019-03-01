@@ -5,6 +5,7 @@ import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 
 var selectionCache = -1;
 var languageCache = -1;
+var unumberedSortingCache = -1;
 
 export const setSerieSelection = (value) => {
   try {
@@ -47,5 +48,23 @@ export const getLanguage = (success) => {
         .then(result => success(result == null ? locale.split("_")[0] : result));
   } else {
     success(languageCache);
+  }
+}
+
+export const setUnumberedSorting = (value) => {
+  try {
+    AsyncStorage.setItem('@Preferences:sorting', value);
+    unumberedSortingCache = value;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getUnumberedSorting = (success) => {
+  if (unumberedSortingCache === -1) { // Keep data in cache
+    AsyncStorage.getItem('@Preferences:sorting')
+        .then(result => success(result == null ? 'default' : result));
+  } else {
+    success(unumberedSortingCache);
   }
 }

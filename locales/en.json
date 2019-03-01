@@ -4,7 +4,16 @@
     "researchs": "Researchs",
     "seriesSelection": "Series selection",
     "statistics": "Statistics",
-    "about": "About"
+    "about": "About",
+    "preferences": "Preferences"
+  },
+  "options": {
+    "sorting": {
+      "name": "Sorting:",
+      "official": "Official sorting",
+      "us-like": "US-like sorting",
+      "bulbapedia": "Bulbapedia sorting"
+    }
   },
   "about": {
     "version": "Version:",

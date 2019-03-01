@@ -20,7 +20,8 @@ const routes = [
   { name: "section.series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
   { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
   { name: "section.seriesSelection", link: "SerieSelection", icon: "cog"},
-  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
+  { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
+//  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
   { name: "section.about", link: "About", icon: "question", type: "FontAwesome"}]
 
 const flags = [

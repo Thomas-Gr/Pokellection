@@ -4,7 +4,16 @@
     "researchs": "Recherches",
     "seriesSelection": "Sélection des séries",
     "statistics": "Statistiques",
-    "about": "A propos"
+    "about": "A propos",
+    "preferences": "Préférences"
+  },
+  "options": {
+    "sorting": {
+      "name": "Tri :",
+      "official": "Tri officiel",
+      "us-like": "Tri à la française",
+      "bulbapedia": "Tri Bulbapedia"
+    }
   },
   "about": {
     "version": "Version:",

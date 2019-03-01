@@ -7,6 +7,7 @@ import { Platform } from "react-native";
 import React from 'react';
 import ResearchsScreen from "../Researchs/ResearchsScreen.js";
 import SerieSelection from "../Preferences/SerieSelection.js";
+import OptionsScreen from "../Preferences/OptionsScreen.js";
 import SideBar from "../SideBar/SideBar.js";
 
 const StackNavigator = createStackNavigator(
@@ -15,7 +16,8 @@ const StackNavigator = createStackNavigator(
     ResearchsScreen: { screen: ResearchsScreen },
     CardListScreen: { screen: CardListTabScreen },
     SerieSelection: { screen: SerieSelection },
-    About: { screen: About }
+    About: { screen: About },
+    OptionsScreen: { screen: OptionsScreen },
   },
   {
     initialRouteName: 'Home',

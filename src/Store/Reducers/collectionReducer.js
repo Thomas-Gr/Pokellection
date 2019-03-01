@@ -7,7 +7,6 @@ import { changeLanguage, language } from "../../i18n.js"
 
 import HomeSerieConfig from '../../Config/HomeSerieConfig.js';
 import SerieConfig from '../../Config/SerieConfig.js';
-import refreshCardList from "../../CardListScreen/CardListHelper.js";
 
 function toggleCollection(state = initialState, action) {
   if (action.type == "LOAD_FROM_MEMORY") {
@@ -21,6 +20,7 @@ function toggleCollection(state = initialState, action) {
       selection: action.value.selection,
       seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, action.value.selectedSeries, action.value.language),
       language: action.value.language,
+      unumberedSorting: action.value.unumberedSorting,
       isLoaded: true
     }
   } else if (action.type == "ADD_CARD") {
@@ -71,6 +71,12 @@ function toggleCollection(state = initialState, action) {
       ...state,
       language: action.value,
       seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, state.selectedSeries, action.value)
+    }
+  } else if (action.type == "CHANGE_SORTING") {
+    PreferencesMemory.setUnumberedSorting(action.value);
+    return {
+      ...state,
+      unumberedSorting: action.value,
     }
   }
 
