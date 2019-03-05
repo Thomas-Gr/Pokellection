@@ -84,7 +84,7 @@ class CardListTabScreen extends React.PureComponent {
   render() {
     return (
       <Container>
-        <MyHeader {...this.props} title={language(this.props.language, SerieConfig[this.state.routes[this.state.index].key].definition)} selectionFunction={this.showConfigurationPanel}/>
+        <MyHeader {...this.props} title={language(this.props.setsLanguage, SerieConfig[this.state.routes[this.state.index].key].definition)} selectionFunction={this.showConfigurationPanel}/>
           <CardListConfigurationScreen
             visible={this.state.listConfigurationVisible}
             hide={this.hideConfigurationPanel}
@@ -115,7 +115,7 @@ const mapStateToProps = (state) => {
   return {
     seriesToDisplay: state.seriesToDisplay,
     collections: state.collections,
-    language: state.language
+    setsLanguage: state.setsLanguage
   }
 }
 
