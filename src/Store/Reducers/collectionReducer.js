@@ -66,32 +66,32 @@ function toggleCollection(state = initialState, action) {
       selectedSeries: series,
       seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, series, state.language),
     }
-  } else if (action.type == "CHANGE_LANGUAGE") {
-    changeLanguage(action.value);
-    PreferencesMemory.setLanguage(action.value);
-    return {
-      ...state,
-      language: action.value
+  } else if (action.type == "UPDATE_PREFERENCES") {
+    var newState = Object.assign({}, state)
+
+    if (action.value.sorting != null) {
+      PreferencesMemory.setUnumberedSorting(action.value.sorting)
+      newState.unumberedSorting = action.value.sorting
     }
-  } else if (action.type == "CHANGE_CARDS_LANGUAGE") {
-    PreferencesMemory.setCardsLanguage(action.value);
-    return {
-      ...state,
-      cardsLanguage: action.value
+
+    if (action.value.menuLanguage != null) {
+      changeLanguage(action.value.menuLanguage)
+      PreferencesMemory.setLanguage(action.value.menuLanguage)
+      newState.language = action.value.menuLanguage
     }
-  } else if (action.type == "CHANGE_SETS_LANGUAGE") {
-    PreferencesMemory.setSetsLanguage(action.value);
-    return {
-      ...state,
-      setsLanguage: action.value,
-      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, state.selectedSeries, action.value)
+
+    if (action.value.cardsLanguage != null) {
+      PreferencesMemory.setCardsLanguage(action.value.cardsLanguage)
+      newState.cardsLanguage = action.value.cardsLanguage
     }
-  } else if (action.type == "CHANGE_SORTING") {
-    PreferencesMemory.setUnumberedSorting(action.value);
-    return {
-      ...state,
-      unumberedSorting: action.value,
+
+    if (action.value.setsLanguage != null) {
+      PreferencesMemory.setSetsLanguage(action.value.setsLanguage)
+      newState.setsLanguage = action.value.setsLanguage
+      newState.seriesToDisplay = filterSelectedSeriesOnly(HomeSerieConfig, state.selectedSeries, action.value)
     }
+
+    return newState
   }
 
   return state;
