@@ -13,6 +13,24 @@
       "official": "Official sorting",
       "us-like": "US-like sorting",
       "bulbapedia": "Bulbapedia sorting"
+    },
+    "menu-language": {
+      "name": "Language (system):",
+      "en": "English",
+      "fr": "French",
+      "ja": "Japanese"
+    },
+    "cards-language": {
+      "name": "Language (cards):",
+      "en": "English",
+      "fr": "French",
+      "ja": "Japanese"
+    },
+    "sets-language": {
+      "name": "Language (sets):",
+      "en": "English",
+      "fr": "French",
+      "ja": "Japanese"
     }
   },
   "about": {

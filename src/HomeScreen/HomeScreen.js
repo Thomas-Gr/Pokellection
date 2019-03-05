@@ -37,19 +37,25 @@ class HomeScreen extends Component {
           SelectionMemory.getUnselectedRarities((unselectedRarities) => {
             PreferencesMemory.getSerieSelection((selectedSeries) => {
               PreferencesMemory.getLanguage((language) => {
-                PreferencesMemory.getUnumberedSorting((unumberedSorting) => {
-                  CollectionMemory.getCollection(selectedSeries, (collections) => {
-                    this.props.dispatch({
-                      type: "LOAD_FROM_MEMORY",
-                      value: {
-                        collections: collections,
-                        selectedSeries: selectedSeries,
-                        unselectedRarities: unselectedRarities,
-                        display: display,
-                        selection: selection,
-                        language: language,
-                        unumberedSorting: unumberedSorting
-                    }});
+                PreferencesMemory.getCardsLanguage((cardsLanguage) => {
+                  PreferencesMemory.getSetsLanguage((setsLanguage) => {
+                    PreferencesMemory.getUnumberedSorting((unumberedSorting) => {
+                      CollectionMemory.getCollection(selectedSeries, (collections) => {
+                        this.props.dispatch({
+                          type: "LOAD_FROM_MEMORY",
+                          value: {
+                            collections: collections,
+                            selectedSeries: selectedSeries,
+                            unselectedRarities: unselectedRarities,
+                            display: display,
+                            selection: selection,
+                            language: language,
+                            cardsLanguage: cardsLanguage,
+                            setsLanguage: setsLanguage,
+                            unumberedSorting: unumberedSorting
+                        }});
+                      });
+                    });
                   });
                 });
               });
@@ -81,7 +87,7 @@ class HomeScreen extends Component {
         </Left>
         <Body style={{flex:0.67}}>
           <Text style={{fontSize: 15}}>
-            {language(this.props.language, SerieConfig[item].definition)}
+            {language(this.props.setsLanguage, SerieConfig[item].definition)}
           </Text>
         </Body>
         <Right style={{flex: 0.17}}>
@@ -130,7 +136,8 @@ const mapStateToProps = (state) => {
     seriesToDisplay: state.seriesToDisplay,
     collections: state.collections,
     isLoaded: state.isLoaded,
-    language: state.language
+    language: state.language,
+    setsLanguage: state.setsLanguage
   }
 }
 

@@ -48,7 +48,7 @@ class CardItem extends React.PureComponent {
         <Body style={{flex: RaritiesLogos[data.rarity] != null ? 0.7 : 0.8}}>
           <TouchableOpacity onPress={() => this.props.selectCard(this.props.data)}>
             <Text style={{fontSize:15, fontWeight: 'bold'}}>
-              {data.number > 0 ? this.showNumber(data) : ""}{language(this.props.language, data)}
+              {data.number > 0 ? this.showNumber(data) : ""}{language(this.props.cardsLanguage, data)}
             </Text>
           </TouchableOpacity>
         </Body>
@@ -98,7 +98,7 @@ class CardItem extends React.PureComponent {
               style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
               source={image}
             />
-            <Text style={{textAlign: 'center', fontSize: 10}}>{showNumbers == true ? this.showNumber(data) : ""}{language(this.props.language, data).substring(0, 21)}</Text>
+            <Text style={{textAlign: 'center', fontSize: 10}}>{showNumbers == true ? this.showNumber(data) : ""}{language(this.props.cardsLanguage, data).substring(0, 21)}</Text>
           </Body>
         </Card>
       </TouchableOpacity>
@@ -138,7 +138,7 @@ const mapStateToProps = (state) => {
   return {
     display: state.display,
     inLongSelectionMode: state.inLongSelectionMode,
-    language: state.language
+    cardsLanguage: state.cardsLanguage
   }
 }
 

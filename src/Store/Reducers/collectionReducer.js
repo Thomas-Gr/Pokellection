@@ -20,6 +20,8 @@ function toggleCollection(state = initialState, action) {
       selection: action.value.selection,
       seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, action.value.selectedSeries, action.value.language),
       language: action.value.language,
+      cardsLanguage: action.value.cardsLanguage,
+      setsLanguage: action.value.setsLanguage,
       unumberedSorting: action.value.unumberedSorting,
       isLoaded: true
     }
@@ -69,7 +71,19 @@ function toggleCollection(state = initialState, action) {
     PreferencesMemory.setLanguage(action.value);
     return {
       ...state,
-      language: action.value,
+      language: action.value
+    }
+  } else if (action.type == "CHANGE_CARDS_LANGUAGE") {
+    PreferencesMemory.setCardsLanguage(action.value);
+    return {
+      ...state,
+      cardsLanguage: action.value
+    }
+  } else if (action.type == "CHANGE_SETS_LANGUAGE") {
+    PreferencesMemory.setSetsLanguage(action.value);
+    return {
+      ...state,
+      setsLanguage: action.value,
       seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, state.selectedSeries, action.value)
     }
   } else if (action.type == "CHANGE_SORTING") {

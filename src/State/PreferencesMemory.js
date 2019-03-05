@@ -5,6 +5,8 @@ import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 
 var selectionCache = -1;
 var languageCache = -1;
+var cardsLanguageCache = -1;
+var setsLanguageCache = -1;
 var unumberedSortingCache = -1;
 
 export const setSerieSelection = (value) => {
@@ -48,6 +50,48 @@ export const getLanguage = (success) => {
         .then(result => success(result == null ? locale.split("_")[0] : result));
   } else {
     success(languageCache);
+  }
+}
+
+export const setCardsLanguage = (value) => {
+  try {
+    AsyncStorage.setItem('@Preferences:CardsLanguage', value);
+    cardsLanguageCache = value;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getCardsLanguage = (success) => {
+  if (cardsLanguageCache === -1) { // Keep data in cache
+    const locale = Platform.OS === 'ios'
+        ? NativeModules.SettingsManager.settings.AppleLocale
+        : NativeModules.I18nManager.localeIdentifier;
+    AsyncStorage.getItem('@Preferences:CardsLanguage')
+        .then(result => success(result == null ? locale.split("_")[0] : result));
+  } else {
+    success(cardsLanguageCache);
+  }
+}
+
+export const setSetsLanguage = (value) => {
+  try {
+    AsyncStorage.setItem('@Preferences:SetsLanguage', value);
+    setsLanguageCache = value;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getSetsLanguage = (success) => {
+  if (setsLanguageCache === -1) { // Keep data in cache
+    const locale = Platform.OS === 'ios'
+        ? NativeModules.SettingsManager.settings.AppleLocale
+        : NativeModules.I18nManager.localeIdentifier;
+    AsyncStorage.getItem('@Preferences:SetsLanguage')
+        .then(result => success(result == null ? locale.split("_")[0] : result));
+  } else {
+    success(setsLanguageCache);
   }
 }
 

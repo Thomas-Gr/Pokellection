@@ -24,6 +24,9 @@ class OptionsScreen extends Component {
   constructor(props) {
     super(props)
     this.updateSorting = this.updateSorting.bind(this);
+    this.updateMenuLanguage = this.updateMenuLanguage.bind(this);
+    this.updateCardsLanguage = this.updateCardsLanguage.bind(this);
+    this.updateSetsLanguage = this.updateSetsLanguage.bind(this);
     this.openActionSheet = this.openActionSheet.bind(this);
   }
 
@@ -54,6 +57,26 @@ class OptionsScreen extends Component {
   updateSorting(value) {
     if (value != undefined) {
       this.props.dispatch({ type: "CHANGE_SORTING", value: value.key })
+    }
+  }
+
+  updateMenuLanguage(value) {
+    if (value != undefined) {
+      this.props.dispatch({ type: "CHANGE_LANGUAGE", value: value.key })
+    }
+  }
+
+  updateCardsLanguage(value) {
+    if (value != undefined) {
+        console.log("as" + value.key);
+      this.props.dispatch({ type: "CHANGE_CARDS_LANGUAGE", value: value.key })
+    }
+  }
+
+  updateSetsLanguage(value) {
+    if (value != undefined) {
+      console.log(value.key);
+      this.props.dispatch({ type: "CHANGE_SETS_LANGUAGE", value: value.key })
     }
   }
 
@@ -92,7 +115,79 @@ class OptionsScreen extends Component {
           }
         ],
         updateFunction: this.updateSorting
-      }
+      },
+      {
+        name: "menu-language",
+        value: this.props.language,
+        text: string("options.menu-language.name"),
+        binding: { "en": 0, "fr": 1, "ja": 2 },
+        options: [
+          {
+            name: "english",
+            key: "en",
+            text: string("options.menu-language.en")
+          },
+          {
+            name: "french",
+            key: "fr",
+            text: string("options.menu-language.fr")
+          },
+          {
+            name: "japanese",
+            key: "ja",
+            text: string("options.menu-language.ja")
+          }
+        ],
+        updateFunction: this.updateMenuLanguage
+      },
+      {
+        name: "cards-language",
+        value: this.props.cardsLanguage,
+        text: string("options.cards-language.name"),
+        binding: { "en": 0, "fr": 1, "ja": 2 },
+        options: [
+          {
+            name: "english",
+            key: "en",
+            text: string("options.cards-language.en")
+          },
+          {
+            name: "french",
+            key: "fr",
+            text: string("options.cards-language.fr")
+          },
+          {
+            name: "japanese",
+            key: "ja",
+            text: string("options.cards-language.ja")
+          }
+        ],
+        updateFunction: this.updateCardsLanguage
+      },
+      {
+        name: "sets-language",
+        value: this.props.setsLanguage,
+        text: string("options.sets-language.name"),
+        binding: { "en": 0, "fr": 1, "ja": 2 },
+        options: [
+          {
+            name: "english",
+            key: "en",
+            text: string("options.sets-language.en")
+          },
+          {
+            name: "french",
+            key: "fr",
+            text: string("options.sets-language.fr")
+          },
+          {
+            name: "japanese",
+            key: "ja",
+            text: string("options.sets-language.ja")
+          }
+        ],
+        updateFunction: this.updateSetsLanguage
+      },
     ]
 
     return (
@@ -121,6 +216,8 @@ class OptionsScreen extends Component {
 const mapStateToProps = (state) => {
   return {
     language: state.language,
+    cardsLanguage: state.cardsLanguage,
+    setsLanguage: state.setsLanguage,
     unumberedSorting: state.unumberedSorting
   }
 }

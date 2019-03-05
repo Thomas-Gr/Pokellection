@@ -54,7 +54,7 @@ class ResearchsScreen extends Component {
   buildList(filteredSerie) {
     return filteredSerie
         .map(key => ({
-          title: language(this.props.language, SerieConfig[key].definition),
+          title: language(this.props.setsLanguage, SerieConfig[key].definition),
           data: [{name: key}]
         }))
         .filter(obj => this.props.collections[obj.data[0].name] == undefined ||
@@ -144,7 +144,7 @@ const mapStateToProps = (state) => {
   return {
     selectedSeries: state.selectedSeries,
     collections: state.collections,
-    language: state.language
+    setsLanguage: state.setsLanguage
   }
 }
 

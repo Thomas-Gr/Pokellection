@@ -24,26 +24,9 @@ const routes = [
 //  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
   { name: "section.about", link: "About", icon: "question", type: "FontAwesome"}]
 
-const flags = [
-    { key: 'US', language: 'en' },
-    { key: 'FR', language: 'fr' },
-    { key: 'JP', language: 'ja' }
-  ]
-
 class SideBar extends React.Component {
 
   render() {
-    const selectionElements = flags.map(flag => {
-      return (
-        <Col key={flag.key}>
-          <View style={{ alignItems: 'center', opacity: flag.language == this.props.language ? 1 : 0.1 }}>
-            <TouchableOpacity activeOpacity={0.4} onPress={() => this.clickFlag(flag.language)}>
-              <Flag code={flag.key} size={32} />
-            </TouchableOpacity>
-          </View>
-        </Col>);
-    })
-
     const translatedRoutes = routes.map(route => {
       return {...route, translatedString: string(route.name)}
     });
@@ -96,14 +79,9 @@ class SideBar extends React.Component {
               );
             }}
           />
-          <Grid style={{marginTop: 10}}><Row>{selectionElements}</Row></Grid>
         </Content>
       </Container>
     );
-  }
-
-  clickFlag(flag) {
-    this.props.dispatch({ type: "CHANGE_LANGUAGE", value: flag })
   }
 }
 

@@ -89,7 +89,7 @@ class CardInformationScreen extends React.Component {
                   <Grid>
                     <Row style={{height: 40}}>
                       <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
-                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {language(this.props.language, selectedCard)} {card}</Text>
+                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {language(this.props.cardsLanguage, selectedCard)} {card}</Text>
                       </View>
                     </Row>
                     <Row>
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    language: state.language
+    cardsLanguage: state.cardsLanguage
   }
 }
 

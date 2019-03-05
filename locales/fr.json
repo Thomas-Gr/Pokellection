@@ -13,6 +13,24 @@
       "official": "Tri officiel",
       "us-like": "Tri à la française",
       "bulbapedia": "Tri Bulbapedia"
+    },
+    "menu-language": {
+      "name": "Langue (menus):",
+      "en": "Anglais",
+      "fr": "Français",
+      "ja": "Japonais"
+    },
+    "cards-language": {
+      "name": "Langue (cartes):",
+      "en": "Anglais",
+      "fr": "Français",
+      "ja": "Japonais"
+    },
+    "sets-language": {
+      "name": "Langue (sets):",
+      "en": "Anglais",
+      "fr": "Français",
+      "ja": "Japonais"
     }
   },
   "about": {
