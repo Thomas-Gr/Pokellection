@@ -50,5 +50,12 @@
   },
   "button": {
     "save": "Enregistrer"
+  },
+  "misc": {
+    "configuration": "Configuration:",
+    "openWiki": "Ouvrir wiki",
+    "add": "Ajouter",
+    "remove": "Supprimer",
+    "card": ""
   }
 }

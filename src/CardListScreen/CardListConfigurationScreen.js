@@ -5,6 +5,7 @@ import { Image, Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import { connect } from 'react-redux'
+import { string } from "../i18n.js"
 
 const selections = [
   {name: "all", icon: "circle-o"},
@@ -139,7 +140,7 @@ class CardListConfigurationScreen extends React.Component {
                 <View style={{flex: 1, backgroundColor: 'white', padding: 20}}>
                     <Grid>
                       <Row>
-                        <Text style={{fontSize: 20, fontWeight: 'bold', marginBottom: 20}}>Configuration:</Text>
+                        <Text style={{fontSize: 20, fontWeight: 'bold', marginBottom: 20}}>{string('misc.configuration')}</Text>
                       </Row>
                           {selectionRow}
                       <Row>
@@ -153,11 +154,11 @@ class CardListConfigurationScreen extends React.Component {
                         </Grid>
                       </Row>
                       <Row>
-                        <Button bordered style={{marginTop: 30}} onPress={() => {
+                        <Button block bordered style={{marginTop: 15, marginBottom: 15, width:'100%'}} onPress={() => {
                               this.props.changeSelection(this.state.cardsToDisplay, this.state.styleToDisplay, this.state.unselectedRarities);
                               this.props.hide();
                             }}>
-                          <Text style={{fontWeight: 'bold'}}>DONE</Text>
+                          <Text style={{fontWeight: 'bold'}}>{string('button.save')}</Text>
                         </Button>
                       </Row>
                     </Grid>
@@ -188,7 +189,8 @@ const mapStateToProps = (state) => {
     research: state.research,
     selection: state.selection,
     display: state.display,
-    unselectedRarities: state.unselectedRarities
+    unselectedRarities: state.unselectedRarities,
+    language: state.language
   }
 }
 

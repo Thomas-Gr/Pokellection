@@ -50,5 +50,12 @@
   },
   "button": {
     "save": "Save"
+  },
+  "misc": {
+    "configuration": "Configuration:",
+    "openWiki": "Open in wiki",
+    "add": "Add ",
+    "remove": "Remove ",
+    "card": "card"
   }
 }

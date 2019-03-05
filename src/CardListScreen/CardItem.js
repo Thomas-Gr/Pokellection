@@ -1,12 +1,12 @@
 import { Body, Button, Card, Icon, Left, ListItem, Right, Row, Text } from "native-base";
 import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { language, string } from "../i18n.js"
 
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
 import { connect } from 'react-redux'
-import { language } from "../i18n.js"
 
 class CardItem extends React.PureComponent {
   render() {
@@ -68,7 +68,7 @@ class CardItem extends React.PureComponent {
       : require('../../resources/images/missing.png');
 
     const icon = item.owned ? 'trash' : 'add';
-    const text = item.owned ? 'Remove' : 'Add';
+    const text = item.owned ? string('misc.remove') : string('misc.add');
 
     const quickAdd = this.props.inLongSelectionMode
       ?
@@ -77,7 +77,7 @@ class CardItem extends React.PureComponent {
               style={{position: 'absolute', alignSelf: 'center', zIndex:10, marginTop:70}}
               onPress={() => this.props.addCard(this.props.collectionName, this.props.data)}>
             <Icon name={icon} />
-            <Text>{text}</Text>
+            <Text style={{fontSize: 10}}>{text}</Text>
           </Button>
         )
       : null;

@@ -9,12 +9,12 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { language, string } from '../i18n.js';
 
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
-import { language } from "../i18n.js"
 import { connect } from 'react-redux'
 
 class CardInformationScreen extends React.Component {
@@ -43,7 +43,7 @@ class CardInformationScreen extends React.Component {
     const wikiLink = selectedCard.wikiLink != null
         ? (
             <Button block onPress={() => Linking.openURL('https://bulbapedia.bulbagarden.net/wiki/' + selectedCard.wikiLink)}>
-              <Text>Open in wiki</Text>
+              <Text>{string('misc.openWiki')}</Text>
             </Button>
           )
         : null;
@@ -103,7 +103,7 @@ class CardInformationScreen extends React.Component {
                         <Col style={styles.centered}>
                           <View style={{width:'90%'}}>
                             <Button block style={{marginBottom:10}} onPress={() => { this.props.hide(); this.props.addCard(this.props.serieName, this.props.selectedCard); }}>
-                              <Text>{this.props.hasSelectedCard ? 'Remove' : 'Add'} card</Text>
+                              <Text>{this.props.hasSelectedCard ? string('misc.remove') : string('misc.add')}{string('misc.card')}</Text>
                             </Button>
 
                             {wikiLink}
@@ -134,7 +134,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    cardsLanguage: state.cardsLanguage
+    cardsLanguage: state.cardsLanguage,
+    language: state.language
   }
 }
 
