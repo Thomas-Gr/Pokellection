@@ -51,20 +51,12 @@ function toggleCollection(state = initialState, action) {
       inLongSelectionMode: !state.inLongSelectionMode
     }
   } else if (action.type == "SET_SERIES") {
-    let series = Object.assign({}, state.selectedSeries);
-
-    if (series[action.value] != null) {
-      series[action.value] = !series[action.value];
-    } else {
-      series[action.value] = true;
-    }
-
-    PreferencesMemory.setSerieSelection(series);
+    PreferencesMemory.setSerieSelection(action.value);
 
     return {
       ...state,
-      selectedSeries: series,
-      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, series, state.language),
+      selectedSeries: action.value,
+      seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, action.value, state.language),
     }
   } else if (action.type == "UPDATE_PREFERENCES") {
     var newState = Object.assign({}, state)
