@@ -8,7 +8,7 @@ import SerieConfig from '../Config/SerieConfig.js';
 import TypesLogos from '../Config/TypesLogos.js';
 import { connect } from 'react-redux'
 
-class CardItem extends React.PureComponent {
+class CardItem extends React.Component {
   render() {
     const item = this.props.item;
     const data = this.props.data;
@@ -20,6 +20,11 @@ class CardItem extends React.PureComponent {
     } else {
       return this.displayPictureStyle(item, data, showNumbers, collectionName);
     }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return this.props.item.owned != nextProps.item.owned
+        || this.props.inLongSelectionMode != nextProps.inLongSelectionMode
   }
 
   displayListStyle(item, data, showNumbers, collectionName) {

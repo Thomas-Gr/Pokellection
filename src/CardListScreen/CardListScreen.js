@@ -20,6 +20,11 @@ class CardListScreen extends React.Component {
     };
   }
 
+  shouldComponentUpdate(nextProps) {
+    return JSON.stringify(this.props.dataSource) != JSON.stringify(nextProps.dataSource)
+        || this.props.display != nextProps.display;
+  }
+
   _switchLongSelectionMode = () => this.props.dispatch({ type: "SWITCH_LONG_SELECTION_MODE" })
 
   _renderItem = ({item}) => (<CardItem
@@ -36,13 +41,19 @@ class CardListScreen extends React.Component {
         ? <View><FlatList
            data={this.props.dataSource}
            keyExtractor={item => 'list' + item.id.toString()}
-           initialNumToRender={15}
+           initialNumToRender={20}
+           windowSize={20}
+           maxToRenderPerBatch={20}
+           onEndReachedThreshold={0.5}
            renderItem={this._renderItem}/></View>
         : <FlatList
            data={this.props.dataSource}
            keyExtractor={item => 'pictures' + item.id.toString()}
            numColumns={3}
            initialNumToRender={12}
+           windowSize={12}
+           maxToRenderPerBatch={12}
+           onEndReachedThreshold={0.5}
            renderItem={this._renderItem}/>
   }
 }

@@ -72,7 +72,6 @@ class ResearchsScreen extends Component {
 
   _renderItem = ({item}) => (
       <CardListScreen
-          isEmbedded={true}
           serieName={item.name}
           forcedSelection="miss"
           selectCard={(card) => this.showCardInformation(item.name, card)}

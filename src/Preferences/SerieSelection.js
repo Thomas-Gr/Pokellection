@@ -81,7 +81,7 @@ class SerieSelection extends Component {
   )
 
   _renderSectionHeader = ({section}) => (
-    <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{language(this.props.setsLanguage, section)}</Text></ListItem>
+    <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{language(this.props.language, section)}</Text></ListItem>
   )
 
   createSaveButton() {
@@ -116,7 +116,8 @@ class SerieSelection extends Component {
 const mapStateToProps = (state) => {
   return {
     selectedSeries: state.selectedSeries,
-    setsLanguage: state.setsLanguage
+    setsLanguage: state.setsLanguage,
+    language: state.language
   }
 }
 
