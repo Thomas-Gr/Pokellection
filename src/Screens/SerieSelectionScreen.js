@@ -20,7 +20,7 @@ import SeriesLogos from '../Config/SeriesLogos.js';
 import { connect } from 'react-redux'
 import { language } from "../i18n.js"
 
-class SerieSelection extends Component {
+class SerieSelectionScreen extends Component {
   constructor(props) {
     super(props)
 
@@ -121,4 +121,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(SerieSelection)
+export default connect(mapStateToProps)(SerieSelectionScreen)

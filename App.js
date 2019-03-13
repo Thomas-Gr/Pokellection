@@ -5,7 +5,7 @@ import * as Expo from 'expo'
 import { Provider } from 'react-redux'
 
 import Store from './src/Store/configureStore.js'
-import HomeScreen from "./src/HomeScreen/index.js";
+import HomeScreenRouter from "./src/index.js";
 
 export default class AwesomeApp extends Component {
   constructor() {
@@ -32,6 +32,6 @@ export default class AwesomeApp extends Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    return <Provider store={Store}><Root><HomeScreen /></Root></Provider>;
+    return <Provider store={Store}><Root><HomeScreenRouter /></Root></Provider>;
   }
 }

@@ -6,7 +6,7 @@ import { string } from "../i18n.js"
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import MyHeader from "../UtilityScreens/MyHeader.js";
 
-class About extends Component {
+class AboutScreen extends Component {
   render() {
     return (
       <Container>
@@ -77,4 +77,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(About)
+export default connect(mapStateToProps)(AboutScreen)

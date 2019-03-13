@@ -1,22 +1,22 @@
 import { createDrawerNavigator, createStackNavigator } from "react-navigation";
 
-import About from "../Screens/About.js";
-import CardListTabScreen from "../CardListScreen/CardListTabScreen.js";
-import HomeScreen from "./HomeScreen.js";
+import AboutScreen from "./Screens/AboutScreen.js";
+import CardListTabScreen from "./CardListScreen/CardListTabScreen.js";
+import HomeScreen from "./Screens/HomeScreen.js";
 import { Platform } from "react-native";
 import React from 'react';
-import ResearchsScreen from "../Researchs/ResearchsScreen.js";
-import SerieSelection from "../Preferences/SerieSelection.js";
-import OptionsScreen from "../Preferences/OptionsScreen.js";
-import SideBar from "../SideBar/SideBar.js";
+import ResearchsScreen from "./Researchs/ResearchsScreen.js";
+import SerieSelectionScreen from "./Screens/SerieSelectionScreen.js";
+import OptionsScreen from "./Screens/OptionsScreen.js";
+import SideBar from "./SideBar/SideBar.js";
 
 const StackNavigator = createStackNavigator(
   {
     Home: { screen: HomeScreen },
     ResearchsScreen: { screen: ResearchsScreen },
     CardListScreen: { screen: CardListTabScreen },
-    SerieSelection: { screen: SerieSelection },
-    About: { screen: About },
+    SerieSelectionScreen: { screen: SerieSelectionScreen },
+    AboutScreen: { screen: AboutScreen },
     OptionsScreen: { screen: OptionsScreen },
   },
   {
