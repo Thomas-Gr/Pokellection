@@ -51,7 +51,6 @@ class SerieSelectionScreen extends Component {
   }
 
   saveUpdate() {
-    console.log(this.state.locallySelectedSeries);
     this.props.dispatch({ type: "SET_SERIES", value: this.state.locallySelectedSeries })
     this.setState({locallySelectedSeries: null});
   }
