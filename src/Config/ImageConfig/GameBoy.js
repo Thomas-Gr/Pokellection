@@ -1,10 +1,10 @@
 const GameBoy =
-  {'MeowthWizardsPromo10.jpg' : require('../../../resources/images/cards/MeowthWizardsPromo10.jpg'),
-'GreatRocketMewtwoCardGB2Promo.jpg' : require('../../../resources/images/cards/GreatRocketMewtwoCardGB2Promo.jpg'),
-'DarkIvysaurBestofGame6.jpg' : require('../../../resources/images/cards/DarkIvysaurBestofGame6.jpg'),
-'LugiaCardGB2Promo.jpg' : require('../../../resources/images/cards/LugiaCardGB2Promo.jpg'),
+  {'DarkFearowCardGB2Promo.jpg' : require('../../../resources/images/cards/DarkFearowCardGB2Promo.jpg'),
 'DragoniteCardGBPromo.jpg' : require('../../../resources/images/cards/DragoniteCardGBPromo.jpg'),
-'DarkFearowCardGB2Promo.jpg' : require('../../../resources/images/cards/DarkFearowCardGB2Promo.jpg'),
-'VenusaurWizardsPromo13.jpg' : require('../../../resources/images/cards/VenusaurWizardsPromo13.jpg'),
-'DarkVenusaurBestofGame7.jpg' : require('../../../resources/images/cards/DarkVenusaurBestofGame7.jpg')};
+'GreatRocketMewtwoCardGB2Promo.jpg' : require('../../../resources/images/cards/GreatRocketMewtwoCardGB2Promo.jpg'),
+'LugiaCardGB2Promo.jpg' : require('../../../resources/images/cards/LugiaCardGB2Promo.jpg'),
+'promo-001.jpg' : require('../../../resources/images/cards/promo-001.jpg'),
+'promo-1-014.jpg' : require('../../../resources/images/cards/promo-1-014.jpg'),
+'promo-3-005.jpg' : require('../../../resources/images/cards/promo-3-005.jpg'),
+'promo-3-011.jpg' : require('../../../resources/images/cards/promo-3-011.jpg')};
 export default GameBoy
