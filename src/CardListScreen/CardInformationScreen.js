@@ -22,6 +22,10 @@ class CardInformationScreen extends React.Component {
     super(props);
   }
 
+  showImage(image) {
+    this.props.dispatch({ type: "SHOW_IMAGE", value: image })
+  }
+
   render() {
     const selectedCard = this.props.selectedCard;
 
@@ -95,10 +99,12 @@ class CardInformationScreen extends React.Component {
                     <Row>
                       <Grid>
                         <Col style={styles.centered}>
-                            <Image
-                              style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
-                              source={image}
-                            />
+                          <TouchableOpacity onPress={() => this.showImage(image)}>
+                              <Image
+                                style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
+                                source={image}
+                              />
+                              </TouchableOpacity>
                         </Col>
                         <Col style={styles.centered}>
                           <View style={{width:'90%'}}>

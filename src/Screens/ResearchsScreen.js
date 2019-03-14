@@ -11,6 +11,7 @@ import { SectionList } from 'react-native';
 import SerieConfig from '../Config/SerieConfig.js';
 import { connect } from 'react-redux'
 import { language } from "../i18n.js"
+import ImageView from 'react-native-image-view';
 
 class ResearchsScreen extends Component {
   constructor() {
@@ -68,6 +69,10 @@ class ResearchsScreen extends Component {
 
   addCard(collectionName, card) {
     this.props.dispatch({ type: "ADD_CARD", value: {collectionName: collectionName, card: card} })
+  }
+
+  hideImage(image) {
+    this.props.dispatch({ type: "HIDE_IMAGE" })
   }
 
   _renderItem = ({item}) => (
@@ -131,6 +136,13 @@ class ResearchsScreen extends Component {
                  hide={this.hideConfigurationPanel}
                  forcedResearched='miss'
                  changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
+
+             <ImageView
+                 images={[{source: this.props.imageToShow, width: 250, height: 358}]}
+                 imageIndex={0}
+                 isVisible={this.props.showImage}
+                 onClose={() => this.hideImage()}
+             />
           </Content>
           <AdBanner />
         </Container>
@@ -143,7 +155,9 @@ const mapStateToProps = (state) => {
   return {
     selectedSeries: state.selectedSeries,
     collections: state.collections,
-    setsLanguage: state.setsLanguage
+    setsLanguage: state.setsLanguage,
+    showImage: state.showImage,
+    imageToShow: state.imageToShow
   }
 }
 

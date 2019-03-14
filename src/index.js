@@ -5,7 +5,7 @@ import CardListTabScreen from "./CardListScreen/CardListTabScreen.js";
 import HomeScreen from "./Screens/HomeScreen.js";
 import { Platform } from "react-native";
 import React from 'react';
-import ResearchsScreen from "./Researchs/ResearchsScreen.js";
+import ResearchsScreen from "./Screens/ResearchsScreen.js";
 import SerieSelectionScreen from "./Screens/SerieSelectionScreen.js";
 import OptionsScreen from "./Screens/OptionsScreen.js";
 import SideBar from "./SideBar/SideBar.js";

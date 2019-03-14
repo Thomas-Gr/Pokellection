@@ -1,4 +1,4 @@
-const initialState = { isLoaded: false, inLongSelectionMode: false }
+const initialState = { isLoaded: false, inLongSelectionMode: false, showImage: false }
 
 import * as CollectionMemory from "../../State/CollectionMemory.js";
 import * as PreferencesMemory from "../../State/PreferencesMemory.js";
@@ -84,6 +84,18 @@ function toggleCollection(state = initialState, action) {
     }
 
     return newState
+  } else if (action.type == "SHOW_IMAGE") {
+    return {
+      ...state,
+      showImage: true,
+      imageToShow: action.value
+    }
+  } else if (action.type == "HIDE_IMAGE") {
+    return {
+      ...state,
+      showImage: false,
+      imageToShow: null
+    }
   }
 
   return state;

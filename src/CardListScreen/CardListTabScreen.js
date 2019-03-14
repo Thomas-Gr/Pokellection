@@ -1,16 +1,18 @@
 import * as React from 'react';
 
 import { Dimensions, View } from 'react-native';
-import { language } from "../i18n.js"
-import SerieConfig from '../Config/SerieConfig.js';
+
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardInformationScreen from "./CardInformationScreen.js";
 import CardListConfigurationScreen from "./CardListConfigurationScreen.js";
 import CardListScreen from "./CardListScreen.js";
 import { Container } from 'native-base';
+import ImageView from 'react-native-image-view';
 import MyHeader from "../UtilityScreens/MyHeader.js";
-import { TabView } from 'react-native-tab-view';
+import SerieConfig from '../Config/SerieConfig.js';
+import { TabView } from 'react-native-tab-view'
 import { connect } from 'react-redux'
+import { language } from "../i18n.js"
 
 class CardListTabScreen extends React.PureComponent {
   constructor(props) {
@@ -81,6 +83,10 @@ class CardListTabScreen extends React.PureComponent {
       />;
   };
 
+  hideImage(image) {
+    this.props.dispatch({ type: "HIDE_IMAGE" })
+  }
+
   render() {
     return (
       <Container>
@@ -105,6 +111,13 @@ class CardListTabScreen extends React.PureComponent {
             renderTabBar={(route) => null}
             initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
           />
+
+          <ImageView
+              images={[{source: this.props.imageToShow, width: 250, height: 358}]}
+              imageIndex={0}
+              isVisible={this.props.showImage}
+              onClose={() => this.hideImage()}
+          />
       <AdBanner/>
     </Container>
     );
@@ -115,7 +128,9 @@ const mapStateToProps = (state) => {
   return {
     seriesToDisplay: state.seriesToDisplay,
     collections: state.collections,
-    setsLanguage: state.setsLanguage
+    setsLanguage: state.setsLanguage,
+    showImage: state.showImage,
+    imageToShow: state.imageToShow
   }
 }
 
