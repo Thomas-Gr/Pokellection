@@ -14,7 +14,7 @@
     "android": {
       "package": "com.pokellection",
       "permissions": [],
-      "versionCode": 2
+      "versionCode": 3
     },
     "assetBundlePatterns": [
       "resources/images/rarities/*",

@@ -21,6 +21,9 @@ class AboutScreen extends Component {
             <Text>{string('about.designer')}</Text>
             <Text style={styles.padded}>{string('about.pictures')}</Text>
 
+            <Text h1 style={styles.title}>{string('about.privacy')}</Text>
+            <Text style={[styles.padded, styles.link]} onPress={() => Linking.openURL('http://grilletta.fr/pokellection/privacy_policy.html')}>http://grilletta.fr/pokellection/privacy_policy.html</Text>
+
             <Text h1 style={styles.title}>{string('about.license')}</Text>
             <Text style={styles.padded}>{string('about.license2')}</Text>
 
