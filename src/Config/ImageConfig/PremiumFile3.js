@@ -1,11 +1,11 @@
 const PremiumFile3 =
-  {'LugiaNeoRevelation20.jpg' : require('../../../resources/images/cards/LugiaNeoRevelation20.jpg'),
-'SudowoodoNeoRevelation26.jpg' : require('../../../resources/images/cards/SudowoodoNeoRevelation26.jpg'),
-'SkarmoryNeoRevelation23.jpg' : require('../../../resources/images/cards/SkarmoryNeoRevelation23.jpg'),
-'CelebiNeoRevelation16.jpg' : require('../../../resources/images/cards/CelebiNeoRevelation16.jpg'),
-'Ho-OhNeoRevelation18.jpg' : require('../../../resources/images/cards/Ho-OhNeoRevelation18.jpg'),
-'EnteiNeoRevelation17.jpg' : require('../../../resources/images/cards/EnteiNeoRevelation17.jpg'),
-'SuicuneNeoRevelation27.jpg' : require('../../../resources/images/cards/SuicuneNeoRevelation27.jpg'),
-'RaikouNeoRevelation22.jpg' : require('../../../resources/images/cards/RaikouNeoRevelation22.jpg'),
-'SneaselNeoRevelation24.jpg' : require('../../../resources/images/cards/SneaselNeoRevelation24.jpg')};
+  {'neo-premium-file-3-001.jpg' : require('../../../resources/images/cards/neo-premium-file-3-001.jpg'),
+'neo-premium-file-3-002.jpg' : require('../../../resources/images/cards/neo-premium-file-3-002.jpg'),
+'neo-premium-file-3-003.jpg' : require('../../../resources/images/cards/neo-premium-file-3-003.jpg'),
+'neo-premium-file-3-004.jpg' : require('../../../resources/images/cards/neo-premium-file-3-004.jpg'),
+'neo-premium-file-3-005.jpg' : require('../../../resources/images/cards/neo-premium-file-3-005.jpg'),
+'neo-premium-file-3-006.jpg' : require('../../../resources/images/cards/neo-premium-file-3-006.jpg'),
+'neo-premium-file-3-007.jpg' : require('../../../resources/images/cards/neo-premium-file-3-007.jpg'),
+'neo-premium-file-3-008.jpg' : require('../../../resources/images/cards/neo-premium-file-3-008.jpg'),
+'neo-premium-file-3-009.jpg' : require('../../../resources/images/cards/neo-premium-file-3-009.jpg')};
 export default PremiumFile3

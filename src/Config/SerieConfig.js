@@ -40,7 +40,6 @@ import PremiumFile3 from "./ImageConfig/PremiumFile3.js";
 import RainbowIsland from "./ImageConfig/RainbowIsland.js";
 import RedDeck from "./ImageConfig/RedDeck.js";
 import RocketGang from "./ImageConfig/RocketGang.js";
-import SouthernIslands from "./ImageConfig/SouthernIslands.js";
 import SplitEarth from "./ImageConfig/SplitEarth.js";
 import SquirtleDeck from "./ImageConfig/SquirtleDeck.js";
 import TPromotionalCards from "./ImageConfig/TPromotionalCards.js";
@@ -150,10 +149,6 @@ const SerieConfig =
     'Rainbow Island' : {
       definition: require('../../resources/series/Rainbow Island.json'),
       pictures: RainbowIsland
-    },
-    'Southern Islands' : {
-      definition: require('../../resources/series/Southern Islands.json'),
-      pictures: SouthernIslands
     },
     'How I Became a Pokémon Card' : {
       definition: require('../../resources/series/How I Became a Pokemon Card.json'),

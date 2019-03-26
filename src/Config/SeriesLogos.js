@@ -21,4 +21,5 @@ export default SeriesLogos = {
   'SetSymbolNeo_Revelation.png' : require('../../resources/images/series/SetSymbolNeo_Revelation.png'),
   'SetSymbolNeo_Discovery.png' : require('../../resources/images/series/SetSymbolNeo_Discovery.png'),
   'SetSymbolNeo_Destiny.png' : require('../../resources/images/series/SetSymbolNeo_Destiny.png'),
+  'macdo.gif' : require('../../resources/images/series/macdo.gif'),
 };

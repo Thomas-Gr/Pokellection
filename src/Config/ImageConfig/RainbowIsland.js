@@ -1,11 +1,11 @@
 const RainbowIsland =
-  {'LedybaSouthernIslands7.jpg' : require('../../../resources/images/cards/LedybaSouthernIslands7.jpg'),
-'MewSouthernIslands1.jpg' : require('../../../resources/images/cards/MewSouthernIslands1.jpg'),
-'IvysaurSouthernIslands5.jpg' : require('../../../resources/images/cards/IvysaurSouthernIslands5.jpg'),
-'OnixSouthernIslands3.jpg' : require('../../../resources/images/cards/OnixSouthernIslands3.jpg'),
-'PidgeotSouthernIslands2.jpg' : require('../../../resources/images/cards/PidgeotSouthernIslands2.jpg'),
-'ButterfreeSouthernIslands9.jpg' : require('../../../resources/images/cards/ButterfreeSouthernIslands9.jpg'),
-'TogepiSouthernIslands4.jpg' : require('../../../resources/images/cards/TogepiSouthernIslands4.jpg'),
-'RaticateSouthernIslands6.jpg' : require('../../../resources/images/cards/RaticateSouthernIslands6.jpg'),
-'JigglypuffSouthernIslands8.jpg' : require('../../../resources/images/cards/JigglypuffSouthernIslands8.jpg')};
+  {'islands-2-001.jpg' : require('../../../resources/images/cards/islands-2-001.jpg'),
+'islands-2-002.jpg' : require('../../../resources/images/cards/islands-2-002.jpg'),
+'islands-2-003.jpg' : require('../../../resources/images/cards/islands-2-003.jpg'),
+'islands-2-004.jpg' : require('../../../resources/images/cards/islands-2-004.jpg'),
+'islands-2-005.jpg' : require('../../../resources/images/cards/islands-2-005.jpg'),
+'islands-2-006.jpg' : require('../../../resources/images/cards/islands-2-006.jpg'),
+'islands-2-007.jpg' : require('../../../resources/images/cards/islands-2-007.jpg'),
+'islands-2-008.jpg' : require('../../../resources/images/cards/islands-2-008.jpg'),
+'islands-2-009.jpg' : require('../../../resources/images/cards/islands-2-009.jpg')};
 export default RainbowIsland
