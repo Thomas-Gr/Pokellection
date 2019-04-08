@@ -63,6 +63,7 @@ import Year1998 from "./ImageConfig/1998.js";
 import Year1999 from "./ImageConfig/1999.js";
 import Year2000 from "./ImageConfig/2000.js";
 import Year20012005 from "./ImageConfig/2001-2005.js";
+import Carddass from "./ImageConfig/Carddass.js";
 
 const SerieConfig =
   {
@@ -329,6 +330,10 @@ const SerieConfig =
     'Totodile Half Deck' : {
       definition: require('../../resources/series/Totodile Half Deck.json'),
       pictures: TotodileHalfDeck
+    },
+    'Pocket Monsters Carddass Trading Cards' : {
+      definition: require('../../resources/series/Pocket Monsters Carddass Trading Cards.json'),
+      pictures: Carddass
     }
   };
 

@@ -48,6 +48,13 @@ const HomeSerieConfig = [
       'Jumbo', 'Championship', 'CoroCoro Best Photo Contest', 'Tropical Mega Battle Phone Cards', 'Pikachu Illustrator'
     ]
   },
+  {
+    name: "Non TCG",
+    frenchName: "Hors TCG",
+    data: [
+      'Pocket Monsters Carddass Trading Cards'
+    ]
+  },
 
 ];
 

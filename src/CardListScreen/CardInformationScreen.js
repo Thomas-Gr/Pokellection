@@ -52,7 +52,7 @@ class CardInformationScreen extends React.Component {
           )
         : null;
 
-    const type = TypesLogos[selectedCard.type] != null
+    const type = TypesLogos[selectedCard.type] != null || selectedCard.type == "NON_TCG"
         ? <Image source={TypesLogos[selectedCard.type]} style={{width:20, height:20}}/>
         : <Text style={{backgroundColor: 'white'}}>{selectedCard.type.charAt(0)}</Text>;
 
