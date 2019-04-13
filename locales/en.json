@@ -57,6 +57,7 @@
     "openWiki": "Open in wiki",
     "add": "Add ",
     "remove": "Remove ",
-    "card": "card"
+    "card": "card",
+    "setsHidden": "Too many cards to load, some sets are hidden"
   }
 }

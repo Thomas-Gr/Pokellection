@@ -57,6 +57,7 @@
     "openWiki": "Ouvrir wiki",
     "add": "Ajouter",
     "remove": "Supprimer",
-    "card": ""
+    "card": "",
+    "setsHidden": "Trop de cartes à charger, des séries ne sont pas affichées"
   }
 }

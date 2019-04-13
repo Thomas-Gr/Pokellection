@@ -1,4 +1,5 @@
 import { Container, Content, ListItem, Text } from 'native-base';
+import { StyleSheet, View } from 'react-native';
 import React, { Component } from 'react';
 
 import AdBanner from "../UtilityScreens/AdBanner.js";
@@ -10,7 +11,7 @@ import MyHeader from "../UtilityScreens/MyHeader.js";
 import { SectionList } from 'react-native';
 import SerieConfig from '../Config/SerieConfig.js';
 import { connect } from 'react-redux'
-import { language } from "../i18n.js"
+import { language, string } from "../i18n.js"
 import ImageView from 'react-native-image-view';
 
 class ResearchsScreen extends Component {
@@ -22,7 +23,8 @@ class ResearchsScreen extends Component {
       cardInformationVisible: false,
       selectedCard: null,
       selectedSerie: null,
-      hasSelectedCard: false
+      hasSelectedCard: false,
+      hasAtLeastOneSerieHidden: false
     };
 
     this.changeSelection = this.changeSelection.bind(this);
@@ -53,14 +55,42 @@ class ResearchsScreen extends Component {
   }
 
   buildList(filteredSerie) {
-    return filteredSerie
+    var max = 200 // TODO: Move this somewhere (make it configurable?)
+    var current = 0
+    var hasAtLeastOneSerieHidden = false
+
+    var result = filteredSerie
         .map(key => ({
           title: language(this.props.setsLanguage, SerieConfig[key].definition),
           data: [{name: key}]
         }))
         .filter(obj => this.props.collections[obj.data[0].name] == undefined ||
             Object.keys(this.props.collections[obj.data[0].name]).length !=
-                Object.keys(SerieConfig[obj.data[0].name].definition.cards).length);
+                Object.keys(SerieConfig[obj.data[0].name].definition.cards).length)
+        .map(obj => {
+          var displayed
+
+          if (current >= max) {
+            displayed = false;
+            hasAtLeastOneSerieHidden = true
+          } else {
+            const owned = this.props.collections[obj.data[0].name] == undefined
+                ? 0
+                : Object.keys(this.props.collections[obj.data[0].name]).length
+
+            const total = Object.keys(SerieConfig[obj.data[0].name].definition.cards).length
+
+            current += total - owned
+            displayed = true
+          }
+
+          return {...obj, isDisplayed: displayed}
+        })
+        .filter(obj => obj.isDisplayed)
+
+        this.setState({hasAtLeastOneSerieHidden: hasAtLeastOneSerieHidden})
+
+        return result
   }
 
   filterSelectedSeriesOnly(allSeries, selectedSeries) {
@@ -110,6 +140,12 @@ class ResearchsScreen extends Component {
         </Container>
       );
     } else {
+      const explanation = this.state.hasAtLeastOneSerieHidden
+          ? <View style={styles.filteredBanner}>
+              <Text style={styles.warning}>{string('misc.setsHidden')}</Text>
+            </View>
+          : null;
+
       return (
         <Container>
           <MyHeader {...this.props} selectionFunction={this.showConfigurationPanel}/>
@@ -122,6 +158,8 @@ class ResearchsScreen extends Component {
                initialNumToRender={1}
                renderSectionHeader={this._renderSectionHeader}
                />
+
+             {explanation}
 
              <CardInformationScreen
                serieName={this.state.selectedSerie}
@@ -150,6 +188,20 @@ class ResearchsScreen extends Component {
     }
   }
 }
+
+const styles = StyleSheet.create({
+  filteredBanner: {
+    position: "relative",
+    bottom: 0,
+    width: '100%',
+    align: 'center',
+    backgroundColor: '#ffa500',
+  },
+  warning: {
+    color: 'white',
+    textAlign: 'center'
+  }
+})
 
 const mapStateToProps = (state) => {
   return {
