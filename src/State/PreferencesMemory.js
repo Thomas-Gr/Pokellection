@@ -44,7 +44,7 @@ export const setLanguage = (value) => {
 export const getLanguage = (success) => {
   if (languageCache === -1) { // Keep data in cache
     const locale = Platform.OS === 'ios'
-        ? NativeModules.SettingsManager.settings.AppleLocale
+        ? (NativeModules.SettingsManager == undefined ? "en" : NativeModules.SettingsManager.settings.AppleLocale)
         : NativeModules.I18nManager.localeIdentifier;
     AsyncStorage.getItem('@Preferences:Language')
         .then(result => success(result == null ? locale.split("_")[0] : result));
@@ -65,7 +65,7 @@ export const setCardsLanguage = (value) => {
 export const getCardsLanguage = (success) => {
   if (cardsLanguageCache === -1) { // Keep data in cache
     const locale = Platform.OS === 'ios'
-        ? NativeModules.SettingsManager.settings.AppleLocale
+        ? (NativeModules.SettingsManager == undefined ? "en" : NativeModules.SettingsManager.settings.AppleLocale)
         : NativeModules.I18nManager.localeIdentifier;
     AsyncStorage.getItem('@Preferences:CardsLanguage')
         .then(result => success(result == null ? locale.split("_")[0] : result));
@@ -86,7 +86,7 @@ export const setSetsLanguage = (value) => {
 export const getSetsLanguage = (success) => {
   if (setsLanguageCache === -1) { // Keep data in cache
     const locale = Platform.OS === 'ios'
-        ? NativeModules.SettingsManager.settings.AppleLocale
+        ? (NativeModules.SettingsManager == undefined ? "en" : NativeModules.SettingsManager.settings.AppleLocale)
         : NativeModules.I18nManager.localeIdentifier;
     AsyncStorage.getItem('@Preferences:SetsLanguage')
         .then(result => success(result == null ? locale.split("_")[0] : result));

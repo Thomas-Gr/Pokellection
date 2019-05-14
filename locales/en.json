@@ -58,6 +58,7 @@
     "add": "Add ",
     "remove": "Remove ",
     "card": "card",
-    "setsHidden": "Too many cards to load, some sets are hidden"
+    "setsHidden": "Too many cards to load, some sets are hidden",
+    "config": "Config"
   }
 }

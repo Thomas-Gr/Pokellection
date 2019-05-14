@@ -9,20 +9,27 @@ import {
   Text
 } from 'native-base';
 import { Col, Grid, Row } from "react-native-easy-grid";
-import { Image, TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View, Platform } from 'react-native';
 import { string } from "../i18n.js"
 
 import Flag from 'react-native-flags';
 import React from "react";
 import { connect } from 'react-redux'
 
-const routes = [
-  { name: "section.series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
-  { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
-  { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog"},
-  { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
-//  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
-  { name: "section.about", link: "AboutScreen", icon: "question", type: "FontAwesome"}]
+const routes = Platform.OS === "ios"
+  ? [ { name: "section.series", link: "Home", icon: "list"},
+      { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
+      { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog"},
+      { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
+    //  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
+      { name: "section.about", link: "AboutScreen", icon: "question", type: "FontAwesome"}]
+
+  : [ { name: "section.series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
+      { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
+      { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog"},
+      { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
+    //  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
+      { name: "section.about", link: "AboutScreen", icon: "question", type: "FontAwesome"}]
 
 class SideBar extends React.Component {
 

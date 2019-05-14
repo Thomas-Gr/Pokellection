@@ -1,5 +1,6 @@
-import { Body, Button, Header, Icon, Left, Subtitle, Title } from 'native-base';
-import { TouchableOpacity, View } from 'react-native';
+import { Body, Button, Header, Icon, Left, Subtitle, Title, Text } from 'native-base';
+import { TouchableOpacity, View, Platform } from 'react-native';
+import { string } from "../i18n.js"
 
 import React from "react";
 
@@ -13,11 +14,15 @@ export default class MyHeader extends React.Component {
   }
 
   renderSelectionButton() {
+    const config = Platform.OS === 'ios'
+        ? <Text>{string('misc.config')}</Text>
+        : <Icon name="sound-mix" type="Entypo" style={{color: 'white'}}/>
+
     if (this.props.selectionFunction != null) {
       return (
         <View style={{marginTop: 15}}>
           <TouchableOpacity onPress={this.props.selectionFunction}>
-            <Icon name="sound-mix" type="Entypo" style={{color: 'white'}}/>
+            {config}
           </TouchableOpacity>
         </View>
       )
