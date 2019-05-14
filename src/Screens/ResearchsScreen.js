@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     position: "relative",
     bottom: 0,
     width: '100%',
-    align: 'center',
+    textAlign: 'center',
     backgroundColor: '#ffa500',
   },
   warning: {
