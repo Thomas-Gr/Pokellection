@@ -21,6 +21,7 @@ const routes = [
   { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
   { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog"},
   { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
+  { name: "section.connection", link: "ConnectionScreen", icon: "cog"},
 //  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
   { name: "section.about", link: "AboutScreen", icon: "question", type: "FontAwesome"}]
 

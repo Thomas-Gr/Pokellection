@@ -8,6 +8,7 @@ import React from 'react';
 import ResearchsScreen from "./Screens/ResearchsScreen.js";
 import SerieSelectionScreen from "./Screens/SerieSelectionScreen.js";
 import OptionsScreen from "./Screens/OptionsScreen.js";
+import ConnectionScreen from "./Screens/ConnectionScreen.js";
 import SideBar from "./SideBar/SideBar.js";
 
 const StackNavigator = createStackNavigator(
@@ -18,6 +19,7 @@ const StackNavigator = createStackNavigator(
     SerieSelectionScreen: { screen: SerieSelectionScreen },
     AboutScreen: { screen: AboutScreen },
     OptionsScreen: { screen: OptionsScreen },
+    ConnectionScreen: { screen: ConnectionScreen },
   },
   {
     initialRouteName: 'Home',
