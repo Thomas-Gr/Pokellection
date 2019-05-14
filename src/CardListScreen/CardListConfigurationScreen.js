@@ -28,7 +28,7 @@ const rarities = [
   [
     "RARE_HOLO",
     "SUPER_RARE",
-    "SUPER_RARE_HOLO",
+    "SHINING_HOLO",
     "ULTRA_RARE_UNCOMMON"
   ]
 ];
