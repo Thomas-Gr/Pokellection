@@ -6,8 +6,12 @@ var unselectedRaritiesCache = -1;
 
 export const setSelection = (value) => {
   try {
-    AsyncStorage.setItem('@Configuration:Selection', value);
-    selectionCache = value;
+    if (value != null) {
+      AsyncStorage.setItem('@Configuration:Selection', value);
+      selectionCache = value;
+    } else {
+      console.log("No value was set for selection")
+    }
   } catch (error) {
     console.log(error);
   }
@@ -23,8 +27,12 @@ export const getSelection = (success) => {
 
 export const setDisplay = (value) => {
   try {
-    AsyncStorage.setItem('@Configuration:Display', value);
-    displayCache = value;
+    if (value != null) {
+      AsyncStorage.setItem('@Configuration:Display', value);
+      displayCache = value;
+    } else {
+      console.log("No value was set for display")
+    }
   } catch (error) {
     console.log(error);
   }
