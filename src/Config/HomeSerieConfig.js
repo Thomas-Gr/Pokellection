@@ -52,7 +52,7 @@ const HomeSerieConfig = [
     name: "Non TCG",
     frenchName: "Hors TCG",
     data: [
-      'Pocket Monsters Carddass Trading Cards'
+      'Carddass Pocket Monster Green', 'Carddass Pocket Monster Red', 'Pocket Monsters Carddass Trading Cards'
     ]
   },
 

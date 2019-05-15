@@ -64,6 +64,8 @@ import Year1999 from "./ImageConfig/1999.js";
 import Year2000 from "./ImageConfig/2000.js";
 import Year20012005 from "./ImageConfig/2001-2005.js";
 import Carddass from "./ImageConfig/Carddass.js";
+import CarddassGreen from "./ImageConfig/CarddassGreen.js";
+import CarddassRed from "./ImageConfig/CarddassRed.js";
 
 const SerieConfig =
   {
@@ -334,6 +336,14 @@ const SerieConfig =
     'Pocket Monsters Carddass Trading Cards' : {
       definition: require('../../resources/series/Pocket Monsters Carddass Trading Cards.json'),
       pictures: Carddass
+    },
+    'Carddass Pocket Monster Green' : {
+      definition: require('../../resources/series/Carddass Pocket Monster Green.json'),
+      pictures: CarddassGreen
+    },
+    'Carddass Pocket Monster Red' : {
+      definition: require('../../resources/series/Carddass Pocket Monster Red.json'),
+      pictures: CarddassRed
     }
   };
 
