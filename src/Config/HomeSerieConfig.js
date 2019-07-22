@@ -39,6 +39,13 @@ const HomeSerieConfig = [
     ]
   },
   {
+    name: "ADV Era",
+    frenchName: "Séries ADV",
+    data: [
+      'ADV Expansion Pack', 'Magma VS Aqua: Two Ambitions', 'Miracle of the Desert', 'Rulers of the Heavens', 'Undone Seal'
+    ]
+  },
+  {
     name: "Unnumbered Promotional cards",
     frenchName: "Promo non-numérotées",
     data: [

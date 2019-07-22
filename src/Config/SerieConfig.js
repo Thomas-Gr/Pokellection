@@ -66,6 +66,11 @@ import Year20012005 from "./ImageConfig/2001-2005.js";
 import Carddass from "./ImageConfig/Carddass.js";
 import CarddassGreen from "./ImageConfig/CarddassGreen.js";
 import CarddassRed from "./ImageConfig/CarddassRed.js";
+import ADVExpansionPack from "./ImageConfig/ADVExpansionPack.js"
+import MagmaVSAquaTwoAmbitions from "./ImageConfig/MagmaVSAquaTwoAmbitions.js"
+import MiracleoftheDesert from "./ImageConfig/MiracleoftheDesert.js"
+import RulersoftheHeavens from "./ImageConfig/RulersoftheHeavens.js"
+import UndoneSeal from "./ImageConfig/UndoneSeal.js"
 
 const SerieConfig =
   {
@@ -344,6 +349,26 @@ const SerieConfig =
     'Carddass Pocket Monster Red' : {
       definition: require('../../resources/series/Carddass Pocket Monster Red.json'),
       pictures: CarddassRed
+    },
+    'ADV Expansion Pack' : {
+      definition: require('../../resources/series/ADV Expansion Pack.json'),
+      pictures: ADVExpansionPack
+    },
+    'Magma VS Aqua: Two Ambitions' : {
+      definition: require('../../resources/series/Magma VS Aqua Two Ambitions.json'),
+      pictures: MagmaVSAquaTwoAmbitions
+    },
+    'Miracle of the Desert' : {
+      definition: require('../../resources/series/Miracle of the Desert.json'),
+      pictures: MiracleoftheDesert
+    },
+    'Rulers of the Heavens' : {
+      definition: require('../../resources/series/Rulers of the Heavens.json'),
+      pictures: RulersoftheHeavens
+    },
+    'Undone Seal' : {
+      definition: require('../../resources/series/Undone Seal.json'),
+      pictures: UndoneSeal
     }
   };
 

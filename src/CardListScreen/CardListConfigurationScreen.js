@@ -22,13 +22,16 @@ const rarities = [
   [
     "NONE",
     "COMMON",
-    "UNCOMMON",
-    "RARE"
+    "UNCOMMON"
   ],
   [
+    "RARE",
     "RARE_HOLO",
     "SUPER_RARE",
+  ],
+  [
     "SHINING_HOLO",
+    "EX",
     "ULTRA_RARE_UNCOMMON"
   ]
 ];
@@ -77,7 +80,7 @@ class CardListConfigurationScreen extends React.Component {
           : <Image source={RaritiesLogos[rarity].image}/>;
 
         return (
-          <Col key={rarity} style={[{margin:1}, this.state.unselectedRarities[rarity] ? {opacity: 0.1} : null]}>
+          <Col key={rarity} style={[{margin:0.8}, this.state.unselectedRarities[rarity] ? {opacity: 0.1} : null]}>
             <TouchableOpacity
               onPress={() => this.updateRarities(rarity)}
               style={styles.cell}>
@@ -90,7 +93,7 @@ class CardListConfigurationScreen extends React.Component {
 
     const displayElements = displays.map(element => {
         return (
-          <Col key={element.name} style={[{margin:1}, this.state.styleToDisplay != element.name ? {opacity: 0.1} : null]}>
+          <Col key={element.name} style={[{margin:0.8}, this.state.styleToDisplay != element.name ? {opacity: 0.1} : null]}>
             <TouchableOpacity
               onPress={() => this.updateDisplay(element.name)}
               style={styles.cell}>

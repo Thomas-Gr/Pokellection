@@ -51,7 +51,11 @@ class CardInformationScreen extends React.Component {
         if (serie.definition.numberSuffix != undefined) {
           card += serie.definition.numberSuffix
         } else {
-          card += Object.keys(serie.definition.cards).length
+          if (serie.definition.numberOfZeros != 0) {
+            card += ('000' + Object.keys(serie.definition.cards).length).slice(-serie.definition.numberOfZeros);
+          } else {
+            card += Object.keys(serie.definition.cards).length
+          }
         }
       }
     }

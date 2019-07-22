@@ -16,7 +16,7 @@ export default class AdBanner extends Component {
         <AdMobBanner
           style={styles.bottomBanner}
           bannerSize="smartBannerPortrait"
-          adUnitID="xxxxx"
+          adUnitID="ca-app-pub-5825529948495220/9502913447"
           didFailToReceiveAdWithError={this.bannerError}
         />
         </View>
