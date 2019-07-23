@@ -46,6 +46,13 @@ const HomeSerieConfig = [
     ]
   },
   {
+    name: "ADV Era (Promo)",
+    frenchName: "Promo ADV",
+    data: [
+      'PLAY Promotional cards'
+    ]
+  },
+  {
     name: "Unnumbered Promotional cards",
     frenchName: "Promo non-numérotées",
     data: [

@@ -71,6 +71,7 @@ import MagmaVSAquaTwoAmbitions from "./ImageConfig/MagmaVSAquaTwoAmbitions.js"
 import MiracleoftheDesert from "./ImageConfig/MiracleoftheDesert.js"
 import RulersoftheHeavens from "./ImageConfig/RulersoftheHeavens.js"
 import UndoneSeal from "./ImageConfig/UndoneSeal.js"
+import PLAYPromotionalcards from "./ImageConfig/PLAYPromotionalcards.js";
 
 const SerieConfig =
   {
@@ -369,6 +370,10 @@ const SerieConfig =
     'Undone Seal' : {
       definition: require('../../resources/series/Undone Seal.json'),
       pictures: UndoneSeal
+    },
+    'PLAY Promotional cards' : {
+      definition: require('../../resources/series/PLAY Promotional cards.json'),
+      pictures: PLAYPromotionalcards
     }
   };
 
