@@ -35,5 +35,6 @@ export default SeriesLogos = {
   'SetSymbolVending.png': require('../../resources/images/series/SetSymbolVending.png'),
   'SetSymbolVS.png': require('../../resources/images/series/SetSymbolVS.png'),
   'SetSymbolWind_from_the_Sea.png': require('../../resources/images/series/SetSymbolWind_from_the_Sea.png'),
-  'SetSymbolPokemon_Players.png': require('../../resources/images/series/SetSymbolPokemon_Players.png')
+  'SetSymbolPokemon_Players.png': require('../../resources/images/series/SetSymbolPokemon_Players.png'),
+  'SetSymbolPromo.png': require('../../resources/images/series/SetSymbolPromo.png')
 };
