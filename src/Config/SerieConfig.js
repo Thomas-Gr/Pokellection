@@ -72,6 +72,7 @@ import MiracleoftheDesert from "./ImageConfig/MiracleoftheDesert.js"
 import RulersoftheHeavens from "./ImageConfig/RulersoftheHeavens.js"
 import UndoneSeal from "./ImageConfig/UndoneSeal.js"
 import PLAYPromotionalcards from "./ImageConfig/PLAYPromotionalcards.js";
+import ADVPPromotionalcards from "./ImageConfig/ADVPPromotionalcards.js";
 
 const SerieConfig =
   {
@@ -374,6 +375,10 @@ const SerieConfig =
     'PLAY Promotional cards' : {
       definition: require('../../resources/series/PLAY Promotional cards.json'),
       pictures: PLAYPromotionalcards
+    },
+    'ADV-P Promotional cards' : {
+      definition: require('../../resources/series/ADV-P Promotional cards.json'),
+      pictures: ADVPPromotionalcards
     }
   };
 

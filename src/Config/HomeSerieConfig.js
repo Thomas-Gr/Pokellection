@@ -49,7 +49,7 @@ const HomeSerieConfig = [
     name: "ADV Era (Promo)",
     frenchName: "Promo ADV",
     data: [
-      'PLAY Promotional cards'
+      'ADV-P Promotional cards', 'PLAY Promotional cards'
     ]
   },
   {
