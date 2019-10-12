@@ -1,22 +1,23 @@
-import I18n from 'react-native-i18n';
+import * as Localization from 'expo-localization';
+import i18n from 'i18n-js';
 import ReactNative from 'react-native';
 
 import en from '../locales/en.json';
 import fr from '../locales/fr.json';
 import ja from '../locales/ja.json';
 
-I18n.defaultLocale = "en";
-I18n.locale = "fr";
-I18n.fallbacks = true;
-I18n.translations = { en, fr, ja };
+i18n.defaultLocale = "en";
+i18n.locale = "fr";
+i18n.fallbacks = true;
+i18n.translations = { en, fr, ja };
 ReactNative.I18nManager.allowRTL(false);
 
 export function string(name, params = {}) {
-  return I18n.t(name, params);
+  return i18n.t(name, params);
 };
 
 export function changeLanguage(language) {
-  I18n.locale = language;
+  i18n.locale = language;
 };
 
 export function language(language, data) {
@@ -31,4 +32,4 @@ export function language(language, data) {
   return data.name;
 }
 
-export default I18n;
+export default i18n;

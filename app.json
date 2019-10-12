@@ -3,7 +3,7 @@
     "androidStatusBar": {
       "backgroundColor": "#000000"
     },
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "35.0.0",
     "name": "Pokellection",
     "version": "0.1",
     "slug": "pokellection",
@@ -24,5 +24,9 @@
       "resources/series/*",
       "resources/pokemon.json"
     ],
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }
