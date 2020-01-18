@@ -5,7 +5,7 @@
     },
     "sdkVersion": "35.0.0",
     "name": "Pokellection",
-    "version": "0.1",
+    "version": "0.2",
     "slug": "pokellection",
     "icon": "resources/icon.png",
     "ios": {
@@ -14,7 +14,7 @@
     "android": {
       "package": "com.pokellection",
       "permissions": [],
-      "versionCode": 3
+      "versionCode": 4
     },
     "assetBundlePatterns": [
       "resources/images/rarities/*",
