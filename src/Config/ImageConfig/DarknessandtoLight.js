@@ -69,6 +69,7 @@ const ChangeName =
 'neo-destiny-068.jpg' : require('../../../resources/images/cards/neo-destiny-068.jpg'),
 'neo-destiny-069.jpg' : require('../../../resources/images/cards/neo-destiny-069.jpg'),
 'neo-destiny-070.jpg' : require('../../../resources/images/cards/neo-destiny-070.jpg'),
+'neo-destiny-071.jpg' : require('../../../resources/images/cards/neo-destiny-071.jpg'),
 'neo-destiny-072.jpg' : require('../../../resources/images/cards/neo-destiny-072.jpg'),
 'neo-destiny-073.jpg' : require('../../../resources/images/cards/neo-destiny-073.jpg'),
 'neo-destiny-074.jpg' : require('../../../resources/images/cards/neo-destiny-074.jpg'),
