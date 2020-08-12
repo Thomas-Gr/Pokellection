@@ -73,6 +73,15 @@ import RulersoftheHeavens from "./ImageConfig/RulersoftheHeavens.js"
 import UndoneSeal from "./ImageConfig/UndoneSeal.js"
 import PLAYPromotionalcards from "./ImageConfig/PLAYPromotionalcards.js";
 import ADVPPromotionalcards from "./ImageConfig/ADVPPromotionalcards.js";
+import ClashOfTheBlueSky from "./ImageConfig/ClashOfTheBlueSky.js";
+import FlightOfLegend from "./ImageConfig/FlightOfLegend.js";
+import GoldenSkySilveryOcean from "./ImageConfig/GoldenSkySilveryOcean.js";
+import HolonPhantom from "./ImageConfig/HolonPhantom.js";
+import HolonResearchTower from "./ImageConfig/HolonResearchTower.js";
+import MiracleCrystal from "./ImageConfig/MiracleCrystal.js";
+import MirageForest from "./ImageConfig/MirageForest.js";
+import OffenseAndDefenseOfTheFurthestEnds from "./ImageConfig/OffenseAndDefenseOfTheFurthestEnds.js";
+import RocketGangStrikesBack from "./ImageConfig/RocketGangStrikesBack.js";
 
 const SerieConfig =
   {
@@ -379,6 +388,42 @@ const SerieConfig =
     'ADV-P Promotional cards' : {
       definition: require('../../resources/series/ADV-P Promotional cards.json'),
       pictures: ADVPPromotionalcards
+    },
+    'Clash of the Blue Sky' : {
+      definition: require('../../resources/series/Clash of the Blue Sky.json'),
+      pictures: ClashOfTheBlueSky
+    },
+    'Flight of Legends' : {
+      definition: require('../../resources/series/Flight of Legends.json'),
+      pictures: FlightOfLegend
+    },
+    'Golden Sky, Silvery Ocean' : {
+      definition: require('../../resources/series/Golden Sky, Silvery Ocean.json'),
+      pictures: GoldenSkySilveryOcean
+    },
+    'Holon Phantom' : {
+      definition: require('../../resources/series/Holon Phantom.json'),
+      pictures: HolonPhantom
+    },
+    'Holon Research Tower' : {
+      definition: require('../../resources/series/Holon Research Tower.json'),
+      pictures: HolonResearchTower
+    },
+    'Miracle Crystal' : {
+      definition: require('../../resources/series/Miracle Crystal.json'),
+      pictures: MiracleCrystal
+    },
+    'Mirage Forest' : {
+      definition: require('../../resources/series/Mirage Forest.json'),
+      pictures: MirageForest
+    },
+    'Offense and Defense of the Furthest Ends' : {
+      definition: require('../../resources/series/Offense and Defense of the Furthest Ends.json'),
+      pictures: OffenseAndDefenseOfTheFurthestEnds
+    },
+    'Rocket Gang Strikes Back' : {
+      definition: require('../../resources/series/Rocket Gang Strikes Back.json'),
+      pictures: RocketGangStrikesBack
     }
   };
 

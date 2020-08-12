@@ -31,8 +31,11 @@ const rarities = [
   ],
   [
     "SHINING_HOLO",
-    "EX",
     "ULTRA_RARE_UNCOMMON"
+  ],
+  [
+    "EX",
+    "SHINY_RARE_HOLO"
   ]
 ];
 
@@ -136,10 +139,10 @@ class CardListConfigurationScreen extends React.Component {
               <TouchableOpacity
                 activeOpacity={1}
                 style={{
-                  marginTop: '25%',
+                  marginTop: '15%',
                   marginLeft: '10%',
                   width: '80%',
-                  height: '60%'}}>
+                  height: '70%'}}>
                 <View style={{flex: 1, backgroundColor: 'white', padding: 20}}>
                     <Grid>
                       <Row>

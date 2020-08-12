@@ -53,6 +53,13 @@ const HomeSerieConfig = [
     ]
   },
   {
+    name: "PCG Era",
+    frenchName: "Séries PCG",
+    data: [
+      'Flight of Legends', 'Clash of the Blue Sky', 'Rocket Gang Strikes Back', 'Golden Sky, Silvery Ocean', 'Mirage Forest', 'Holon Research Tower', 'Holon Phantom', 'Miracle Crystal', 'Offense and Defense of the Furthest Ends'
+    ]
+  },
+  {
     name: "Unnumbered Promotional cards",
     frenchName: "Promo non-numérotées",
     data: [

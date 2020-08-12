@@ -36,5 +36,14 @@ export default SeriesLogos = {
   'SetSymbolVS.png': require('../../resources/images/series/SetSymbolVS.png'),
   'SetSymbolWind_from_the_Sea.png': require('../../resources/images/series/SetSymbolWind_from_the_Sea.png'),
   'SetSymbolPokemon_Players.png': require('../../resources/images/series/SetSymbolPokemon_Players.png'),
-  'SetSymbolPromo.png': require('../../resources/images/series/SetSymbolPromo.png')
+  'SetSymbolPromo.png': require('../../resources/images/series/SetSymbolPromo.png'),
+  'SetSymbolTeam_Rocket_Returns.png': require('../../resources/images/series/SetSymbolTeam_Rocket_Returns.png'),
+  'SetSymbolCrystal_Guardians.png': require('../../resources/images/series/SetSymbolCrystal_Guardians.png'),
+  'SetSymbolDelta_Species.png': require('../../resources/images/series/SetSymbolDelta_Species.png'),
+  'SetSymbolDeoxys.png': require('../../resources/images/series/SetSymbolDeoxys.png'),
+  'SetSymbolDragon_Frontiers.png': require('../../resources/images/series/SetSymbolDragon_Frontiers.png'),
+  'SetSymbolFlight_of_Legends.png': require('../../resources/images/series/SetSymbolFlight_of_Legends.png'),
+  'SetSymbolHolon_Phantoms.png': require('../../resources/images/series/SetSymbolHolon_Phantoms.png'),
+  'SetSymbolLegend_Maker.png': require('../../resources/images/series/SetSymbolLegend_Maker.png'),
+  'SetSymbolUnseen_Forces.png': require('../../resources/images/series/SetSymbolUnseen_Forces.png')
 };
