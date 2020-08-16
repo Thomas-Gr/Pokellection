@@ -59,7 +59,7 @@ const FlightOfLegends =
 'ElectrodeFRLG.png' : require('../../../resources/images/cards/ElectrodeFRLG.png'),
 'OnixEXFireRedLeafGreen42.jpg' : require('../../../resources/images/cards/OnixEXFireRedLeafGreen42.jpg'),
 'NidorinaEXFireRedLeafGreen40.jpg' : require('../../../resources/images/cards/NidorinaEXFireRedLeafGreen40.jpg'),
-'PokéDexHANDY909EXFireRedLeafGreen96.jpg' : require('../../../resources/images/cards/PokéDexHANDY909EXFireRedLeafGreen96.jpg'),
+'PokeDexHANDY909EXFireRedLeafGreen96.jpg' : require('../../../resources/images/cards/PokeDexHANDY909EXFireRedLeafGreen96.jpg'),
 'FarfetchdEXFireRedLeafGreen23.jpg' : require('../../../resources/images/cards/FarfetchdEXFireRedLeafGreen23.jpg'),
 'ProfessorOakResearchExpedition149.jpg' : require('../../../resources/images/cards/ProfessorOakResearchExpedition149.jpg'),
 'VSSeekerEXFireRedLeafGreen100.jpg' : require('../../../resources/images/cards/VSSeekerEXFireRedLeafGreen100.jpg'),

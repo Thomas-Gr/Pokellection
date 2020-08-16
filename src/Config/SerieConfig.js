@@ -74,7 +74,7 @@ import UndoneSeal from "./ImageConfig/UndoneSeal.js"
 import PLAYPromotionalcards from "./ImageConfig/PLAYPromotionalcards.js";
 import ADVPPromotionalcards from "./ImageConfig/ADVPPromotionalcards.js";
 import ClashOfTheBlueSky from "./ImageConfig/ClashOfTheBlueSky.js";
-import FlightOfLegend from "./ImageConfig/FlightOfLegend.js";
+import FlightOfLegends from "./ImageConfig/FlightOfLegends.js";
 import GoldenSkySilveryOcean from "./ImageConfig/GoldenSkySilveryOcean.js";
 import HolonPhantom from "./ImageConfig/HolonPhantom.js";
 import HolonResearchTower from "./ImageConfig/HolonResearchTower.js";
@@ -395,7 +395,7 @@ const SerieConfig =
     },
     'Flight of Legends' : {
       definition: require('../../resources/series/Flight of Legends.json'),
-      pictures: FlightOfLegend
+      pictures: FlightOfLegends
     },
     'Golden Sky, Silvery Ocean' : {
       definition: require('../../resources/series/Golden Sky, Silvery Ocean.json'),
