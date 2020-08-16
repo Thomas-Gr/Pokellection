@@ -76,6 +76,10 @@ class CardInformationScreen extends React.Component {
         ? <Image source={TypesLogos[selectedCard.type]} style={{width:20, height:20}}/>
         : <Text style={{backgroundColor: 'white'}}>{selectedCard.type.charAt(0)}</Text>;
 
+    const type2 = TypesLogos[selectedCard.type2] != null
+        ? <Image source={TypesLogos[selectedCard.type2]} style={{width:20, height:20}}/>
+        : null;
+
     const rarity = RaritiesLogos[selectedCard.rarity] != null
         ? <Image source={RaritiesLogos[selectedCard.rarity].image}/>
         : null;
@@ -113,7 +117,7 @@ class CardInformationScreen extends React.Component {
                   <Grid>
                     <Row style={{height: 40}}>
                       <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
-                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type} {language(this.props.cardsLanguage, selectedCard)} {card}</Text>
+                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type}{type2} {language(this.props.cardsLanguage, selectedCard)} {card}</Text>
                       </View>
                     </Row>
                     <Row>

@@ -32,6 +32,10 @@ class CardItem extends React.Component {
         ? <Image source={TypesLogos[data.type]} style={{width:20,height:20}}/>
         : <Text style={{backgroundColor: 'white'}}>{data.type.charAt(0)}</Text>;
 
+   const type2 = TypesLogos[data.type2] != null
+        ? <Image source={TypesLogos[data.type2]} style={{width:20,height:20}}/>
+        : null;
+
     const rarity = RaritiesLogos[data.rarity] != null
         ? <Left style={{flex:0.1}}><Image source={RaritiesLogos[data.rarity].image} style={{height:RaritiesLogos[data.rarity].height/2, width:RaritiesLogos[data.rarity].width/2}}/></Left>
         : null;
@@ -47,7 +51,7 @@ class CardItem extends React.Component {
     return (
       <ListItem>
         <Left style={{flex:0.1}}>
-          {type}
+          {type}{type2}
         </Left>
         {rarity}
         <Body style={{flex: RaritiesLogos[data.rarity] != null ? 0.7 : 0.8}}>
