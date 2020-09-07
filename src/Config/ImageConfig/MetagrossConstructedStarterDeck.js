@@ -1,0 +1,25 @@
+const MetagrossConstructedStarterDeck =
+ {'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'SwitchEXRubySapphire92.jpg' : require('../../../resources/images/cards/SwitchEXRubySapphire92.jpg'),
+'MagneticStormEXHiddenLegends91.jpg' : require('../../../resources/images/cards/MagneticStormEXHiddenLegends91.jpg'),
+'MetalEnergyEXRubySapphire94.jpg' : require('../../../resources/images/cards/MetalEnergyEXRubySapphire94.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'PokeNavEXRubySapphire88.jpg' : require('../../../resources/images/cards/PokeNavEXRubySapphire88.jpg'),
+'MedichamEXHiddenLegends42.jpg' : require('../../../resources/images/cards/MedichamEXHiddenLegends42.jpg'),
+'MetangEXHiddenLegends43.jpg' : require('../../../resources/images/cards/MetangEXHiddenLegends43.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'BeldumEXHiddenLegends28.jpg' : require('../../../resources/images/cards/BeldumEXHiddenLegends28.jpg'),
+'StevenAdviceEXHiddenLegends92.jpg' : require('../../../resources/images/cards/StevenAdviceEXHiddenLegends92.jpg'),
+'BaltoyEXHiddenLegends52.jpg' : require('../../../resources/images/cards/BaltoyEXHiddenLegends52.jpg'),
+'ClaydolEXHiddenLegends31.jpg' : require('../../../resources/images/cards/ClaydolEXHiddenLegends31.jpg'),
+'MedititeEXHiddenLegends66.jpg' : require('../../../resources/images/cards/MedititeEXHiddenLegends66.jpg'),
+'MetangEXHiddenLegends44.jpg' : require('../../../resources/images/cards/MetangEXHiddenLegends44.jpg'),
+'BeldumEXHiddenLegends54.jpg' : require('../../../resources/images/cards/BeldumEXHiddenLegends54.jpg'),
+'LifeHerbEXHiddenLegends90.jpg' : require('../../../resources/images/cards/LifeHerbEXHiddenLegends90.jpg'),
+'MetagrossEXHiddenLegends11.jpg' : require('../../../resources/images/cards/MetagrossEXHiddenLegends11.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg'),
+'MedititeEXHiddenLegends65.jpg' : require('../../../resources/images/cards/MedititeEXHiddenLegends65.jpg'),
+'JirachiEXHiddenLegends8.jpg' : require('../../../resources/images/cards/JirachiEXHiddenLegends8.jpg'),
+'BaltoyEXHiddenLegends53.jpg' : require('../../../resources/images/cards/BaltoyEXHiddenLegends53.jpg')};
+
+export default MetagrossConstructedStarterDeck

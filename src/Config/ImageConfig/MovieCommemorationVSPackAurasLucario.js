@@ -1,0 +1,27 @@
+const MovieCommemorationVSPackAurasLucario =
+ {'AaronPidgeotMovieVSPack6.jpg' : require('../../../resources/images/cards/AaronPidgeotMovieVSPack6.jpg'),
+'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'AaronAuraMovieVSPack19.jpg' : require('../../../resources/images/cards/AaronAuraMovieVSPack19.jpg'),
+'DarkMetalEnergyEXHolonPhantoms97.png' : require('../../../resources/images/cards/DarkMetalEnergyEXHolonPhantoms97.png'),
+'SwitchEXRubySapphire92.jpg' : require('../../../resources/images/cards/SwitchEXRubySapphire92.jpg'),
+'PokemonReversalEXRubySapphire87.jpg' : require('../../../resources/images/cards/PokemonReversalEXRubySapphire87.jpg'),
+'RotaMewMovieVSPack2.jpg' : require('../../../resources/images/cards/RotaMewMovieVSPack2.jpg'),
+'DarknessEnergyEXRubySapphire93.jpg' : require('../../../resources/images/cards/DarknessEnergyEXRubySapphire93.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'BrockForretressMovieVSPack11.jpg' : require('../../../resources/images/cards/BrockForretressMovieVSPack11.jpg'),
+'AshSwellowMovieVSPack7.jpg' : require('../../../resources/images/cards/AshSwellowMovieVSPack7.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'KiddWeavileMovieVSPack10.jpg' : require('../../../resources/images/cards/KiddWeavileMovieVSPack10.jpg'),
+'MayMunchlaxMovieVSPack8.jpg' : require('../../../resources/images/cards/MayMunchlaxMovieVSPack8.jpg'),
+'EnergySwitchEXFireRedLeafGreen90.jpg' : require('../../../resources/images/cards/EnergySwitchEXFireRedLeafGreen90.jpg'),
+'IleneMimeJrMovieVSPack3.jpg' : require('../../../resources/images/cards/IleneMimeJrMovieVSPack3.jpg'),
+'MetalEnergyEXRubySapphire94.jpg' : require('../../../resources/images/cards/MetalEnergyEXRubySapphire94.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg'),
+'AshPhanpyMovieVSPack4.jpg' : require('../../../resources/images/cards/AshPhanpyMovieVSPack4.jpg'),
+'AuraLucarioMovieVSPack12.jpg' : require('../../../resources/images/cards/AuraLucarioMovieVSPack12.jpg'),
+'AshGrovyleMovieVSPack1.jpg' : require('../../../resources/images/cards/AshGrovyleMovieVSPack1.jpg'),
+'TimeFlowerMovieVSPack15.jpg' : require('../../../resources/images/cards/TimeFlowerMovieVSPack15.jpg'),
+'KiddWeavileMovieVSPack9.jpg' : require('../../../resources/images/cards/KiddWeavileMovieVSPack9.jpg'),
+'RotaBonslyMovieVSPack5.jpg' : require('../../../resources/images/cards/RotaBonslyMovieVSPack5.jpg')};
+
+export default MovieCommemorationVSPackAurasLucario

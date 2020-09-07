@@ -1,0 +1,22 @@
+const MiragesMewConstructedStarterDeck =
+ {'SwitchEXRubySapphire92.jpg' : require('../../../resources/images/cards/SwitchEXRubySapphire92.jpg'),
+'ShuppetEXLegendMaker63.jpg' : require('../../../resources/images/cards/ShuppetEXLegendMaker63.jpg'),
+'FieldworkerEXLegendMaker73.jpg' : require('../../../resources/images/cards/FieldworkerEXLegendMaker73.jpg'),
+'BanetteexEXLegendMaker85.jpg' : require('../../../resources/images/cards/BanetteexEXLegendMaker85.jpg'),
+'MasterBallGymChallenge116.jpg' : require('../../../resources/images/cards/MasterBallGymChallenge116.jpg'),
+'SentretEXLegendMaker62.jpg' : require('../../../resources/images/cards/SentretEXLegendMaker62.jpg'),
+'VoltorbEXLegendMaker68.jpg' : require('../../../resources/images/cards/VoltorbEXLegendMaker68.jpg'),
+'ElectrodeEXLegendMaker32.jpg' : require('../../../resources/images/cards/ElectrodeEXLegendMaker32.jpg'),
+'MewEXLegendMaker10.jpg' : require('../../../resources/images/cards/MewEXLegendMaker10.jpg'),
+'FurretEXLegendMaker33.jpg' : require('../../../resources/images/cards/FurretEXLegendMaker33.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'MinunMinunHalfDeck6.jpg' : require('../../../resources/images/cards/MinunMinunHalfDeck6.jpg'),
+'LightningEnergyEXRubySapphire109.jpg' : require('../../../resources/images/cards/LightningEnergyEXRubySapphire109.jpg'),
+'ScottEXEmerald84.jpg' : require('../../../resources/images/cards/ScottEXEmerald84.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg'),
+'BS92EnergyRemoval.jpg' : require('../../../resources/images/cards/BS92EnergyRemoval.jpg'),
+'BattleFrontierEXEmerald75.jpg' : require('../../../resources/images/cards/BattleFrontierEXEmerald75.jpg'),
+'RainbowEnergyEXRubySapphire95.jpg' : require('../../../resources/images/cards/RainbowEnergyEXRubySapphire95.jpg'),
+'PluslePlusleHalfDeck6.jpg' : require('../../../resources/images/cards/PluslePlusleHalfDeck6.jpg')};
+
+export default MiragesMewConstructedStarterDeck

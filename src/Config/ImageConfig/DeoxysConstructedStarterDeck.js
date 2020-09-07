@@ -1,0 +1,22 @@
+const DeoxysConstructedStarterDeck =
+ {'NuzleafEXDeoxys43.jpg' : require('../../../resources/images/cards/NuzleafEXDeoxys43.jpg'),
+'GrumpigEXDeoxys32.jpg' : require('../../../resources/images/cards/GrumpigEXDeoxys32.jpg'),
+'SwitchEXRubySapphire92.jpg' : require('../../../resources/images/cards/SwitchEXRubySapphire92.jpg'),
+'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'EnergyChargeNeoGenesis85.jpg' : require('../../../resources/images/cards/EnergyChargeNeoGenesis85.jpg'),
+'SeedotEXDeoxys71.jpg' : require('../../../resources/images/cards/SeedotEXDeoxys71.jpg'),
+'GrassEnergyEXRubySapphire104.jpg' : require('../../../resources/images/cards/GrassEnergyEXRubySapphire104.jpg'),
+'ProfessorCozmoDiscoveryEXDeoxys90.jpg' : require('../../../resources/images/cards/ProfessorCozmoDiscoveryEXDeoxys90.jpg'),
+'MasterBallGymChallenge116.jpg' : require('../../../resources/images/cards/MasterBallGymChallenge116.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'PhanpyEXDeoxys69.jpg' : require('../../../resources/images/cards/PhanpyEXDeoxys69.jpg'),
+'LadyOutingEXRubySapphire83.jpg' : require('../../../resources/images/cards/LadyOutingEXRubySapphire83.jpg'),
+'SpoinkEXDeoxys76.jpg' : require('../../../resources/images/cards/SpoinkEXDeoxys76.jpg'),
+'StrengthCharmEXDragonFrontiers81.jpg' : require('../../../resources/images/cards/StrengthCharmEXDragonFrontiers81.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg'),
+'ShiftryEXDeoxys25.jpg' : require('../../../resources/images/cards/ShiftryEXDeoxys25.jpg'),
+'611_018_386DEOXYSn.jpg' : require('../../../resources/images/cards/611_018_386DEOXYSn.jpg'),
+'DonphanEXDeoxys30.jpg' : require('../../../resources/images/cards/DonphanEXDeoxys30.jpg'),
+'MultiEnergyEXSandstorm93.jpg' : require('../../../resources/images/cards/MultiEnergyEXSandstorm93.jpg')};
+
+export default DeoxysConstructedStarterDeck

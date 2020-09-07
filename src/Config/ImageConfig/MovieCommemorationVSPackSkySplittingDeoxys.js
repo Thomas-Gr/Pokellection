@@ -1,0 +1,26 @@
+const MovieCommemorationVSPackSkySplittingDeoxys =
+ {'RebeccaMetagrossMovieVSPack11.jpg' : require('../../../resources/images/cards/RebeccaMetagrossMovieVSPack11.jpg'),
+'SwitchEXRubySapphire92.jpg' : require('../../../resources/images/cards/SwitchEXRubySapphire92.jpg'),
+'SkySplittingDeoxysMovieVSPack1.jpg' : require('../../../resources/images/cards/SkySplittingDeoxysMovieVSPack1.jpg'),
+'MagneticStormEXHiddenLegends91.jpg' : require('../../../resources/images/cards/MagneticStormEXHiddenLegends91.jpg'),
+'ToryFeelingsMovieVSPack17.jpg' : require('../../../resources/images/cards/ToryFeelingsMovieVSPack17.jpg'),
+'WaterEnergyEXRubySapphire106.jpg' : require('../../../resources/images/cards/WaterEnergyEXRubySapphire106.jpg'),
+'LaRoussePlusleMovieVSPack4.jpg' : require('../../../resources/images/cards/LaRoussePlusleMovieVSPack4.jpg'),
+'SidBlastoiseMovieVSPack10.jpg' : require('../../../resources/images/cards/SidBlastoiseMovieVSPack10.jpg'),
+'RafeBlazikenMovieVSPack12.jpg' : require('../../../resources/images/cards/RafeBlazikenMovieVSPack12.jpg'),
+'EnergySwitchEXFireRedLeafGreen90.jpg' : require('../../../resources/images/cards/EnergySwitchEXFireRedLeafGreen90.jpg'),
+'StrengthCharmExpedition150.jpg' : require('../../../resources/images/cards/StrengthCharmExpedition150.jpg'),
+'LaRousseMunchlaxMovieVSPack6.jpg' : require('../../../resources/images/cards/LaRousseMunchlaxMovieVSPack6.jpg'),
+'AudreyMasquerainMovieVSPack7.jpg' : require('../../../resources/images/cards/AudreyMasquerainMovieVSPack7.jpg'),
+'LaRousseMinunMovieVSPack5.jpg' : require('../../../resources/images/cards/LaRousseMinunMovieVSPack5.jpg'),
+'EnergySearchExpedition153.jpg' : require('../../../resources/images/cards/EnergySearchExpedition153.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'SkyRayquazaMovieVSPack3.jpg' : require('../../../resources/images/cards/SkyRayquazaMovieVSPack3.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg'),
+'SkySplittingDeoxysMovieVSPack2.jpg' : require('../../../resources/images/cards/SkySplittingDeoxysMovieVSPack2.jpg'),
+'KathrynSurskitMovieVSPack8.jpg' : require('../../../resources/images/cards/KathrynSurskitMovieVSPack8.jpg'),
+'AshTorkoalMovieVSPack9.jpg' : require('../../../resources/images/cards/AshTorkoalMovieVSPack9.jpg'),
+'MultiEnergyEXSandstorm93.jpg' : require('../../../resources/images/cards/MultiEnergyEXSandstorm93.jpg'),
+'FireEnergyExpedition161.jpg' : require('../../../resources/images/cards/FireEnergyExpedition161.jpg')};
+
+export default MovieCommemorationVSPackSkySplittingDeoxys

@@ -1,0 +1,20 @@
+const BlackHalfDeck2 =
+ {'DarkPupitarEXTeamRocketReturns40.jpg' : require('../../../resources/images/cards/DarkPupitarEXTeamRocketReturns40.jpg'),
+'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'RocketPokeBallEXTeamRocketReturns89.jpg' : require('../../../resources/images/cards/RocketPokeBallEXTeamRocketReturns89.jpg'),
+'SpinarakEXTeamRocketReturns78.jpg' : require('../../../resources/images/cards/SpinarakEXTeamRocketReturns78.jpg'),
+'RocketMissionEXTeamRocketReturns88.jpg' : require('../../../resources/images/cards/RocketMissionEXTeamRocketReturns88.jpg'),
+'RattataEXTeamRocketReturns72.jpg' : require('../../../resources/images/cards/RattataEXTeamRocketReturns72.jpg'),
+'GrassEnergyEXRubySapphire104.jpg' : require('../../../resources/images/cards/GrassEnergyEXRubySapphire104.jpg'),
+'DarkTyranitarEXTeamRocketReturns20.jpg' : require('../../../resources/images/cards/DarkTyranitarEXTeamRocketReturns20.jpg'),
+'REnergyEXTeamRocketReturns95.jpg' : require('../../../resources/images/cards/REnergyEXTeamRocketReturns95.jpg'),
+'RocketAdminEXTeamRocketReturns86.jpg' : require('../../../resources/images/cards/RocketAdminEXTeamRocketReturns86.jpg'),
+'EnergySearchExpedition153.jpg' : require('../../../resources/images/cards/EnergySearchExpedition153.jpg'),
+'DarkAriadosEXTeamRocketReturns30.jpg' : require('../../../resources/images/cards/DarkAriadosEXTeamRocketReturns30.jpg'),
+'HoundourEXTeamRocketReturns59.jpg' : require('../../../resources/images/cards/HoundourEXTeamRocketReturns59.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'DarkHoundoomEXTeamRocketReturns37.jpg' : require('../../../resources/images/cards/DarkHoundoomEXTeamRocketReturns37.jpg'),
+'LarvitarEXTeamRocketReturns62.jpg' : require('../../../resources/images/cards/LarvitarEXTeamRocketReturns62.jpg'),
+'FireEnergyEXRubySapphire108.jpg' : require('../../../resources/images/cards/FireEnergyEXRubySapphire108.jpg')};
+
+export default BlackHalfDeck2

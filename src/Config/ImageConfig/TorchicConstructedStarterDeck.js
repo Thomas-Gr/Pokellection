@@ -1,0 +1,25 @@
+const TorchicConstructedStarterDeck =
+ {'ElectrikeEXRubySapphire52.jpg' : require('../../../resources/images/cards/ElectrikeEXRubySapphire52.jpg'),
+'PokemonReversalEXRubySapphire87.jpg' : require('../../../resources/images/cards/PokemonReversalEXRubySapphire87.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'ProfessorBirchEXRubySapphire89.jpg' : require('../../../resources/images/cards/ProfessorBirchEXRubySapphire89.jpg'),
+'LumBerryEXRubySapphire84.jpg' : require('../../../resources/images/cards/LumBerryEXRubySapphire84.jpg'),
+'TorchicEXRubySapphire73.jpg' : require('../../../resources/images/cards/TorchicEXRubySapphire73.jpg'),
+'PokeNavEXRubySapphire88.jpg' : require('../../../resources/images/cards/PokeNavEXRubySapphire88.jpg'),
+'TorchicEXRubySapphire74.jpg' : require('../../../resources/images/cards/TorchicEXRubySapphire74.jpg'),
+'BlazikenEXRubySapphire15.jpg' : require('../../../resources/images/cards/BlazikenEXRubySapphire15.jpg'),
+'PoochyenaEXRubySapphire63.jpg' : require('../../../resources/images/cards/PoochyenaEXRubySapphire63.jpg'),
+'DarknessEnergyEXRubySapphire93.jpg' : require('../../../resources/images/cards/DarknessEnergyEXRubySapphire93.jpg'),
+'ManectricEXRubySapphire39.jpg' : require('../../../resources/images/cards/ManectricEXRubySapphire39.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'MagmarexEXRubySapphire100.jpg' : require('../../../resources/images/cards/MagmarexEXRubySapphire100.jpg'),
+'LightningEnergyEXRubySapphire109.jpg' : require('../../../resources/images/cards/LightningEnergyEXRubySapphire109.jpg'),
+'MightyenaEXRubySapphire42.jpg' : require('../../../resources/images/cards/MightyenaEXRubySapphire42.jpg'),
+'CombuskenEXRubySapphire28.jpg' : require('../../../resources/images/cards/CombuskenEXRubySapphire28.jpg'),
+'PoochyenaEXRubySapphire64.jpg' : require('../../../resources/images/cards/PoochyenaEXRubySapphire64.jpg'),
+'FireEnergyExpedition161.jpg' : require('../../../resources/images/cards/FireEnergyExpedition161.jpg'),
+'ElectrikeEXRubySapphire53.jpg' : require('../../../resources/images/cards/ElectrikeEXRubySapphire53.jpg'),
+'EnergyRestoreMajesticDawn81.jpg' : require('../../../resources/images/cards/EnergyRestoreMajesticDawn81.jpg'),
+'CombuskenEXRubySapphire27.jpg' : require('../../../resources/images/cards/CombuskenEXRubySapphire27.jpg')};
+
+export default TorchicConstructedStarterDeck

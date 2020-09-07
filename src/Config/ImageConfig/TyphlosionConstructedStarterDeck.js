@@ -1,0 +1,21 @@
+const TyphlosionConstructedStarterDeck =
+ {'621_006_195NUOH.jpg' : require('../../../resources/images/cards/621_006_195NUOH.jpg'),
+'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'WooperEXUnseenForces79.jpg' : require('../../../resources/images/cards/WooperEXUnseenForces79.jpg'),
+'TyphlosionexEXUnseenForces110.jpg' : require('../../../resources/images/cards/TyphlosionexEXUnseenForces110.jpg'),
+'ClefairyEXUnseenForces53.jpg' : require('../../../resources/images/cards/ClefairyEXUnseenForces53.jpg'),
+'EnergyRemoval2EXFireRedLeafGreen89.jpg' : require('../../../resources/images/cards/EnergyRemoval2EXFireRedLeafGreen89.jpg'),
+'ProfessorElmTrainingMethodExpedition148.jpg' : require('../../../resources/images/cards/ProfessorElmTrainingMethodExpedition148.jpg'),
+'MaryRequestEXUnseenForces86.jpg' : require('../../../resources/images/cards/MaryRequestEXUnseenForces86.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'FluffyBerryEXUnseenForces85.jpg' : require('../../../resources/images/cards/FluffyBerryEXUnseenForces85.jpg'),
+'ClefableEXUnseenForces36.jpg' : require('../../../resources/images/cards/ClefableEXUnseenForces36.jpg'),
+'CycloneEnergyEXPowerKeepers90.jpg' : require('../../../resources/images/cards/CycloneEnergyEXPowerKeepers90.jpg'),
+'621_002_156MAGMARASHI.jpg' : require('../../../resources/images/cards/621_002_156MAGMARASHI.jpg'),
+'EnergySwitchEXFireRedLeafGreen90.jpg' : require('../../../resources/images/cards/EnergySwitchEXFireRedLeafGreen90.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'FireEnergyExpedition161.jpg' : require('../../../resources/images/cards/FireEnergyExpedition161.jpg'),
+'CyndaquilEXUnseenForces54.jpg' : require('../../../resources/images/cards/CyndaquilEXUnseenForces54.jpg'),
+'621_004_201UNKNOWNt.jpg' : require('../../../resources/images/cards/621_004_201UNKNOWNt.jpg')};
+
+export default TyphlosionConstructedStarterDeck

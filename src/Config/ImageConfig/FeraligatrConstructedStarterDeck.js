@@ -1,0 +1,21 @@
+const FeraligatrConstructedStarterDeck =
+ {'ProfessorElmTrainingMethodExpedition148.jpg' : require('../../../resources/images/cards/ProfessorElmTrainingMethodExpedition148.jpg'),
+'MaryRequestEXUnseenForces86.jpg' : require('../../../resources/images/cards/MaryRequestEXUnseenForces86.jpg'),
+'LanturnEXUnseenForces40.jpg' : require('../../../resources/images/cards/LanturnEXUnseenForces40.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'FluffyBerryEXUnseenForces85.jpg' : require('../../../resources/images/cards/FluffyBerryEXUnseenForces85.jpg'),
+'WaterEnergyEXRubySapphire106.jpg' : require('../../../resources/images/cards/WaterEnergyEXRubySapphire106.jpg'),
+'GranbullEXUnseenForces39.jpg' : require('../../../resources/images/cards/GranbullEXUnseenForces39.jpg'),
+'ChinchouEXUnseenForces52.jpg' : require('../../../resources/images/cards/ChinchouEXUnseenForces52.jpg'),
+'EnergySearchExpedition153.jpg' : require('../../../resources/images/cards/EnergySearchExpedition153.jpg'),
+'WarpPointEXUnseenForces93.jpg' : require('../../../resources/images/cards/WarpPointEXUnseenForces93.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'SnubbullEXUnseenForces74.jpg' : require('../../../resources/images/cards/SnubbullEXUnseenForces74.jpg'),
+'LightningEnergyEXRubySapphire109.jpg' : require('../../../resources/images/cards/LightningEnergyEXRubySapphire109.jpg'),
+'CroconawEXUnseenForces38.jpg' : require('../../../resources/images/cards/CroconawEXUnseenForces38.jpg'),
+'BoostEnergyEXDeoxys93.jpg' : require('../../../resources/images/cards/BoostEnergyEXDeoxys93.jpg'),
+'FeraligatrEXUnseenForces103.png' : require('../../../resources/images/cards/FeraligatrEXUnseenForces103.png'),
+'TotodileEXUnseenForces78.jpg' : require('../../../resources/images/cards/TotodileEXUnseenForces78.jpg'),
+'622_006_201UNKNOWNr.jpg' : require('../../../resources/images/cards/622_006_201UNKNOWNr.jpg')};
+
+export default FeraligatrConstructedStarterDeck

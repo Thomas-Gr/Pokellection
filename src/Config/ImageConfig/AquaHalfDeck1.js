@@ -1,0 +1,23 @@
+const AquaHalfDeck1 =
+ {'TeamAquaMightyenaEXTeamMagmavsTeamAqua15.jpg' : require('../../../resources/images/cards/TeamAquaMightyenaEXTeamMagmavsTeamAqua15.jpg'),
+'TeamAquaSphealEXTeamMagmavsTeamAqua57.jpg' : require('../../../resources/images/cards/TeamAquaSphealEXTeamMagmavsTeamAqua57.jpg'),
+'TeamAquaConspiratorEXTeamMagmavsTeamAqua77.jpg' : require('../../../resources/images/cards/TeamAquaConspiratorEXTeamMagmavsTeamAqua77.jpg'),
+'TeamAquaSharpedoEXTeamMagmavsTeamAqua18.jpg' : require('../../../resources/images/cards/TeamAquaSharpedoEXTeamMagmavsTeamAqua18.jpg'),
+'TeamAquaBallEXTeamMagmavsTeamAqua75.jpg' : require('../../../resources/images/cards/TeamAquaBallEXTeamMagmavsTeamAqua75.jpg'),
+'TeamAquaKyogreEXTeamMagmavsTeamAqua3.jpg' : require('../../../resources/images/cards/TeamAquaKyogreEXTeamMagmavsTeamAqua3.jpg'),
+'WaterEnergyEXRubySapphire106.jpg' : require('../../../resources/images/cards/WaterEnergyEXRubySapphire106.jpg'),
+'TeamAquaWalreinEXTeamMagmavsTeamAqua6.jpg' : require('../../../resources/images/cards/TeamAquaWalreinEXTeamMagmavsTeamAqua6.jpg'),
+'TeamAquaSealeoEXTeamMagmavsTeamAqua16.jpg' : require('../../../resources/images/cards/TeamAquaSealeoEXTeamMagmavsTeamAqua16.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'TeamAquaChinchouEXTeamMagmavsTeamAqua49.jpg' : require('../../../resources/images/cards/TeamAquaChinchouEXTeamMagmavsTeamAqua49.jpg'),
+'TeamAquaPoochyenaEXTeamMagmavsTeamAqua55.jpg' : require('../../../resources/images/cards/TeamAquaPoochyenaEXTeamMagmavsTeamAqua55.jpg'),
+'LightningEnergyEXRubySapphire109.jpg' : require('../../../resources/images/cards/LightningEnergyEXRubySapphire109.jpg'),
+'ArchieEXTeamMagmavsTeamAqua71.jpg' : require('../../../resources/images/cards/ArchieEXTeamMagmavsTeamAqua71.jpg'),
+'TeamAquaSchemerEXTeamMagmavsTeamAqua69.jpg' : require('../../../resources/images/cards/TeamAquaSchemerEXTeamMagmavsTeamAqua69.jpg'),
+'TeamAquaHideoutEXTeamMagmavsTeamAqua78.jpg' : require('../../../resources/images/cards/TeamAquaHideoutEXTeamMagmavsTeamAqua78.jpg'),
+'TeamAquaCarvanhaEXTeamMagmavsTeamAqua47.jpg' : require('../../../resources/images/cards/TeamAquaCarvanhaEXTeamMagmavsTeamAqua47.jpg'),
+'TeamAquaLanturnEXTeamMagmavsTeamAqua28.jpg' : require('../../../resources/images/cards/TeamAquaLanturnEXTeamMagmavsTeamAqua28.jpg'),
+'TeamAquaCarvanhaEXTeamMagmavsTeamAqua48.jpg' : require('../../../resources/images/cards/TeamAquaCarvanhaEXTeamMagmavsTeamAqua48.jpg'),
+'AquaEnergyEXTeamMagmavsTeamAqua86.jpg' : require('../../../resources/images/cards/AquaEnergyEXTeamMagmavsTeamAqua86.jpg')};
+
+export default AquaHalfDeck1

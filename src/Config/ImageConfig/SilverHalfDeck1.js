@@ -1,0 +1,19 @@
+const SilverHalfDeck1 =
+ {'RocketPokeBallEXTeamRocketReturns89.jpg' : require('../../../resources/images/cards/RocketPokeBallEXTeamRocketReturns89.jpg'),
+'RocketMissionEXTeamRocketReturns88.jpg' : require('../../../resources/images/cards/RocketMissionEXTeamRocketReturns88.jpg'),
+'PsyduckEXTeamRocketReturns70.jpg' : require('../../../resources/images/cards/PsyduckEXTeamRocketReturns70.jpg'),
+'DarkMagnetonEXTeamRocketReturns39.jpg' : require('../../../resources/images/cards/DarkMagnetonEXTeamRocketReturns39.jpg'),
+'DarknessEnergyEXRubySapphire93.jpg' : require('../../../resources/images/cards/DarknessEnergyEXRubySapphire93.jpg'),
+'DarkDragoniteEXTeamRocketReturns15.jpg' : require('../../../resources/images/cards/DarkDragoniteEXTeamRocketReturns15.jpg'),
+'DratiniEXTeamRocketReturns53.jpg' : require('../../../resources/images/cards/DratiniEXTeamRocketReturns53.jpg'),
+'RocketAdminEXTeamRocketReturns86.jpg' : require('../../../resources/images/cards/RocketAdminEXTeamRocketReturns86.jpg'),
+'WaterEnergyEXRubySapphire106.jpg' : require('../../../resources/images/cards/WaterEnergyEXRubySapphire106.jpg'),
+'DarkDragonairEXTeamRocketReturns31.jpg' : require('../../../resources/images/cards/DarkDragonairEXTeamRocketReturns31.jpg'),
+'EnergySearchExpedition153.jpg' : require('../../../resources/images/cards/EnergySearchExpedition153.jpg'),
+'MagnemiteEXTeamRocketReturns66.jpg' : require('../../../resources/images/cards/MagnemiteEXTeamRocketReturns66.jpg'),
+'RattataEXTeamRocketReturns72.jpg' : require('../../../resources/images/cards/RattataEXTeamRocketReturns72.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'LightningEnergyEXRubySapphire109.jpg' : require('../../../resources/images/cards/LightningEnergyEXRubySapphire109.jpg'),
+'DarkGolduckEXTeamRocketReturns35.jpg' : require('../../../resources/images/cards/DarkGolduckEXTeamRocketReturns35.jpg')};
+
+export default SilverHalfDeck1

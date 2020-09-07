@@ -1,0 +1,21 @@
+const MeganiumConstructedStarterDeck =
+ {'XatuEXUnseenForces49.jpg' : require('../../../resources/images/cards/XatuEXUnseenForces49.jpg'),
+'BayleefEXUnseenForces35.jpg' : require('../../../resources/images/cards/BayleefEXUnseenForces35.jpg'),
+'620_008_164YORUNOZUKU.jpg' : require('../../../resources/images/cards/620_008_164YORUNOZUKU.jpg'),
+'WarpEnergyEXPowerKeepers91.jpg' : require('../../../resources/images/cards/WarpEnergyEXPowerKeepers91.jpg'),
+'ProfessorElmTrainingMethodExpedition148.jpg' : require('../../../resources/images/cards/ProfessorElmTrainingMethodExpedition148.jpg'),
+'MaryRequestEXUnseenForces86.jpg' : require('../../../resources/images/cards/MaryRequestEXUnseenForces86.jpg'),
+'ChikoritaEXUnseenForces51.jpg' : require('../../../resources/images/cards/ChikoritaEXUnseenForces51.jpg'),
+'GrassEnergyEXRubySapphire104.jpg' : require('../../../resources/images/cards/GrassEnergyEXRubySapphire104.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'FluffyBerryEXUnseenForces85.jpg' : require('../../../resources/images/cards/FluffyBerryEXUnseenForces85.jpg'),
+'MeganiumexEXUnseenForces106.jpg' : require('../../../resources/images/cards/MeganiumexEXUnseenForces106.jpg'),
+'HoothootEXUnseenForces59.jpg' : require('../../../resources/images/cards/HoothootEXUnseenForces59.jpg'),
+'NatuEXUnseenForces63.jpg' : require('../../../resources/images/cards/NatuEXUnseenForces63.jpg'),
+'EnergyRecycleSystemEXDragon84.jpg' : require('../../../resources/images/cards/EnergyRecycleSystemEXDragon84.jpg'),
+'PokemonReversalEXRubySapphire87.jpg' : require('../../../resources/images/cards/PokemonReversalEXRubySapphire87.jpg'),
+'620_006_201UNKNOWNx.jpg' : require('../../../resources/images/cards/620_006_201UNKNOWNx.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg')};
+
+export default MeganiumConstructedStarterDeck

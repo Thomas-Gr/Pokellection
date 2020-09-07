@@ -83,6 +83,62 @@ import MirageForest from "./ImageConfig/MirageForest.js";
 import OffenseAndDefenseOfTheFurthestEnds from "./ImageConfig/OffenseAndDefenseOfTheFurthestEnds.js";
 import RocketGangStrikesBack from "./ImageConfig/RocketGangStrikesBack.js";
 
+import OceansKyogreexConstructedStarterDeck from "./ImageConfig/OceansKyogreexConstructedStarterDeck.js";
+import AquaHalfDeck1 from "./ImageConfig/AquaHalfDeck1.js";
+import AquaHalfDeck2 from "./ImageConfig/AquaHalfDeck2.js";
+import BlackHalfDeck1 from "./ImageConfig/BlackHalfDeck1.js";
+import BlackHalfDeck2 from "./ImageConfig/BlackHalfDeck2.js";
+import BlastoiseStarterDeck from "./ImageConfig/BlastoiseStarterDeck.js";
+import BulbasaurQuarterDeck from "./ImageConfig/BulbasaurQuarterDeck.js";
+import CharizardStarterDeck from "./ImageConfig/CharizardStarterDeck.js";
+import CrawdauntQuarterDeck from "./ImageConfig/CrawdauntQuarterDeck.js";
+import DeoxysConstructedStarterDeck from "./ImageConfig/DeoxysConstructedStarterDeck.js";
+import DeoxysHalfDeck from "./ImageConfig/DeoxysHalfDeck.js";
+import EarthsGroudonexConstructedStarterDeck from "./ImageConfig/EarthsGroudonexConstructedStarterDeck.js";
+import FeraligatrConstructedStarterDeck from "./ImageConfig/FeraligatrConstructedStarterDeck.js";
+import FightingQuickConstructionPack from "./ImageConfig/FightingQuickConstructionPack.js";
+import FireQuickConstructionPack from "./ImageConfig/FireQuickConstructionPack.js";
+import FlygonConstructedStarterDeck from "./ImageConfig/FlygonConstructedStarterDeck.js";
+import GrassQuickConstructionPack from "./ImageConfig/GrassQuickConstructionPack.js";
+import HolonResearchTowerFireQuarterDeck from "./ImageConfig/HolonResearchTowerFireQuarterDeck.js";
+import HolonResearchTowerLightningQuarterDeck from "./ImageConfig/HolonResearchTowerLightningQuarterDeck.js";
+import HolonResearchTowerWaterQuarterDeck from "./ImageConfig/HolonResearchTowerWaterQuarterDeck.js";
+import ImprisonGardevoirexConstructedStandardDeck from "./ImageConfig/ImprisonGardevoirexConstructedStandardDeck.js";
+import LatiasHalfDeck from "./ImageConfig/LatiasHalfDeck.js";
+import LatiosHalfDeck from "./ImageConfig/LatiosHalfDeck.js";
+import LightningQuickConstructionPack from "./ImageConfig/LightningQuickConstructionPack.js";
+import LucarioQuarterDeck from "./ImageConfig/LucarioQuarterDeck.js";
+import MagmaHalfDeck1 from "./ImageConfig/MagmaHalfDeck1.js";
+import MagmaHalfDeck2 from "./ImageConfig/MagmaHalfDeck2.js";
+import MeganiumConstructedStarterDeck from "./ImageConfig/MeganiumConstructedStarterDeck.js";
+import MetagrossConstructedStarterDeck from "./ImageConfig/MetagrossConstructedStarterDeck.js";
+import MewQuarterDeck from "./ImageConfig/MewQuarterDeck.js";
+import MightyenaQuarterDeck from "./ImageConfig/MightyenaQuarterDeck.js";
+import MiragesMewConstructedStarterDeck from "./ImageConfig/MiragesMewConstructedStarterDeck.js";
+import MovieCommemorationVSPack from "./ImageConfig/MovieCommemorationVSPack.js";
+import MovieCommemorationVSPackAurasLucario from "./ImageConfig/MovieCommemorationVSPackAurasLucario.js";
+import MovieCommemorationVSPackSeasManaphy from "./ImageConfig/MovieCommemorationVSPackSeasManaphy.js";
+import MovieCommemorationVSPackSkySplittingDeoxys from "./ImageConfig/MovieCommemorationVSPackSkySplittingDeoxys.js";
+import MudkipConstructedStarterDeck from "./ImageConfig/MudkipConstructedStarterDeck.js";
+import PCGPPromotionalcards from "./ImageConfig/PCGPPromotionalcards.js";
+import PokemonStar from "./ImageConfig/PokemonStar.js";
+import PsychicQuickConstructionPack from "./ImageConfig/PsychicQuickConstructionPack.js";
+import RayquazaConstructedStarterDeck from "./ImageConfig/RayquazaConstructedStarterDeck.js";
+import RayquazaHalfDeck from "./ImageConfig/RayquazaHalfDeck.js";
+import SalamenceConstructedStarterDeck from "./ImageConfig/SalamenceConstructedStarterDeck.js";
+import ShockwaveTyranitarexConstructedStandardDeck from "./ImageConfig/ShockwaveTyranitarexConstructedStandardDeck.js";
+import MasterKitSideDeck from "./ImageConfig/MasterKitSideDeck.js";
+import SilverHalfDeck1 from "./ImageConfig/SilverHalfDeck1.js";
+import SilverHalfDeck2 from "./ImageConfig/SilverHalfDeck2.js";
+import TorchicConstructedStarterDeck from "./ImageConfig/TorchicConstructedStarterDeck.js";
+import TorchicQuarterDeck from "./ImageConfig/TorchicQuarterDeck.js";
+import TreeckoConstructedStarterDeck from "./ImageConfig/TreeckoConstructedStarterDeck.js";
+import TyphlosionConstructedStarterDeck from "./ImageConfig/TyphlosionConstructedStarterDeck.js";
+import VenusaurStarterDeck from "./ImageConfig/VenusaurStarterDeck.js";
+import WaterQuickConstructionPack from "./ImageConfig/WaterQuickConstructionPack.js";
+import PokeParkBlue from "./ImageConfig/PokeParkBlue.js";
+import PokeParkForest from "./ImageConfig/PokeParkForest.js";
+
 const SerieConfig =
   {
     'Expansion Pack' : {
@@ -424,6 +480,226 @@ const SerieConfig =
     'Rocket Gang Strikes Back' : {
       definition: require('../../resources/series/Rocket Gang Strikes Back.json'),
       pictures: RocketGangStrikesBack
+    },
+    'Ocean\'s Kyogre ex Constructed Starter Deck' : {
+      definition: require('../../resources/series/Oceans Kyogre ex Constructed Starter Deck.json'),
+      pictures: OceansKyogreexConstructedStarterDeck
+    },
+    'Aqua Half Deck 1' : {
+      definition: require('../../resources/series/Aqua Half Deck 1.json'),
+      pictures: AquaHalfDeck1
+    },
+    'Aqua Half Deck 2' : {
+      definition: require('../../resources/series/Aqua Half Deck 2.json'),
+      pictures: AquaHalfDeck2
+    },
+    'Black Half Deck 1' : {
+      definition: require('../../resources/series/Black Half Deck 1.json'),
+      pictures: BlackHalfDeck1
+    },
+    'Black Half Deck 2' : {
+      definition: require('../../resources/series/Black Half Deck 2.json'),
+      pictures: BlackHalfDeck2
+    },
+    'Blastoise Starter Deck' : {
+      definition: require('../../resources/series/Blastoise Starter Deck.json'),
+      pictures: BlastoiseStarterDeck
+    },
+    'Bulbasaur Quarter Deck' : {
+      definition: require('../../resources/series/Bulbasaur Quarter Deck.json'),
+      pictures: BulbasaurQuarterDeck
+    },
+    'Charizard Starter Deck' : {
+      definition: require('../../resources/series/Charizard Starter Deck.json'),
+      pictures: CharizardStarterDeck
+    },
+    'Crawdaunt Quarter Deck' : {
+      definition: require('../../resources/series/Crawdaunt Quarter Deck.json'),
+      pictures: CrawdauntQuarterDeck
+    },
+    'Deoxys Constructed Starter Deck' : {
+      definition: require('../../resources/series/Deoxys Constructed Starter Deck.json'),
+      pictures: DeoxysConstructedStarterDeck
+    },
+    'Deoxys Half Deck' : {
+      definition: require('../../resources/series/Deoxys Half Deck.json'),
+      pictures: DeoxysHalfDeck
+    },
+    'Earth\'s Groudon ex Constructed Starter Deck' : {
+      definition: require('../../resources/series/Earths Groudon ex Constructed Starter Deck.json'),
+      pictures: EarthsGroudonexConstructedStarterDeck
+    },
+    'Feraligatr Constructed Starter Deck' : {
+      definition: require('../../resources/series/Feraligatr Constructed Starter Deck.json'),
+      pictures: FeraligatrConstructedStarterDeck
+    },
+    'Fighting Quick Construction Pack' : {
+      definition: require('../../resources/series/Fighting Quick Construction Pack.json'),
+      pictures: FightingQuickConstructionPack
+    },
+    'Fire Quick Construction Pack' : {
+      definition: require('../../resources/series/Fire Quick Construction Pack.json'),
+      pictures: FireQuickConstructionPack
+    },
+    'Flygon Constructed Starter Deck' : {
+      definition: require('../../resources/series/Flygon Constructed Starter Deck.json'),
+      pictures: FlygonConstructedStarterDeck
+    },
+    'Grass Quick Construction Pack' : {
+      definition: require('../../resources/series/Grass Quick Construction Pack.json'),
+      pictures: GrassQuickConstructionPack
+    },
+    'Holon Research Tower Fire Quarter Deck' : {
+      definition: require('../../resources/series/Holon Research Tower Fire Quarter Deck.json'),
+      pictures: HolonResearchTowerFireQuarterDeck
+    },
+    'Holon Research Tower Lightning Quarter Deck' : {
+      definition: require('../../resources/series/Holon Research Tower Lightning Quarter Deck.json'),
+      pictures: HolonResearchTowerLightningQuarterDeck
+    },
+    'Holon Research Tower Water Quarter Deck' : {
+      definition: require('../../resources/series/Holon Research Tower Water Quarter Deck.json'),
+      pictures: HolonResearchTowerWaterQuarterDeck
+    },
+    'Imprison! Gardevoir ex Constructed Standard Deck' : {
+      definition: require('../../resources/series/Imprison! Gardevoir ex Constructed Standard Deck.json'),
+      pictures: ImprisonGardevoirexConstructedStandardDeck
+    },
+    'Latias Half Deck' : {
+      definition: require('../../resources/series/Latias Half Deck.json'),
+      pictures: LatiasHalfDeck
+    },
+    'Latios Half Deck' : {
+      definition: require('../../resources/series/Latios Half Deck.json'),
+      pictures: LatiosHalfDeck
+    },
+    'Lightning Quick Construction Pack' : {
+      definition: require('../../resources/series/Lightning Quick Construction Pack.json'),
+      pictures: LightningQuickConstructionPack
+    },
+    'Lucario Quarter Deck' : {
+      definition: require('../../resources/series/Lucario Quarter Deck.json'),
+      pictures: LucarioQuarterDeck
+    },
+    'Magma Half Deck 1' : {
+      definition: require('../../resources/series/Magma Half Deck 1.json'),
+      pictures: MagmaHalfDeck1
+    },
+    'Magma Half Deck 2' : {
+      definition: require('../../resources/series/Magma Half Deck 2.json'),
+      pictures: MagmaHalfDeck2
+    },
+    'Meganium Constructed Starter Deck' : {
+      definition: require('../../resources/series/Meganium Constructed Starter Deck.json'),
+      pictures: MeganiumConstructedStarterDeck
+    },
+    'Metagross Constructed Starter Deck' : {
+      definition: require('../../resources/series/Metagross Constructed Starter Deck.json'),
+      pictures: MetagrossConstructedStarterDeck
+    },
+    'Mew Quarter Deck' : {
+      definition: require('../../resources/series/Mew Quarter Deck.json'),
+      pictures: MewQuarterDeck
+    },
+    'Mightyena Quarter Deck' : {
+      definition: require('../../resources/series/Mightyena Quarter Deck.json'),
+      pictures: MightyenaQuarterDeck
+    },
+    'Mirage\'s Mew Constructed Starter Deck' : {
+      definition: require('../../resources/series/Mirages Mew Constructed Starter Deck.json'),
+      pictures: MiragesMewConstructedStarterDeck
+    },
+    'Movie Commemoration VS Pack' : {
+      definition: require('../../resources/series/Movie Commemoration VS Pack.json'),
+      pictures: MovieCommemorationVSPack
+    },
+    'Movie Commemoration VS Pack: Aura\'s Lucario' : {
+      definition: require('../../resources/series/Movie Commemoration VS Pack Auras Lucario.json'),
+      pictures: MovieCommemorationVSPackAurasLucario
+    },
+    'Movie Commemoration VS Pack: Sea\'s Manaphy' : {
+      definition: require('../../resources/series/Movie Commemoration VS Pack Seas Manaphy.json'),
+      pictures: MovieCommemorationVSPackSeasManaphy
+    },
+    'Movie Commemoration VS Pack: Sky-Splitting Deoxys' : {
+      definition: require('../../resources/series/Movie Commemoration VS Pack Sky-Splitting Deoxys.json'),
+      pictures: MovieCommemorationVSPackSkySplittingDeoxys
+    },
+    'Mudkip Constructed Starter Deck' : {
+      definition: require('../../resources/series/Mudkip Constructed Starter Deck.json'),
+      pictures: MudkipConstructedStarterDeck
+    },
+    'PCG-P Promotional cards' : {
+      definition: require('../../resources/series/PCG-P Promotional cards.json'),
+      pictures: PCGPPromotionalcards
+    },
+    'Pokémon Star' : {
+      definition: require('../../resources/series/Pokémon Star.json'),
+      pictures: PokemonStar
+    },
+    'Psychic Quick Construction Pack' : {
+      definition: require('../../resources/series/Psychic Quick Construction Pack.json'),
+      pictures: PsychicQuickConstructionPack
+    },
+    'Rayquaza Constructed Starter Deck' : {
+      definition: require('../../resources/series/Rayquaza Constructed Starter Deck.json'),
+      pictures: RayquazaConstructedStarterDeck
+    },
+    'Rayquaza Half Deck' : {
+      definition: require('../../resources/series/Rayquaza Half Deck.json'),
+      pictures: RayquazaHalfDeck
+    },
+    'Salamence Constructed Starter Deck' : {
+      definition: require('../../resources/series/Salamence Constructed Starter Deck.json'),
+      pictures: SalamenceConstructedStarterDeck
+    },
+    'Shockwave! Tyranitar ex Constructed Standard Deck' : {
+      definition: require('../../resources/series/Shockwave Tyranitar ex Constructed Standard Deck.json'),
+      pictures: ShockwaveTyranitarexConstructedStandardDeck
+    },
+    'Master Kit Side Deck' : {
+      definition: require('../../resources/series/Master Kit Side Deck.json'),
+      pictures: MasterKitSideDeck
+    },
+    'Silver Half Deck 1' : {
+      definition: require('../../resources/series/Silver Half Deck 1.json'),
+      pictures: SilverHalfDeck1
+    },
+    'Silver Half Deck 2' : {
+      definition: require('../../resources/series/Silver Half Deck 2.json'),
+      pictures: SilverHalfDeck2
+    },
+    'Torchic Constructed Starter Deck' : {
+      definition: require('../../resources/series/Torchic Constructed Starter Deck.json'),
+      pictures: TorchicConstructedStarterDeck
+    },
+    'Torchic Quarter Deck' : {
+      definition: require('../../resources/series/Torchic Quarter Deck.json'),
+      pictures: TorchicQuarterDeck
+    },
+    'Treecko Constructed Starter Deck' : {
+      definition: require('../../resources/series/Treecko Constructed Starter Deck.json'),
+      pictures: TreeckoConstructedStarterDeck
+    },
+    'Typhlosion Constructed Starter Deck' : {
+      definition: require('../../resources/series/Typhlosion Constructed Starter Deck.json'),
+      pictures: TyphlosionConstructedStarterDeck
+    },
+    'Venusaur Starter Deck' : {
+      definition: require('../../resources/series/Venusaur Starter Deck.json'),
+      pictures: VenusaurStarterDeck
+    },
+    'Water Quick Construction Pack' : {
+      definition: require('../../resources/series/Water Quick Construction Pack.json'),
+      pictures: WaterQuickConstructionPack
+    },
+    'PokéPark Forest' : {
+      definition: require('../../resources/series/PokePark Forest.json'),
+      pictures: PokeParkForest
+    },
+    'PokéPark Blue' : {
+      definition: require('../../resources/series/PokePark Blue.json'),
+      pictures: PokeParkBlue
     }
   };
 

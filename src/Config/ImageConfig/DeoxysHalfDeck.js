@@ -1,0 +1,25 @@
+const DeoxysHalfDeck =
+ {'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'EM032-Illumise.jpg' : require('../../../resources/images/cards/EM032-Illumise.jpg'),
+'GrassEnergyEXRubySapphire104.jpg' : require('../../../resources/images/cards/GrassEnergyEXRubySapphire104.jpg'),
+'ZigzagoonEXEmerald74.jpg' : require('../../../resources/images/cards/ZigzagoonEXEmerald74.jpg'),
+'ProfessorBirchEXRubySapphire89.jpg' : require('../../../resources/images/cards/ProfessorBirchEXRubySapphire89.jpg'),
+'BillMaintenanceExpedition137.jpg' : require('../../../resources/images/cards/BillMaintenanceExpedition137.jpg'),
+'BaltoyEXEmerald43.jpg' : require('../../../resources/images/cards/BaltoyEXEmerald43.jpg'),
+'EM005-Groudon.jpg' : require('../../../resources/images/cards/EM005-Groudon.jpg'),
+'GrumpigEXEmerald30.jpg' : require('../../../resources/images/cards/GrumpigEXEmerald30.jpg'),
+'VolbeatEXEmerald42.jpg' : require('../../../resources/images/cards/VolbeatEXEmerald42.jpg'),
+'DeoxysexEXDeoxys97.jpg' : require('../../../resources/images/cards/DeoxysexEXDeoxys97.jpg'),
+'ClaydolEXEmerald24.jpg' : require('../../../resources/images/cards/ClaydolEXEmerald24.jpg'),
+'LinooneEXEmerald34.jpg' : require('../../../resources/images/cards/LinooneEXEmerald34.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'EnergySwitchEXFireRedLeafGreen90.jpg' : require('../../../resources/images/cards/EnergySwitchEXFireRedLeafGreen90.jpg'),
+'GulpinEXEmerald51.jpg' : require('../../../resources/images/cards/GulpinEXEmerald51.jpg'),
+'EnergySearchExpedition153.jpg' : require('../../../resources/images/cards/EnergySearchExpedition153.jpg'),
+'LifeHerbEXHiddenLegends90.jpg' : require('../../../resources/images/cards/LifeHerbEXHiddenLegends90.jpg'),
+'611_019_386DEOXYSs.jpg' : require('../../../resources/images/cards/611_019_386DEOXYSs.jpg'),
+'EM040-Swalot.jpg' : require('../../../resources/images/cards/EM040-Swalot.jpg'),
+'PsychicEnergyEXRubySapphire107.jpg' : require('../../../resources/images/cards/PsychicEnergyEXRubySapphire107.jpg'),
+'SpoinkEXEmerald66.jpg' : require('../../../resources/images/cards/SpoinkEXEmerald66.jpg')};
+
+export default DeoxysHalfDeck

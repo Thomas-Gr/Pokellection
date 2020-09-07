@@ -1,0 +1,25 @@
+const SalamenceConstructedStarterDeck =
+ {'CorphishEXDragon53.jpg' : require('../../../resources/images/cards/CorphishEXDragon53.jpg'),
+'SalamenceEXDragon19.jpg' : require('../../../resources/images/cards/SalamenceEXDragon19.jpg'),
+'PokeBallEXFireRedLeafGreen95.jpg' : require('../../../resources/images/cards/PokeBallEXFireRedLeafGreen95.jpg'),
+'BalloonBerryEXDeoxys84.jpg' : require('../../../resources/images/cards/BalloonBerryEXDeoxys84.jpg'),
+'HighPressureSystemEXDragon85.jpg' : require('../../../resources/images/cards/HighPressureSystemEXDragon85.jpg'),
+'PokeNavEXRubySapphire88.jpg' : require('../../../resources/images/cards/PokeNavEXRubySapphire88.jpg'),
+'WaterEnergyEXRubySapphire106.jpg' : require('../../../resources/images/cards/WaterEnergyEXRubySapphire106.jpg'),
+'NumelEXDragon70.jpg' : require('../../../resources/images/cards/NumelEXDragon70.jpg'),
+'LatiasexLatiasHalfDeck11.jpg' : require('../../../resources/images/cards/LatiasexLatiasHalfDeck11.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'NumelEXDragon69.jpg' : require('../../../resources/images/cards/NumelEXDragon69.jpg'),
+'BagonEXDragon50.jpg' : require('../../../resources/images/cards/BagonEXDragon50.jpg'),
+'ShelgonEXDragon42.jpg' : require('../../../resources/images/cards/ShelgonEXDragon42.jpg'),
+'EnergyRecycleSystemEXDragon84.jpg' : require('../../../resources/images/cards/EnergyRecycleSystemEXDragon84.jpg'),
+'BagonEXDragon49.jpg' : require('../../../resources/images/cards/BagonEXDragon49.jpg'),
+'ShelgonEXDragon41.jpg' : require('../../../resources/images/cards/ShelgonEXDragon41.jpg'),
+'CameruptEXDragon24.jpg' : require('../../../resources/images/cards/CameruptEXDragon24.jpg'),
+'TVReporterEXDragon88.jpg' : require('../../../resources/images/cards/TVReporterEXDragon88.jpg'),
+'FireEnergyExpedition161.jpg' : require('../../../resources/images/cards/FireEnergyExpedition161.jpg'),
+'CorphishEXDragon52.jpg' : require('../../../resources/images/cards/CorphishEXDragon52.jpg'),
+'CrawdauntEXDragon13.jpg' : require('../../../resources/images/cards/CrawdauntEXDragon13.jpg'),
+'RainbowEnergyEXRubySapphire95.jpg' : require('../../../resources/images/cards/RainbowEnergyEXRubySapphire95.jpg')};
+
+export default SalamenceConstructedStarterDeck

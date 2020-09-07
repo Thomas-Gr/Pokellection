@@ -1,0 +1,25 @@
+const LatiosHalfDeck =
+ {'SeedotEXSandstorm77.jpg' : require('../../../resources/images/cards/SeedotEXSandstorm77.jpg'),
+'ShroomishEXSandstorm78.jpg' : require('../../../resources/images/cards/ShroomishEXSandstorm78.jpg'),
+'ElectabuzzEXSandstorm35.jpg' : require('../../../resources/images/cards/ElectabuzzEXSandstorm35.jpg'),
+'TrapinchEXDragon79.jpg' : require('../../../resources/images/cards/TrapinchEXDragon79.jpg'),
+'FightingEnergyEXRubySapphire105.jpg' : require('../../../resources/images/cards/FightingEnergyEXRubySapphire105.jpg'),
+'GrassEnergyEXRubySapphire104.jpg' : require('../../../resources/images/cards/GrassEnergyEXRubySapphire104.jpg'),
+'MetalEnergyEXRubySapphire94.jpg' : require('../../../resources/images/cards/MetalEnergyEXRubySapphire94.jpg'),
+'LadyOutingEXRubySapphire83.jpg' : require('../../../resources/images/cards/LadyOutingEXRubySapphire83.jpg'),
+'ProfessorBirchEXRubySapphire89.jpg' : require('../../../resources/images/cards/ProfessorBirchEXRubySapphire89.jpg'),
+'ShiftryEXSandstorm22.jpg' : require('../../../resources/images/cards/ShiftryEXSandstorm22.jpg'),
+'LatiosexLatiosHalfDeck11.jpg' : require('../../../resources/images/cards/LatiosexLatiosHalfDeck11.jpg'),
+'LaironEXSandstorm41.jpg' : require('../../../resources/images/cards/LaironEXSandstorm41.jpg'),
+'MasterBallGymChallenge116.jpg' : require('../../../resources/images/cards/MasterBallGymChallenge116.jpg'),
+'BreloomEXSandstorm33.jpg' : require('../../../resources/images/cards/BreloomEXSandstorm33.jpg'),
+'PotionSecretWonders127.jpg' : require('../../../resources/images/cards/PotionSecretWonders127.jpg'),
+'AronEXSandstorm56.jpg' : require('../../../resources/images/cards/AronEXSandstorm56.jpg'),
+'LightningEnergyEXRubySapphire109.jpg' : require('../../../resources/images/cards/LightningEnergyEXRubySapphire109.jpg'),
+'NuzleafEXSandstorm49.jpg' : require('../../../resources/images/cards/NuzleafEXSandstorm49.jpg'),
+'ElekidEXSandstorm36.jpg' : require('../../../resources/images/cards/ElekidEXSandstorm36.jpg'),
+'FearowEXSandstorm37.jpg' : require('../../../resources/images/cards/FearowEXSandstorm37.jpg'),
+'SpearowEXSandstorm81.jpg' : require('../../../resources/images/cards/SpearowEXSandstorm81.jpg'),
+'DoubleFullHealEXSandstorm86.jpg' : require('../../../resources/images/cards/DoubleFullHealEXSandstorm86.jpg')};
+
+export default LatiosHalfDeck
