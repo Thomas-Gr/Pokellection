@@ -32,14 +32,6 @@ class AboutScreen extends Component {
               https://github.com/Thomas-Gr/Pokellection
             </Text>
 
-            <Text h1 style={styles.title}>{string('about.tip')}</Text>
-            <Text style={styles.padded}>
-              {string('about.tipMessage')}{' '}
-              <Text style={styles.link} onPress={() => Linking.openURL('https://paypal.me/GrTh')}>
-                https://paypal.me/GrTh
-              </Text>
-            </Text>
-
             <Text h1 style={styles.title}>{string('about.disclaimer')}</Text>
             <Text>
               1.   {string('about.disclaimer1')}{' '}
