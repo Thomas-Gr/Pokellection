@@ -1,5 +1,10 @@
 const PLAYPromotionalcards =
-  {'600_B031_249LUGIA.jpg' : require('../../../resources/images/cards/600_B031_249LUGIA.jpg'),
+  {'VaporeonEXPowerKeepers102.jpg' : require('../../../resources/images/cards/VaporeonEXPowerKeepers102.jpg'),
+'Espeon16POPSeries5.jpg' : require('../../../resources/images/cards/Espeon16POPSeries5.jpg'),
+'JolteonEXPowerKeepers101.jpg' : require('../../../resources/images/cards/JolteonEXPowerKeepers101.jpg'),
+'FlareonEXPowerKeepers100.jpg' : require('../../../resources/images/cards/FlareonEXPowerKeepers100.jpg'),
+'Umbreon17POPSeries5.jpg' : require('../../../resources/images/cards/Umbreon17POPSeries5.jpg'),
+'600_B031_249LUGIA.jpg' : require('../../../resources/images/cards/600_B031_249LUGIA.jpg'),
 'BlankGroudonPLAYPromo20.jpg' : require('../../../resources/images/cards/BlankGroudonPLAYPromo20.jpg'),
 'Plusle3POPSeries5.jpg' : require('../../../resources/images/cards/Plusle3POPSeries5.jpg'),
 '500_B013_306MEW.jpg' : require('../../../resources/images/cards/500_B013_306MEW.jpg'),

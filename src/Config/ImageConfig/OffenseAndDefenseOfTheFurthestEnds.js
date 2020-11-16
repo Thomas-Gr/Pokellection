@@ -1,5 +1,6 @@
 const OffenceAndDefenseOfTheFurthestEnds =
-  {'MewEXDragonFrontiers101.jpg' : require('../../../resources/images/cards/MewEXDragonFrontiers101.jpg'),
+  {'SnorlaxEXDragonFrontiers10.jpg' : require('../../../resources/images/cards/SnorlaxEXDragonFrontiers10.jpg'),
+'MewEXDragonFrontiers101.jpg' : require('../../../resources/images/cards/MewEXDragonFrontiers101.jpg'),
 'MantineEXDragonFrontiers20.jpg' : require('../../../resources/images/cards/MantineEXDragonFrontiers20.jpg'),
 'LickitungEXDragonFrontiers19.jpg' : require('../../../resources/images/cards/LickitungEXDragonFrontiers19.jpg'),
 'TrapinchEXDragonFrontiers69.jpg' : require('../../../resources/images/cards/TrapinchEXDragonFrontiers69.jpg'),

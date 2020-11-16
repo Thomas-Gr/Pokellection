@@ -562,7 +562,7 @@ const SerieConfig =
       pictures: HolonResearchTowerWaterQuarterDeck
     },
     'Imprison! Gardevoir ex Constructed Standard Deck' : {
-      definition: require('../../resources/series/Imprison! Gardevoir ex Constructed Standard Deck.json'),
+      definition: require('../../resources/series/Imprison Gardevoir ex Constructed Standard Deck.json'),
       pictures: ImprisonGardevoirexConstructedStandardDeck
     },
     'Latias Half Deck' : {
