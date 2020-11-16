@@ -193,20 +193,18 @@ class OptionsScreen extends Component {
     return (
       <Container>
         <MyHeader {...this.props}/>
-        <Content>
-          <List
-            dataArray={this.createOptions()}
-            renderRow={data => {
-              return (
-                <ListItem button onPress={() => this.openActionSheet(data)}>
-                  <Body>
-                    <Text style={data.value != data.savedValue ? {fontWeight: 'bold'} : null}>{data.text} {data.options[data.binding[data.value]].text}</Text>
-                  </Body>
-                </ListItem>
-              );
-            }}
-          />
-        </Content>
+        <List
+          dataArray={this.createOptions()}
+          renderRow={data => {
+            return (
+              <ListItem button onPress={() => this.openActionSheet(data)}>
+                <Body>
+                  <Text style={data.value != data.savedValue ? {fontWeight: 'bold'} : null}>{data.text} {data.options[data.binding[data.value]].text}</Text>
+                </Body>
+              </ListItem>
+            );
+          }}
+        />
         {this.createSaveButton()}
         <AdBanner />
       </Container>

@@ -15,16 +15,16 @@ import { language, string } from "../i18n.js"
 import ImageView from 'react-native-image-view';
 
 class ResearchsScreen extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      launched: false,
       listConfigurationVisible: false,
       cardInformationVisible: false,
       selectedCard: null,
       selectedSerie: null,
       hasSelectedCard: false,
-      hasAtLeastOneSerieHidden: false
+      hasAtLeastOneSerieHidden: false,
+      seriesToDisplay: this.buildList(this.filterSelectedSeriesOnly(HomeSerieConfig, this.props.selectedSeries)),
     };
 
     this.changeSelection = this.changeSelection.bind(this);
@@ -33,13 +33,6 @@ class ResearchsScreen extends Component {
     this.addCard = this.addCard.bind(this);
     this.showCardInformation = this.showCardInformation.bind(this);
     this.hideCardInformation = this.hideCardInformation.bind(this);
-  }
-
-  componentWillMount() {
-    this.setState({
-      seriesToDisplay: this.buildList(this.filterSelectedSeriesOnly(HomeSerieConfig, this.props.selectedSeries)),
-      launched: true
-    });
   }
 
   showConfigurationPanel() {
@@ -133,59 +126,49 @@ class ResearchsScreen extends Component {
   }
 
   render() {
-    if (!this.state.launched) {
-      return (
-        <Container>
-          <Content/>
-        </Container>
-      );
-    } else {
-      const explanation = this.state.hasAtLeastOneSerieHidden
-          ? <View style={styles.filteredBanner}>
-              <Text style={styles.warning}>{string('misc.setsHidden')}</Text>
-            </View>
-          : null;
+    const explanation = this.state.hasAtLeastOneSerieHidden
+        ? <View style={styles.filteredBanner}>
+            <Text style={styles.warning}>{string('misc.setsHidden')}</Text>
+          </View>
+        : null;
 
-      return (
-        <Container>
-          <MyHeader {...this.props} selectionFunction={this.showConfigurationPanel}/>
-          <Content>
-            <SectionList
-               sections={this.state.seriesToDisplay}
-               keyExtractor={item => item}
-               renderItem={this._renderItem}
-               numColumns={1}
-               initialNumToRender={1}
-               renderSectionHeader={this._renderSectionHeader}
-               />
+    return (
+      <Container>
+        <MyHeader {...this.props} selectionFunction={this.showConfigurationPanel}/>
+        <SectionList
+           sections={this.state.seriesToDisplay}
+           keyExtractor={item => item}
+           renderItem={this._renderItem}
+           numColumns={1}
+           initialNumToRender={1}
+           renderSectionHeader={this._renderSectionHeader}
+           />
 
-             {explanation}
+         {explanation}
 
-             <CardInformationScreen
-               serieName={this.state.selectedSerie}
-               visible={this.state.cardInformationVisible}
-               hide={this.hideCardInformation}
-               hasSelectedCard={this.state.hasSelectedCard}
-               selectedCard={this.state.selectedCard}
-               addCard={(name, card) => this.addCard(name, card)}/>
+         <CardInformationScreen
+           serieName={this.state.selectedSerie}
+           visible={this.state.cardInformationVisible}
+           hide={this.hideCardInformation}
+           hasSelectedCard={this.state.hasSelectedCard}
+           selectedCard={this.state.selectedCard}
+           addCard={(name, card) => this.addCard(name, card)}/>
 
-             <CardListConfigurationScreen
-                 visible={this.state.listConfigurationVisible}
-                 hide={this.hideConfigurationPanel}
-                 forcedResearched='miss'
-                 changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
+         <CardListConfigurationScreen
+             visible={this.state.listConfigurationVisible}
+             hide={this.hideConfigurationPanel}
+             forcedResearched='miss'
+             changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
 
-             <ImageView
-                 images={[{source: this.props.imageToShow, width: 250, height: 358}]}
-                 imageIndex={0}
-                 isVisible={this.props.showImage}
-                 onClose={() => this.hideImage()}
-             />
-          </Content>
-          <AdBanner />
-        </Container>
-      );
-    }
+         <ImageView
+             images={[{source: this.props.imageToShow, width: 250, height: 358}]}
+             imageIndex={0}
+             isVisible={this.props.showImage}
+             onClose={() => this.hideImage()}
+         />
+        <AdBanner />
+      </Container>
+    );
   }
 }
 

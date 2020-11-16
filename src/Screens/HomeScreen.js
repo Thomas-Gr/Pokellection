@@ -114,7 +114,6 @@ class HomeScreen extends Component {
       return (
         <Container>
           <MyHeader {...this.props}/>
-          <Content>
           <SectionList
              sections={this.props.seriesToDisplay}
              keyExtractor={item => item}
@@ -123,7 +122,6 @@ class HomeScreen extends Component {
              initialNumToRender={12}
              renderSectionHeader={this._renderSectionHeader}
              />
-          </Content>
           <AdBanner/>
         </Container>
       );

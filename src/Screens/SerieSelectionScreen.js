@@ -95,7 +95,6 @@ class SerieSelectionScreen extends Component {
     return (
       <Container>
         <MyHeader {...this.props}/>
-        <Content>
         <SectionList
            sections={HomeSerieConfig}
            keyExtractor={item => item}
@@ -104,7 +103,6 @@ class SerieSelectionScreen extends Component {
            initialNumToRender={12}
            renderSectionHeader={this._renderSectionHeader}
            />
-        </Content>
         {this.createSaveButton()}
         <AdBanner />
       </Container>

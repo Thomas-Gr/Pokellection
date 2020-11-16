@@ -37,7 +37,7 @@ export default class MyHeader extends React.Component {
 	          transparent
 	          onPress={() => this.props.navigation.openDrawer()}
 	        >
-	          <Icon name="menu" />
+	          <Icon name="menu" type="Entypo"/>
 	        </Button>
 	      </Left>
 	      <Body style={{flex: 0.85}}>

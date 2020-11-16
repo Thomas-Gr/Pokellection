@@ -16,18 +16,11 @@ import Flag from 'react-native-flags';
 import React from "react";
 import { connect } from 'react-redux'
 
-const routes = Platform.OS === "ios"
-  ? [ { name: "section.series", link: "Home", icon: "list"},
-      { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
-      { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog"},
-      { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
-    //  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
-      { name: "section.about", link: "AboutScreen", icon: "question", type: "FontAwesome"}]
-
-  : [ { name: "section.series", link: "Home", icon: "cards", type: "MaterialCommunityIcons"},
-      { name: "section.researchs", link: "ResearchsScreen", icon: "search"},
-      { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog"},
-      { name: "section.preferences", link: "OptionsScreen", icon: "cog"},
+const routes = 
+   [ { name: "section.series", link: "Home", icon: "list", type: "Entypo"},
+      { name: "section.researchs", link: "ResearchsScreen", icon: "search", type: "FontAwesome"},
+      { name: "section.seriesSelection", link: "SerieSelectionScreen", icon: "cog", type: "FontAwesome"},
+      { name: "section.preferences", link: "OptionsScreen", icon: "cog", type: "FontAwesome"},
     //  { name: "section.statistics", link: "NOPE", icon: "md-stats", type: "Ionicons"},
       { name: "section.about", link: "AboutScreen", icon: "question", type: "FontAwesome"}]
 
