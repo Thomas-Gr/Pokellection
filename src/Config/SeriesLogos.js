@@ -1,4 +1,4 @@
-export default SeriesLogos = {
+const SeriesLogos = {
   '60px-SetSymbolChikoritaIntroPackNeo.png': require('../../resources/images/series/60px-SetSymbolChikoritaIntroPackNeo.png'),
   '60px-SetSymbolNeo_Destiny.png': require('../../resources/images/series/60px-SetSymbolNeo_Destiny.png'),
   '60px-SetSymbolNeo_Discovery.png': require('../../resources/images/series/60px-SetSymbolNeo_Discovery.png'),
@@ -92,3 +92,5 @@ export default SeriesLogos = {
   'TyphlosionexConstructedDeckSymbol.png': require('../../resources/images/series/TyphlosionexConstructedDeckSymbol.png'),
   'TyranitarexDeckSymbol.png': require('../../resources/images/series/TyranitarexDeckSymbol.png')
 };
+
+export default SeriesLogos;

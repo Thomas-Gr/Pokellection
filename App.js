@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Platform } from "react-native";
 import { Container, Content, Picker, Button, Text, Root } from "native-base";
 import * as Expo from 'expo'
 import * as Font from 'expo-font'
 import { Provider } from 'react-redux'
 import * as ScreenOrientation from 'expo-screen-orientation';
+import Modal from 'modal-react-native-web';
 
 import Store from './src/Store/configureStore.js'
 import HomeScreenRouter from "./src/index.js";
@@ -26,8 +27,13 @@ export default class AwesomeApp extends Component {
     });
     this.setState({ isReady: true });
   }
+
   render() {
-    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    Modal.setAppElement('body');
+
+    if (Platform.OS != "web") {
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    }
 
     if (!this.state.isReady) {
       return <Expo.AppLoading />;

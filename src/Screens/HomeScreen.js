@@ -81,7 +81,7 @@ class HomeScreen extends Component {
         <Left style={{flex:0.15}}>
           {
             SerieConfig[item].definition.image != ""
-              ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} />)
+              ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} />) // TODO: style={{width:30,height:30}}
               : (null)
           }
         </Left>
@@ -91,7 +91,7 @@ class HomeScreen extends Component {
           </Text>
         </Body>
         <Right style={{flex: 0.17}}>
-          <Text note>
+          <Text note="true">
             {message}
           </Text>
         </Right>
@@ -114,6 +114,7 @@ class HomeScreen extends Component {
       return (
         <Container>
           <MyHeader {...this.props}/>
+          <Content>
           <SectionList
              sections={this.props.seriesToDisplay}
              keyExtractor={item => item}
@@ -122,6 +123,7 @@ class HomeScreen extends Component {
              initialNumToRender={12}
              renderSectionHeader={this._renderSectionHeader}
              />
+             </Content>
           <AdBanner/>
         </Container>
       );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { AdMobBanner } from 'expo-ads-admob';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 
 export default class AdBanner extends Component {
   bannerError() {
@@ -10,17 +10,21 @@ export default class AdBanner extends Component {
   }
 
   render() {
-    return (
-      <View>
-       <View style={styles.margin} />
-        <AdMobBanner
-          style={styles.bottomBanner}
-          bannerSize="smartBannerPortrait"
-          adUnitID="ca-app-pub-5825529948495220/9502913447"
-          didFailToReceiveAdWithError={this.bannerError}
-        />
-        </View>
-    );
+    if (Platform.OS != "web") {
+      return (
+        <View>
+         <View style={styles.margin} />
+          <AdMobBanner
+            style={styles.bottomBanner}
+            bannerSize="smartBannerPortrait"
+            adUnitID="ca-app-pub-5825529948495220/9502913447"
+            didFailToReceiveAdWithError={this.bannerError}
+          />
+          </View>
+      );
+    } else {
+      return null;
+    }
   }
 }
 

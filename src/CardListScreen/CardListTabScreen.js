@@ -88,6 +88,14 @@ class CardListTabScreen extends React.PureComponent {
   }
 
   render() {
+    const imageView = this.props.showImage
+      ? <ImageView
+              images={[{source: this.props.imageToShow, width: 250, height: 358}]}
+              imageIndex={0}
+              isVisible={this.props.showImage}
+              onClose={() => this.hideImage()}
+          />
+      : null;
     return (
       <Container>
         <MyHeader {...this.props} title={language(this.props.setsLanguage, SerieConfig[this.state.routes[this.state.index].key].definition)} selectionFunction={this.showConfigurationPanel}/>
@@ -112,12 +120,7 @@ class CardListTabScreen extends React.PureComponent {
             initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
           />
 
-          <ImageView
-              images={[{source: this.props.imageToShow, width: 250, height: 358}]}
-              imageIndex={0}
-              isVisible={this.props.showImage}
-              onClose={() => this.hideImage()}
-          />
+          {imageView}
       <AdBanner/>
     </Container>
     );

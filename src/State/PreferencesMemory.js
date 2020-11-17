@@ -45,7 +45,7 @@ export const getLanguage = (success) => {
   if (languageCache === -1) { // Keep data in cache
     const locale = Platform.OS === 'ios'
         ? (NativeModules.SettingsManager == undefined ? "en" : NativeModules.SettingsManager.settings.AppleLocale)
-        : NativeModules.I18nManager.localeIdentifier;
+        : (Platform.OS === 'android' ? NativeModules.I18nManager.localeIdentifier : "en");
     AsyncStorage.getItem('@Preferences:Language')
         .then(result => success(result == null ? locale.split("_")[0] : result));
   } else {
@@ -66,7 +66,7 @@ export const getCardsLanguage = (success) => {
   if (cardsLanguageCache === -1) { // Keep data in cache
     const locale = Platform.OS === 'ios'
         ? (NativeModules.SettingsManager == undefined ? "en" : NativeModules.SettingsManager.settings.AppleLocale)
-        : NativeModules.I18nManager.localeIdentifier;
+        : (Platform.OS === 'android' ? NativeModules.I18nManager.localeIdentifier : "en");
     AsyncStorage.getItem('@Preferences:CardsLanguage')
         .then(result => success(result == null ? locale.split("_")[0] : result));
   } else {
@@ -87,7 +87,7 @@ export const getSetsLanguage = (success) => {
   if (setsLanguageCache === -1) { // Keep data in cache
     const locale = Platform.OS === 'ios'
         ? (NativeModules.SettingsManager == undefined ? "en" : NativeModules.SettingsManager.settings.AppleLocale)
-        : NativeModules.I18nManager.localeIdentifier;
+        : (Platform.OS === 'android' ? NativeModules.I18nManager.localeIdentifier : "en");
     AsyncStorage.getItem('@Preferences:SetsLanguage')
         .then(result => success(result == null ? locale.split("_")[0] : result));
   } else {

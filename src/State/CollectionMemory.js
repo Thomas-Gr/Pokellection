@@ -29,7 +29,7 @@ export const getCollection = (series, success) => {
 
             success(collections);
             cardsCache = collections;
-            selectedSeries = series;
+            cardsCacheSeries = series;
           });
     });
   } else {

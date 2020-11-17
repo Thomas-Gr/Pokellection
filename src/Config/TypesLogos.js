@@ -1,4 +1,4 @@
-export default TypeLogos = {
+const TypeLogos = {
   "GRASS": require('../../resources/images/types/Grass-attack.png'),
   "FIRE": require('../../resources/images/types/Fire-attack.png'),
   "WATER": require('../../resources/images/types/Water-attack.png'),
@@ -9,3 +9,5 @@ export default TypeLogos = {
   "METAL": require('../../resources/images/types/Metal-attack.png'),
   "DARKNESS": require('../../resources/images/types/Darkness-attack.png')
 };
+
+export default TypeLogos;

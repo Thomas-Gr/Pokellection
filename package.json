@@ -1,6 +1,6 @@
 {
   "name": "pokellection",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -19,27 +19,36 @@
     "test": "jest",
     "flow": "flow"
   },
+  "expo": {
+    "platforms": [
+      "web"
+    ]
+  },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/webpack-config": "^0.12.44",
     "axios": "^0.18.0",
     "expo": "~39.0.2",
     "expo-ads-admob": "~8.3.0",
     "expo-localization": "~9.0.0",
     "expo-screen-orientation": "~2.0.0",
     "i18n-js": "^3.3.0",
+    "modal-react-native-web": "^0.2.0",
     "native-base": "^2.13.14",
     "npm": "^6.4.1",
     "react": "16.13.1",
-    "react-dom": "^17.0.1",
+    "react-dom": "^16.6.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
     "react-native-easy-grid": "^0.2.0",
     "react-native-flags": "^1.0.0",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-image-view": "^2.1.4",
+    "react-native-keyboard-aware-scroll-view": "^0.9.3",
     "react-native-reanimated": "~1.13.0",
     "react-native-tab-view": "^2.15.2",
+    "react-native-web": "^0.11.1",
     "react-navigation": "^2.9.3",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",

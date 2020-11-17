@@ -7,8 +7,10 @@ import {
   Modal,
   StyleSheet,
   TouchableOpacity,
+  Platform,
   View
 } from 'react-native';
+import { default as ModalWeb } from 'modal-react-native-web';
 import { language, string } from '../i18n.js';
 
 import RaritiesLogos from '../Config/RaritiesLogos.js';
@@ -85,69 +87,85 @@ class CardInformationScreen extends React.Component {
         : null;
 
     const explanation = selectedCard.explanation != null
-        ? <Row style={{height: 60}}>
-            <View style={{padding: 10, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
+        ? <Row>
+            <View style={{padding: 10, justifyContent: 'center', alignItems: 'center', width:'100%', height: 60, marginTop: 40}}>
               <Text style={{fontWeight: 'bold', textAlign: 'center'}}>{selectedCard.explanation}</Text>
             </View>
           </Row>
         : null;
 
+    const firstRowStyle = selectedCard.explanation == null ? {height: 40} : null;
+
     /*
     There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
      As a result tapping just below the white space won't actually close the Modal...
     */
-    return (
+    const modalContent = <TouchableOpacity
+        activeOpacity={1}
+        onPress={() => this.props.hide()}
+        style={{backgroundColor: 'rgba(52, 52, 52, 0.8)',flex: 1}}>
+      <TouchableOpacity
+        activeOpacity={1}
+        style={{
+          marginTop: '25%',
+          marginLeft: '10%',
+          width: '80%',
+          height: '50%'}}>
+        <View style={{flex: 1, backgroundColor: 'white'}}>
+          <Grid>
+            <Row style={firstRowStyle}>
+              <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%', height: 40}}>
+                <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type}{type2} {language(this.props.cardsLanguage, selectedCard)} {card}</Text>
+              </View>
+            </Row>
+            <Row>
+              <Grid>
+                <Col style={styles.centered}>
+                  <TouchableOpacity onPress={() => this.showImage(image)}>
+                      <Image
+                        style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
+                        source={image}
+                      />
+                      </TouchableOpacity>
+                </Col>
+                <Col style={styles.centered}>
+                  <View style={{width:'90%'}}>
+                    <Button block style={{marginBottom:10}} onPress={() => { this.props.hide(); this.props.addCard(this.props.serieName, this.props.selectedCard); }}>
+                      <Text>{this.props.hasSelectedCard ? string('misc.remove') : string('misc.add')}{string('misc.card')}</Text>
+                    </Button>
+
+                    {wikiLink}
+                  </View>
+                </Col>
+              </Grid>
+            </Row>
+            {explanation}
+          </Grid>
+        </View>
+    </TouchableOpacity>
+  </TouchableOpacity>
+
+    if (Platform.OS == 'web') {
+      return (
+        <ModalWeb
+            animationType="fade"
+            transparent={true}
+            visible={this.props.visible}
+            onRequestClose={() => this.props.hide()}>
+          {modalContent}
+        </ModalWeb>
+      );
+    } else {
+      return (
         <Modal
             animationType="fade"
             transparent={true}
             visible={this.props.visible}
             onRequestClose={() => this.props.hide()}>
-            <TouchableOpacity
-                activeOpacity={1}
-                onPress={() => this.props.hide()}
-                style={{backgroundColor: 'rgba(52, 52, 52, 0.8)',flex: 1}}>
-              <TouchableOpacity
-                activeOpacity={1}
-                style={{
-                  marginTop: '25%',
-                  marginLeft: '10%',
-                  width: '80%',
-                  height: '60%'}}>
-                <View style={{flex: 1, backgroundColor: 'white'}}>
-                  <Grid>
-                    <Row style={{height: 40}}>
-                      <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%'}}>
-                        <Text style={{fontWeight: 'bold', color: 'white'}}>{rarity} {type}{type2} {language(this.props.cardsLanguage, selectedCard)} {card}</Text>
-                      </View>
-                    </Row>
-                    <Row>
-                      <Grid>
-                        <Col style={styles.centered}>
-                          <TouchableOpacity onPress={() => this.showImage(image)}>
-                              <Image
-                                style={{width: Dimensions.get('window').width / 3 - 6, height: 170}}
-                                source={image}
-                              />
-                              </TouchableOpacity>
-                        </Col>
-                        <Col style={styles.centered}>
-                          <View style={{width:'90%'}}>
-                            <Button block style={{marginBottom:10}} onPress={() => { this.props.hide(); this.props.addCard(this.props.serieName, this.props.selectedCard); }}>
-                              <Text>{this.props.hasSelectedCard ? string('misc.remove') : string('misc.add')}{string('misc.card')}</Text>
-                            </Button>
-
-                            {wikiLink}
-                          </View>
-                        </Col>
-                      </Grid>
-                    </Row>
-                    {explanation}
-                  </Grid>
-                </View>
-            </TouchableOpacity>
-          </TouchableOpacity>
-      </Modal>
-    );
+          {modalContent}
+        </Modal>
+      );
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import { Button, Icon, Text } from 'native-base';
 import { Col, Grid, Row } from "react-native-easy-grid";
-import { Image, Modal, StyleSheet, TouchableOpacity, View } from 'react-native';
-
+import { Image, StyleSheet, TouchableOpacity, View, Modal, Platform } from 'react-native';
+import { default as ModalWeb } from 'modal-react-native-web';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import { connect } from 'react-redux'
@@ -80,7 +80,7 @@ class CardListConfigurationScreen extends React.Component {
       const content = row.map(rarity => {
         const image = RaritiesLogos[rarity] == null
           ? <Text>/</Text>
-          : <Image source={RaritiesLogos[rarity].image}/>;
+          : <Image source={RaritiesLogos[rarity].image} style={{width:RaritiesLogos[rarity].width / 3,height:RaritiesLogos[rarity].height / 3}}/>;
 
         return (
           <Col key={rarity} style={[{margin:0.8}, this.state.unselectedRarities[rarity] ? {opacity: 0.1} : null]}>
@@ -126,13 +126,7 @@ class CardListConfigurationScreen extends React.Component {
     There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
      As a result tapping just below the white space won't actually close the Modal...
     */
-    return (
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={this.props.visible}
-            onRequestClose={() => this.props.hide()}>
-            <TouchableOpacity
+    const modalContent = <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => this.props.hide()}
                 style={{backgroundColor: 'rgba(52, 52, 52, 0.8)',flex: 1}}>
@@ -171,8 +165,28 @@ class CardListConfigurationScreen extends React.Component {
                 </View>
             </TouchableOpacity>
           </TouchableOpacity>
-      </Modal>
-    );
+
+    if (Platform.OS == 'web') {
+      return (
+        <ModalWeb
+            animationType="fade"
+            transparent={true}
+            visible={this.props.visible}
+            onRequestClose={() => this.props.hide()}>
+          {modalContent}
+        </ModalWeb>
+      );
+    } else {
+      return (
+        <Modal
+            animationType="fade"
+            transparent={true}
+            visible={this.props.visible}
+            onRequestClose={() => this.props.hide()}>
+          {modalContent}
+        </Modal>
+      );
+    }
   }
 }
 

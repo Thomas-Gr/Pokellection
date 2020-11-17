@@ -17,14 +17,15 @@ import ImageView from 'react-native-image-view';
 class ResearchsScreen extends Component {
   constructor(props) {
     super(props);
+    const selectedSeries = this.filterSelectedSeriesOnly(HomeSerieConfig, this.props.selectedSeries)
     this.state = {
       listConfigurationVisible: false,
       cardInformationVisible: false,
       selectedCard: null,
       selectedSerie: null,
       hasSelectedCard: false,
-      hasAtLeastOneSerieHidden: false,
-      seriesToDisplay: this.buildList(this.filterSelectedSeriesOnly(HomeSerieConfig, this.props.selectedSeries)),
+      seriesToDisplay: this.buildList(selectedSeries),
+      hasAtLeastOneSerieHidden: this.hasAtLeastOneSerieHidden(selectedSeries)
     };
 
     this.changeSelection = this.changeSelection.bind(this);
@@ -50,7 +51,6 @@ class ResearchsScreen extends Component {
   buildList(filteredSerie) {
     var max = 200 // TODO: Move this somewhere (make it configurable?)
     var current = 0
-    var hasAtLeastOneSerieHidden = false
 
     var result = filteredSerie
         .map(key => ({
@@ -65,7 +65,6 @@ class ResearchsScreen extends Component {
 
           if (current >= max) {
             displayed = false;
-            hasAtLeastOneSerieHidden = true
           } else {
             const owned = this.props.collections[obj.data[0].name] == undefined
                 ? 0
@@ -81,9 +80,32 @@ class ResearchsScreen extends Component {
         })
         .filter(obj => obj.isDisplayed)
 
-        this.setState({hasAtLeastOneSerieHidden: hasAtLeastOneSerieHidden})
+    return result
+  }
 
-        return result
+  hasAtLeastOneSerieHidden(filteredSerie) {
+    var max = 200 // TODO: Move this somewhere (make it configurable?)
+    var current = 0
+    var key;
+    for (key of filteredSerie) {
+      if (this.props.collections[key] == undefined ||
+            Object.keys(this.props.collections[key]).length !=
+                Object.keys(SerieConfig[key].definition.cards).length) {
+          const owned = this.props.collections[key] == undefined
+            ? 0
+            : Object.keys(this.props.collections[key]).length
+
+          const total = Object.keys(SerieConfig[key].definition.cards).length
+
+          current += total - owned
+
+          if (current > max) {
+            return true
+          }
+      }
+    }
+
+    return false;
   }
 
   filterSelectedSeriesOnly(allSeries, selectedSeries) {
@@ -132,6 +154,15 @@ class ResearchsScreen extends Component {
           </View>
         : null;
 
+    const imageView = this.props.showImage
+        ? <ImageView
+             images={[{source: this.props.imageToShow, width: 250, height: 358}]}
+             imageIndex={0}
+             onClose={() => this.hideImage()}
+         />
+         : null
+
+    console.log(this.props.showImage)
     return (
       <Container>
         <MyHeader {...this.props} selectionFunction={this.showConfigurationPanel}/>
@@ -160,12 +191,7 @@ class ResearchsScreen extends Component {
              forcedResearched='miss'
              changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
 
-         <ImageView
-             images={[{source: this.props.imageToShow, width: 250, height: 358}]}
-             imageIndex={0}
-             isVisible={this.props.showImage}
-             onClose={() => this.hideImage()}
-         />
+         {imageView}
         <AdBanner />
       </Container>
     );
@@ -177,7 +203,8 @@ const styles = StyleSheet.create({
     position: "relative",
     bottom: 0,
     width: '100%',
-    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#ffa500',
   },
   warning: {

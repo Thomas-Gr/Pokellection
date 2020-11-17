@@ -10,7 +10,6 @@ i18n.defaultLocale = "en";
 i18n.locale = "fr";
 i18n.fallbacks = true;
 i18n.translations = { en, fr, ja };
-ReactNative.I18nManager.allowRTL(false);
 
 export function string(name, params = {}) {
   return i18n.t(name, params);
