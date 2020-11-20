@@ -18,9 +18,15 @@ class CardListTabScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const series = [].concat(...props.seriesToDisplay.map(a => a.data))
+    this.changeSelection = this.changeSelection.bind(this);
+    this.showConfigurationPanel = this.showConfigurationPanel.bind(this);
+    this.hideConfigurationPanel = this.hideConfigurationPanel.bind(this);
+    this.addCard = this.addCard.bind(this);
+    this.showCardInformation = this.showCardInformation.bind(this);
+    this.hideCardInformation = this.hideCardInformation.bind(this);
 
-    const firstIndex = series.indexOf(props.navigation.state.params.serieName);
+    const series = [].concat(...props.seriesToDisplay.map(a => a.data))
+    const firstIndex = series.indexOf(props.route.params.serieName);
 
     this.state = {
       index: firstIndex,
@@ -30,13 +36,27 @@ class CardListTabScreen extends React.PureComponent {
       selectedCard: null,
       hasSelectedCard: false
     };
+  }
+  
+  static getDerivedStateFromProps(props, state) {
+    if (props.route.params == undefined) {
+      return null;
+    }
+    const series = [].concat(...props.seriesToDisplay.map(a => a.data))
+    const firstIndex = series.indexOf(props.route.params.serieName);
 
-    this.changeSelection = this.changeSelection.bind(this);
-    this.showConfigurationPanel = this.showConfigurationPanel.bind(this);
-    this.hideConfigurationPanel = this.hideConfigurationPanel.bind(this);
-    this.addCard = this.addCard.bind(this);
-    this.showCardInformation = this.showCardInformation.bind(this);
-    this.hideCardInformation = this.hideCardInformation.bind(this);
+    if (firstIndex !== state.index) {
+      return {
+        index: firstIndex,
+        routes: series.map(a => ({key: a})),
+        listConfigurationVisible: false,
+        cardInformationVisible: false,
+        selectedCard: null,
+        hasSelectedCard: false
+      };
+    }
+
+    return null;
   }
 
   showConfigurationPanel() {

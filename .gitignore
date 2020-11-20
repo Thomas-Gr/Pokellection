@@ -1,7 +1,9 @@
 .expo/
+.expo-shared/
 android/
 ios/
 *.iml
 package-lock.json
 node_modules/
 resources/images/cards/
+web-build/

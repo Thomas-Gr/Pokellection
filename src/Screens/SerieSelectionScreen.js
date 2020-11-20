@@ -60,7 +60,7 @@ class SerieSelectionScreen extends Component {
       <Left style={{flex:0.15}}>
         {
           SerieConfig[item].definition.image != ""
-            ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} />)
+            ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} style={{flex: 1, width: 30, height: 30, resizeMode: 'contain'}}/>)
             : (null)
         }
       </Left>

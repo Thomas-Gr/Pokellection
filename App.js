@@ -10,7 +10,7 @@ import Modal from 'modal-react-native-web';
 import Store from './src/Store/configureStore.js'
 import HomeScreenRouter from "./src/index.js";
 
-export default class AwesomeApp extends Component {
+class PokellectionRoot extends Component {
   constructor() {
     super();
     this.state = {
@@ -41,3 +41,5 @@ export default class AwesomeApp extends Component {
     return <Provider store={Store}><Root><HomeScreenRouter /></Root></Provider>;
   }
 }
+
+export default PokellectionRoot

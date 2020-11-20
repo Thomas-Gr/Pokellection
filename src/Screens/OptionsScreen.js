@@ -1,5 +1,4 @@
 import {
-  ActionSheet,
   Body,
   Container,
   Content,
@@ -8,7 +7,7 @@ import {
   Text
 } from 'native-base';
 import React, { Component } from 'react';
-
+import { connectActionSheet } from '@expo/react-native-action-sheet'
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import ConfigSaveButton from '../Components/ConfigSaveButton.js';
 import MyHeader from "../UtilityScreens/MyHeader.js";
@@ -64,9 +63,9 @@ class OptionsScreen extends Component {
   }
 
   openActionSheet(data) {
-    ActionSheet.show(
+    this.props.showActionSheetWithOptions(
       {
-        options: data.options,
+        options: data.options.map(a => a.text),
         title: data.text
       },
       buttonIndex => data.updateFunction(data.options[buttonIndex])
@@ -221,4 +220,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(OptionsScreen)
+export default connect(mapStateToProps)(connectActionSheet(OptionsScreen))
