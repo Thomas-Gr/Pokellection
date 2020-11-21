@@ -45,7 +45,7 @@ class HomeScreen extends Component {
           </Text>
         </Body>
         <Right style={{flex: 0.17}}>
-          <Text note="true">
+          <Text note>
             {message}
           </Text>
         </Right>

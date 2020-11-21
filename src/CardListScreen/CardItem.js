@@ -76,7 +76,7 @@ class CardItem extends React.Component {
       ? SerieConfig[collectionName].pictures[data.picture]
       : require('../../resources/images/missing.png');
 
-    const icon = item.owned ? 'trash' : 'add';
+    const icon = item.owned ? 'trash-o' : 'plus';
     const text = item.owned ? string('misc.remove') : string('misc.add');
 
     const quickAdd = this.props.inLongSelectionMode
@@ -85,7 +85,7 @@ class CardItem extends React.Component {
           <Button iconLeft
               style={{position: 'absolute', alignSelf: 'center', zIndex:10, marginTop:70}}
               onPress={() => this.props.addCard(this.props.collectionName, this.props.data)}>
-            <Icon name={icon} />
+            <Icon name={icon} type="FontAwesome"/>
             <Text style={{fontSize: 10}}>{text}</Text>
           </Button>
         )

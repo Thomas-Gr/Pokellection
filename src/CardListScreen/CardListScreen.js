@@ -1,4 +1,4 @@
-import { FlatList, View } from 'react-native';
+import { FlatList, View, Platform } from 'react-native';
 
 import CardItem from "./CardItem.js";
 import React from "react";
@@ -37,15 +37,32 @@ class CardListScreen extends React.Component {
     selectCard={this.props.selectCard}/>)
 
   render() {
+    if (Platform.OS == 'web') {
+
+    }
     return this.props.display == 'list'
-        ? <View><FlatList
-           data={this.props.dataSource}
-           keyExtractor={item => 'list' + item.id.toString()}
-           initialNumToRender={20}
-           windowSize={20}
-           maxToRenderPerBatch={20}
-           onEndReachedThreshold={0.5}
-           renderItem={this._renderItem}/></View>
+        ? (Platform.OS == 'web'
+            ? <span>
+                <FlatList
+                 data={this.props.dataSource}
+                 keyExtractor={item => 'list' + item.id.toString()}
+                 initialNumToRender={20}
+                 windowSize={20}
+                 maxToRenderPerBatch={20}
+                 onEndReachedThreshold={0.5}
+                 renderItem={this._renderItem}/>
+               </span>
+            : <View>
+                <FlatList
+                 data={this.props.dataSource}
+                 keyExtractor={item => 'list' + item.id.toString()}
+                 initialNumToRender={20}
+                 windowSize={20}
+                 maxToRenderPerBatch={20}
+                 onEndReachedThreshold={0.5}
+                 renderItem={this._renderItem}/>
+               </View>
+           )
         : <FlatList
            data={this.props.dataSource}
            keyExtractor={item => 'pictures' + item.id.toString()}

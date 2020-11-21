@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Dimensions, View } from 'react-native';
+import { Dimensions, View, Platform } from 'react-native';
 
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardInformationScreen from "./CardInformationScreen.js";
@@ -30,6 +30,7 @@ class CardListTabScreen extends React.PureComponent {
 
     this.state = {
       index: firstIndex,
+      initialIndex: firstIndex,
       routes: series.map(a => ({key: a})),
       listConfigurationVisible: false,
       cardInformationVisible: false,
@@ -45,9 +46,10 @@ class CardListTabScreen extends React.PureComponent {
     const series = [].concat(...props.seriesToDisplay.map(a => a.data))
     const firstIndex = series.indexOf(props.route.params.serieName);
 
-    if (firstIndex !== state.index) {
+    if (firstIndex !== state.initialIndex) {
       return {
         index: firstIndex,
+        initialIndex: firstIndex,
         routes: series.map(a => ({key: a})),
         listConfigurationVisible: false,
         cardInformationVisible: false,
@@ -108,6 +110,10 @@ class CardListTabScreen extends React.PureComponent {
   }
 
   render() {
+    if (this.props.route.params === undefined) {
+      return null;
+    }
+
     const imageView = this.props.showImage
       ? <ImageView
               images={[{source: this.props.imageToShow, width: 250, height: 358}]}
@@ -116,6 +122,21 @@ class CardListTabScreen extends React.PureComponent {
               onClose={() => this.hideImage()}
           />
       : null;
+
+    const actualList = Platform.OS == 'web'
+        ? <CardListScreen
+            serieName={this.props.route.params.serieName}
+            selectCard={(card) => this.showCardInformation(card)}
+            addCard={(name, card) => this.addCard(name, card)}
+            />
+        : <TabView
+            navigationState={this.state}
+            renderScene={this._renderScene}
+            onIndexChange={this._handleIndexChange}
+            renderTabBar={(route) => null}
+            initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
+          />
+
     return (
       <Container>
         <MyHeader {...this.props} title={language(this.props.setsLanguage, SerieConfig[this.state.routes[this.state.index].key].definition)} selectionFunction={this.showConfigurationPanel}/>
@@ -132,13 +153,7 @@ class CardListTabScreen extends React.PureComponent {
             selectedCard={this.state.selectedCard}
             addCard={(name, card) => this.addCard(name, card)}/>
 
-          <TabView
-            navigationState={this.state}
-            renderScene={this._renderScene}
-            onIndexChange={this._handleIndexChange}
-            renderTabBar={(route) => null}
-            initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
-          />
+          {actualList}
 
           {imageView}
       <AdBanner/>

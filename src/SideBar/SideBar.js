@@ -63,6 +63,7 @@ class SideBar extends React.Component {
           <List
             dataArray={translatedRoutes}
             contentContainerStyle={{ marginTop: 120 }}
+            keyExtractor={data => data.translatedString}
             renderRow={data => {
               return (
                 <ListItem icon

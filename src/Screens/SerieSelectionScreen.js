@@ -1,6 +1,5 @@
 import {
   Body,
-  CheckBox,
   Container,
   Content,
   Left,
@@ -8,6 +7,7 @@ import {
   Right,
   Text
 } from 'native-base';
+import CheckBox from '@react-native-community/checkbox';
 import { Image, SectionList } from 'react-native';
 import React, { Component } from 'react';
 
@@ -20,7 +20,35 @@ import SeriesLogos from '../Config/SeriesLogos.js';
 import { connect } from 'react-redux'
 import { language } from "../i18n.js"
 
-class SerieSelectionScreen extends Component {
+class CategoryItem extends React.PureComponent {
+  render() {
+    const configDefinition = SerieConfig[this.props.item].definition
+
+    return (
+      <ListItem>
+        <Left style={{flex:0.15}}>
+          {
+            configDefinition.image != ""
+              ? (<Image source={SeriesLogos[configDefinition.image]} style={{flex: 1, width: 30, height: 30, resizeMode: 'contain'}}/>)
+              : (null)
+          }
+        </Left>
+        <Body style={{flex:0.7}}>
+          <Text style={{fontSize:15}}>
+            {language(this.props.setsLanguage, configDefinition)}
+          </Text>
+        </Body>
+        <Right style={{flex:0.15}}>
+          <CheckBox
+              value={this.props.isChecked}
+              onValueChange={this.props.action}/>
+        </Right>
+      </ListItem>
+    )
+  }
+}
+
+class SerieSelectionScreen extends React.PureComponent {
   constructor(props) {
     super(props)
 
@@ -55,30 +83,6 @@ class SerieSelectionScreen extends Component {
     this.setState({locallySelectedSeries: null});
   }
 
-  _renderItem = ({item}) => (
-    <ListItem>
-      <Left style={{flex:0.15}}>
-        {
-          SerieConfig[item].definition.image != ""
-            ? (<Image source={SeriesLogos[SerieConfig[item].definition.image]} style={{flex: 1, width: 30, height: 30, resizeMode: 'contain'}}/>)
-            : (null)
-        }
-      </Left>
-      <Body style={{flex:0.7}}>
-        <Text style={{fontSize:15}}>
-          {language(this.props.setsLanguage, SerieConfig[item].definition)}
-        </Text>
-      </Body>
-      <Right style={{flex:0.15}}>
-        <CheckBox
-            checked={this.state.locallySelectedSeries == null
-                ? this.props.selectedSeries[item] == true
-                : this.state.locallySelectedSeries[item] == true}
-            onPress={() => this.updateSerie(item)}/>
-      </Right>
-    </ListItem>
-  )
-
   _renderSectionHeader = ({section}) => (
     <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{language(this.props.language, section)}</Text></ListItem>
   )
@@ -98,7 +102,15 @@ class SerieSelectionScreen extends Component {
         <SectionList
            sections={HomeSerieConfig}
            keyExtractor={item => item}
-           renderItem={this._renderItem}
+           renderItem={({ item }) => 
+              <CategoryItem 
+                item={item} 
+                setsLanguage={this.props.setsLanguage} 
+                isChecked={this.state.locallySelectedSeries == null
+                  ? this.props.selectedSeries[item] == true
+                  : this.state.locallySelectedSeries[item] == true}
+                action={() => this.updateSerie(item)}/> 
+            }
            numColumns={1}
            initialNumToRender={12}
            renderSectionHeader={this._renderSectionHeader}
