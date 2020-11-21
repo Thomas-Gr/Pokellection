@@ -7,7 +7,7 @@ import {
   Right,
   Text
 } from 'native-base';
-import CheckBox from '@react-native-community/checkbox';
+import MyCheckBox from '../UtilityScreens/MyCheckBox';
 import { Image, SectionList } from 'react-native';
 import React, { Component } from 'react';
 
@@ -39,7 +39,7 @@ class CategoryItem extends React.PureComponent {
           </Text>
         </Body>
         <Right style={{flex:0.15}}>
-          <CheckBox
+          <MyCheckBox
               value={this.props.isChecked}
               onValueChange={this.props.action}/>
         </Right>

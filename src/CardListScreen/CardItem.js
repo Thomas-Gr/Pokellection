@@ -1,7 +1,7 @@
 import { Body, Button, Card, Icon, Left, ListItem, Right, Row, Text } from "native-base";
 import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { language, string } from "../i18n.js"
-
+import MyCheckBox from '../UtilityScreens/MyCheckBox';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import SerieConfig from '../Config/SerieConfig.js';
@@ -62,10 +62,9 @@ class CardItem extends React.Component {
           </TouchableOpacity>
         </Body>
         <Right style={{flex:0.1}}>
-          <TouchableOpacity
-              onPress={() => this.props.addCard(this.props.collectionName, this.props.data)}>
-            <Icon name="check-square-o" type="FontAwesome" style={item.owned ? styles.yes : styles.no_2}/>
-          </TouchableOpacity>
+          <MyCheckBox
+            value={item.owned}
+            onValueChange={() => this.props.addCard(this.props.collectionName, this.props.data)} />
         </Right>
       </ListItem>
      )
