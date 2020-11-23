@@ -4,16 +4,19 @@
       "backgroundColor": "#000000"
     },
     "name": "Pokellection",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "slug": "pokellection",
     "icon": "resources/icon.png",
+    "splash": {
+      "image": "resources/icon.png"
+    },
     "ios": {
       "bundleIdentifier": "com.pokellection"
     },
     "android": {
       "package": "com.pokellection",
       "permissions": [],
-      "versionCode": 6
+      "versionCode": 7
     },
     "assetBundlePatterns": [
       "resources/images/rarities/*",

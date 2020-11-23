@@ -14,7 +14,7 @@ class AboutScreen extends Component {
         <Content>
           <View style={styles.view}>
             <Text h1 style={styles.title}>{string('about.version')}</Text>
-            <Text style={styles.padded}>0.2.2</Text>
+            <Text style={styles.padded}>0.2.3</Text>
 
             <Text h1 style={styles.title}>{string('about.team')}</Text>
             <Text>{string('about.developer')}</Text>
