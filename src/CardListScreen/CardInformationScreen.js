@@ -68,8 +68,8 @@ class CardInformationScreen extends React.Component {
 
     const wikiLink = selectedCard.wikiLink != null
         ? (
-            <Button block onPress={() => Linking.openURL('https://bulbapedia.bulbagarden.net/wiki/' + selectedCard.wikiLink)}>
-              <Text>{string('misc.openWiki')}</Text>
+            <Button style={{marginTop:10}} block onPress={() => Linking.openURL('https://bulbapedia.bulbagarden.net/wiki/' + selectedCard.wikiLink)}>
+              <Text adjustsFontSizeToFit={true} numberOfLines={1}>{string('misc.openWiki')}</Text>
             </Button>
           )
         : null;
@@ -87,31 +87,27 @@ class CardInformationScreen extends React.Component {
         : null;
 
     const explanation = selectedCard.explanation != null
-        ? <Row>
+        ? <Row style={{marginTop:20}}>
             <View style={{padding: 10, justifyContent: 'center', alignItems: 'center', width:'100%', height: 60, marginTop: 40}}>
               <Text style={{fontWeight: 'bold', textAlign: 'center'}}>{selectedCard.explanation}</Text>
             </View>
           </Row>
         : null;
 
+    const modalSize = selectedCard.explanation != null ? '60%' : '50%'
+
     const firstRowStyle = selectedCard.explanation == null ? {height: 40} : null;
 
-    /*
-    There's a hack here: the View doesn't actually take the entire height of the TouchableOpacity
-     As a result tapping just below the white space won't actually close the Modal...
-    */
     const modalContent = <TouchableOpacity
         activeOpacity={1}
         onPress={() => this.props.hide()}
         style={{backgroundColor: 'rgba(52, 52, 52, 0.8)',flex: 1}}>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={{
+        <View style={{
           marginTop: '25%',
           marginLeft: '10%',
           width: '80%',
-          height: '50%'}}>
-        <View style={{flex: 1, backgroundColor: 'white'}}>
+          height: modalSize, 
+          backgroundColor: 'white'}}>
           <Grid>
             <Row style={firstRowStyle}>
               <View style={{backgroundColor: '#3f51b5', padding: 5, justifyContent: 'center', alignItems: 'center', width:'100%', height: 40}}>
@@ -130,11 +126,19 @@ class CardInformationScreen extends React.Component {
                 </Col>
                 <Col style={styles.centered}>
                   <View style={{width:'90%'}}>
-                    <Button block style={{marginBottom:10}} onPress={() => { this.props.hide(); this.props.addCard(this.props.serieName, this.props.selectedCard); }}>
-                      <Text>{this.props.hasSelectedCard ? string('misc.remove') : string('misc.add')}{string('misc.card')}</Text>
+                    <Button block onPress={() => { this.props.hide(); this.props.addCard(this.props.serieName, this.props.selectedCard); }}>
+                      <Text adjustsFontSizeToFit={true} numberOfLines={1}>{this.props.hasSelectedCard ? string('misc.remove') : string('misc.add')}{string('misc.card')}</Text>
                     </Button>
 
                     {wikiLink}
+
+                    <Button block style={{marginTop:10}} onPress={() => Linking.openURL('https://www.mercari.com/jp/search/?keyword=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%AB%E3%83%BC%E3%83%89+' + language('ja', selectedCard))}>
+                      <Text adjustsFontSizeToFit={true} numberOfLines={1}>{string('misc.searchMercari')}</Text>
+                    </Button>
+
+                    <Button block style={{marginTop:10}} onPress={() => Linking.openURL('https://auctions.yahoo.co.jp/search/search?auccat=&tab_ex=commerce&ei=utf-8&aq=-1&oq=&sc_i=&fr=auc_top&p=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%AB%E3%83%BC%E3%83%89%E3%80%80' + language('ja', selectedCard))}>
+                      <Text adjustsFontSizeToFit={true} numberOfLines={1}>{string('misc.searchYahoo')}</Text>
+                    </Button>
                   </View>
                 </Col>
               </Grid>
@@ -142,7 +146,6 @@ class CardInformationScreen extends React.Component {
             {explanation}
           </Grid>
         </View>
-    </TouchableOpacity>
   </TouchableOpacity>
 
     if (Platform.OS == 'web') {

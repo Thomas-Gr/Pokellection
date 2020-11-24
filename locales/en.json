@@ -53,6 +53,8 @@
   "misc": {
     "configuration": "Configuration:",
     "openWiki": "Open in wiki",
+    "searchMercari": "Search on Mercari",
+    "searchYahoo": "Search on Yahoo!",
     "add": "Add ",
     "remove": "Remove ",
     "card": "card",
