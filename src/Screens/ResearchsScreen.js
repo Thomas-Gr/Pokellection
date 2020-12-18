@@ -1,10 +1,11 @@
 import { Container, Content, ListItem, Text } from 'native-base';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import React, { Component } from 'react';
 
 import AdBanner from "../UtilityScreens/AdBanner.js";
 import CardInformationScreen from "../CardListScreen/CardInformationScreen.js";
 import CardListConfigurationScreen from '../CardListScreen/CardListConfigurationScreen.js';
+import SeriesLogos from '../Config/SeriesLogos.js';
 import CardListScreen from '../CardListScreen/CardListScreen.js';
 import HomeSerieConfig from '../Config/HomeSerieConfig.js';
 import MyHeader from "../UtilityScreens/MyHeader.js";
@@ -140,9 +141,19 @@ class ResearchsScreen extends Component {
           />
   )
 
-  _renderSectionHeader = ({section}) => (
-    <ListItem itemDivider><Text style={{fontWeight: 'bold'}}>{section.title}</Text></ListItem>
-  )
+  _renderSectionHeader = ({section}) => {
+    const image = SerieConfig[section.data[0].name].definition.image
+    return (
+      <ListItem itemDivider>
+        {
+          image != ""
+            ? (<Image source={SeriesLogos[image]} style={{width: 20, resizeMode: 'contain', marginRight: 10}}/>)
+            : (null)
+        }
+        <Text style={{fontWeight: 'bold'}}>{section.title}</Text>
+      </ListItem>
+    )
+  }
 
   hideCardInformation() {
     this.setState({cardInformationVisible: false, hasSelectedCard: false});
