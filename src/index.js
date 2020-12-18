@@ -75,25 +75,28 @@ class MainNavigator extends Component {
       SelectionMemory.getSelection((selection) => {
         SelectionMemory.getDisplay((display) => {
           SelectionMemory.getUnselectedRarities((unselectedRarities) => {
-            PreferencesMemory.getSerieSelection((selectedSeries) => {
-              PreferencesMemory.getLanguage((language) => {
-                PreferencesMemory.getCardsLanguage((cardsLanguage) => {
-                  PreferencesMemory.getSetsLanguage((setsLanguage) => {
-                    PreferencesMemory.getUnumberedSorting((unumberedSorting) => {
-                      CollectionMemory.getCollection(selectedSeries, (collections) => {
-                        this.props.dispatch({
-                          type: "LOAD_FROM_MEMORY",
-                          value: {
-                            collections: collections,
-                            selectedSeries: selectedSeries,
-                            unselectedRarities: unselectedRarities,
-                            display: display,
-                            selection: selection,
-                            language: language,
-                            cardsLanguage: cardsLanguage,
-                            setsLanguage: setsLanguage,
-                            unumberedSorting: unumberedSorting
-                        }});
+            SelectionMemory.getUnselectedTypes((unselectedTypes) => {
+              PreferencesMemory.getSerieSelection((selectedSeries) => {
+                PreferencesMemory.getLanguage((language) => {
+                  PreferencesMemory.getCardsLanguage((cardsLanguage) => {
+                    PreferencesMemory.getSetsLanguage((setsLanguage) => {
+                      PreferencesMemory.getUnumberedSorting((unumberedSorting) => {
+                        CollectionMemory.getCollection(selectedSeries, (collections) => {
+                          this.props.dispatch({
+                            type: "LOAD_FROM_MEMORY",
+                            value: {
+                              collections: collections,
+                              selectedSeries: selectedSeries,
+                              unselectedRarities: unselectedRarities,
+                              unselectedTypes: unselectedTypes,
+                              display: display,
+                              selection: selection,
+                              language: language,
+                              cardsLanguage: cardsLanguage,
+                              setsLanguage: setsLanguage,
+                              unumberedSorting: unumberedSorting
+                          }});
+                        });
                       });
                     });
                   });

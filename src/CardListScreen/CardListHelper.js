@@ -40,12 +40,14 @@ const rarityOrder2 = {
   "NONE": 8
 };
 
-export const refreshCardList = (cards, collection, selection, unselectedRarities, sorting) => {
+export const refreshCardList = (cards, collection, selection, unselectedRarities, unselectedTypes, sorting) => {
   var sortingFunction = getUnumberedSortingFunction(sorting);
+
 
   return Object.values(cards)
     .sort((a, b) => sortingFunction(a, b))
     .filter(a => unselectedRarities[a.rarity] == null)
+    .filter(a => unselectedTypes[a.type] == null || (a.type2 != null && unselectedTypes[a.type2] == null))
     .map(a => ({id: a.id, owned: collection != null && collection[a.id] != null}))
     .filter(a => {
       if (selection == 'got') return a.owned;

@@ -16,6 +16,7 @@ function toggleCollection(state = initialState, action) {
       collections: action.value.collections,
       selectedSeries: action.value.selectedSeries,
       unselectedRarities: action.value.unselectedRarities,
+      unselectedTypes: action.value.unselectedTypes,
       display: action.value.display,
       selection: action.value.selection,
       seriesToDisplay: filterSelectedSeriesOnly(HomeSerieConfig, action.value.selectedSeries, action.value.language),
@@ -38,12 +39,14 @@ function toggleCollection(state = initialState, action) {
     SelectionMemory.setSelection(action.value.selection);
     SelectionMemory.setDisplay(action.value.display);
     SelectionMemory.setUnselectedRarities(action.value.unselectedRarities);
+    SelectionMemory.setUnselectedTypes(action.value.unselectedTypes);
 
     return {
       ...state,
       selection: action.value.selection,
       display: action.value.display,
-      unselectedRarities: action.value.unselectedRarities
+      unselectedRarities: action.value.unselectedRarities,
+      unselectedTypes: action.value.unselectedTypes
     }
   } else if (action.type == "SWITCH_LONG_SELECTION_MODE") {
     return {

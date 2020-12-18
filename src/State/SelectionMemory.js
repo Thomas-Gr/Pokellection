@@ -3,6 +3,7 @@ import { AsyncStorage } from "react-native";
 var selectionCache = -1;
 var displayCache = -1;
 var unselectedRaritiesCache = -1;
+var unselectedTypesCache = -1;
 
 export const setSelection = (value) => {
   try {
@@ -60,5 +61,22 @@ export const getUnselectedRarities = (success) => {
     AsyncStorage.getItem('@Configuration:UnselectedRarities').then(result => success(result != null ? JSON.parse(result) : {}));
   } else {
     success(unselectedRaritiesCache);
+  }
+}
+
+export const setUnselectedTypes = (value) => {
+  try {
+    AsyncStorage.setItem('@Configuration:UnselectedTypes', JSON.stringify(value));
+    unselectedTypesCache = value;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const getUnselectedTypes = (success) => {
+  if (unselectedTypesCache === -1) { // Keep data in cache
+    AsyncStorage.getItem('@Configuration:UnselectedTypes').then(result => success(result != null ? JSON.parse(result) : {}));
+  } else {
+    success(unselectedTypesCache);
   }
 }

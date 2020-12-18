@@ -82,8 +82,16 @@ class CardListTabScreen extends React.PureComponent {
     });
   }
 
-  changeSelection(selection: string, display: string, unselectedRarities: string[]) {
-    this.props.dispatch({ type: "CHANGE_CONFIG", value: {selection: selection, display: display, unselectedRarities: unselectedRarities} })
+  changeSelection(selection: string, display: string, unselectedRarities: string[], unselectedTypes: string[]) {
+    this.props.dispatch({ 
+      type: "CHANGE_CONFIG", 
+      value: {
+        selection: selection, 
+        display: display, 
+        unselectedRarities: unselectedRarities, 
+        unselectedTypes: unselectedTypes
+      } 
+    })
   }
 
   addCard(collectionName, card) {
@@ -143,7 +151,7 @@ class CardListTabScreen extends React.PureComponent {
           <CardListConfigurationScreen
             visible={this.state.listConfigurationVisible}
             hide={this.hideConfigurationPanel}
-            changeSelection={(selection, display, unselectedRarities) => this.changeSelection(selection, display, unselectedRarities)}/>
+            changeSelection={(selection, display, unselectedRarities, unselectedTypes) => this.changeSelection(selection, display, unselectedRarities, unselectedTypes)}/>
 
           <CardInformationScreen
             serieName={this.state.routes[this.state.index].key}

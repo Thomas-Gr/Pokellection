@@ -3,6 +3,7 @@ import { Col, Grid, Row } from "react-native-easy-grid";
 import { Image, StyleSheet, TouchableOpacity, View, Modal, Platform } from 'react-native';
 import { default as ModalWeb } from 'modal-react-native-web';
 import RaritiesLogos from '../Config/RaritiesLogos.js';
+import TypesLogos from '../Config/TypesLogos.js';
 import React from "react";
 import { connect } from 'react-redux'
 import { string } from "../i18n.js"
@@ -39,6 +40,28 @@ const rarities = [
   ]
 ];
 
+const types = [
+  [
+    "GRASS",
+    "FIRE",
+    "WATER"
+  ],
+  [
+    "LIGHTNING",
+    "PSYCHIC",
+    "FIGHTING"
+  ],
+  [
+    "COLORLESS",
+    "METAL",
+    "DARKNESS"
+  ],
+  [
+    "TRAINER",
+    "ENERGY"
+  ]
+];
+
 class CardListConfigurationScreen extends React.Component {
 
   constructor(props) {
@@ -47,7 +70,8 @@ class CardListConfigurationScreen extends React.Component {
       forcedResearched: props.research,
       cardsToDisplay: props.selection,
       styleToDisplay: props.display,
-      unselectedRarities: props.unselectedRarities
+      unselectedRarities: props.unselectedRarities,
+      unselectedTypes: props.unselectedTypes,
     };
   }
 
@@ -75,6 +99,18 @@ class CardListConfigurationScreen extends React.Component {
     this.setState({unselectedRarities: rarities});
   }
 
+  updateTypes(type) {
+    let types = Object.assign({}, this.state.unselectedTypes);
+
+    if (types[type] != null) {
+      delete types[type];
+    } else {
+      types[type] = true;
+    }
+
+    this.setState({unselectedTypes: types});
+  }
+
   render() {
     const rarityElements = rarities.map(row => {
       const content = row.map(rarity => {
@@ -86,6 +122,24 @@ class CardListConfigurationScreen extends React.Component {
           <Col key={rarity} style={[{margin:0.8}, this.state.unselectedRarities[rarity] ? {opacity: 0.1} : null]}>
             <TouchableOpacity
               onPress={() => this.updateRarities(rarity)}
+              style={styles.cell}>
+                {image}
+            </TouchableOpacity>
+          </Col>);
+      });
+      return (<Row key={row[0]}>{content}</Row>);
+    })
+
+    const typeElements = types.map(row => {
+      const content = row.map(type => {
+        const image = TypesLogos[type] == null
+          ? <Text>{type.charAt(0)}</Text>
+          : <Image source={TypesLogos[type]} style={{width:15,height:15}}/>;
+
+        return (
+          <Col key={type} style={[{margin:0.9}, this.state.unselectedTypes[type] ? {opacity: 0.1} : null]}>
+            <TouchableOpacity
+              onPress={() => this.updateTypes(type)}
               style={styles.cell}>
                 {image}
             </TouchableOpacity>
@@ -144,14 +198,19 @@ class CardListConfigurationScreen extends React.Component {
                   <Row>{displayElements}</Row>
                 </Grid>
               </Row>
-              <Row>
+              <Row style={{marginTop:5}}>
+                <Grid>
+                  {typeElements}
+                </Grid>
+              </Row>
+              <Row style={{marginTop:5}}>
                 <Grid>
                   {rarityElements}
                 </Grid>
               </Row>
               <Row>
                 <Button block bordered style={{marginTop: 15, marginBottom: 15, width:'100%'}} onPress={() => {
-                      this.props.changeSelection(this.state.cardsToDisplay, this.state.styleToDisplay, this.state.unselectedRarities);
+                      this.props.changeSelection(this.state.cardsToDisplay, this.state.styleToDisplay, this.state.unselectedRarities, this.state.unselectedTypes);
                       this.props.hide();
                     }}>
                   <Text style={{fontWeight: 'bold'}}>{string('button.save')}</Text>
@@ -205,6 +264,7 @@ const mapStateToProps = (state) => {
     selection: state.selection,
     display: state.display,
     unselectedRarities: state.unselectedRarities,
+    unselectedTypes: state.unselectedTypes,
     language: state.language
   }
 }
