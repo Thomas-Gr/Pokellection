@@ -6,7 +6,6 @@ import RaritiesLogos from '../Config/RaritiesLogos.js';
 import React from "react";
 import { connect } from 'react-redux'
 import { string } from "../i18n.js"
-import CheckBox from '@react-native-community/checkbox';
 
 const selections = [
   {name: "all", icon: "circle-o"},
