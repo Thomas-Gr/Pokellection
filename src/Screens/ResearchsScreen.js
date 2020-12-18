@@ -18,14 +18,17 @@ class ResearchsScreen extends Component {
   constructor(props) {
     super(props);
     const selectedSeries = this.filterSelectedSeriesOnly(HomeSerieConfig, this.props.selectedSeries)
+    const maxCards = 200
     this.state = {
       listConfigurationVisible: false,
       cardInformationVisible: false,
       selectedCard: null,
       selectedSerie: null,
+      selectedSeries: selectedSeries,
       hasSelectedCard: false,
-      seriesToDisplay: this.buildList(selectedSeries),
-      hasAtLeastOneSerieHidden: this.hasAtLeastOneSerieHidden(selectedSeries)
+      seriesToDisplay: this.buildList(selectedSeries, maxCards),
+      hasAtLeastOneSerieHidden: this.hasAtLeastOneSerieHidden(selectedSeries, maxCards),
+      maxCards: maxCards
     };
 
     this.changeSelection = this.changeSelection.bind(this);
@@ -34,6 +37,7 @@ class ResearchsScreen extends Component {
     this.addCard = this.addCard.bind(this);
     this.showCardInformation = this.showCardInformation.bind(this);
     this.hideCardInformation = this.hideCardInformation.bind(this);
+    this.loadMore = this.loadMore.bind(this);
   }
 
   showConfigurationPanel() {
@@ -57,8 +61,7 @@ class ResearchsScreen extends Component {
        })
   }
 
-  buildList(filteredSerie) {
-    var max = 200 // TODO: Move this somewhere (make it configurable?)
+  buildList(filteredSerie, maxCards) {
     var current = 0
 
     var result = filteredSerie
@@ -72,7 +75,7 @@ class ResearchsScreen extends Component {
         .map(obj => {
           var displayed
 
-          if (current >= max) {
+          if (current >= maxCards) {
             displayed = false;
           } else {
             const owned = this.props.collections[obj.data[0].name] == undefined
@@ -92,8 +95,7 @@ class ResearchsScreen extends Component {
     return result
   }
 
-  hasAtLeastOneSerieHidden(filteredSerie) {
-    var max = 200 // TODO: Move this somewhere (make it configurable?)
+  hasAtLeastOneSerieHidden(filteredSerie, maxCards) {
     var current = 0
     var key;
     for (key of filteredSerie) {
@@ -108,7 +110,7 @@ class ResearchsScreen extends Component {
 
           current += total - owned
 
-          if (current > max) {
+          if (current > maxCards) {
             return true
           }
       }
@@ -156,10 +158,19 @@ class ResearchsScreen extends Component {
     });
   }
 
+  loadMore() {
+    const newMaxCards = this.state.maxCards + 50
+    this.setState({
+      seriesToDisplay: this.buildList(this.state.selectedSeries, newMaxCards),
+      hasAtLeastOneSerieHidden: this.hasAtLeastOneSerieHidden(this.state.selectedSeries, newMaxCards),
+      maxCards: newMaxCards
+    });
+  }
+
   render() {
     const explanation = this.state.hasAtLeastOneSerieHidden
         ? <View style={styles.filteredBanner}>
-            <Text style={styles.warning}>{string('misc.setsHidden')}</Text>
+            <Text style={styles.warning} onPress={() => this.loadMore()}>{string('misc.setsHidden')}</Text>
           </View>
         : null;
 
@@ -171,7 +182,6 @@ class ResearchsScreen extends Component {
          />
          : null
 
-    console.log(this.props.showImage)
     return (
       <Container>
         <MyHeader {...this.props} selectionFunction={this.showConfigurationPanel}/>

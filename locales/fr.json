@@ -58,7 +58,7 @@
     "add": "Ajouter",
     "remove": "Supprimer",
     "card": "",
-    "setsHidden": "Trop de cartes à charger, des séries ne sont pas affichées",
+    "setsHidden": "Trop de cartes à charger, des séries ne sont pas affichées. Toucher pour charger plus de cartes.",
     "config": "Config"
   }
 }

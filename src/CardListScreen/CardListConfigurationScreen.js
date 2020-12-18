@@ -185,7 +185,7 @@ class CardListConfigurationScreen extends React.Component {
           marginTop: '15%',
           marginLeft: '10%',
           width: '80%',
-          height: '70%',
+          height: '80%',
           backgroundColor: 'white', 
           padding: 20}}>
             <Grid>
