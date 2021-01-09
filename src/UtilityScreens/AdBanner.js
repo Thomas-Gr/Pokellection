@@ -16,7 +16,7 @@ export default class AdBanner extends Component {
          <View style={styles.margin} />
           <AdMobBanner
             style={styles.bottomBanner}
-            bannerSize="smartBannerPortrait"
+            bannerSize="fullBanner"
             adUnitID="ca-app-pub-5825529948495220/9502913447"
             didFailToReceiveAdWithError={this.bannerError}
           />
@@ -31,9 +31,10 @@ export default class AdBanner extends Component {
 const styles = StyleSheet.create({
   bottomBanner: {
     position: "absolute",
-    bottom: 0
+    bottom: 0,
+    height: 60
   },
   margin: {
-    height: 50
+    height: 60
   }
 });
